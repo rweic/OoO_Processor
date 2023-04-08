@@ -29,7 +29,7 @@ module alu #(parameter WIDTH=32) (alu_op1, alu_op2, alu_func, alu_out);
             `ALU_OP_SRL:
                 alu_out <= alu_op1 >>> alu_op2[4:0];
             default:
-                alu_out <= 32'b0;
+                alu_out <= {(WIDTH){1'b0}};
         endcase
     end
 
