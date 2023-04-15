@@ -1,8 +1,9 @@
 // Word Width Config
 `define WORD_WIDTH  32;
 
+
 // ALU Operations
-`define ALU_OP_NONE 4'b0000
+`define ALU_OP_NOP 4'b0000
 `define ALU_OP_ADD  4'b0001
 `define ALU_OP_SUB  4'b0010
 `define ALU_OP_AND  4'b0011

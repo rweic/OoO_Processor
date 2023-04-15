@@ -1,3 +1,9 @@
+/*--------------------------------------------------
+Regfile 2r1w
+1 sync write, 2 async read
+x0 - zero
+x1-x31 general purpose registers
+--------------------------------------------------*/
 module regfile #(parameter WIDTH=32) (clk, rst, w_en, ra_addr, rb_addr, rd_addr, w_data, ra_value, rb_value);
     input clk, rst, w_en;
     input [4:0] ra_addr, rb_addr, rd_addr;
