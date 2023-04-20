@@ -1,9 +1,9 @@
-MODULE = regfile
+MODULE = execute
 
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/$(MODULE).v
+SRC = $(DSRC)/$(MODULE).v $(DSRC)/alu.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 
