@@ -1,16 +1,20 @@
 // ToDo: add cases for muxex as inputs
 //       fix the length of the mux select signal
 module execute #(parameter WORD = 32, parameter ADDR_LEN = 32) ();
+    input clk, reset;
     input [1:0] opsel1, opsel2; // need to change the length
     input [3:0] alu_func;
     input [WORD-1:0] rs1_value, rs2_value, imm, imm_id;
     input [ADDR_LEN-1:0] pc_i;
-    output [ADDR_LEN-1:0] pc_o;
-    output [WORD-1:0] alu_out;
+    output reg [ADDR_LEN-1:0] pc_o;
+    output reg [WORD-1:0] alu_out;
 
-    assign pc_o = pc_i; // need to add ff for piplined processsor
+    wire [WORD-1:0] alu_op1, alu_op2;
 
-    reg [WORD-1:0] alu_op1, alu_op2;
+    // Reg EX-MEM
+    always @(posedge clk) begin
+        pc_o <= pc_i;
+    end
 
     // Mux 1: select alu input 1
     always @(*) begin
