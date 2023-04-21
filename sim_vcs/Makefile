@@ -1,4 +1,4 @@
-TESTBENCH = TOPCELL
+TESTBENCH = execute
 
 # Source Files
 SRC = src/*.v
