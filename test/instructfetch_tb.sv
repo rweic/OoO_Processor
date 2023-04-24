@@ -1,7 +1,8 @@
 module instructfetch_tb();
-    reg [31:0] addr;
+    reg clk, reset;
+    reg [31:0] pc_i;
 
-    wire [31:0] data;
+    wire [31:0] pc_o, instr_o;
 
     instructfetch fetch (.*);
     
@@ -14,8 +15,10 @@ module instructfetch_tb();
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
         reset = 1'b1; #10
-        reset = 1'b0; addr = 32'b0; #20
-        reset = 1'b0; addr = 32'b100; #20
+        reset = 1'b0; pc_i = 32'b0; #20
+        reset = 1'b0; pc_i = 32'b100; #20
+        reset = 1'b0; pc_i = 32'b1000; #20
+        #40
         $finish;
     end
 
