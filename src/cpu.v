@@ -21,29 +21,11 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
     instructfetch fetch(
         .clk(clk),          // Clock input
         .reset(reset),       // Reset input (active high)
-        .pc_i(),   // Program counter input (32 bits)
+        .pc_i(pc_if),   // Program counter input (32 bits)
+        .pc_o(pc_id),
         .nstr_o()); // Instruction output (32 bits)
 
     // Instruction Decode
-
-    // Execution
-    execute #(.WIDTH(32)) execute0 (
-        .clk(clk), 
-        .reset(reset), 
-        .opsel1(), // should be from decode stage
-        .opsel2(), // should be from decode stage
-        .alu_func(), // should be from decode stage
-        .rs1_value(rs1_value), 
-        .rs2_value(rs2_value), 
-        .imm(),  // should be from decode stage
-        .imm_id(), // should be from decode stage
-        .pc_i(pc_id), 
-        .pc_o(pc_ex), 
-        .alu_out(alu_out));
-
-    // Memory Access
-
-    // Write Back
 
     // Regfile
     regfile #(.WIDTH(32)) regfile0 (
@@ -57,7 +39,24 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .ra_value(rs1_value), 
         .rb_value(rs2_value));
 
-    // Memory
+    // Execution
+    execute #(.WIDTH(32)) execute0 (
+        .clk(clk), 
+        .reset(reset), 
+        .opsel1(), // should be from decode stage
+        .opsel2(), // should be from decode stage
+        .alu_func(), // should be from decode stage
+        .rs1_value(rs1_value), 
+        .rs2_value(rs2_value), 
+        .imm(),  // should be from decode stage
+        .imm_id(), // should be from decode stage
+        .pc_i(pc_ex), 
+        .pc_o(pc_mem), 
+        .alu_out(alu_out));
+
+    // Memory Access
+
+    // Data Memory
     dcache dcache0 (
         .clk(clk), 
         .reset(reset), 
@@ -67,9 +66,16 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .waddr(),
         .rdata());
 
-    // Control Unit
+    // Write back
+    writeback writeback0 (
+        .wb_sel(), 
+        .alu_result(alu_out), 
+        .dmem_result(), 
+        .imm_u(), 
+        .pc_i(pc_wb), 
+        .rf_wdata(rf_wdata));
 
-    // Hazard Detection
+    // Hazard Handling
 
 
 endmodule
