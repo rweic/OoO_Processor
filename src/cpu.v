@@ -4,7 +4,7 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
     input clk, reset;
 
     // Internal signals
-    wire [WORD-1:0] pc_if;
+    wire [WORD-1:0] pc_if, pc_id, pc_ex, pc_mem, pc_wb;
     wire [INST_LEN-1:0] instruction;
 
     wire [ADDR_LEN-1:0] rs1, rs2, rd;
@@ -12,31 +12,38 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
     wire rf_en;
     wire [WORD-1:0] rf_wdata;
 
+
+    wire [WORD-1:0] alu_out;
+
     wire dmem_en;
 
-    // Fetch
+    // Instruction Fetch
     instructfetch fetch(
         .clk(clk),          // Clock input
         .reset(reset),       // Reset input (active high)
         .pc_i(),   // Program counter input (32 bits)
         .nstr_o()); // Instruction output (32 bits)
 
-    // Decode
+    // Instruction Decode
 
     // Execution
     execute #(.WIDTH(32)) execute0 (
-        .clk(), 
-        .reset(), 
-        .opsel1(), 
-        .opsel2(), 
-        .alu_func(), 
-        .rs1_value(), 
-        .rs2_value(), 
-        .imm(), 
-        .imm_id(), 
-        .pc_i(), 
-        .pc_o(), 
-        .alu_out());
+        .clk(clk), 
+        .reset(reset), 
+        .opsel1(), // should be from decode stage
+        .opsel2(), // should be from decode stage
+        .alu_func(), // should be from decode stage
+        .rs1_value(rs1_value), 
+        .rs2_value(rs2_value), 
+        .imm(),  // should be from decode stage
+        .imm_id(), // should be from decode stage
+        .pc_i(pc_id), 
+        .pc_o(pc_ex), 
+        .alu_out(alu_out));
+
+    // Memory Access
+
+    // Write Back
 
     // Regfile
     regfile #(.WIDTH(32)) regfile0 (

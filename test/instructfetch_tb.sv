@@ -1,8 +1,7 @@
-module execute_tb();
-    reg clk, reset;
-    reg [31:0] pc_i;
+module instructfetch_tb();
+    reg [31:0] addr;
 
-    wire [31:0] instr_o;
+    wire [31:0] data;
 
     instructfetch fetch (.*);
     
@@ -15,8 +14,8 @@ module execute_tb();
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
         reset = 1'b1; #10
-        reset = 1'b0; pc_i = 32'b0; #10
-        reset = 1'b0; pc_i = 32'b100; #10
+        reset = 1'b0; addr = 32'b0; #20
+        reset = 1'b0; addr = 32'b100; #20
         $finish;
     end
 

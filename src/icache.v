@@ -1,8 +1,9 @@
-module icache(
+module icache #(parameter MEM_DEP = 64) (
     input logic [31:0] addr,     // Address input (32 bits)
     output logic [31:0] data     // Data output (32 bits)
 );
 
+    /*
     // Instruction memory implemented using registers
     // Hard-coded instructions for now
     reg [31:0] instr_mem [0:63] = '{
@@ -42,9 +43,19 @@ module icache(
         32'b00000000000000000000000000000000,
         32'b00000000000000000000000000000000,
         32'b00000000000000000000000000000000
-    };
+    };*/
 
     // Read operation
-    assign data = instr_mem[addr];
+    assign data = instr_mem[addr>>2];
+
+    // Second way of initializing memory
+    integer i;
+    reg [31:0] instr_mem [0:MEM_DEP-1];
+    initial begin
+        for(i = 0; i < MEM_DEP; i = i + 1) begin
+            instr_mem[i] = 8'b0;
+            $readmemh("/Users/salazarchen/Desktop/OoO_Processor/src/icache_init.txt", instr_mem);
+        end
+    end
 
 endmodule
