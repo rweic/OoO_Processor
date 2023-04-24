@@ -1,9 +1,9 @@
-MODULE = execute
+MODULE = memoryaccess
 
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/$(MODULE).v $(DSRC)/alu.v
+SRC = $(DSRC)/$(MODULE).v $(DSRC)/dcache.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 
