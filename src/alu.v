@@ -4,9 +4,9 @@ module alu #(parameter WIDTH=32) (alu_op1, alu_op2, alu_func, alu_out);
     input [WIDTH-1:0] alu_op1, alu_op2;
     input [3:0] alu_func;
 
-    output [WIDTH-1:0] alu_out;
+    output reg [WIDTH-1:0] alu_out;
 
-    always @(alu_func, alu_op1, alu_op2) begin
+    always @(*) begin
         case (alu_func)
             `ALU_OP_ADD:
                 alu_out = alu_op1 + alu_op2;

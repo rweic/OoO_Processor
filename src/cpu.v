@@ -24,10 +24,22 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
     // Decode
 
     // Execution
-
+    execute #(.WIDTH(32)) execute0 (
+        .clk(), 
+        .reset(), 
+        .opsel1(), 
+        .opsel2(), 
+        .alu_func(), 
+        .rs1_value(), 
+        .rs2_value(), 
+        .imm(), 
+        .imm_id(), 
+        .pc_i(), 
+        .pc_o(), 
+        .alu_out());
 
     // Regfile
-    regfile regfile #(parameter WIDTH=32) (
+    regfile #(.WIDTH(32)) regfile0 (
         .clk(clk), 
         .reset(reset), 
         .w_en(rf_en), 
