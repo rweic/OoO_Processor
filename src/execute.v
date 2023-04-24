@@ -1,5 +1,8 @@
 // ToDo: add cases for muxex as inputs
 //       fix the length of the mux select signal
+/*--------------------------------------------------
+Execute Module
+--------------------------------------------------*/
 module execute #(parameter WORD = 32, parameter ADDR_LEN = 32) (
     clk, reset, opsel1, opsel2, alu_func, rs1_value, rs2_value, imm, imm_id, pc_i, pc_o, alu_out
 );
