@@ -3,19 +3,18 @@
 /*--------------------------------------------------
 Execute Module
 --------------------------------------------------*/
-module execute #(parameter WORD = 32, parameter ADDR_LEN = 32) (
-    clk, reset, opsel1, opsel2, alu_func, rs1_value, rs2_value, imm, imm_id, pc_i, pc_o, alu_out
-);
+module execute #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
+    clk, reset, opsel1, opsel2, alu_func, rs1_value, rs2_value, imm, imm_id, pc_i, pc_o, alu_out);
     input clk, reset;
     input [1:0] opsel1, opsel2; // need to change the length
     input [3:0] alu_func;
-    input [WORD-1:0] rs1_value, rs2_value, imm, imm_id;
+    input [WIDTH-1:0] rs1_value, rs2_value, imm, imm_id;
     input [ADDR_LEN-1:0] pc_i;
     output reg [ADDR_LEN-1:0] pc_o;
-    output reg [WORD-1:0] alu_out;
+    output reg [WIDTH-1:0] alu_out;
 
-    reg [WORD-1:0] alu_op1, alu_op2;
-    wire [WORD-1:0] alu_out_temp;
+    reg [WIDTH-1:0] alu_op1, alu_op2;
+    wire [WIDTH-1:0] alu_out_temp;
 
     // Reg EX-MEM
     always @(posedge clk) begin

@@ -3,7 +3,6 @@ Instruction Decode Module
 --------------------------------------------------*/
 module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32)  (
     clk, reset, pc_i, inst, pc_o, opsel1, opsel2, alu_func, rs1_addr, rs2_addr, imm, imm_id
-
 );
     input clk, reset;
     input [ADDR_LEN-1:0] pc_i;
@@ -14,7 +13,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg [ADDR_LEN-1:0] pc_o;
     output [1:0] opsel1, opsel2;
     output [3:0] alu_func;
-    output [WIDTH-1:0] rs1_value, rs2_value, imm, imm_id;
+    output [4:0] rs1_addr, rs2_addr;
+    output [WIDTH-1:0] imm, imm_id;
 
     wire [6:0] opcode = inst[6:0];
 	wire [2:0] funct3 = inst[14:12];
@@ -38,17 +38,18 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             case(opcode)
                 `OP_ITYPE:begin
                     case (funct3)
-                        `FUNCT3_ADDI: 
-                        `FUNCT3_SLLI:
-                        `FUNCT3_SLTI:
-                        `FUNCT3_SLTIU:
-                        `FUNCT3_XORI:
-                        `FUNCT3_SRI:
+                        `FUNCT3_ADDI: begin end
+                        `FUNCT3_SLLI: begin end
+                        `FUNCT3_SLTI: begin end
+                        `FUNCT3_SLTIU: begin end
+                        `FUNCT3_XORI: begin end
+                        `FUNCT3_SRI: begin
                             case (funct7)
                                 default: begin end
                             endcase
-                        `FUNCT3_ORI:
-                        `FUNCT3_ANDI:
+                        end
+                        `FUNCT3_ORI: begin end
+                        `FUNCT3_ANDI: begin end
                         default: begin end
                     endcase
                 end
@@ -58,48 +59,48 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
                             case (funct7)
                                 default: begin end
                             endcase
-                        `FUNCT3_SLL:
-                        `FUNCT3_SLT:
-                        `FUNCT3_SLTU:
-                        `FUNCT3_XOR:
+                        `FUNCT3_SLL: begin end
+                        `FUNCT3_SLT: begin end
+                        `FUNCT3_SLTU: begin end
+                        `FUNCT3_XOR: begin end
                         `FUNCT3_SR:
                             case (funct7)
                                 default: begin end
                             endcase
-                        `FUNCT3_OR:
-                        `FUNCT3_AND:
+                        `FUNCT3_OR: begin end
+                        `FUNCT3_AND: begin end
                         default: begin end
                     endcase
                 end
                 `OP_BRANCH:begin
                     case (funct3)
-                        `FUNCT3_BEQ:
-                        `FUNCT3_BNE:
-                        `FUNCT3_BLT:
-                        `FUNCT3_BGE:
-                        `FUNCT3_BLTU:
-                        `FUNCT3_BGEU:
+                        `FUNCT3_BEQ: begin end
+                        `FUNCT3_BNE: begin end
+                        `FUNCT3_BLT: begin end
+                        `FUNCT3_BGE: begin end
+                        `FUNCT3_BLTU: begin end
+                        `FUNCT3_BGEU: begin end
                         default: begin end
                     endcase
                 end
-                `OP_LUI:
-                `OP_AUIPC:
-                `OP_JAL:
-                `OP_JALR:
+                `OP_LUI: begin end
+                `OP_AUIPC: begin end
+                `OP_JAL: begin end
+                `OP_JALR: begin end
                 `OP_LOAD:
                     case (funct3)
-                        `FUNCT3_LB:
-                        `FUNCT3_LH:
-                        `FUNCT3_LW:
-                        `FUNCT3_LBU:
-                        `FUNCT3_LHU:
+                        `FUNCT3_LB: begin end
+                        `FUNCT3_LH: begin end
+                        `FUNCT3_LW: begin end
+                        `FUNCT3_LBU: begin end
+                        `FUNCT3_LHU: begin end
                         default: begin end
                     endcase
                 `OP_STORE:
                     case (funct3)
-                        `FUNCT3_SB:
-                        `FUNCT3_SH:
-                        `FUNCT3_SW:
+                        `FUNCT3_SB: begin end
+                        `FUNCT3_SH: begin end
+                        `FUNCT3_SW: begin end
                         default: begin end
                     endcase
                 default: begin end
