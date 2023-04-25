@@ -1,4 +1,9 @@
-module memoryaccess #(parameter WIDTH = 32, parameter ADDR_LEN = 32) ();
+/*--------------------------------------------------
+Memory Access Module
+--------------------------------------------------*/
+module memoryaccess #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
+    clk, reset, pc_i, alu_result_i, mem_r_i, pc_o, alu_result_o, load_data
+);
     input clk, reset;
     input [ADDR_LEN-1:0] pc_i;
     input [WIDTH-1:0] alu_result_i;

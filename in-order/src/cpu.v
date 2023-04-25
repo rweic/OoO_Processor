@@ -1,34 +1,48 @@
-module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
+module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
     clk, reset
 );
     input clk, reset;
 
     // Internal signals
-    wire [WORD-1:0] pc_if, pc_id, pc_ex, pc_mem, pc_wb;
+    wire [WIDTH-1:0] pc_if, pc_id, pc_ex, pc_mem, pc_wb;
     wire [INST_LEN-1:0] instruction;
 
-    wire [ADDR_LEN-1:0] rs1, rs2, rd;
-    wire [WORD-1:0] rs1_value, rs2_value;
+    wire [4:0] rs1, rs2, rd;
+    wire [WIDTH-1:0] rs1_value, rs2_value;
     wire rf_en;
-    wire [WORD-1:0] rf_wdata;
+    wire [WIDTH-1:0] rf_wdata;
 
 
-    wire [WORD-1:0] alu_out;
+    wire [WIDTH-1:0] alu_out;
 
     wire dmem_en;
 
     // Instruction Fetch
-    instructfetch fetch(
+    instructfetch if0 (
         .clk(clk),          // Clock input
         .reset(reset),       // Reset input (active high)
         .pc_i(pc_if),   // Program counter input (32 bits)
         .pc_o(pc_id),
-        .nstr_o()); // Instruction output (32 bits)
+        .instr_o(instruction)); // Instruction output (32 bits)
 
     // Instruction Decode
+    decode id0 (
+        .clk(clk), 
+        .reset(reset), 
+        .pc_i(pc_id), 
+        .inst(instruction), 
+        .pc_o(pc_ex), 
+        .opsel1(), 
+        .opsel2(), 
+        .alu_func(), 
+        .rs1_addr(rs1), 
+        .rs2_addr(rs2), 
+        .imm(), 
+        .imm_id()
+    );
 
     // Regfile
-    regfile #(.WIDTH(32)) regfile0 (
+    regfile regfile0 (
         .clk(clk), 
         .reset(reset), 
         .w_en(rf_en), 
@@ -40,7 +54,7 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .rb_value(rs2_value));
 
     // Execution
-    execute #(.WIDTH(32)) execute0 (
+    execute ex0 (
         .clk(clk), 
         .reset(reset), 
         .opsel1(), // should be from decode stage
@@ -55,6 +69,15 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .alu_out(alu_out));
 
     // Memory Access
+    memoryaccess mem0 (
+        .clk(clk), 
+        .reset(reset), 
+        .pc_i(pc_mem), 
+        .alu_result_i(alu_out), 
+        .mem_r_i(), 
+        .pc_o(pc_wb), 
+        .alu_result_o(), 
+        .load_data());
 
     // Data Memory
     dcache dcache0 (
@@ -67,7 +90,7 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .rdata());
 
     // Write back
-    writeback writeback0 (
+    writeback wb0 (
         .wb_sel(), 
         .alu_result(alu_out), 
         .dmem_result(), 
@@ -76,6 +99,7 @@ module cpu #(parameter WORD = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 
         .rf_wdata(rf_wdata));
 
     // Hazard Handling
+    control ctrl ();
 
 
 endmodule

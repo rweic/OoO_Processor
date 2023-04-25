@@ -4,6 +4,10 @@
  * - tests for RAW hazard - with stall
  */
 module cpu_tb();
+
+    reg clk, reset;
+
+    cpu cpu0 (.*);
     
     initial begin
         clk = 1'b0;
@@ -13,6 +17,10 @@ module cpu_tb();
     initial begin
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
+        reset = 1; #20
+        reset = 0;
+        #200
+        $finish;
     end
 
 endmodule

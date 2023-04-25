@@ -33,7 +33,7 @@ module execute #(parameter WORD = 32, parameter ADDR_LEN = 32) (
         // add anything for alu input select (the two muxes)
         case (opsel1)
             2'b00: alu_op1 = rs1_value;
-            default: alu_op1 = rs1_value;
+            default: alu_op1 = 'b0;
         endcase
     end
 
@@ -42,11 +42,11 @@ module execute #(parameter WORD = 32, parameter ADDR_LEN = 32) (
         // add anything for alu input select (the two muxes)
         case (opsel2)
             2'b00: alu_op2 = rs2_value;
-            default: alu_op2 = rs2_value;
+            default: alu_op2 = 'b0;
         endcase
     end
 
-    alu #(.WIDTH(32)) alu0 (
+    alu alu0 (
         .alu_op1(alu_op1), 
         .alu_op2(alu_op2), 
         .alu_func(alu_func), 

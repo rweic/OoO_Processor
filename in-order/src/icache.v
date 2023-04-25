@@ -54,8 +54,8 @@ module icache #(parameter MEM_DEP = 64) (
     initial begin
         for(i = 0; i < MEM_DEP; i = i + 1) begin
             instr_mem[i] = 8'b0;
-            $readmemh("/Users/salazarchen/Desktop/OoO_Processor/src/icache_init.txt", instr_mem);
         end
+        $readmemh("/Users/salazarchen/Desktop/OoO_Processor/in-order/src/icache_init.txt", instr_mem, 0, 11);
     end
 
 endmodule
