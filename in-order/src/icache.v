@@ -46,7 +46,7 @@ module icache #(parameter MEM_DEP = 64) (
     };*/
 
     // Read operation
-    assign data = instr_mem[addr];
+    assign data = instr_mem[addr>>2];
 
     // Second way of initializing memory
     integer i;

@@ -51,8 +51,6 @@
 `define FUNCT3_BGE      3'b101
 `define FUNCT3_BLTU     3'b110
 `define FUNCT3_BGEU     3'b111
-// JALR
-`define FUNCT3_JALR     3'b000
 // LOAD
 `define FUNCT3_LB       3'b000
 `define FUNCT3_LH       3'b001
@@ -66,7 +64,7 @@
 
 // FUNCT 7
 `define FUNCT7_SLLI 7'b0000000
-// SRLI_SRAI
+// SRI
 `define FUNCT7_SRLI 7'b0000000
 `define FUNCT7_SRAI 7'b0100000
 // ADD_SUB
@@ -76,12 +74,21 @@
 `define FUNCT7_SLT  7'b0000000
 `define FUNCT7_SLTU 7'b0000000
 `define FUNCT7_XOR  7'b0000000
-// SRL_SRA
+// SR
 `define FUNCT7_SRL 7'b0000000
 `define FUNCT7_SRA 7'b0100000
 `define FUNCT7_OR  7'b0000000
 `define FUNCT7_AND 7'b0000000
 
+
+// Opsel 1
+`define OPSEL_RS1 2'b01
+`define OPSEL_PC 2'b10
+`define OPSEL_NONE 2'b00
+
+// Opsel 2
+`define OPSEL_RS2 2'b01
+`define OPSEL_IMM 2'b10
 
 // Write Back Selection
 `define WB_ALU  2'b00

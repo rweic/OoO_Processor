@@ -1,7 +1,7 @@
 /*--------------------------------------------------
 Instruction Fetch Module
 --------------------------------------------------*/
-module instructfetch(
+module fetch(
     input logic clk,          // Clock input
     input logic reset,       // Reset input (active high)
     input logic [31:0] pc_i,   // Program counter input (32 bits)
@@ -13,9 +13,20 @@ module instructfetch(
     logic [31:0] instr_raw;
     logic [31:0] instrmem_o;
 
+    reg [31:0] pc;
+
+    // reg pc
+    // TODO: ADD branch later
+    always_ff @(posedge clk) begin
+        if (reset)
+            pc <= 0;
+        else
+            pc <=  pc + 4;
+    end 
+
     // Instantiate the instruction cache module
     icache instruction_memory(
-        .addr(pc_i >> 2),   // Use pc_o as address input, right-shifted by 2 to account for word addressing
+        .addr(pc),   // Use pc_o as address input, right-shifted by 2 to account for word addressing
         .data(instrmem_o)      // Connect instrmem_o as data output
     );
 
@@ -24,7 +35,7 @@ module instructfetch(
         if (reset)
             pc_o <= 0;
         else
-            pc_o <= pc_i;
+            pc_o <= pc;
     end
 
     always_ff @(posedge clk) begin
