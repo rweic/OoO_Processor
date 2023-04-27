@@ -33,7 +33,7 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
 
     reg [3:0] alu_func_id;
     reg [1:0] opsel1_id, opsel2_id, wbsel_id;
-    reg [4:0] rs1_addr_id, rs2_addr_id, rd_addr_id;
+    reg [4:0] rd_addr_id;
     reg rf_w_en_id, mem_w_en_id;
     reg [WIDTH-1:0] imm_id;
 
@@ -45,8 +45,6 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             opsel1 <= 'b0; 
             opsel2 <= 'b0;
             wbsel <= 'b0;
-            rs1_addr <= 'b0; 
-            rs2_addr <= 'b0;
             rd_addr <= 'b0;
             rf_w_en <= 'b0;
             mem_w_en <= 'b0;
@@ -57,23 +55,21 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             opsel1 <= opsel1_id; 
             opsel2 <= opsel2_id;
             wbsel <= wbsel_id;
-            rs1_addr <= rs1_addr_id; 
-            rs2_addr <= rs2_addr_id;
             rd_addr <= rd_addr_id;
             rf_w_en <= rf_w_en_id;
             mem_w_en <= mem_w_en_id;
             imm <= imm_id;
         end
     end
-    
+
     // Define the decoded regs
     `define DECODE_SET(alu_func_data, opsel1_data, opsel2_data, wbsel_data, rs1_addr_data, rs2_addr_data, rd_addr_data, rf_w_en_data, mem_w_en_data, imm_data) \
 		alu_func_id = alu_func_data; \
 		opsel1_id = opsel1_data; \
 		opsel2_id = opsel2_data; \
 		wbsel_id = wbsel_data; \
-		rs1_addr_id = rs1_addr_data; \
-		rs2_addr_id = rs2_addr_data; \
+		rs1_addr = rs1_addr_data; \
+		rs2_addr = rs2_addr_data; \
 		rd_addr_id = rd_addr_data; \
 		rf_w_en_id = rf_w_en_data; \
 		mem_w_en_id = mem_w_en_data; \

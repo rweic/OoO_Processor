@@ -26,7 +26,6 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     fetch fetch0 (
         .clk(clk),          // Clock input
         .reset(reset),       // Reset input (active high)
-        .pc_i(pc_if),   // Program counter input (32 bits)
         .pc_o(pc_id),
         .instr_o(instruction)); // Instruction output (32 bits)
 

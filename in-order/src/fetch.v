@@ -4,7 +4,6 @@ Instruction Fetch Module
 module fetch(
     input logic clk,          // Clock input
     input logic reset,       // Reset input (active high)
-    input logic [31:0] pc_i,   // Program counter input (32 bits)
     output logic [31:0] pc_o,
     output logic [31:0] instr_o // Instruction output (32 bits)
 );
@@ -40,11 +39,9 @@ module fetch(
 
     always_ff @(posedge clk) begin
         if (reset)
-            instr_raw <= 0;
+            instr_o <= 0;
         else
-            instr_raw <= instrmem_o; // Use data output from Instruction Cache module
+            instr_o <= instrmem_o; // Use data output from Instruction Cache module
     end
-
-    assign instr_o = instr_raw;
 
 endmodule
