@@ -3,10 +3,10 @@ module dcache #(parameter WIDTH=32, parameter ADDR_LEN=6) (clk, reset, w_en, wda
     input [WIDTH-1:0] wdata;
     input [ADDR_LEN-1:0] raddr, waddr;
     output [WIDTH-1:0] rdata;
-
     reg [WIDTH-1:0] mem [0:2<<ADDR_LEN-1];
-    integer i;
 
+    integer i;
+    
     assign rdata = mem[raddr];
 
     always @(posedge clk) begin

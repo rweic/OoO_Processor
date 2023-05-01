@@ -2,8 +2,10 @@
 Instruction Fetch Module
 --------------------------------------------------*/
 module fetch(
-    input logic clk,          // Clock input
-    input logic reset,       // Reset input (active high)
+    input logic clk,
+    input logic reset,
+    input logic [1:0] pcsel,
+    input logic [31:0] br_dest,
     output logic [31:0] pc_o,
     output logic [31:0] instr_o // Instruction output (32 bits)
 );
@@ -19,8 +21,14 @@ module fetch(
     always_ff @(posedge clk) begin
         if (reset)
             pc <= 0;
-        else
-            pc <=  pc + 4;
+        else begin
+            case (pcsel)
+                `PC_PC4:
+                    pc <=  pc + 4;
+                `PC_BRANCH:
+                    pc <=  br_dest + 4;
+            endcase
+        end
     end 
 
     // Instantiate the instruction cache module

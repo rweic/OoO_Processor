@@ -1,9 +1,7 @@
 `include "PARAM.vh"
-
 module alu #(parameter WIDTH=32) (alu_op1, alu_op2, alu_func, alu_out);
     input [WIDTH-1:0] alu_op1, alu_op2;
     input [3:0] alu_func;
-
     output reg [WIDTH-1:0] alu_out;
 
     always @(*) begin

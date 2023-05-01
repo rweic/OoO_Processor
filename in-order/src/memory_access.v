@@ -1,7 +1,7 @@
 /*--------------------------------------------------
 Memory Access Module
 --------------------------------------------------*/
-module memoryaccess #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
+module memory_access #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
     clk, reset, pc_i, alu_result_i, mem_r_i, rd_addr_i, rf_w_en_i, imm_i, wbsel_i, pc_o, alu_result_o, load_data, rd_addr_o, rf_w_en_o, imm_o, wbsel_o
 );
     input clk, reset;
@@ -19,7 +19,6 @@ module memoryaccess #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
     output reg rf_w_en_o;
     output reg [WIDTH-1:0] imm_o;
     output reg [1:0] wbsel_o;
-
 
     // Reg MEM-WB
     always @(posedge clk) begin

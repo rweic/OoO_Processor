@@ -42,15 +42,22 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [WIDTH-1:0] imm_wb;
     wire [1:0] wbsel_wb;
 
+    // Branch
+    wire [1:0] pcsel;
+    wire [ADDR_LEN-1:0] br_tar;
+
     // Instruction Fetch
     fetch fetch0 (
-        .clk(clk),          // Clock input
-        .reset(reset),       // Reset input (active high)
+        .clk(clk),
+        .reset(reset),
+        .pcsel(pcsel),
+        .br_dest(br_tar),
         .pc_o(pc_id),
-        .instr_o(instruction_id)); // Instruction output (32 bits)
+        .instr_o(instruction_id));
 
     // Instruction Decode
     decode decode0 (
+        // Inputs
         .clk(clk), 
         .reset(reset), 
         .pc_i(pc_id), 
@@ -61,7 +68,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .alu_func(alu_func), 
         .opsel1(opsel1), 
         .opsel2(opsel2), 
-        .wbsel(wbsel_ex), // also need to delay for 3 cycle
+        .wbsel(wbsel_ex),
+        // Outputs
         .rs1_addr(rs1_addr), 
         .rs2_addr(rs2_addr), 
         .rd_addr(rd_addr_ex), 
@@ -69,17 +77,19 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .rs2_value_o(rs2_data_ex),
         .rf_w_en(rf_w_en_ex),
         .mem_w_en(mem_w_en), 
-        .imm(imm_mem));
+        .imm(imm_mem),
+        .pcsel(pcsel),
+        .branch_tar(br_tar));
 
     // Regfile
     regfile regfile0 (
         .clk(clk), 
         .reset(reset), 
-        .w_en(rf_w_en_wb),    // need to delay this data to write back stage, at decode stage now
+        .w_en(rf_w_en_wb),
         .ra_addr(rs1_addr), 
         .rb_addr(rs2_addr), 
-        .rd_addr(rd_addr_wb),  // at write back stage
-        .w_data(rf_wdata_wb), // at write back stage right now, one circle earlier than rd_addr now??
+        .rd_addr(rd_addr_wb),
+        .w_data(rf_wdata_wb),
         .ra_value(rs1_data), 
         .rb_value(rs2_data));
 
@@ -106,7 +116,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .wbsel_o(wbsel_mem));
 
     // Memory Access
-    memoryaccess memaccess0 (
+    memory_access memaccess0 (
         // Inputs
         .clk(clk), 
         .reset(reset), 
@@ -142,13 +152,13 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .wbsel(wbsel_wb), 
         .alu_result(alu_out_wb), 
         .dmem_result(load_data_wb), 
-        .imm(imm_wb),  // need the value for this
+        .imm(imm_wb),
         .pc_i(pc_wb), 
         // Outputs
         .rf_wdata(rf_wdata_wb));
 
     // Hazard Handling
-    control ctrl ();
+    hazard_detect hazard_detect0 ();
 
 
 endmodule

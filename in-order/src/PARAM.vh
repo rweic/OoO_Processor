@@ -95,3 +95,7 @@
 `define WB_DMEM 2'b01
 `define WB_IMM  2'b10
 `define WB_PC   2'b11
+
+// PCSEL
+`define PC_PC4 2'b00
+`define PC_BRANCH 2'b01
