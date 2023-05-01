@@ -10,9 +10,11 @@ module dcache #(parameter WIDTH=32, parameter ADDR_LEN=6) (clk, reset, w_en, wda
     assign rdata = mem[raddr];
 
     always @(posedge clk) begin
-        if (reset)
-            for (i = 0; i < 32; i = i + 1)
+        if (reset) begin
+            for (i = 1; i < 32; i = i + 1)
                 mem[i] <= 0;
+            mem[0] <= 32'hACE1;   //  for test only, please comment out later
+        end
         else if (w_en)
             mem[waddr] <= wdata;
     end

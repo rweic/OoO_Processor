@@ -30,7 +30,7 @@ module fetch(
     );
 
     // Reg IF-ID
-    always_ff @(posedge clk or posedge reset) begin
+    always_ff @(posedge clk) begin
         if (reset)
             pc_o <= 0;
         else

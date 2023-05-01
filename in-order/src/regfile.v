@@ -9,7 +9,7 @@ module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_add
     input [4:0] ra_addr, rb_addr, rd_addr;
     input [WIDTH-1:0] w_data;
 
-    output reg [WIDTH-1:0] ra_value, rb_value;
+    output [WIDTH-1:0] ra_value, rb_value;
 
     reg [WIDTH-1:0] register [0:31];
     
