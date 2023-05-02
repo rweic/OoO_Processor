@@ -1,4 +1,4 @@
-MODULE = cpu
+MODULE = toplevel
 
 DSRC = ../src
 DTST = ../test

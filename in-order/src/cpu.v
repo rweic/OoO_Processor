@@ -1,8 +1,20 @@
 module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
-    clk, reset
+    clk, reset, 
+    dmem_rdata, dmem_w_en, dmem_wdata, dmem_addr
 );
     input clk, reset;
 
+    // dmem
+    input [WIDTH-1:0] dmem_rdata;
+    output dmem_w_en;
+    output [WIDTH-1:0] dmem_wdata;
+    output [5:0] dmem_addr;
+
+    assign dmem_rdata = dmem_rdata;
+    assign dmem_w_en = mem_w_en;
+    assign dmem_wdata = rs2_data;
+    assign dmem_addr = alu_out_mem[7:2];
+  
     // Internal Signals
     // IF stage
     wire [WIDTH-1:0] pc_if;
@@ -136,15 +148,6 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .imm_o(imm_wb),
         .wbsel_o(wbsel_wb));
 
-    // Data Memory
-    dcache dcache0 (
-        .clk(clk), 
-        .reset(reset), 
-        .w_en(mem_w_en), 
-        .wdata(rs2_data), 
-        .raddr(alu_out_mem[7:2]), 
-        .waddr(alu_out_mem[7:2]),
-        .rdata(dmem_rdata));
 
     // Write back
     writeback wb0 (
