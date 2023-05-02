@@ -166,8 +166,5 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         // Outputs
         .rf_wdata(rf_wdata_wb));
 
-    // Hazard Handling
-    hazard_detect hazard_detect0 ();
-
 
 endmodule

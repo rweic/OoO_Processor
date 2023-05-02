@@ -18,7 +18,7 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg [1:0] opsel1, opsel2, wbsel;
     output reg [4:0] rs1_addr, rs2_addr;
     output reg [4:0] rd_addr;
-    output [WIDTH-1:0] rs1_value_o, rs2_value_o;
+    output reg [WIDTH-1:0] rs1_value_o, rs2_value_o;
     output reg rf_w_en, mem_w_en;
     output reg [WIDTH-1:0] imm;
     output reg [1:0] pcsel;
@@ -55,9 +55,6 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     reg rf_w_en_id, mem_w_en_id;
     reg [WIDTH-1:0] imm_id;
 
-    assign rs1_value_o = rs1_value_i;
-    assign rs2_value_o = rs2_value_i;
-
     // Set branch condition rs1 & rs2 comparison
     assign branch_cond_eq = rs1_value_i == rs2_value_i;
     assign branch_cond_ne = rs1_value_i != rs2_value_i;
@@ -78,6 +75,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             rf_w_en <= 'b0;
             mem_w_en <= 'b0;
             imm <= 'b0;
+            rs1_value_o <= 'b0;
+            rs2_value_o <= 'b0;
         end else begin
             pc_o <= pc_i;
             alu_func <= alu_func_id;
@@ -88,6 +87,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             rf_w_en <= rf_w_en_id;
             mem_w_en <= mem_w_en_id;
             imm <= imm_id;
+            rs1_value_o <= rs1_value_i;
+            rs2_value_o <= rs2_value_i;
         end
     end
 
