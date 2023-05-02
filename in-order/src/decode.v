@@ -18,11 +18,16 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg [1:0] opsel1, opsel2, wbsel;
     output reg [4:0] rs1_addr, rs2_addr;
     output reg [4:0] rd_addr;
-    output [WIDTH-1:0] rs1_value_o, rs2_value_o;
+    output reg [WIDTH-1:0] rs1_value_o, rs2_value_o;
     output reg rf_w_en, mem_w_en;
     output reg [WIDTH-1:0] imm;
     output reg [1:0] pcsel;
     output reg [ADDR_LEN-1:0] branch_tar;
+    
+    // Get the register addresses from instruction
+	wire[4:0] rs1 = inst[19:15];
+	wire[4:0] rs2 = inst[24:20];
+    wire[4:0] rd = inst[11:7];
 
     // Get the opcode, funct and imm from instruction
     wire [6:0] opcode = inst[6:0];
@@ -34,11 +39,6 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     wire [ADDR_LEN-1:0] br_addr = pc_i + {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
     wire [ADDR_LEN-1:0] jal_addr = pc_i + {{12{inst[31]}}, inst[19:12], inst[20], inst[30:21], 1'b0};
     wire [ADDR_LEN-1:0] jalr_addr =  rs1 + {{20{imm_i[11]}}, imm_i};
-
-    // Get the register addresses from instruction
-	wire[4:0] rs1 = inst[19:15];
-	wire[4:0] rs2 = inst[24:20];
-    wire[4:0] rd = inst[11:7];
 
     // Declaration for branch condition
     wire branch_cond_eq;
@@ -54,9 +54,6 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     reg [4:0] rd_addr_id;
     reg rf_w_en_id, mem_w_en_id;
     reg [WIDTH-1:0] imm_id;
-
-    assign rs1_value_o = rs1_value_i;
-    assign rs2_value_o = rs2_value_i;
 
     // Set branch condition rs1 & rs2 comparison
     assign branch_cond_eq = rs1_value_i == rs2_value_i;
@@ -78,6 +75,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             rf_w_en <= 'b0;
             mem_w_en <= 'b0;
             imm <= 'b0;
+            rs1_value_o <= 'b0;
+            rs2_value_o <= 'b0;
         end else begin
             pc_o <= pc_i;
             alu_func <= alu_func_id;
@@ -88,6 +87,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             rf_w_en <= rf_w_en_id;
             mem_w_en <= mem_w_en_id;
             imm <= imm_id;
+            rs1_value_o <= rs1_value_i;
+            rs2_value_o <= rs2_value_i;
         end
     end
 

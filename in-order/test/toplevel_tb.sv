@@ -7,7 +7,7 @@ module cpu_tb();
 
     reg clk, reset;
 
-    cpu cpu0 (.*);
+    toplevel toplevel0 (.*);
     
     initial begin
         clk = 1'b0;
