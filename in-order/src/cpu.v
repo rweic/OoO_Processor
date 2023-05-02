@@ -14,10 +14,6 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     // imem
     input [INST_LEN-1:0] instruction_if;
     output [WIDTH-1:0] pc_if;
-
-    assign dmem_w_en = mem_w_en;
-    assign dmem_wdata = rs2_data;
-    assign dmem_addr = alu_out_mem[7:2];
   
     // Internal Signals
     // IF stage
@@ -44,7 +40,6 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [4:0] rd_addr_mem;
     wire rf_w_en_mem;
     wire [WIDTH-1:0] alu_out_mem;
-    wire [WIDTH-1:0] dmem_rdata;    // temp value
     wire [WIDTH-1:0] imm_mem;
     wire [1:0] wbsel_mem;
 
@@ -61,6 +56,11 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     // Branch
     wire [1:0] pcsel;
     wire [ADDR_LEN-1:0] br_tar;
+
+
+    assign dmem_w_en = mem_w_en;
+    assign dmem_wdata = rs2_data;
+    assign dmem_addr = alu_out_mem[7:2];
 
     // Instruction Fetch
     fetch fetch0 (
