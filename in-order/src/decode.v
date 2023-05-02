@@ -23,6 +23,11 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg [WIDTH-1:0] imm;
     output reg [1:0] pcsel;
     output reg [ADDR_LEN-1:0] branch_tar;
+    
+    // Get the register addresses from instruction
+	wire[4:0] rs1 = inst[19:15];
+	wire[4:0] rs2 = inst[24:20];
+    wire[4:0] rd = inst[11:7];
 
     // Get the opcode, funct and imm from instruction
     wire [6:0] opcode = inst[6:0];
@@ -34,11 +39,6 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     wire [ADDR_LEN-1:0] br_addr = pc_i + {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
     wire [ADDR_LEN-1:0] jal_addr = pc_i + {{12{inst[31]}}, inst[19:12], inst[20], inst[30:21], 1'b0};
     wire [ADDR_LEN-1:0] jalr_addr =  rs1 + {{20{imm_i[11]}}, imm_i};
-
-    // Get the register addresses from instruction
-	wire[4:0] rs1 = inst[19:15];
-	wire[4:0] rs2 = inst[24:20];
-    wire[4:0] rd = inst[11:7];
 
     // Declaration for branch condition
     wire branch_cond_eq;
