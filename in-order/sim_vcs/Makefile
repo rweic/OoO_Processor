@@ -1,25 +1,34 @@
-TESTBENCH = execute
+TOPLEVEL=toplevel
 
-# Source Files
-SRC = src/*.v
+dve: 
+	-dve -full64 &
 
-# Testbenches
-TB = test/$(TESTBENCH)_tb.v
+verdi: $(TOPLEVEL).fsdb
+	-verdi -ultra -ssf $<
 
-#incdir:=+incdir+
-#defmacro:=+define+
-#DEFINE+=$(defmacro)DATA_W=32
-#INCLUDE+=$(incdir)$(_DIR)
+$(TOPLEVEL).fsdb: $(TOPLEVEL).include
+	-vcs -f $(TOPLEVEL).include +v2k -R +lint=all -sverilog -full64 \
+	+neg_tchk +define+PRE_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l $(TOPLEVEL).log
 
-# VCS simulation
-SIM_TOOL = vcs
-COV_REPORT_FLAG = -cm line+cond+tgl
-SIM_FLAG = +v2k -R +lint=all -sverilog -full64 -debug_acc+pp+dmptf -debug_region+cell+encrypt +define+VCD
-TIMESCALE = -timescale=1ns/10ps
-LOG_FLAG = -l $(TESTBENCH)_test.log
+vcs: $(TOPLEVEL).fsdb
 
-sim-vcs:	$(SRC)
-	$(SIM_TOOL) $(COV_REPORT_FLAG) $(SRC) $(SIM_FLAG) $(TIMESCALE) $(LOG_FLAG)
+clean:
+	-rm -r alib-52
+	-rm -r db
+	-rm -r ddc
+	-rm -r $(TOPLEVEL)_design
+	-rm -r reports
+	-rm -r netlist
+	-rm -r csrc
+	-rm -r simv.daidir
+	-rm -r DVEfiles
+	-rm *.log
+	-rm vcdplus.vpd
+	-rm ucli.key
+	-rm default.svf
+	-rm simv
+	-rm -r results
+	-rm -r tmp
+	-rm -rf design_lib
+	-rm -rf pna_output
 
-clean: 
-	@rm a.out
