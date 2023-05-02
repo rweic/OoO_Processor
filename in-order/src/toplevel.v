@@ -9,13 +9,19 @@ module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_
     wire [WIDTH-1:0] dmem_wdata;
     wire [5:0] dmem_addr;
 
+    // CPU - IMEM
+    wire [INST_LEN-1:0] instruction_if;
+    wire [WIDTH-1:0] pc_if;
+
     cpu cpu0 (
         .clk(clk), 
         .reset(reset), 
         .dmem_rdata(dmem_rdata), 
         .dmem_w_en(dmem_w_en),
         .dmem_wdata(dmem_wdata), 
-        .dmem_addr(dmem_addr));
+        .dmem_addr(dmem_addr),
+        .instruction_if(instruction_if), 
+        .pc_if(pc_if));
 
     // Data Memory
     dcache dcache0 (
@@ -26,5 +32,11 @@ module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_
         .raddr(dmem_addr), 
         .waddr(dmem_addr),
         .rdata(dmem_rdata));
+
+    // Instruction Memory
+    icache instruction_memory(
+        .addr(pc_if),
+        .data(instruction_if)
+    );
 
 endmodule
