@@ -4,5 +4,5 @@
 
 
 ## Coverage report with VCS
-./simv
+./simv /
 urg -full64 -dir simv.vdb
