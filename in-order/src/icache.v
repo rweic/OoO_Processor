@@ -45,12 +45,13 @@ module icache #(parameter MEM_DEP = 64) (
         32'b00000000000000000000000000000000
     };*/
 
-    // Read operation
-    assign data = instr_mem[addr>>2];
-
     // Second way of initializing memory
     integer i;
     reg [31:0] instr_mem [0:MEM_DEP-1];
+
+    // Read operation
+    assign data = instr_mem[addr>>2];
+    
     initial begin
         for(i = 0; i < MEM_DEP; i = i + 1) begin
             instr_mem[i] = 8'b0;
