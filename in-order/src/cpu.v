@@ -23,17 +23,17 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [WIDTH-1:0] pc_id;
     wire [INST_LEN-1:0] instruction_id;
     wire [4:0] rs1_addr, rs2_addr;  //temp value
+    wire [WIDTH-1:0] rs1_data, rs2_data;    // temp value
 
     // EX stage
     wire [WIDTH-1:0] pc_ex;
     wire [4:0] rd_addr_ex;
-    wire [WIDTH-1:0] rs1_data, rs2_data;    // temp value
     wire [WIDTH-1:0] rs1_data_ex, rs2_data_ex;
     wire rf_w_en_ex;
     wire [1:0] opsel1, opsel2;
     wire [1:0] wbsel_ex;
     wire [3:0] alu_func;
-    wire mem_w_en;
+    wire mem_w_en_ex;
 
     // MEM stage
     wire [WIDTH-1:0] pc_mem;
@@ -42,6 +42,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [WIDTH-1:0] alu_out_mem;
     wire [WIDTH-1:0] imm_mem;
     wire [1:0] wbsel_mem;
+    wire mem_w_en_mem;
+    wire [WIDTH-1:0] rs2_data_mem;
 
     // WB stage
     wire [WIDTH-1:0] pc_wb;
@@ -58,8 +60,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [ADDR_LEN-1:0] br_tar;
 
 
-    assign dmem_w_en = mem_w_en;
-    assign dmem_wdata = rs2_data;
+    assign dmem_w_en = mem_w_en_mem;
+    assign dmem_wdata = rs2_data_mem;
     assign dmem_addr = alu_out_mem[7:2];
 
     // Instruction Fetch
@@ -94,7 +96,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .rs1_value_o(rs1_data_ex), 
         .rs2_value_o(rs2_data_ex),
         .rf_w_en(rf_w_en_ex),
-        .mem_w_en(mem_w_en), 
+        .mem_w_en(mem_w_en_ex), 
         .imm(imm_mem),
         .pcsel(pcsel),
         .branch_tar(br_tar));
@@ -119,11 +121,12 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .opsel1(opsel1),
         .opsel2(opsel2),
         .alu_func(alu_func),
-        .rs1_data(rs1_data_ex), 
-        .rs2_data(rs2_data_ex), 
+        .rs1_data_i(rs1_data_ex), 
+        .rs2_data_i(rs2_data_ex), 
         .rd_addr_i(rd_addr_ex),
         .rf_w_en_i(rf_w_en_ex),
         .wbsel_i(wbsel_ex),
+        .mem_w_en_i(mem_w_en_ex),
         // Outputs
         .imm(imm_mem),
         .pc_i(pc_ex), 
@@ -131,7 +134,9 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .alu_out(alu_out_mem),
         .rd_addr_o(rd_addr_mem),
         .rf_w_en_o(rf_w_en_mem),
-        .wbsel_o(wbsel_mem));
+        .wbsel_o(wbsel_mem),
+        .mem_w_en_o(mem_w_en_mem),
+        .rs2_data_o(rs2_data_mem));
 
     // Memory Access
     memory_access memaccess0 (

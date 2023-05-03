@@ -226,36 +226,36 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
                     endcase
                 end
                 `OP_LUI: begin 
-                    `SET_CTRL(`ALU_OP_NOP, 0, 0, `WB_IMM, 0, 0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
+                    `SET_CTRL(`ALU_OP_NOP, 0, 0, `WB_IMM, 'b0, 'b0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
                 end
                 `OP_AUIPC: begin 
-                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_PC, 0, `WB_ALU, 0, 0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
+                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_PC, 0, `WB_ALU, 'b0, 'b0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
                 end
                 `OP_JAL: begin 
-                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_IMM, `WB_ALU, 0, 0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
+                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_IMM, `WB_ALU, 'b0, 'b0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
                     `SET_BRANCH(`PC_BRANCH, jal_addr)
                 end
                 `OP_JALR: begin 
-                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_IMM, `WB_ALU, 0, 0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
+                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_IMM, `WB_ALU, 'b0, 'b0, rd, 1'b1, 1'b0, {imm_u, 12'b0})
                     `SET_BRANCH(`PC_BRANCH, jalr_addr)
                 end
                 // TODO: for load and store need additional signal to interact with memory
                 `OP_LOAD:
                     case (funct3)
                         `FUNCT3_LB: begin
-                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
+                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 'b0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
                          end
                         `FUNCT3_LH: begin
-                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
+                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 'b0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
                         end
                         `FUNCT3_LW: begin 
-                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
+                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 'b0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
                         end
                         `FUNCT3_LBU: begin 
-                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
+                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 'b0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
                         end
                         `FUNCT3_LHU: begin 
-                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
+                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, 0, `WB_DMEM, rs1_addr, 'b0, rd, 1'b1, 1'b0, {{20{imm_i[11]}}, imm_i})
                         end
                         default: begin end
                     endcase
