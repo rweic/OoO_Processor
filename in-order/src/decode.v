@@ -1,8 +1,6 @@
 /*--------------------------------------------------
 Instruction Decode Module
 --------------------------------------------------*/
-`include "PARAM.vh"
-
 module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32)  (
     clk, reset, pc_i, inst, rs1_value_i, rs2_value_i, pc_o, alu_func, opsel1, opsel2, wbsel,
     rs1_addr, rs2_addr, rd_addr, rs1_value_o, rs2_value_o, rf_w_en, mem_w_en, imm, pcsel,
