@@ -7,7 +7,7 @@ verdi: $(TOPLEVEL).fsdb
 	-verdi -ultra -ssf $<
 
 $(TOPLEVEL).fsdb: $(TOPLEVEL).include
-	-vcs -f $(TOPLEVEL).include +v2k -R +lint=all -sverilog -full64 \
+	-vcs -cm line+cond+branch+fsm -f $(TOPLEVEL).include +v2k -R +lint=all -sverilog -full64 \
 	+neg_tchk +define+PRE_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l $(TOPLEVEL).log
 
 vcs: $(TOPLEVEL).fsdb

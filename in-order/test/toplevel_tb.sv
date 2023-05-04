@@ -3,11 +3,11 @@
  * - tests all kinds of instructions in the RV32I instruction set
  * - tests for RAW hazard - with stall
  */
-module cpu_tb();
+module toplevel_tb();
 
     reg clk, reset;
 
-    toplevel toplevel0 (.*);
+    toplevel dut (.*);
     
     initial begin
         clk = 1'b0;
@@ -15,8 +15,14 @@ module cpu_tb();
     end
 
     initial begin
-	    $dumpfile("uut.vcd");
-	    $dumpvars();
+        `ifndef PRE_SYN
+    	    $sdf_annotate("toplevel.sdf", dut);
+    	`endif
+        //$vcdpluson;
+        $fsdbDumpfile("toplevel.fsdb");
+        $fsdbDumpvars(0, toplevel_tb);
+        $dumpfile("toplevel.vcd");
+        $dumpvars();
         reset = 1; #20
         reset = 0;
         #200
