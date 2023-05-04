@@ -17,17 +17,17 @@ module decoder (
     reg [3:0] resource;
 
     wire [6:0] opcode = inst_i[6:0];
-    
+
 /*  All decoding fields that could probably be used later
-	wire[4:0] rs1_addr = inst_i[19:15];
-	wire[4:0] rs2_addr = inst_i[24:20];
+    wire[4:0] rs1_addr = inst_i[19:15];
+    wire[4:0] rs2_addr = inst_i[24:20];
     wire[4:0] rd_addr = inst_i[11:7];
     wire [6:0] opcode = inst_i[6:0];
-	wire [2:0] funct3 = inst_i[14:12];
-	wire [6:0] funct7 = inst_i[31:25];
-	wire [31:0] imm_i = {{20{inst_i[31]}}, inst_i[31:20]};
-	wire [31:0] imm_u = {inst_i[31:12], 12'b0};
-	// wire [11:0] imm_s = {inst_i[31:25], inst_i[11:7]};
+    wire [2:0] funct3 = inst_i[14:12];
+    wire [6:0] funct7 = inst_i[31:25];
+    wire [31:0] imm_i = {{20{inst_i[31]}}, inst_i[31:20]};
+    wire [31:0] imm_u = {inst_i[31:12], 12'b0};
+    // wire [11:0] imm_s = {inst_i[31:25], inst_i[11:7]};
     wire [31:0] imm_b = {{20{inst_i[31]}}, inst_i[7], inst_i[30:25], inst_i[11:8], 1'b0};
     wire [31:0] imm_j = {{12{inst_i[31]}}, inst_i[19:12], inst_i[20], inst_i[30:21], 1'b0};*/
 
