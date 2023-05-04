@@ -1,4 +1,4 @@
-MODULE = memoryaccess
+MODULE = rename
 
 DSRC = ../src
 DTST = ../test
