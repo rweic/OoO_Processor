@@ -1,9 +1,5 @@
 // OpenRAM SRAM model
-<<<<<<< HEAD
-// Words: 16
-=======
 // Words: 256
->>>>>>> e9735e079d59da45d9a1cb31a1f8b19cf70bf5f4
 // Word size: 32
 // Write size: 8
 
@@ -20,7 +16,7 @@ module dmem(
 
   parameter NUM_WMASKS = 4 ;
   parameter DATA_WIDTH = 32 ;
-  parameter ADDR_WIDTH = 4 ;
+  parameter ADDR_WIDTH = 8 ;
   parameter RAM_DEPTH = 1 << ADDR_WIDTH;
   // FIXME: This delay is arbitrary.
   parameter DELAY = 3 ;
