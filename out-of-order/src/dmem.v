@@ -1,6 +1,7 @@
 // OpenRAM SRAM model
-// Words: 512
+// Words: 256
 // Word size: 32
+// Write size: 8
 
 module dmem(
 `ifdef USE_POWER_PINS
@@ -8,11 +9,12 @@ module dmem(
     gnd,
 `endif
 // Port 0: W
-    clk0,csb0,addr0,din0,
+    clk0,csb0,wmask0,addr0,din0,
 // Port 1: R
     clk1,csb1,addr1,dout1
   );
 
+  parameter NUM_WMASKS = 4 ;
   parameter DATA_WIDTH = 32 ;
   parameter ADDR_WIDTH = 8 ;
   parameter RAM_DEPTH = 1 << ADDR_WIDTH;
@@ -28,6 +30,7 @@ module dmem(
   input  clk0; // clock
   input   csb0; // active low chip select
   input [ADDR_WIDTH-1:0]  addr0;
+  input [NUM_WMASKS-1:0]   wmask0; // write mask
   input [DATA_WIDTH-1:0]  din0;
   input  clk1; // clock
   input   csb1; // active low chip select
@@ -37,6 +40,7 @@ module dmem(
   reg [DATA_WIDTH-1:0]    mem [0:RAM_DEPTH-1];
 
   reg  csb0_reg;
+  reg [NUM_WMASKS-1:0]   wmask0_reg;
   reg [ADDR_WIDTH-1:0]  addr0_reg;
   reg [DATA_WIDTH-1:0]  din0_reg;
 
@@ -44,10 +48,11 @@ module dmem(
   always @(posedge clk0)
   begin
     csb0_reg = csb0;
+    wmask0_reg = wmask0;
     addr0_reg = addr0;
     din0_reg = din0;
     if ( !csb0_reg && VERBOSE )
-      $display($time," Writing %m addr0=%b din0=%b",addr0_reg,din0_reg);
+      $display($time," Writing %m addr0=%b din0=%b wmask0=%b",addr0_reg,din0_reg,wmask0_reg);
   end
 
   reg  csb1_reg;
@@ -72,7 +77,14 @@ module dmem(
   always @ (negedge clk0)
   begin : MEM_WRITE0
     if (!csb0_reg) begin
-        mem[addr0_reg][1:0] = din0_reg[1:0];
+        if (wmask0_reg[0])
+                mem[addr0_reg][7:0] = din0_reg[7:0];
+        if (wmask0_reg[1])
+                mem[addr0_reg][15:8] = din0_reg[15:8];
+        if (wmask0_reg[2])
+                mem[addr0_reg][23:16] = din0_reg[23:16];
+        if (wmask0_reg[3])
+                mem[addr0_reg][31:24] = din0_reg[31:24];
     end
   end
 
