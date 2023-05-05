@@ -15,18 +15,18 @@
 `define ALU_OP_SRL  4'b1010     // Shift right
 
 // Opcode
-`define OP_ITYPE    7'b0010011
-`define OP_RTYPE    7'b0110011
-`define OP_BRANCH   7'b1100011
+`define OP_OP_IMM   7'b0010011  // OP-IMM  (NOP also use this: addi x0, x0, 0)
+`define OP_OP       7'b0110011  // OP
 `define OP_LUI      7'b0110111
 `define OP_AUIPC    7'b0010111
 `define OP_JAL      7'b1101111
 `define OP_JALR     7'b1100111
+`define OP_BRANCH   7'b1100011
 `define OP_LOAD     7'b0000011
 `define OP_STORE    7'b0100011
 
 // FUNCT 3
-// ITYPE
+// OP_IMM
 `define FUNCT3_ADDI     3'b000
 `define FUNCT3_SLLI     3'b001
 `define FUNCT3_SLTI     3'b010
@@ -35,7 +35,8 @@
 `define FUNCT3_SRI      3'b101  //including SRA & SRL
 `define FUNCT3_ORI      3'b110
 `define FUNCT3_ANDI     3'b111
-// RTYPE
+// OP
+// OP (basic)
 `define FUNCT3_ADD_SUB  3'b000
 `define FUNCT3_SLL      3'b001
 `define FUNCT3_SLT      3'b010
@@ -44,6 +45,10 @@
 `define FUNCT3_SR       3'b101  //including SRA & SRL
 `define FUNCT3_OR       3'b110
 `define FUNCT3_AND      3'b111
+// OP (muldiv)
+`define FUNCT3_AND      3'b111
+// OP-32 (muldiv)
+
 // BRANCH
 `define FUNCT3_BEQ      3'b000
 `define FUNCT3_BNE      3'b001
@@ -61,6 +66,15 @@
 `define FUNCT3_SB       3'b000
 `define FUNCT3_SH       3'b001
 `define FUNCT3_SW       3'b010
+// MULDIV
+`define FUNCT3_MUL      3'b000
+`define FUNCT3_MULH     3'b001
+`define FUNCT3_MULHSU   3'b010
+`define FUNCT3_MULHU    3'b011
+`define FUNCT3_DIV      3'b100
+`define FUNCT3_DIVU     3'b101
+`define FUNCT3_REM      3'b110
+`define FUNCT3_REMU     3'b111
 
 // FUNCT 7
 `define FUNCT7_SLLI 7'b0000000
@@ -79,3 +93,5 @@
 `define FUNCT7_SRA 7'b0100000
 `define FUNCT7_OR  7'b0000000
 `define FUNCT7_AND 7'b0000000
+// MULDIV
+`define FUNCT7_MULDIV 7'b0000001

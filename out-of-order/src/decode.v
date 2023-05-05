@@ -1,6 +1,6 @@
 module decode ();
     input clk_i, reset_i;
 
-    // module decoder ();
+    // decoder dec0 ();
 
 endmodule

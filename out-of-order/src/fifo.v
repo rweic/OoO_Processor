@@ -20,8 +20,8 @@ module fifo
     output valid_o, not_full_o;
 
     reg [WIDTH-1:0] mem [0:DEPTH-1];
-    reg [2:0] rd_i_ptr, wr_i_ptr;
-    reg [3:0] fifo_cnt;
+    reg [ADDR_LEN-1:0] rd_i_ptr, wr_i_ptr;
+    reg [ADDR_LEN-1:0] fifo_cnt;
 
     // generate fifo signals
     assign valid_o = (fifo_cnt == 0) ? 0:1;

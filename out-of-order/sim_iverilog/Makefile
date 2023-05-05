@@ -1,9 +1,9 @@
-MODULE = rename
+MODULE = lsu
 
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/$(MODULE).v $(DSRC)/dcache.v
+SRC = $(DSRC)/$(MODULE).v $(DSRC)/dmem.v $(DSRC)/fifo.v $(DSRC)/regfile.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 

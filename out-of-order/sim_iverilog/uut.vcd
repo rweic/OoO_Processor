@@ -1,0 +1,292 @@
+$date
+	Thu May  4 23:42:01 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fifo $end
+$var wire 1 ! clk_i $end
+$var wire 8 " data_in_i [7:0] $end
+$var wire 1 # rd_i $end
+$var wire 1 $ reset_i $end
+$var wire 1 % wr_i $end
+$var wire 1 & valid_o $end
+$var wire 1 ' not_full_o $end
+$var reg 8 ( data_out_o [7:0] $end
+$var reg 3 ) fifo_cnt [2:0] $end
+$var reg 3 * rd_i_ptr [2:0] $end
+$var reg 3 + wr_i_ptr [2:0] $end
+$upscope $end
+$scope module lsu_tb $end
+$var reg 1 , clk_i $end
+$var reg 32 - inst_i [31:0] $end
+$var reg 32 . pc_i [31:0] $end
+$var reg 1 / reset_i $end
+$var reg 32 0 rs1_value_i [31:0] $end
+$var reg 32 1 rs2_value_i [31:0] $end
+$scope module lsu $end
+$var wire 1 , clk_i $end
+$var wire 32 2 inst_i [31:0] $end
+$var wire 32 3 pc_i [31:0] $end
+$var wire 1 / reset_i $end
+$var wire 32 4 rs1_value_i [31:0] $end
+$var wire 32 5 rs2_value_i [31:0] $end
+$var wire 5 6 rs2_addr [4:0] $end
+$var wire 5 7 rs1_addr [4:0] $end
+$var wire 5 8 rd_addr [4:0] $end
+$var wire 7 9 opcode [6:0] $end
+$var wire 32 : mem_data_out [31:0] $end
+$var wire 8 ; mem_addr_w [7:0] $end
+$var wire 8 < mem_addr_r [7:0] $end
+$var wire 12 = imm_s [11:0] $end
+$var wire 32 > imm_i [31:0] $end
+$var wire 3 ? funct3 [2:0] $end
+$var reg 1 @ mem_csb_read $end
+$var reg 1 A mem_csb_write $end
+$var reg 32 B mem_data_in [31:0] $end
+$scope module dmem $end
+$var wire 8 C addr0 [7:0] $end
+$var wire 8 D addr1 [7:0] $end
+$var wire 1 , clk0 $end
+$var wire 1 , clk1 $end
+$var wire 1 A csb0 $end
+$var wire 1 @ csb1 $end
+$var wire 32 E din0 [31:0] $end
+$var wire 4 F wmask0 [3:0] $end
+$var reg 8 G addr0_reg [7:0] $end
+$var reg 8 H addr1_reg [7:0] $end
+$var reg 1 I csb0_reg $end
+$var reg 1 J csb1_reg $end
+$var reg 32 K din0_reg [31:0] $end
+$var reg 32 L dout1 [31:0] $end
+$var reg 4 M wmask0_reg [3:0] $end
+$scope begin MEM_READ1 $end
+$upscope $end
+$scope begin MEM_WRITE0 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module regfile $end
+$var wire 1 N clk $end
+$var wire 5 O ra_addr [4:0] $end
+$var wire 32 P ra_value [31:0] $end
+$var wire 5 Q rb_addr [4:0] $end
+$var wire 32 R rb_value [31:0] $end
+$var wire 5 S rd_addr [4:0] $end
+$var wire 1 T reset $end
+$var wire 32 U w_data [31:0] $end
+$var wire 1 V w_en $end
+$var integer 32 W i [31:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx W
+zV
+bz U
+zT
+bz S
+bx R
+bz Q
+bx P
+bz O
+zN
+bx M
+bx L
+bx K
+xJ
+xI
+bx H
+bx G
+b1111 F
+bx E
+bx D
+bx C
+bx B
+xA
+x@
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+1/
+bx .
+bx -
+0,
+bx +
+bx *
+bx )
+bx (
+1'
+x&
+z%
+z$
+z#
+bz "
+z!
+$end
+#5
+b1111 M
+1,
+#10
+1A
+1@
+b0 7
+b0 6
+b0 8
+b0 9
+b0 ?
+b0 >
+b0 =
+0,
+b0 -
+b0 2
+0/
+#15
+0A
+b1111111111111111 B
+b1111111111111111 E
+b10 <
+b10 D
+b100 ;
+b100 C
+b1 7
+b10 6
+b100 8
+b100011 9
+b10 ?
+b10 >
+b100 =
+1I
+1J
+b1111111111111111 1
+b1111111111111111 5
+b0 0
+b0 4
+b1000001010001000100011 -
+b1000001010001000100011 2
+1,
+#20
+0,
+#25
+1A
+b0 <
+b0 D
+b0 ;
+b0 C
+b0 B
+b0 E
+b0 7
+b0 6
+b0 8
+b0 9
+b0 ?
+b0 >
+b0 =
+b0 1
+b0 5
+b0 -
+b0 2
+b1111111111111111 K
+b100 G
+0I
+b10 H
+1,
+#30
+0,
+#35
+b0 K
+b0 G
+1I
+b0 H
+1,
+#40
+0,
+#45
+1,
+#50
+0,
+#55
+1,
+#60
+0,
+#65
+0@
+b100 <
+b100 D
+b11 ;
+b11 C
+b100 6
+b11 8
+b11 9
+b10 ?
+b100 >
+b11 =
+b10000000010000110000011 -
+b10000000010000110000011 2
+1,
+#70
+0,
+#75
+1@
+b0 <
+b0 D
+b0 ;
+b0 C
+b0 6
+b0 8
+b0 9
+b0 ?
+b0 >
+b0 =
+b11 G
+b0 -
+b0 2
+b100 H
+0J
+1,
+#80
+0,
+#81
+b1111111111111111 :
+b1111111111111111 L
+#85
+b0 G
+b0 H
+1J
+1,
+#86
+bx :
+bx L
+#90
+0,
+#95
+1,
+#100
+0,
+#105
+1,
+#110
+0,
+#115
+1,
+#120
+0,
+#125
+1,

@@ -5,7 +5,8 @@ x0 - zero
 x1-x31 general purpose registers
 --------------------------------------------------*/
 module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_addr, w_data, ra_value, rb_value);
-    input clk, reset, w_en;
+    input clk, reset;
+    input w_en; // probably no need for this w_en, just set w_addr to 0 if not supposed to write
     input [4:0] ra_addr, rb_addr, rd_addr;
     input [WIDTH-1:0] w_data;
     output [WIDTH-1:0] ra_value, rb_value;
@@ -21,6 +22,8 @@ module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_add
         if (reset) begin  
             for (i = 0; i < 32; i = i + 1)
                 register[i] <= 0;
+            // For testing only, please comment out later
+            //register[2] = 'h5;
         end
         else begin
             if (w_en & (|rd_addr != 0)) // x0 will always be zero
