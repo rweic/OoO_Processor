@@ -13,7 +13,7 @@ module fifo
 );
     input clk_i, reset_i;
     input wr_i, rd_i;
-    input [DEPTH-1:0] data_in_i;
+    input [WIDTH-1:0] data_in_i;
     output reg [WIDTH-1:0] data_out_o;
     output empty_o, full_o;
 

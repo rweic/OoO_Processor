@@ -7,7 +7,7 @@ module lsu
     // Inputs
     clk_i, reset_i, pc_i, lsu_request_i, inst_i, rs1_value_i, rs2_value_i,
     // Outputs
-    busy_o
+    busy_o, writeback_valid_o, writeback_value_o
 );
     // Inputs
     input clk_i, reset_i;
@@ -52,7 +52,7 @@ module lsu
 
 
     // Internal signals
-    wire [31:0] mem_data_in;
+    wire [31:0] mem_data_in = rs2_value_i;
     wire [31:0] mem_data_out; // The whole word read from memory
     reg [3:0] wmask;
     reg mem_csb_read, mem_csb_write;
@@ -61,10 +61,23 @@ module lsu
     wire lsb_full;  // load store buffer is full
     wire lsb_empty;
 
+    // Load mask & extension
+    reg mem_ls;
+    reg mem_signed;
+    reg mem_h;
+    reg mem_b;
+
+    wire [DMEM_ADDR_LEN-1:0] lsu_out_addr;
+    wire lsu_out_ls;
+    wire lsu_out_signed;
+    wire lsu_out_h;
+    wire lsu_out_b;
+
+
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
     reg mem_load_success;
     always @(posedge clk_i) begin
-        mem_load_success <= !mem_csb_read;
+        mem_load_success <= (!mem_csb_read) | (!mem_csb_read);
     end
 
 
@@ -74,12 +87,13 @@ module lsu
 
     assign busy_o = lsb_full;
 
+    assign writeback_valid_o = mem_load_success; 
+
     // Load/store buffer
-    // FIFO stores: load/store?, addr, 
     // pop should be enabled when receiving responde from mem/cache
     // small mem bank, store mem & data -> be able to write the address. should always wait for the first one taken out
     fifo #(
-        .WIDTH(DMEM_ADDR_LEN),
+        .WIDTH(DMEM_ADDR_LEN + 4), // each line include the mem addr and some control signals
         .DEPTH(2),
         .ADDR_LEN(1)
     ) 
@@ -88,11 +102,11 @@ module lsu
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .data_in_i({rs2_value_i, mem_addr_w}), // {data, mem_addr, l/s?, }
-        .wr_i(lsu_request_i & (!lsb_full)), // when accept inst from issue stage, and the address is calculated, and load_store buffer is not full
+        .data_in_i({mem_addr_r, mem_ls, mem_signed, mem_h, mem_b}), // {mem_addr, l=1/s=0, lw00/lh10/lb11 }
+        .wr_i(lsu_request_i & (!lsb_full)), // when accept inst from issue stage, and the address is calculated, and load store buffer is not full
         .rd_i(mem_load_success), // when receive response from memory
         // Outputs
-        .data_out_o({mem_data_in}), 
+        .data_out_o({lsu_out_addr, lsu_out_ls, lsu_out_signed, lsu_out_h, lsu_out_b}), 
         .empty_o(lsb_empty), 
         .full_o(lsb_full)
     );
@@ -124,6 +138,7 @@ module lsu
     // What should I do if it's not aligned?
     always @(*) begin
         if (opcode == `OP_STORE & mem_aligned) begin
+            mem_ls = 0;
             case(funct3)
                 `FUNCT3_LW_SW: wmask = 'b1111;
                 `FUNCT3_LH_SH: begin
@@ -140,44 +155,71 @@ module lsu
                         default: wmask = 'b0001;
                     endcase
                 end
+            endcase
+        end
+        else if (opcode == `OP_LOAD & mem_aligned) begin
+            mem_ls = 1;
+            case (funct3)
+                `FUNCT3_LW_SW: begin 
+                    mem_signed = 1;
+                    {mem_h, mem_b} = 2'b00;
+                end
+                `FUNCT3_LH_SH: begin 
+                    mem_signed = 1;
+                    {mem_h, mem_b} = 2'b10;
+                end
+                `FUNCT3_LB_SB: begin 
+                    mem_signed = 1;
+                    {mem_h, mem_b} = 2'b01;
+                end
+                `FUNCT3_LHU: begin
+                    mem_signed = 0;
+                    {mem_h, mem_b} = 2'b10;
+                end
+                `FUNCT3_LBU: begin
+                    mem_signed = 0;
+                    {mem_h, mem_b} = 2'b01;
+                end
                 default: wmask = 'b0000;
             endcase
         end
-        // Has some error now - one cycle delay???
-        else if (opcode == `OP_LOAD & mem_aligned) begin
-            case(funct3)
-                `FUNCT3_LW_SW: mem_load_data <= mem_data_out;
-                `FUNCT3_LH_SH: begin
-                    if (mem_addr_r[1] == 1'b1)
-                        mem_load_data <= {mem_data_out[15:0], 16'h0};
-                    else
-                        mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[15:0]};
-                end
-                `FUNCT3_LB_SB: begin
-                    case (mem_addr_r[1:0])
-                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                        2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
-                        2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
-                        default: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
-                    endcase
-                end
-                `FUNCT3_LHU:
-                    if (mem_addr_r[1] == 1'b1)
-                        mem_load_data = {mem_data_out[15:0], 16'h0};
-                    else
-                        mem_load_data = {16'h0, mem_data_out[15:0]};
-                `FUNCT3_LBU:
-                    case (mem_addr_r[1:0])
-                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                        2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
-                        2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
-                        default: mem_load_data = {24'h0, mem_data_out[7:0]};
-                    endcase
-                default: begin 
-                    mem_load_data = 'h0;
-                end
-            endcase
-        end
+    end
+
+
+    // Load extension
+    always @(*) begin
+        case(funct3)
+            `FUNCT3_LW_SW: mem_load_data <= mem_data_out;
+            `FUNCT3_LH_SH: begin
+                if (mem_addr_r[1] == 1'b1)
+                    mem_load_data <= {mem_data_out[15:0], 16'h0};
+                else
+                    mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[15:0]};
+            end
+            `FUNCT3_LB_SB: begin
+                case (mem_addr_r[1:0])
+                    2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
+                    2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
+                    2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
+                    default: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
+                endcase
+            end
+            `FUNCT3_LHU:
+                if (mem_addr_r[1] == 1'b1)
+                    mem_load_data = {mem_data_out[15:0], 16'h0};
+                else
+                    mem_load_data = {16'h0, mem_data_out[15:0]};
+            `FUNCT3_LBU:
+                case (mem_addr_r[1:0])
+                    2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
+                    2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
+                    2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
+                    default: mem_load_data = {24'h0, mem_data_out[7:0]};
+                endcase
+            default: begin 
+                mem_load_data = 'h0;
+            end
+        endcase
     end
 
     // Set control signals

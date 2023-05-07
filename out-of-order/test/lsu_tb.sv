@@ -7,6 +7,8 @@ module lsu_tb();
     reg [31:0] rs2_value_i;
 
     wire busy_o;
+    wire writeback_valid_o;
+    wire [31:0]  writeback_value_o;
 
     lsu lsu (.*);
     
