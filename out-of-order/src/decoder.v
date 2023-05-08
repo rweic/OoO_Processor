@@ -17,7 +17,6 @@ module decoder (
     reg [3:0] resource;
 
     wire [6:0] opcode = inst_i[6:0];
-    wire [2:0] funct3 = inst_i[14:12];
     wire [6:0] funct7 = inst_i[31:25];
 
 /*  All decoding fields that could probably be used later

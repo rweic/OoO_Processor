@@ -1,9 +1,9 @@
-MODULE = lsu
+MODULE = arith
 
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/$(MODULE).v $(DSRC)/dmem.v $(DSRC)/fifo.v $(DSRC)/regfile.v
+SRC = $(DSRC)/$(MODULE).v $(DSRC)/dmem.v $(DSRC)/fifo.v $(DSRC)/regfile.v $(DSRC)/alu.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 
