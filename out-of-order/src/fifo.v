@@ -18,57 +18,66 @@ module fifo
     output empty_o, full_o;
 
     reg [WIDTH-1:0] mem [0:DEPTH-1];
-    reg [ADDR_LEN-1:0] rd_i_ptr, wr_i_ptr;
+    reg [ADDR_LEN-1:0] rd_ptr, wr_ptr;
     reg [ADDR_LEN-1:0] fifo_cnt;
 
     // generate fifo signals
-    assign empty_o = (fifo_cnt == 0) ? 1:0;
-    assign full_o = (fifo_cnt == DEPTH) ? 1:0;
+    assign empty_o = (fifo_cnt == 0);
+    assign full_o = (fifo_cnt == DEPTH);
+
+    // Comment out this : for DEBUG ONLY
+    //wire [WIDTH-1:0] line1 = mem[0];
+    //wire [WIDTH-1:0] line2 = mem[1];
 
     // counter block
+    integer i;
     always @(posedge clk_i)
     begin
-        if(!reset_i)
+        if(!reset_i) begin
             fifo_cnt <= 0;
+            for (i = 0; i < DEPTH; i = i + 1) begin
+                mem[i] <= 'b0;
+            end
+        end
         else begin
-            case({wr_i,rd_i})
-                2'b01: fifo_cnt <= (fifo_cnt==0) ? 0:fifo_cnt-1;
-                2'b10: fifo_cnt <= (fifo_cnt==DEPTH) ? DEPTH:fifo_cnt+1;
-                default: fifo_cnt <= fifo_cnt;
-            endcase
+            if ((wr_i && !full_o) & ~(rd_i && !empty_o))
+                fifo_cnt <= fifo_cnt-1;
+            else if (~(wr_i && !full_o) & (rd_i && !empty_o))
+                fifo_cnt <= fifo_cnt+1;
         end
     end
 
     // pointer block
     always @(posedge clk_i)
     begin
-        if(!reset_i) begin
-            wr_i_ptr <= 0;
-            rd_i_ptr <= 0;
+        if(reset_i) begin
+            wr_ptr <= 0;
+            rd_ptr <= 0;
         end
         else begin
-            wr_i_ptr <= (wr_i && !full_o)||(wr_i && rd_i) ? wr_i_ptr+1 : wr_i_ptr;
-            rd_i_ptr <= (rd_i && !empty_o)||(wr_i && rd_i) ? rd_i_ptr+1 : rd_i_ptr;
+            wr_ptr <= (wr_i && !full_o) ? wr_ptr+1 : wr_ptr;
+            rd_ptr <= (rd_i) ? rd_ptr+1 : rd_ptr;
         end
     end
 
-    // read & write
+    // write
     always @(posedge clk_i)
     begin
         if (wr_i && !full_o)
-            mem[wr_i_ptr] <= data_in_i;
-        else if(wr_i && rd_i)
-            mem[wr_i_ptr] <= data_in_i;
+            mem[wr_ptr] <= data_in_i;
+        else begin end
     end
-
-    always @(posedge clk_i)
+    
+    // read -> async
+    assign data_out_o = mem[rd_ptr];
+    /*always @(posedge clk_i)
     begin
         if(rd_i && !empty_o)
-            data_out_o <= mem[rd_i_ptr];
+            data_out_o <= mem[rd_ptr];
         else if(wr_i && rd_i)
-            data_out_o <= mem[rd_i_ptr];
+            data_out_o <= mem[rd_ptr];
         else
             data_out_o <= 8'b0;
-    end
+    end*/
 
 endmodule

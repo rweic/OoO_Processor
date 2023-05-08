@@ -55,7 +55,8 @@ module lsu
     wire [31:0] mem_data_in = rs2_value_i;
     wire [31:0] mem_data_out; // The whole word read from memory
     reg [3:0] wmask;
-    reg mem_csb_read, mem_csb_write;
+    reg mem_csb_read = 1'b1;
+    reg mem_csb_write = 1'b1;
     wire [31:0] rs1_value;
     wire [31:0] rs2_value;  // convert to mem input according to funct3
     wire lsb_full;  // load store buffer is full
@@ -67,19 +68,18 @@ module lsu
     reg mem_h;
     reg mem_b;
 
-    wire [DMEM_ADDR_LEN-1:0] lsu_out_addr;
-    wire lsu_out_ls;
-    wire lsu_out_signed;
-    wire lsu_out_h;
-    wire lsu_out_b;
-
+    reg [DMEM_ADDR_LEN-1:0] lsu_out_addr;
+    reg lsu_out_ls;
+    reg lsu_out_signed;
+    reg lsu_out_h;
+    reg lsu_out_b;
 
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
-    reg mem_load_success;
+    //wire mem_load_success = (!mem_csb_read) | (!mem_csb_write);
+    reg mem_load_success = 'b0;
     always @(posedge clk_i) begin
-        mem_load_success <= (!mem_csb_read) | (!mem_csb_read);
+        mem_load_success <= (!mem_csb_read) | (!mem_csb_write);
     end
-
 
     // Load/store mem_aligned - r/w only happens when alignment requirements met
     reg mem_aligned;
@@ -88,14 +88,15 @@ module lsu
     assign busy_o = lsb_full;
 
     assign writeback_valid_o = mem_load_success; 
+    assign writeback_value_o = mem_load_data;
 
     // Load/store buffer
     // pop should be enabled when receiving responde from mem/cache
     // small mem bank, store mem & data -> be able to write the address. should always wait for the first one taken out
     fifo #(
         .WIDTH(DMEM_ADDR_LEN + 4), // each line include the mem addr and some control signals
-        .DEPTH(2),
-        .ADDR_LEN(1)
+        .DEPTH(4),
+        .ADDR_LEN(2)
     ) 
     lsu_fifo
     (
@@ -128,17 +129,28 @@ module lsu
     // Set mem_aligned
     always @(*) begin
         case (funct3)
-            `FUNCT3_LW_SW: mem_aligned = mem_addr_r[1:0] == 2'b0;
-            `FUNCT3_LH_SH: mem_aligned = mem_addr_r[0] == 1'b0;
+            `FUNCT3_LW_SW: begin
+                if (opcode == `OP_STORE)
+                    mem_aligned = mem_addr_w[1:0] == 2'b0;
+                else if (opcode == `OP_LOAD)
+                    mem_aligned = mem_addr_r[1:0] == 2'b0;
+            end
+            `FUNCT3_LH_SH: begin
+                if (opcode == `OP_STORE)
+                    mem_aligned = mem_addr_w[0] == 1'b0;
+                else if (opcode == `OP_LOAD)
+                    mem_aligned = mem_addr_r[0] == 1'b0;
+            end
             default: mem_aligned = 1'b1;
         endcase
     end
 
-    // Data extension for memory - need to check for mem_aligned
+    // Set memory write mask for memory - need to check for mem_aligned
     // What should I do if it's not aligned?
     always @(*) begin
         if (opcode == `OP_STORE & mem_aligned) begin
             mem_ls = 0;
+            {mem_signed, mem_h, mem_b} = 'b0;
             case(funct3)
                 `FUNCT3_LW_SW: wmask = 'b1111;
                 `FUNCT3_LH_SH: begin
@@ -161,7 +173,7 @@ module lsu
             mem_ls = 1;
             case (funct3)
                 `FUNCT3_LW_SW: begin 
-                    mem_signed = 1;
+                    mem_signed = 0;
                     {mem_h, mem_b} = 2'b00;
                 end
                 `FUNCT3_LH_SH: begin 
@@ -185,41 +197,43 @@ module lsu
         end
     end
 
-
     // Load extension
+    // lsu_out_addr, lsu_out_ls, lsu_out_signed, lsu_out_h, lsu_out_b
     always @(*) begin
-        case(funct3)
-            `FUNCT3_LW_SW: mem_load_data <= mem_data_out;
-            `FUNCT3_LH_SH: begin
-                if (mem_addr_r[1] == 1'b1)
-                    mem_load_data <= {mem_data_out[15:0], 16'h0};
-                else
-                    mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[15:0]};
-            end
-            `FUNCT3_LB_SB: begin
-                case (mem_addr_r[1:0])
-                    2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                    2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
-                    2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
-                    default: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
-                endcase
-            end
-            `FUNCT3_LHU:
-                if (mem_addr_r[1] == 1'b1)
-                    mem_load_data = {mem_data_out[15:0], 16'h0};
-                else
-                    mem_load_data = {16'h0, mem_data_out[15:0]};
-            `FUNCT3_LBU:
-                case (mem_addr_r[1:0])
-                    2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                    2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
-                    2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
-                    default: mem_load_data = {24'h0, mem_data_out[7:0]};
-                endcase
-            default: begin 
-                mem_load_data = 'h0;
-            end
-        endcase
+        if(mem_load_success & lsu_out_ls) begin // response received, and it's a load
+            case({lsu_out_signed, lsu_out_h, lsu_out_b})
+                'b000: mem_load_data = mem_data_out;
+                'b110: begin
+                    if (lsu_out_addr[1] == 1'b1)
+                        mem_load_data = {mem_data_out[15:0], 16'h0};
+                    else
+                        mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[15:0]};
+                end
+                'b101: begin
+                    case (lsu_out_addr[1:0])
+                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
+                        2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
+                        2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
+                        default: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
+                    endcase
+                end
+                'b010:
+                    if (lsu_out_addr[1] == 1'b1)
+                        mem_load_data = {mem_data_out[15:0], 16'h0};
+                    else
+                        mem_load_data = {16'h0, mem_data_out[15:0]};
+                'b001:
+                    case (lsu_out_addr[1:0])
+                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
+                        2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
+                        2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
+                        default: mem_load_data = {24'h0, mem_data_out[7:0]};
+                    endcase
+                default: begin 
+                    mem_load_data = 'h0;
+                end
+            endcase
+        end
     end
 
     // Set control signals

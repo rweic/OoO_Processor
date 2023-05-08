@@ -20,10 +20,10 @@ module lsu_tb();
     initial begin
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
-        reset_i = 1'b1; #10
-        reset_i = 1'b0; inst_i = 'b0;  @(posedge clk_i);
-        //reset_i = 1'b0; inst_i = 'b00000000001000001010001000100011; rs1_value_i = 'h0; rs2_value_i = 'hffff; @(posedge clk_i); // SW: rs2 = 2, rs1 = 1, imm = 4: mem[4] <- regfile[2]
-        reset_i = 1'b0; inst_i = 'b00000000001000001000001000100011; rs1_value_i = 'h0; rs2_value_i = 'hffff; lsu_request_i = 1'b1; @(posedge clk_i); // SB: rs2 = 2, rs1 = 1, imm = 4: mem[4] <- regfile[2]
+        reset_i = 1'b1; lsu_request_i = 1'b0; #10
+        reset_i = 1'b0; inst_i = 'b0; @(posedge clk_i);
+        reset_i = 1'b0; inst_i = 'b00000000001000001010001000100011; rs1_value_i = 'h0; rs2_value_i = 'hffff; lsu_request_i = 1'b1; @(posedge clk_i); // SW: rs2 = 2, rs1 = 1, imm = 4: mem[4] <- regfile[2]
+        //reset_i = 1'b0; inst_i = 'b00000000001000001000001000100011; rs1_value_i = 'h0; rs2_value_i = 'hffff; lsu_request_i = 1'b1; @(posedge clk_i); // SB: rs2 = 2, rs1 = 1, imm = 4: mem[4] <- regfile[2]
         reset_i = 1'b0; inst_i = 'b0;  rs1_value_i = 'h0; rs2_value_i = 'h0; lsu_request_i = 1'b0; @(posedge clk_i);
         reset_i = 1'b0; inst_i = 'b0;  @(posedge clk_i);
         reset_i = 1'b0; inst_i = 'b0;  @(posedge clk_i);
