@@ -1,4 +1,4 @@
-MODULE = arith
+MODULE = rob
 
 DSRC = ../src
 DTST = ../test
