@@ -5,19 +5,23 @@ x0 - zero
 x1-x31 general purpose registers
 --------------------------------------------------*/
 module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_addr, w_data, ra_value, rb_value);
+    // Inputs
     input clk, reset;
     input w_en; // probably no need for this w_en, just set w_addr to 0 if not supposed to write
-    input [4:0] ra_addr, rb_addr, rd_addr;
+    input [4:0] ra_addr;
+    input [4:0] rb_addr;
+    input [4:0] rd_addr;
     input [WIDTH-1:0] w_data;
-    output [WIDTH-1:0] ra_value, rb_value;
+    // Outputs
+    output [WIDTH-1:0] ra_value;
+    output [WIDTH-1:0] rb_value;
 
     reg [WIDTH-1:0] register [0:31];
-    
-    integer i;
 
     assign ra_value = register[ra_addr];
     assign rb_value = register[rb_addr];
 
+    integer i;
     always @(posedge clk) begin
         if (reset) begin  
             for (i = 0; i < 32; i = i + 1)

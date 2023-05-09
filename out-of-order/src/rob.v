@@ -10,7 +10,10 @@ module rob
     parameter NUM_ENTRIES = 32
 )
 (
-
+    // Inputs
+    clk_i, reset_i, allocate_req_i, update_req_i, 
+    // Outputs
+    empty_o, full_o
 );
     // Inputs
     input clk_i, reset_i;
@@ -25,5 +28,24 @@ module rob
     output empty_o, full_o;
     // Output data at commitment
 
+    // Using seperate reg arrays to decrease power comsumption, and make data accessing easier
+    fifo #(
+        .WIDTH(1), // each line include the mem addr and some control signals
+        .DEPTH(NUM_ENTRIES),
+        .ADDR_LEN(5)
+    ) 
+    buffer
+    (
+        // Inputs
+        .clk_i(clk_i), 
+        .reset_i(reset_i), 
+        .data_in_i(),
+        .wr_i(),
+        .rd_i(),
+        // Outputs
+        .data_out_o(), 
+        .empty_o(), 
+        .full_o()
+    );
 
 endmodule

@@ -46,7 +46,6 @@
 `define FUNCT3_OR       3'b110
 `define FUNCT3_AND      3'b111
 // OP (muldiv)
-`define FUNCT3_AND      3'b111
 // OP-32 (muldiv)
 
 // BRANCH

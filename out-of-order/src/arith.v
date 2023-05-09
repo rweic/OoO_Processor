@@ -15,7 +15,7 @@ module arith (
     input [31:0] rs2_value_i;
 
     //output busy_o;  // an output signal indicating that the resource is not valid
-    //output writeback_valid_o;
+    output writeback_valid_o;
     output [31:0]  writeback_value_o;
 
     wire [6:0] opcode = inst_i[6:0];
@@ -33,6 +33,8 @@ module arith (
     reg [31:0] alu_operand2;
     reg [3:0]  alu_func;
     wire [31:0] alu_out;
+
+    assign writeback_valid_o = arith_request_i;
 
     alu alu (
         .alu_op1(alu_operand1), 

@@ -261,5 +261,4 @@ module lsu
         endcase
     end
 
-
 endmodule

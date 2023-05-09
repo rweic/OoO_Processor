@@ -1,3 +1,9 @@
+/* Mul/div Module
+ * MUL lower 32 bits
+ * MULH/ MULHU/ MULHSU upper 32 bits (signed×signed, unsigned×unsigned, signed×unsigned)
+ * DIV/DIVU division round towards zero
+ * REM/REMU remainder (REM has the same sign as the div result)
+ */
 module muldiv();
     input clk_i, reset_i;
     input [31:0] pc_i;
@@ -6,6 +12,10 @@ module muldiv();
     // Value of registers should be known by this point
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
+    
+    // Outputs
+    output writeback_valid_o;
+    output [31:0]  writeback_value_o;
 
 
 /*

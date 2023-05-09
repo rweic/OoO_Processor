@@ -3,7 +3,7 @@ MODULE = rob
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/$(MODULE).v $(DSRC)/dmem.v $(DSRC)/fifo.v $(DSRC)/regfile.v $(DSRC)/alu.v
+SRC = $(DSRC)/*.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 
