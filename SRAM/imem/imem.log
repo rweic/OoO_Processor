@@ -1,0 +1,73 @@
+|==============================================================================|
+|=========                       OpenRAM v1.2.3                       =========|
+|=========                                                            =========|
+|=========               VLSI Design and Automation Lab               =========|
+|=========        Computer Science and Engineering Department         =========|
+|=========            University of California Santa Cruz             =========|
+|=========                                                            =========|
+|=========          Usage help: openram-user-group@ucsc.edu           =========|
+|=========        Development help: openram-dev-group@ucsc.edu        =========|
+|=========                See LICENSE for license info                =========|
+|==============================================================================|
+** Start: 05/09/2023 02:12:17
+Technology: freepdk45
+Total size: 8192 bits
+Word size: 32
+Words: 256
+Banks: 1
+RW ports: 1
+R-only ports: 0
+W-only ports: 0
+DRC/LVS/PEX is only run on the top-level design to save run-time (inline_lvsdrc=True to do inline checking).
+DRC/LVS/PEX is disabled (check_lvsdrc=True to enable).
+Characterization is disabled (using analytical delay models) (analytical_delay=False to simulate).
+Only generating nominal corner timing.
+Words per row: None
+Output files are: 
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lvs
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.sp
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.v
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lib
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.py
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.html
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.log
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lef
+/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.gds
+** Submodules: 4.3 seconds
+** Placement: 0.0 seconds
+**** Retrieving pins: 0.0 seconds
+**** Analyzing pins: 0.0 seconds
+**** Finding blockages: 1.5 seconds
+**** Converting blockages: 0.1 seconds
+**** Converting pins: 0.1 seconds
+**** Separating adjacent pins: 0.0 seconds
+*** Finding pins and blockages: 22.4 seconds
+*** Maze routing pins: 45.6 seconds
+**** Retrieving pins: 0.0 seconds
+**** Analyzing pins: 0.0 seconds
+**** Finding blockages: 1.5 seconds
+**** Converting blockages: 0.1 seconds
+**** Converting pins: 1.9 seconds
+**** Separating adjacent pins: 5.0 seconds
+*** Finding pins and blockages: 29.0 seconds
+*** Maze routing supplies: 108.1 seconds
+** Routing: 348.6 seconds
+** Verification: 0.0 seconds
+** SRAM creation: 352.9 seconds
+SP: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.sp
+** Spice writing: 0.4 seconds
+GDS: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.gds
+** GDS: 0.3 seconds
+LEF: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lef
+** LEF: 0.0 seconds
+LVS: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lvs.sp
+** LVS writing: 0.1 seconds
+LIB: Characterizing... 
+** Characterization: 0.4 seconds
+Config: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.py
+** Config: 0.0 seconds
+Datasheet: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.html
+** Datasheet: 0.1 seconds
+Verilog: Writing to /home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.v
+** Verilog: 0.0 seconds
+** End: 354.4 seconds

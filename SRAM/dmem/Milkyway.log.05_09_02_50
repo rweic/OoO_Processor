@@ -1,0 +1,327 @@
+Connection to IPC server failed.
+Starting IPC Server. (Port = 1925)
+IPC Server started successfully.
+File /tmp/.X50-lock exists, please remove it if there is no X server on it.
+Using display unix:55
+;; ;# Scheme
+
+                                 Milkyway (TM)
+
+               Version T-2022.03-SP3 for linux64 - Jul 12, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Loading /home/lab.apps/vlsiapps_new/mw/current/etc/scheme/.avntrc
+#t
+ Info: loading setup file(s)
+Info: sourcing installation .synopsys_milkyway.tcl
+Info: sourced /home/lab.apps/vlsiapps_new/mw/current/etc/auxx/tcllib/astro/milkyway.tbc
+;; source /homes/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/create_fram.tcl
+Start to load technology file /homes/rweic/ee526/ram_test_freepdk45_sapr_flow/freepdk-45nm/rtk-tech.tf.
+Warning: Layer 'metal1' is missing the attribute 'minArea'. (line 106) (TFCHK-012)
+Warning: Layer 'metal2' is missing the attribute 'minArea'. (line 165) (TFCHK-012)
+Warning: Layer 'metal3' is missing the attribute 'minArea'. (line 224) (TFCHK-012)
+Warning: Layer 'metal4' is missing the attribute 'minArea'. (line 282) (TFCHK-012)
+Warning: Layer 'metal5' is missing the attribute 'minArea'. (line 340) (TFCHK-012)
+Warning: Layer 'metal6' is missing the attribute 'minArea'. (line 398) (TFCHK-012)
+Warning: Layer 'metal7' is missing the attribute 'minArea'. (line 455) (TFCHK-012)
+Warning: Layer 'metal8' is missing the attribute 'minArea'. (line 512) (TFCHK-012)
+Warning: Layer 'metal9' is missing the attribute 'minArea'. (line 568) (TFCHK-012)
+Warning: Layer 'metal10' is missing the attribute 'minArea'. (line 624) (TFCHK-012)
+Warning: Cut layer 'via1' has a non-cross primary default ContactCode 'via1_4'. (line 642) (TFCHK-092)
+Warning: Cut layer 'via2' has a non-cross primary default ContactCode 'via2_8'. (line 732) (TFCHK-092)
+Warning: ContactCode 'via4_0' has undefined or zero enclosures. (line 858). (TFCHK-073)
+Warning: ContactCode 'via5_0' has undefined or zero enclosures. (line 876). (TFCHK-073)
+Warning: ContactCode 'via7_0' has undefined or zero enclosures. (line 912). (TFCHK-073)
+Warning: ContactCode 'via9_0' has undefined or zero enclosures. (line 948). (TFCHK-073)
+Warning: ContactCode 'Via4Array-0' has undefined or zero enclosures. (line 1366). (TFCHK-073)
+Warning: ContactCode 'Via5Array-0' has undefined or zero enclosures. (line 1385). (TFCHK-073)
+Warning: ContactCode 'Via7Array-0' has undefined or zero enclosures. (line 1423). (TFCHK-073)
+Warning: ContactCode 'Via9Array-0' has undefined or zero enclosures. (line 1461). (TFCHK-073)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1470) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1479) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1488) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1497) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1506) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1515) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1524) (TFCHK-014)
+Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1533) (TFCHK-014)
+Warning: Layer 'metal1' has a pitch 0.14 that does not match the recommended wire-to-via pitch 0.17. (TFCHK-049)
+Warning: Layer 'metal2' has a pitch 0.19 that does not match the recommended wire-to-via pitch 0.175. (TFCHK-049)
+Warning: Layer 'metal3' has a pitch 0.14 that does not match the recommended wire-to-via pitch 0.175. (TFCHK-049)
+Warning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)
+Technology file /homes/rweic/ee526/ram_test_freepdk45_sapr_flow/freepdk-45nm/rtk-tech.tf has been loaded successfully.
+
+	>>>>>>> MILKYWAY LEF IN <<<<<<<
+
+>>> Read Tech LEF File "/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/dmem/dmem.lef" ... 
+Backup existing technology info ...
+Technology data dumped to dmem.tf_replaced completely.
+
+Starting to read LEF file ...
+
+Calling LEF IN API exit handler ...
+ Done
+
+
+
+>>> Read Cell LEF File "/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/dmem/dmem.lef" ... 
+
+
+
+Starting to read LEF file ...
+WARNING : Macro Cell dmem exists already, Revise the existing cell.
+Re-mark cell dmem's type as MacroCell.
+
+
+Calling LEF IN API exit handler ...
+ Done
+
+
+Read LEF completed.
+
+
+Extracting blockage/pin ... 
+
+------ new BPV starts ... -----
+Using [6 x 6] Fat Wire Table for metal2
+Fat condition [0] is less than minWidth on metal2
+Using [6 x 6] Fat Wire Table for metal3
+Fat condition [0] is less than minWidth on metal3
+Using [5 x 5] Fat Wire Table for metal4
+Fat condition [0] is less than minWidth on metal4
+Using [5 x 5] Fat Wire Table for metal5
+Fat condition [0] is less than minWidth on metal5
+Using [5 x 5] Fat Wire Table for metal6
+Fat condition [0] is less than minWidth on metal6
+Using [4 x 4] Fat Wire Table for metal7
+Fat condition [0] is less than minWidth on metal7
+Using [4 x 4] Fat Wire Table for metal8
+Fat condition [0] is less than minWidth on metal8
+Using [3 x 3] Fat Wire Table for metal9
+Fat condition [0] is less than minWidth on metal9
+Using [3 x 3] Fat Wire Table for metal10
+Fat condition [0] is less than minWidth on metal10
+cutLayer [via1]  --- master via ---> via1_4 
+cutLayer [via2]  --- master via ---> via2_8 
+cutLayer [via3]  --- master via ---> via3_2 
+cutLayer [via4]  --- master via ---> via4_0 
+cutLayer [via5]  --- master via ---> via5_0 
+cutLayer [via6]  --- master via ---> via6_0 
+cutLayer [via7]  --- master via ---> via7_0 
+cutLayer [via8]  --- master via ---> via8_0 
+cutLayer [via9]  --- master via ---> via9_0 
+Total Hash [72] Single Master Vias
+Total Hash [0] Array-Master Vias
+merge tolerance:
+mask 0: route layer 0,   cut layer -1
+mask 1: route layer 0,   cut layer 0
+mask 2: route layer 0,   cut layer 0
+mask 3: route layer 0,   cut layer 500
+mask 4: route layer 0,   cut layer 500
+mask 5: route layer 0,   cut layer 920
+mask 6: route layer 0,   cut layer 920
+mask 7: route layer 0,   cut layer 920
+mask 8: route layer 0,   cut layer 2560
+mask 9: route layer 0,   cut layer 2560
+mask 10: route layer 0,   cut layer 5120
+mask 11: route layer 0,   cut layer 0
+mask 12: route layer 0,   cut layer 0
+mask 13: route layer 0,   cut layer 0
+mask 14: route layer 0,   cut layer 0
+mask 15: route layer 0,   cut layer 0
+mask 16: route layer 0,   cut layer 0
+mask 17: route layer 0,   cut layer 0
+mask 18: route layer 0,   cut layer 0
+mask 19: route layer 0,   cut layer 0
+mask 20: route layer 0,   cut layer 0
+mask 21: route layer 0,   cut layer 0
+mask 22: route layer 0,   cut layer 0
+mask 23: route layer 0,   cut layer 0
+mask 24: route layer 0,   cut layer 0
+mask 25: route layer 0,   cut layer 0
+mask 26: route layer 0,   cut layer 0
+mask 27: route layer 0,   cut layer 0
+mask 28: route layer 0,   cut layer 0
+mask 29: route layer 0,   cut layer 0
+mask 30: route layer 0,   cut layer 0
+mask 31: route layer 0,   cut layer 0
+------ new BPV starts ... -----
+Using [6 x 6] Fat Wire Table for metal2
+Fat condition [0] is less than minWidth on metal2
+Using [6 x 6] Fat Wire Table for metal3
+Fat condition [0] is less than minWidth on metal3
+Using [5 x 5] Fat Wire Table for metal4
+Fat condition [0] is less than minWidth on metal4
+Using [5 x 5] Fat Wire Table for metal5
+Fat condition [0] is less than minWidth on metal5
+Using [5 x 5] Fat Wire Table for metal6
+Fat condition [0] is less than minWidth on metal6
+Using [4 x 4] Fat Wire Table for metal7
+Fat condition [0] is less than minWidth on metal7
+Using [4 x 4] Fat Wire Table for metal8
+Fat condition [0] is less than minWidth on metal8
+Using [3 x 3] Fat Wire Table for metal9
+Fat condition [0] is less than minWidth on metal9
+Using [3 x 3] Fat Wire Table for metal10
+Fat condition [0] is less than minWidth on metal10
+cutLayer [via1]  --- master via ---> via1_4 
+cutLayer [via2]  --- master via ---> via2_8 
+cutLayer [via3]  --- master via ---> via3_2 
+cutLayer [via4]  --- master via ---> via4_0 
+cutLayer [via5]  --- master via ---> via5_0 
+cutLayer [via6]  --- master via ---> via6_0 
+cutLayer [via7]  --- master via ---> via7_0 
+cutLayer [via8]  --- master via ---> via8_0 
+cutLayer [via9]  --- master via ---> via9_0 
+Total Hash [72] Single Master Vias
+Total Hash [0] Array-Master Vias
+merge tolerance:
+mask 0: route layer 0,   cut layer -1
+mask 1: route layer 0,   cut layer 0
+mask 2: route layer 0,   cut layer 0
+mask 3: route layer 0,   cut layer 500
+mask 4: route layer 0,   cut layer 500
+mask 5: route layer 0,   cut layer 920
+mask 6: route layer 0,   cut layer 920
+mask 7: route layer 0,   cut layer 920
+mask 8: route layer 0,   cut layer 2560
+mask 9: route layer 0,   cut layer 2560
+mask 10: route layer 0,   cut layer 5120
+mask 11: route layer 0,   cut layer 0
+mask 12: route layer 0,   cut layer 0
+mask 13: route layer 0,   cut layer 0
+mask 14: route layer 0,   cut layer 0
+mask 15: route layer 0,   cut layer 0
+mask 16: route layer 0,   cut layer 0
+mask 17: route layer 0,   cut layer 0
+mask 18: route layer 0,   cut layer 0
+mask 19: route layer 0,   cut layer 0
+mask 20: route layer 0,   cut layer 0
+mask 21: route layer 0,   cut layer 0
+mask 22: route layer 0,   cut layer 0
+mask 23: route layer 0,   cut layer 0
+mask 24: route layer 0,   cut layer 0
+mask 25: route layer 0,   cut layer 0
+mask 26: route layer 0,   cut layer 0
+mask 27: route layer 0,   cut layer 0
+mask 28: route layer 0,   cut layer 0
+mask 29: route layer 0,   cut layer 0
+mask 30: route layer 0,   cut layer 0
+mask 31: route layer 0,   cut layer 0
+Marking EEQ ports in each cell.
+------ new BPV starts ... -----
+Using [6 x 6] Fat Wire Table for metal2
+Fat condition [0] is less than minWidth on metal2
+Using [6 x 6] Fat Wire Table for metal3
+Fat condition [0] is less than minWidth on metal3
+Using [5 x 5] Fat Wire Table for metal4
+Fat condition [0] is less than minWidth on metal4
+Using [5 x 5] Fat Wire Table for metal5
+Fat condition [0] is less than minWidth on metal5
+Using [5 x 5] Fat Wire Table for metal6
+Fat condition [0] is less than minWidth on metal6
+Using [4 x 4] Fat Wire Table for metal7
+Fat condition [0] is less than minWidth on metal7
+Using [4 x 4] Fat Wire Table for metal8
+Fat condition [0] is less than minWidth on metal8
+Using [3 x 3] Fat Wire Table for metal9
+Fat condition [0] is less than minWidth on metal9
+Using [3 x 3] Fat Wire Table for metal10
+Fat condition [0] is less than minWidth on metal10
+cutLayer [via1]  --- master via ---> via1_4 
+cutLayer [via2]  --- master via ---> via2_8 
+cutLayer [via3]  --- master via ---> via3_2 
+cutLayer [via4]  --- master via ---> via4_0 
+cutLayer [via5]  --- master via ---> via5_0 
+cutLayer [via6]  --- master via ---> via6_0 
+cutLayer [via7]  --- master via ---> via7_0 
+cutLayer [via8]  --- master via ---> via8_0 
+cutLayer [via9]  --- master via ---> via9_0 
+Total Hash [72] Single Master Vias
+Total Hash [0] Array-Master Vias
+       Processing cell [dmem_31515.CEL] ...
+this cell has 0 rectangle records
+this cell has 231 extrectangle records
+this cell has 0 path records
+this cell has 96 text records
+this cell has 0 polygon records
+The total number of paths in this cell is 0. 
+(Macro Instance Object Layer) .....................
+[3] [4] [5] [6] [7] 
+[8] [9] [10] [11] [12] 
+[13] [14] [15] [16] [17] 
+[18] [19] [20] [21] 
+ .......... total 19 layers with Macro instances.
+
+--- All pins have been split into connected components --
+Mask(4) speed-up coreBlockageBbox = (4760, 2240)-(465920, 287000)
+Mask(3) speed-up coreBlockageBbox = (280, 127680)-(470400, 276920)
+Mask(4) speed-up coreBlockageBbox = (4760, 2240)-(465920, 287000)
+Mask(3) speed-up coreBlockageBbox = (280, 127680)-(470400, 276920)
+Metal[4] pin access processing ...
+Acc-edge scanBox: [0, 0] - [470680, 4480]
+Acc-edge metal scanBox: [0, 0] - [470680, 289240]
+Acc-edge scanBox: [466200, 0] - [470680, 289240]
+Acc-edge metal scanBox: [466200, 0] - [470680, 289240]
+Acc-edge scanBox: [0, 284760] - [470680, 289240]
+Acc-edge metal scanBox: [0, 0] - [470680, 289240]
+Acc-edge scanBox: [0, 0] - [4480, 289240]
+Acc-edge metal scanBox: [0, 0] - [4480, 289240]
+Metal[3] pin access processing ...
+Acc-edge scanBox: [0, 0] - [470680, 2240]
+Acc-edge metal scanBox: [0, 0] - [470680, 2240]
+Acc-edge scanBox: [468440, 0] - [470680, 289240]
+Acc-edge metal scanBox: [0, 0] - [470680, 289240]
+Acc-edge scanBox: [0, 287000] - [470680, 289240]
+Acc-edge metal scanBox: [0, 287000] - [470680, 289240]
+Acc-edge scanBox: [0, 0] - [2240, 289240]
+Acc-edge metal scanBox: [0, 0] - [470680, 289240]
+[End of bpvFindAccessEdgesOnRouteLayer]
+[Mask 2]: Blockage_B1 is doing fat merge.
+[Mask 3]: Blockage_B1 is doing fat merge.
+[Mask 4]: Blockage_B1 is doing fat merge.
+PinHashOnLayer [3]: 
+   addr0[2],    addr0[3],    addr0[4],    addr0[5],    addr0[6],  
+   addr0[7],    addr1[2],    addr1[3],    addr1[4],    csb0,  
+   csb1,    gnd,    vdd, 
+   ----- Total 13 pins hashed on Mask Layer 3. 
+PinHashOnLayer [4]: 
+   addr0[0],    addr0[1],    addr1[0],    addr1[1],    addr1[5],  
+   addr1[6],    addr1[7],    clk0,    clk1,    din0[0],  
+   din0[10],    din0[11],    din0[12],    din0[13],    din0[14],  
+   din0[15],    din0[16],    din0[17],    din0[18],    din0[19],  
+   din0[1],    din0[20],    din0[21],    din0[22],    din0[23],  
+   din0[24],    din0[25],    din0[26],    din0[27],    din0[28],  
+   din0[29],    din0[2],    din0[30],    din0[31],    din0[3],  
+   din0[4],    din0[5],    din0[6],    din0[7],    din0[8],  
+   din0[9],    dout1[0],    dout1[10],    dout1[11],    dout1[12],  
+   dout1[13],    dout1[14],    dout1[15],    dout1[16],    dout1[17],  
+   dout1[18],    dout1[19],    dout1[1],    dout1[20],    dout1[21],  
+   dout1[22],    dout1[23],    dout1[24],    dout1[25],    dout1[26],  
+   dout1[27],    dout1[28],    dout1[29],    dout1[2],    dout1[30],  
+   dout1[31],    dout1[3],    dout1[4],    dout1[5],    dout1[6],  
+   dout1[7],    dout1[8],    dout1[9],    gnd,    vdd,  
+   wmask0[0],    wmask0[1],    wmask0[2],    wmask0[3], 
+   ----- Total 79 pins hashed on Mask Layer 4. 
+Made macro dmem.
+
+Load Library settings...
+WARNING : This is not a standard cell library.
+Skip setting PR boundary & defining wire track.
+Kill NullXServer PID = 31607
+Thank you for using Milkyway

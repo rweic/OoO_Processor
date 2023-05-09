@@ -1,16 +1,15 @@
 # Data word size
 word_size = 32
 # Number of words in the memory
-num_words = 16
-#clk_edge = "posedge"
+num_words = 256
+write_size = 32
 
 # Port Configuration
-num_rw_ports = 0
-num_r_ports = 1
-num_w_ports = 1
-write_size = 8
+num_rw_ports = 1
+num_r_ports = 0
+num_w_ports = 0
 
-check_lvsdrc = True
+chack_lvsdrc = True
 
 # Technology to use in $OPENRAM_TECH
 tech_name = "freepdk45"
@@ -31,9 +30,9 @@ temperatures = [ 25 ]
 route_supplies = True
 
 # Output directory for the results
-output_path = f"dmem"
+output_path = f"imem"
 # Output file base name
-output_name = f"dmem"
+output_name = f"imem"
 
 # Disable analytical models for full characterization (WARNING: slow!)
 # analytical_delay = False
