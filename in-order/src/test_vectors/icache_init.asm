@@ -158,3 +158,26 @@ forward:
     remu x2, x1, x1
 
 done:
+
+ # Use sll to shift val1 left by 2 bits and store the result in x1
+    sll x1, x0, x2
+    
+    # Use slt to compare val1 and val2 as signed integers and store the result in x2
+    slt x2, x2, x2
+    
+    # Use sltu to compare val1 and val2 as unsigned integers and store the result in x3
+    sltu x3, x2, x2
+    
+    # Use lui to load the upper 20 bits of a 32-bit immediate value into x4
+    lui x4, 0x12345
+    
+    # Use auipc to add a 20-bit immediate value to the PC and store the result in x5
+    auipc x5, 0x10000
+    
+    # Use jal to jump to the address of the label 'function' and save the return address in x6
+    jal x6, finish
+    
+    # Use jalr to jump to the address in x7 plus an immediate offset and save the return address in x8
+    jalr x8, x7, 8
+    
+finish:
