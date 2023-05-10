@@ -1,5 +1,9 @@
+Connection to IPC server failed.
+Starting IPC Server. (Port = 1925)
+IPC Server started successfully.
 File /tmp/.X11-unix/X50 exists, please remove it if there is no X server on it.
-Using display linuxsrv01.ece.uw.edu:70
+Using display unix:55
+;; ;# Scheme
 
                                  Milkyway (TM)
 
@@ -21,29 +25,21 @@ Using display linuxsrv01.ece.uw.edu:70
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 
-Starting a non page replacement mode Milkyway db session... 
-
 Loading /home/lab.apps/vlsiapps_new/mw/current/etc/scheme/.avntrc
 #t
  Info: loading setup file(s)
 Info: sourcing installation .synopsys_milkyway.tcl
 Info: sourced /home/lab.apps/vlsiapps_new/mw/current/etc/auxx/tcllib/astro/milkyway.tbc
-Error: can't read "env(ADK_PATH)": no such variable
+;; source /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl
+Error: wrong # args: should be "set varName ?newValue?"
 	Use error_info for more info. (CMD-013)
 Information: script '/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl'
-	stopped at line 8 due to error. (CMD-081)
+	stopped at line 2 due to error. (CMD-081)
 Extended error info:
-no such variable
-    (read trace on "env(ADK_PATH)")
-    invoked from within
-"# Compiled -- no source code available
-error "called a copy of a compiled script""
-    (procedure "getenv" line 1)
-    invoked from within
-"getenv "ADK_PATH""
-    invoked from within
-"set TFPATH [getenv "ADK_PATH"]"
-    (file "/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl" line 8)
+wrong # args: should be "set varName ?newValue?"
+    while executing
+"set macro "dmem" #"imem""
+    (file "/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl" line 2)
  -- End Extended Error Info
 Initialization completed
 

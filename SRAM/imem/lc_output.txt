@@ -22,22 +22,29 @@
 
 Initializing...
 set macros [list \
-    imem
+    imem_TT_1p0V_25C #dmem_TT_1p0V_25C
 ]
-imem
+imem_TT_1p0V_25C {#dmem_TT_1p0V_25C}
 foreach macro $macros {
     read_lib ${macro}.lib
     write_lib -format db "[get_object_name [get_libs]]" -output ${macro}.db
     remove_lib "[get_object_name [get_libs]]"
 }
-Error: The 'imem.lib' library source file is not found. (UIL-4)
+Reading '/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/SRAM/imem/imem_TT_1p0V_25C.lib' ...
+Warning: Line 1, The 'internal_power_calculation' attribute in char_config group is required for NLPM library. 
+        No default can be applied to this attribute. (LBDB-366)
+Information: Line 74, Cell 'imem', The cell 'imem' contiains memory/memory_read/memory_write groups which are deprecated, use the is_memory_cell attribute instead. (LIBG-280)
+Technology library 'imem_TT_1p0V_25C_lib' read successfully
+Wrote the 'imem_TT_1p0V_25C_lib' library to '/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/SRAM/imem/imem_TT_1p0V_25C.db' successfully
+Removing library 'imem_TT_1p0V_25C_lib'
+Error: The '#dmem_TT_1p0V_25C.lib' library source file is not found. (UIL-4)
 Error: Can't find library '*'. (UIL-103)
 Warning: The '' library has not been read in yet. (UIL-3)
 Error: Can't find library '*'. (UIL-103)
 # Finish
 exit
-Maximum memory usage for this session: 102.63 MB
-CPU usage for this session:      1 seconds (  0.00 hours)
-Elapsed time for this session:      5 seconds (  0.00 hours)
+Maximum memory usage for this session: 105.47 MB
+CPU usage for this session:      5 seconds (  0.00 hours)
+Elapsed time for this session:      9 seconds (  0.00 hours)
 Thank you for using Library Compiler.
 
