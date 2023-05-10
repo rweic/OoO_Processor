@@ -6,3 +6,6 @@
 ## Coverage report with VCS
 ./simv \
 urg -full64 -dir simv.vdb
+
+### Alternatively,
+make coverage

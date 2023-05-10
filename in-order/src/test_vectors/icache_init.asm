@@ -6,8 +6,11 @@ _start:
     # Load immediate
     li x1, 123
     
-    # Add
+    # Addi
     addi x2, x1, 456
+    
+    # Add
+    add x2, x1, x2
     
     # Subtract
     sub x2, x2, x1
@@ -15,11 +18,20 @@ _start:
     # Bitwise AND
     and x2, x2, x1
     
+    # Bitwise ANDI
+    andi x2, x2, 1
+    
     # Bitwise OR
     or x2, x2, x1
     
+    # Bitwise ORI
+    ori x2, x2, 1
+    
     # Bitwise XOR
     xor x2, x2, x1
+    
+    # Bitwise XORI
+    xori x2, x2, 1
     
     # Shift left logical
     slli x2, x2, 2
@@ -80,6 +92,46 @@ _start:
     
     # Return
     ret
+    
+    # sll
+    sll x1, x2, x3
+    
+    # slt
+    slt x1, x2, x3
+    
+    # sltu
+    sltu x1, x2, x3
+    
+    # sra
+    sra x1, x2, x3
+    
+    # bne
+    bne x1, x2, forward
+
+back:
+    
+    # sltu
+    sltu x1, x2, x3
+    
+forward:
+
+    # sltu
+    sltu x1, x2, x3
+    
+    # sltu
+    sltu x1, x3, x2
+    
+	# blt
+    blt x1, x2, back
+    
+    # bltu
+    bltu x1, x2, back
+    
+    # bge
+    bge x1, x2, back
+    
+    # bgeu
+    bgeu x1, x2, back
     
     # Multiply
     mul x2, x1, x1
