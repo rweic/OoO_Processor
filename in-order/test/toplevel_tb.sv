@@ -25,7 +25,7 @@ module toplevel_tb();
         $dumpvars();
         reset = 1; #20
         reset = 0;
-        #300
+        #1000
         $finish;
     end
 
