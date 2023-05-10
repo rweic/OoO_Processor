@@ -1,6 +1,8 @@
 /* Mul/div Module
  * MUL lower 32 bits
  * MULH/ MULHU/ MULHSU upper 32 bits (signed×signed, unsigned×unsigned, signed×unsigned)
+ * Booth Wallace Dadda Array multiplexer?
+ *
  * DIV/DIVU division round towards zero
  * REM/REMU remainder (REM has the same sign as the div result)
  */

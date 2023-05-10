@@ -35,6 +35,7 @@ module arith (
     wire [31:0] alu_out;
 
     assign writeback_valid_o = arith_request_i;
+    assign writeback_value_o = alu_out;
 
     alu alu (
         .alu_op1(alu_operand1), 

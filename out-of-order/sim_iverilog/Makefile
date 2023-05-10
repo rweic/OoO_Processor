@@ -1,4 +1,4 @@
-MODULE = rob
+MODULE = rename
 
 DSRC = ../src
 DTST = ../test
