@@ -12,6 +12,11 @@ $(TOPLEVEL).fsdb: $(TOPLEVEL).include
 
 vcs: $(TOPLEVEL).fsdb
 
+coverage:
+	make vcs -B
+	./simv
+	urg -full64 -dir simv.vdb
+
 clean:
 	-rm -r alib-52
 	-rm -r db
