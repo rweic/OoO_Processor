@@ -25,18 +25,22 @@ module rename_tb();
     initial begin
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
-        reset_i = 1'b1;  #10
-        reset_i = 1'b0; 
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
-         @(posedge clk_i);
+        reset_i = 1'b1;
+        pc_i = 'h0; inst_valid_i = 'b0; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h0; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0;   #10
+        reset_i = 1'b0; @(posedge clk_i);
+        pc_i = 'h0; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h1; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h4; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h2; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h8; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h3; cdb_en_i = 'h1; cdb_reg_addr_i = 'h1; @(posedge clk_i);
+        pc_i = 'hc; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h4; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h10; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h5; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h10; inst_valid_i = 'b1; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h6; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);  
+        pc_i = 'h14; inst_valid_i = 'b1; rs1_addr_i = 'h2; rs2_addr_i = 'h2; rd_addr_i = 'h2; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h18; inst_valid_i = 'b1; rs1_addr_i = 'h1; rs2_addr_i = 'h2; rd_addr_i = 'h1; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h1c; inst_valid_i = 'b1; rs1_addr_i = 'h4; rs2_addr_i = 'h4; rd_addr_i = 'h2; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h20; inst_valid_i = 'b1; rs1_addr_i = 'h3; rs2_addr_i = 'h2; rd_addr_i = 'h3; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h24; inst_valid_i = 'b1; rs1_addr_i = 'h6; rs2_addr_i = 'h6; rd_addr_i = 'h2; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h28; inst_valid_i = 'b1; rs1_addr_i = 'h5; rs2_addr_i = 'h2; rd_addr_i = 'h5; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
+        pc_i = 'h2c; inst_valid_i = 'b0; rs1_addr_i = 'h0; rs2_addr_i = 'h0; rd_addr_i = 'h0; cdb_en_i = 'h0; cdb_reg_addr_i = 'h0; @(posedge clk_i);
          @(posedge clk_i);
          @(posedge clk_i);
         $finish;

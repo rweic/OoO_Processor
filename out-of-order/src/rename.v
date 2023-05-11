@@ -3,7 +3,10 @@
  */
 
 module rename (
-
+    // Inputs
+    clk_i, reset_i, pc_i, inst_valid_i, rs1_addr_i, rs2_addr_i, rd_addr_i, cdb_en_i, cdb_reg_addr_i,
+    // Outputs
+    prs1_addr_o, prs2_addr_o, prd_addr_o
 );
     // Inputs
     input clk_i, reset_i;
@@ -62,6 +65,7 @@ module rename (
     always @(rs1_addr_i, rs2_addr_i, rd_addr_i) begin
         prs1_addr_o = rat[rs1_addr_i];
         prs2_addr_o = rat[rs2_addr_i];
+        rat[rd_addr_i] = reg_allocate_addr;
         prd_addr_o = reg_allocate_addr;
     end
 
@@ -106,35 +110,43 @@ module freelist
     wire [4:0] tail_plus_one;
 
     assign empty_o = (num_free_reg == 0);
-    assign reg_allocate_addr_o = valid_registers[tail];
+    assign reg_allocate_addr_o = valid_registers[head];
 
     integer i;
     always @(posedge clk_i) begin
         if (reset_i) begin
             // all 
             for (i = 0; i < 31; i ++ ) begin
-                valid_registers[i] <= i+1;
+                valid_registers[i] <= i + 1;
             end
-            num_free_reg <= 'b10000; // gray code 31
+            /*num_free_reg <= 'b10000; // gray code 31
             head <= 'b00000; // gray code 0
-            tail <= 'b10000; // gray code 31
+            tail <= 'b10000; // gray code 31*/
+
+            // binary
+            num_free_reg <= 'd31;
+            head <= 'd0;
+            tail <= 'd31;
         end 
         else begin
             if (reg_free_en_i & !reg_allocate_en_i) 
-                num_free_reg <= num_free_reg ^ (num_free_reg >> 1); // +1
+                //num_free_reg <= num_free_reg ^ (num_free_reg >> 1); // +1
+                num_free_reg <= num_free_reg + 1;
             else if (!reg_free_en_i & reg_allocate_en_i)
-                num_free_reg <= {~num_free_reg[4], num_free_reg[3:0]} ^ ({~num_free_reg[4], num_free_reg[3:0]} >> 1); // -1
-
+                //num_free_reg <= {~num_free_reg[4], num_free_reg[3:0]} ^ ({~num_free_reg[4], num_free_reg[3:0]} >> 1); // -1
+                num_free_reg <= num_free_reg - 1;
+            else
+                num_free_reg <= num_free_reg;
+            
             if (reg_free_en_i) begin // add reg to free list
-                tail <= tail ^ (tail >> 1);
+                //tail <= tail ^ (tail >> 1);
+                tail <= tail + 1;
                 valid_registers[tail] <= reg_free_addr_i;
             end else if (reg_allocate_en_i) begin
-                head <= head ^ (head >> 1);
+                //head <= head ^ (head >> 1);
+                head <= head + 1;
             end
         end
     end
-
-    //assign count_up = gray_count ^ (gray_count >> 1);
-    //assign count_down = {~gray_count[4], gray_count[3:0]} ^ ({~gray_count[4], gray_count[3:0]} >> 1);
 
 endmodule
