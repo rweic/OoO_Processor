@@ -1,8 +1,5 @@
-Connection to IPC server failed.
-Starting IPC Server. (Port = 1925)
-IPC Server started successfully.
-File /tmp/.X50-lock exists, please remove it if there is no X server on it.
-Using display linux-lab-055.ece.uw.edu:55
+File /tmp/.X11-unix/X50 exists, please remove it if there is no X server on it.
+Using display unix:60
 
                                  Milkyway (TM)
 
@@ -31,158 +28,29 @@ Loading /home/lab.apps/vlsiapps_new/mw/current/etc/scheme/.avntrc
  Info: loading setup file(s)
 Info: sourcing installation .synopsys_milkyway.tcl
 Info: sourced /home/lab.apps/vlsiapps_new/mw/current/etc/auxx/tcllib/astro/milkyway.tbc
-Start to load technology file /homes/rweic/ee526/ram_test_freepdk45_sapr_flow/freepdk-45nm/rtk-tech.tf.
-Warning: Layer 'metal1' is missing the attribute 'minArea'. (line 106) (TFCHK-012)
-Warning: Layer 'metal2' is missing the attribute 'minArea'. (line 165) (TFCHK-012)
-Warning: Layer 'metal3' is missing the attribute 'minArea'. (line 224) (TFCHK-012)
-Warning: Layer 'metal4' is missing the attribute 'minArea'. (line 282) (TFCHK-012)
-Warning: Layer 'metal5' is missing the attribute 'minArea'. (line 340) (TFCHK-012)
-Warning: Layer 'metal6' is missing the attribute 'minArea'. (line 398) (TFCHK-012)
-Warning: Layer 'metal7' is missing the attribute 'minArea'. (line 455) (TFCHK-012)
-Warning: Layer 'metal8' is missing the attribute 'minArea'. (line 512) (TFCHK-012)
-Warning: Layer 'metal9' is missing the attribute 'minArea'. (line 568) (TFCHK-012)
-Warning: Layer 'metal10' is missing the attribute 'minArea'. (line 624) (TFCHK-012)
-Warning: Cut layer 'via1' has a non-cross primary default ContactCode 'via1_4'. (line 642) (TFCHK-092)
-Warning: Cut layer 'via2' has a non-cross primary default ContactCode 'via2_8'. (line 732) (TFCHK-092)
-Warning: ContactCode 'via4_0' has undefined or zero enclosures. (line 858). (TFCHK-073)
-Warning: ContactCode 'via5_0' has undefined or zero enclosures. (line 876). (TFCHK-073)
-Warning: ContactCode 'via7_0' has undefined or zero enclosures. (line 912). (TFCHK-073)
-Warning: ContactCode 'via9_0' has undefined or zero enclosures. (line 948). (TFCHK-073)
-Warning: ContactCode 'Via4Array-0' has undefined or zero enclosures. (line 1366). (TFCHK-073)
-Warning: ContactCode 'Via5Array-0' has undefined or zero enclosures. (line 1385). (TFCHK-073)
-Warning: ContactCode 'Via7Array-0' has undefined or zero enclosures. (line 1423). (TFCHK-073)
-Warning: ContactCode 'Via9Array-0' has undefined or zero enclosures. (line 1461). (TFCHK-073)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1470) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1479) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1488) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1497) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1506) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1515) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1524) (TFCHK-014)
-Warning: Layer '' is missing the attribute 'maxStackLevel'. (line 1533) (TFCHK-014)
-Warning: Layer 'metal1' has a pitch 0.14 that does not match the recommended wire-to-via pitch 0.17. (TFCHK-049)
-Warning: Layer 'metal2' has a pitch 0.19 that does not match the recommended wire-to-via pitch 0.175. (TFCHK-049)
-Warning: Layer 'metal3' has a pitch 0.14 that does not match the recommended wire-to-via pitch 0.175. (TFCHK-049)
-Warning: CapModel sections are missing. Capacitance models should be loaded with a TLU+ file later. (TFCHK-084)
-Technology file /homes/rweic/ee526/ram_test_freepdk45_sapr_flow/freepdk-45nm/rtk-tech.tf has been loaded successfully.
+Error: can't read "env(ADK_PATH)": no such variable
+	Use error_info for more info. (CMD-013)
+Information: script '/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl'
+	stopped at line 8 due to error. (CMD-081)
+Extended error info:
+no such variable
+    (read trace on "env(ADK_PATH)")
+    invoked from within
+"# Compiled -- no source code available
+error "called a copy of a compiled script""
+    (procedure "getenv" line 1)
+    invoked from within
+"getenv "ADK_PATH""
+    invoked from within
+"set TFPATH [getenv "ADK_PATH"]"
+    (file "/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl" line 8)
+ -- End Extended Error Info
+Initialization completed
 
-	>>>>>>> MILKYWAY LEF IN <<<<<<<
-
->>> Read Tech LEF File "/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lef" ... 
-Backup existing technology info ...
-Technology data dumped to imem.tf_replaced completely.
-
-Starting to read LEF file ...
-
-Calling LEF IN API exit handler ...
- Done
+----- Begin Scheme mode. For Tcl, type begin_tcl or click the Tcl button
+----- To run tcl script, use "source"
 
 
+----- Begin Tcl mode: For Scheme, type begin_scheme or click the Scheme button
+----- To run scheme script, use "load_scheme"
 
->>> Read Cell LEF File "/home/rweic/ee526/ram_test_freepdk45_sapr_flow/macro_prep/imem/imem.lef" ... 
-
-
-
-Starting to read LEF file ...
-Re-mark cell imem's type as MacroCell.
-
-
-Calling LEF IN API exit handler ...
- Done
-
-
-Read LEF completed.
-
-
-Extracting blockage/pin ... 
-
------- new BPV starts ... -----
-Using [6 x 6] Fat Wire Table for metal2
-Fat condition [0] is less than minWidth on metal2
-Using [6 x 6] Fat Wire Table for metal3
-Fat condition [0] is less than minWidth on metal3
-Using [5 x 5] Fat Wire Table for metal4
-Fat condition [0] is less than minWidth on metal4
-Using [5 x 5] Fat Wire Table for metal5
-Fat condition [0] is less than minWidth on metal5
-Using [5 x 5] Fat Wire Table for metal6
-Fat condition [0] is less than minWidth on metal6
-Using [4 x 4] Fat Wire Table for metal7
-Fat condition [0] is less than minWidth on metal7
-Using [4 x 4] Fat Wire Table for metal8
-Fat condition [0] is less than minWidth on metal8
-Using [3 x 3] Fat Wire Table for metal9
-Fat condition [0] is less than minWidth on metal9
-Using [3 x 3] Fat Wire Table for metal10
-Fat condition [0] is less than minWidth on metal10
------- new BPV starts ... -----
-Using [6 x 6] Fat Wire Table for metal2
-Fat condition [0] is less than minWidth on metal2
-Using [6 x 6] Fat Wire Table for metal3
-Fat condition [0] is less than minWidth on metal3
-Using [5 x 5] Fat Wire Table for metal4
-Fat condition [0] is less than minWidth on metal4
-Using [5 x 5] Fat Wire Table for metal5
-Fat condition [0] is less than minWidth on metal5
-Using [5 x 5] Fat Wire Table for metal6
-Fat condition [0] is less than minWidth on metal6
-Using [4 x 4] Fat Wire Table for metal7
-Fat condition [0] is less than minWidth on metal7
-Using [4 x 4] Fat Wire Table for metal8
-Fat condition [0] is less than minWidth on metal8
-Using [3 x 3] Fat Wire Table for metal9
-Fat condition [0] is less than minWidth on metal9
-Using [3 x 3] Fat Wire Table for metal10
-Fat condition [0] is less than minWidth on metal10
-Marking EEQ ports in each cell.
------- new BPV starts ... -----
-Using [6 x 6] Fat Wire Table for metal2
-Fat condition [0] is less than minWidth on metal2
-Using [6 x 6] Fat Wire Table for metal3
-Fat condition [0] is less than minWidth on metal3
-Using [5 x 5] Fat Wire Table for metal4
-Fat condition [0] is less than minWidth on metal4
-Using [5 x 5] Fat Wire Table for metal5
-Fat condition [0] is less than minWidth on metal5
-Using [5 x 5] Fat Wire Table for metal6
-Fat condition [0] is less than minWidth on metal6
-Using [4 x 4] Fat Wire Table for metal7
-Fat condition [0] is less than minWidth on metal7
-Using [4 x 4] Fat Wire Table for metal8
-Fat condition [0] is less than minWidth on metal8
-Using [3 x 3] Fat Wire Table for metal9
-Fat condition [0] is less than minWidth on metal9
-Using [3 x 3] Fat Wire Table for metal10
-Fat condition [0] is less than minWidth on metal10
-       Processing cell [imem_32204.CEL] ...
-(Macro Instance Object Layer) .....................
-Metal[4] pin access processing ...
-Acc-edge scanBox: [0, 0] - [275800, 4480]
-Acc-edge metal scanBox: [0, 0] - [275800, 237160]
-Acc-edge scanBox: [271320, 0] - [275800, 237160]
-Acc-edge metal scanBox: [271320, 0] - [275800, 237160]
-Acc-edge scanBox: [0, 232680] - [275800, 237160]
-Acc-edge metal scanBox: [0, 0] - [275800, 237160]
-Acc-edge scanBox: [0, 0] - [4480, 237160]
-Acc-edge metal scanBox: [0, 0] - [4480, 237160]
-Metal[3] pin access processing ...
-Acc-edge scanBox: [0, 0] - [275800, 2240]
-Acc-edge metal scanBox: [0, 0] - [275800, 2240]
-Acc-edge scanBox: [273560, 0] - [275800, 237160]
-Acc-edge metal scanBox: [0, 0] - [275800, 237160]
-Acc-edge scanBox: [0, 234920] - [275800, 237160]
-Acc-edge metal scanBox: [0, 234920] - [275800, 237160]
-Acc-edge scanBox: [0, 0] - [2240, 237160]
-Acc-edge metal scanBox: [0, 0] - [275800, 237160]
-Made macro imem.
-
-Load Library settings...
-WARNING : This is not a standard cell library.
-Skip setting PR boundary & defining wire track.
-
-Maximum memory usage for this session:    97.41 MB
-CPU usage for this session: 0 seconds
-Kill NullXServer PID = 32290
-Thank you for using Milkyway
-Exit AMonitor!
-Exit AServer!

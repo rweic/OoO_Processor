@@ -1,5 +1,6 @@
 File /tmp/.X11-unix/X50 exists, please remove it if there is no X server on it.
-Using display linuxsrv01.ece.uw.edu:70
+Using display unix:60
+;; ;# Scheme
 
                                  Milkyway (TM)
 
@@ -21,13 +22,12 @@ Using display linuxsrv01.ece.uw.edu:70
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 
-Starting a non page replacement mode Milkyway db session... 
-
 Loading /home/lab.apps/vlsiapps_new/mw/current/etc/scheme/.avntrc
 #t
  Info: loading setup file(s)
 Info: sourcing installation .synopsys_milkyway.tcl
 Info: sourced /home/lab.apps/vlsiapps_new/mw/current/etc/auxx/tcllib/astro/milkyway.tbc
+;; source /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl
 Error: can't read "env(ADK_PATH)": no such variable
 	Use error_info for more info. (CMD-013)
 Information: script '/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/SRAM/create_fram.tcl'
@@ -50,3 +50,8 @@ Initialization completed
 ----- Begin Scheme mode. For Tcl, type begin_tcl or click the Tcl button
 ----- To run tcl script, use "source"
 
+
+----- Begin Tcl mode: For Scheme, type begin_scheme or click the Scheme button
+----- To run scheme script, use "load_scheme"
+
+Milkyway> 
