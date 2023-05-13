@@ -1,0 +1,28 @@
+Warning: Design 'toplevel' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : net fanout
+        -threshold 32
+Design : toplevel
+Version: T-2022.03-SP3
+Date   : Wed May 10 15:52:50 2023
+****************************************
+
+
+Operating Conditions: nom_pvt   Library: gtech
+Wire Load Model Mode: top
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+1

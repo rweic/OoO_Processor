@@ -46,3 +46,5 @@ Initialization completed
 ----- Begin Scheme mode. For Tcl, type begin_tcl or click the Tcl button
 ----- To run tcl script, use "source"
 
+caught signal 1 [hangup].
+Kill NullXServer PID = 13587

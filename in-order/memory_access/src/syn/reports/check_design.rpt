@@ -1,0 +1,21 @@
+Warning: Design 'toplevel' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03-SP3
+Date:        Wed May 10 15:52:50 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Multiply driven inputs (LINT-6)                                 2
+
+Designs                                                             1
+    Design has no outputs ports (LINT-25)                           1
+--------------------------------------------------------------------------------
+
+Warning: In design 'toplevel', input port 'clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'toplevel', input port 'reset' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: Design 'toplevel' does not have any output ports. (LINT-25)
+1

@@ -54,4 +54,5 @@ Initialization completed
 ----- Begin Tcl mode: For Scheme, type begin_scheme or click the Scheme button
 ----- To run scheme script, use "load_scheme"
 
-Milkyway> 
+Milkyway> caught signal 1 [hangup].
+Kill NullXServer PID = 15063
