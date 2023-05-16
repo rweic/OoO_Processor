@@ -7,7 +7,7 @@ module regfile_tb();
 
     regfile #(.WIDTH(32)) regfile0 (
         .clk(clk), 
-        .rst(rst), 
+        .reset(rst), 
         .w_en(w_en),
         .ra_addr(ra_addr), 
         .rb_addr(rb_addr), 

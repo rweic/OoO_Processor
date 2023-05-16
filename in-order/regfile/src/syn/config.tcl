@@ -1,7 +1,7 @@
 
 # Project and design
 # ==========================================================================
-set TOPLEVEL "toplevel"
+set TOPLEVEL "regfile"
 set PROJECT_DIR "../.."
 
 set PROCESS "45GP"; # 45GP
@@ -12,18 +12,7 @@ set CORNER "LOW"
 set BASE "$PROJECT_DIR/src/verilog"
 
 set RTL_SOURCE_FILES [list \
-   "$BASE/toplevel.v" \
-   "$BASE/alu.v" \
-   "$BASE/cpu.v" \
-   "$BASE/dcache.v" \
-   "$BASE/decode.v" \
-   "$BASE/execute.v" \
-   "$BASE/fetch.v" \
-   "$BASE/hazard_detect.v" \
-   "$BASE/icache.v" \
-   "$BASE/memory_access.v" \
    "$BASE/regfile.v" \
-   "$BASE/writeback.v"  
    
 ]
 
@@ -64,7 +53,7 @@ if {$PROCESS == "45GP"} {
 
    # Reference libraries 
    set MW_REFERENCE_LIBS "$ADK_PATH/stdcells.mwlib"
-   set MW_ADDITIONAL_REFERENCE_LIBS "sram_2_16_freepdk45"
+   set MW_ADDITIONAL_REFERENCE_LIBS ""
    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 
    # BC - 1.25 V
@@ -77,7 +66,7 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells-wc.db"
-      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
+      set ADDITIONAL_TARGET_LIBS ""
       # Worst case library
       set LIB_WC_FILE   "stdcells-wc.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -95,7 +84,7 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells.db"
-      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
+      set ADDITIONAL_TARGET_LIBS "{}"
       # Worst case library
       set LIB_WC_FILE   "stdcells.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -122,7 +111,7 @@ set NAND2_NAME    "NAND2_X1"
 set CLK_PORT   "clk"
 
 # Frequency 
-set CLK_PERIOD 10
+set CLK_PERIOD 5
 
 # Timing uncertainties
 set clk_critical_range 0.010

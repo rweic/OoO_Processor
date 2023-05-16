@@ -12,7 +12,8 @@ module alu_tb();
     reg [3:0] alu_func;
     wire [31:0] out;
 
-    alu #(.WIDTH(32)) alu0 (
+		//#(.WIDTH(32))
+    alu  alu0 (
         .alu_op1(in1), 
         .alu_op2(in2), 
         .alu_func(alu_func), 
@@ -20,8 +21,15 @@ module alu_tb();
     );
 
     initial begin
-	    $dumpfile("uut.vcd");
-	    $dumpvars();
+
+			`ifndef PRE_SYN
+					$sdf_annotate("alu.sdf", alu0);
+			`endif
+					//$vcdpluson;
+					$fsdbDumpfile("alu.fsdb");
+					$fsdbDumpvars(0, alu_tb);
+					$dumpfile("alu.vcd");
+					$dumpvars();
         in1 = 32'b1; in2 = 32'b10; alu_func=4'b1; #10
         in1 = 32'b10; in2 = 32'b10; alu_func=4'b1; #10
         in1 = 32'b11; in2 = 32'b10; alu_func=4'b1;

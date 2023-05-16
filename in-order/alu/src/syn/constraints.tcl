@@ -2,12 +2,13 @@
 # Get configuration settings
 source ../../src/syn/config.tcl
 
+if 0 {
 # Clocks
 # =====================================
-create_clock -name     "clk"                      \
-             -period   "$CLK_PERIOD"            \
-             -waveform "0 [expr $CLK_PERIOD/2]" \
-             [get_ports $CLK_PORT]
+#create_clock -name     "clk"                      \
+#             -period   "$CLK_PERIOD"            \
+#             -waveform "0 [expr $CLK_PERIOD/2]" \
+#             [get_ports $CLK_PORT]
 
 # create_clock -name     "clk"                      \
              # -period   "$CLK_PERIOD"            \
@@ -15,16 +16,16 @@ create_clock -name     "clk"                      \
              # [get_pins i_root_clk_gater/gclk]
 
 #High fanout net
-#set_ideal_network [get_net rst] -no_propagate
+#set_ideal_network [get_net reset] -no_propagate
 
 # global margin
-set_critical_range $clk_critical_range $current_design
+#set_critical_range $clk_critical_range $current_design
 # uncertainty
-set_clock_uncertainty -setup ${clk_setup_uncertainty} "clk"
-set_clock_uncertainty -hold ${clk_hold_uncertainty}  "clk"
+#set_clock_uncertainty -setup ${clk_setup_uncertainty} "clk"
+#set_clock_uncertainty -hold ${clk_hold_uncertainty}  "clk"
 # transition
-set_clock_transition ${clk_trans} [get_clocks]
-set_fix_hold [get_clocks]
+#set_clock_transition ${clk_trans} [get_clocks]
+#set_fix_hold [get_clocks]
 
 # Fanout, transition,
 # ==============================================
@@ -50,27 +51,27 @@ set timing_remove_clock_reconvergence_pessimism true
 
 # Path groups 
 # ==============================================
-group_path -name "Inputs"       -from [remove_from_collection [all_inputs] [get_ports $CLK_PORT]]
+group_path -name "Inputs"       -from [remove_from_collection [all_inputs]]
 group_path -name "Outputs"      -to [all_outputs]
-group_path -name "Feedthroughs" -from [remove_from_collection [all_inputs] [get_ports $CLK_PORT]] \
+group_path -name "Feedthroughs" -from [remove_from_collection [all_inputs]] \
                                 -to [all_outputs]
-group_path -name "Regs_to_Regs" -from [all_registers] -to [all_registers]
+#group_path -name "Regs_to_Regs" -from [all_registers] -to [all_registers]
 
 # Boundary timing/loading
 # ==============================================
 
 # outputs 
-set_output_delay $blanket_output_delay -clock "clk" [all_outputs]
+set_output_delay $blanket_output_delay [all_outputs]
 set_load [load_of $blanket_input_load] [all_outputs]
 
 # inputs 
-set_input_delay $blanket_input_delay -clock "clk" \
-   [remove_from_collection [all_inputs] [get_ports $CLK_PORT]]
+#set_input_delay $blanket_input_delay \
+#   [remove_from_collection [all_inputs]]
 set_drive [drive_of $blanket_output_drive] [all_inputs]
 
 # Operating conditions
 # ==============================================
 set_operating_conditions -max $LIB_WC_OPCON -max_library $LIB_WC_NAME \
                          -min $LIB_BC_OPCON -min_library $LIB_BC_NAME
-
+}
 

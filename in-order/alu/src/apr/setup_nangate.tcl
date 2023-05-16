@@ -29,14 +29,16 @@ set TARGET_LIBS [list \
 			 "stdcells-bc.db" \
 		    ]
 #Used by sdc 
-set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
+set ADDITIONAL_TARGET_LIBS {}
+	# RAM_16B_512.db}
 set ADDITIONAL_SYMBOL_LIBS {}
 set SYMBOL_LIB "stdcells.db"
 set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 
 # Reference libraries
 set MW_REFERENCE_LIBS "$ADK_PATH/stdcells.mwlib"
-set MW_ADDITIONAL_REFERENCE_LIBS "sram_2_16_freepdk45"
+set MW_ADDITIONAL_REFERENCE_LIBS {}
+	# ./RAM_16B_512}
 
 # # Worst case library
 set LIB_WC_FILE   "stdcells-wc.db"
