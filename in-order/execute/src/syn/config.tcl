@@ -1,7 +1,7 @@
 
 # Project and design
 # ==========================================================================
-set TOPLEVEL "fsm"
+set TOPLEVEL "execute"
 set PROJECT_DIR "../.."
 
 set PROCESS "45GP"; # 45GP
@@ -12,11 +12,13 @@ set CORNER "LOW"
 set BASE "$PROJECT_DIR/src/verilog"
 
 set RTL_SOURCE_FILES [list \
-   "$BASE/fsm.sv" \
+	 "$BASE/PARAM.vh" \
+	 "$BASE/alu.v"	\
+   "$BASE/execute.v" \
    
 ]
 
-set RTL_DEFINES ""
+set RTL_DEFINES "$BASE/PARAM.vh"
 
 # Runtime options 
 # ==========================================================================
@@ -108,7 +110,7 @@ set NAND2_NAME    "NAND2_X1"
 #  - Assumes a single clock
 
 # Name of the port
-set CLK_PORT   "Clock"
+set CLK_PORT   "clk"
 
 # Frequency 
 set CLK_PERIOD 5

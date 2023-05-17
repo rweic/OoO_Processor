@@ -19,16 +19,16 @@
 #                   -layers {metal2}
 
 #set_physical_constraints [all_inputs] \
-#                    -side 1 \
-#                    -width 0.1 \
+ #                   -side 1 \
+ #                   -width 0.1 \
 #                    -depth 0.1 \
 #                    -layers {metal2,metal4}
-#
+
 #set_physical_constraints [all_outputs] \
 #                    -side 3 \
 #                    -width 0.1 \
 #                    -depth 0.1 \
-#                    -layers {metal2,metal4}
+ #                   -layers {metal2,metal4}
 
 derive_pg_connection -power_net VDD -power_pin VDD -ground_net VSS -ground_pin VSS
 derive_pg_connection
@@ -45,8 +45,8 @@ if {[file isfile pin_placement.tcl]} {
 
 #### SET FLOORPLAN VARIABLES ######
 set CELL_HEIGHT 1.4
-set CORE_WIDTH_IN_CELL_HEIGHTS  10
-set CORE_HEIGHT_IN_CELL_HEIGHTS 10
+set CORE_WIDTH_IN_CELL_HEIGHTS  100
+set CORE_HEIGHT_IN_CELL_HEIGHTS 100
 set POWER_RING_CHANNEL_WIDTH [expr 10*$CELL_HEIGHT]
 
 set CORE_WIDTH  [expr $CORE_WIDTH_IN_CELL_HEIGHTS * $CELL_HEIGHT]

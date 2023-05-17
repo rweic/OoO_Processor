@@ -32,8 +32,8 @@ module execute_tb();
 
     initial begin
 			`ifndef PRE_SYN
-					$sdf_annotate("execute.sdf", alu0);
-			`endif
+					$sdf_annotate("execute.sdf", execute0);
+			`endif 
 					//$vcdpluson;
 					$fsdbDumpfile("execute.fsdb");
 					$fsdbDumpvars(0, execute_tb);

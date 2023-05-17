@@ -1,8 +1,9 @@
-TOPLEVEL=fsm
+TOPLEVEL=execute
 
 SRC=$(ADK_PATH)/stdcells.v \
-	./fsm.apr_no_phys_pwr.v \
-	./tb.sv
+  PARAM.vh \
+	./execute.apr_no_phys_pwr.v \
+	execute_tb.sv
 
 $(TOPLEVEL).include:
 	echo $(SRC) > $@
