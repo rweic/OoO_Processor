@@ -23,7 +23,7 @@ module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_add
                 register[i] <= 0;
         end
         else begin
-            if (w_en & (|rd_addr != 0)) // x0 will always be zero
+            if (w_en & (rd_addr != 0)) // x0 will always be zero
                 register[rd_addr] <= w_data;
         end
     end

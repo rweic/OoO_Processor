@@ -16,6 +16,10 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     output [WIDTH-1:0] pc_if;
   
     // Internal Signals
+    
+    // Hazard Detect
+    wire hazard_flag;
+    
     // IF stage
     // wire [WIDTH-1:0] pc_if;
 
@@ -64,6 +68,13 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     assign dmem_wdata = rs2_data_mem;
     assign dmem_addr = alu_out_mem[7:2];
 
+    // Hazard Detection
+    hazard_detect #(32, 32) hazard_detect_inst (
+      .inst_if(instruction_if),
+      .inst_id(instruction_id),
+      .hazard_o(hazard_flag)
+    );
+    
     // Instruction Fetch
     fetch fetch0 (
         .clk(clk),
@@ -73,7 +84,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .instr_if(instruction_if), 
         .pc_if(pc_if),
         .pc_o(pc_id),
-        .instr_o(instruction_id));
+        .instr_o(instruction_id),
+        .hazard_flag_i(hazard_flag));
 
     // Instruction Decode
     decode decode0 (

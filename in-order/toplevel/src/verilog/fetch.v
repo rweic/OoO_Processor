@@ -9,7 +9,8 @@ module fetch(
     input logic [31:0] instr_if, 
     output logic [31:0] pc_if,
     output logic [31:0] pc_o,
-    output logic [31:0] instr_o // Instruction output (32 bits)
+    output logic [31:0] instr_o, // Instruction output (32 bits)
+    input logic hazard_flag_i
 );
 
     // Registers for storing the current program counter and instruction
@@ -25,12 +26,16 @@ module fetch(
     always_ff @(posedge clk) begin
         if (reset)
             pc <= 0;
+      //  else if (!hazard_flag_i) // dont increase counter if hazard
+       //     pc <= pc;
         else begin
             case (pcsel)
                 `PC_PC4:
                     pc <=  pc + 4;
                 `PC_BRANCH:
                     pc <=  br_dest + 4;
+              //  default: 
+                   // pc <= pc;
             endcase
         end
     end 
@@ -45,7 +50,7 @@ module fetch(
     end
 
     always_ff @(posedge clk) begin
-        if (reset)
+        if (reset) // output zero instruction on reset or hazard
             instr_o <= 0;
         else
             instr_o <= instr_if; // Use data output from Instruction Cache module

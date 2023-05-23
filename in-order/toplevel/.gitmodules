@@ -1,0 +1,4 @@
+[submodule "freepdk-45nm"]
+	path = freepdk-45nm
+	url = git@bitbucket.org:ececadtauw/freepdk-45nm.git
+	branch = lvs_2000_precision
