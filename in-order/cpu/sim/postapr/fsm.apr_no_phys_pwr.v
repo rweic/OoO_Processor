@@ -1,1 +1,0 @@
-../../sapr/apr/results/fsm.apr_no_phys_pwr.v
