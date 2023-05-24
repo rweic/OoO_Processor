@@ -1,0 +1,55 @@
+verdiSetActWin -dock widgetDock_<Decl._Tree>
+simSetSimulator "-vcssv" -exec \
+           "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv" \
+           -args "+v2k +lint=all +neg_tchk +define+POST_SYN=1 -a toplevel.log"
+debImport "-dbdir" \
+          "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir"
+debLoadSimResult \
+           /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/toplevel.fsdb
+wvCreateWindow
+verdiWindowResize -win $_Verdi_1 "820" "330" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcHBSelect "toplevel_tb" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "toplevel_tb" -win $_nTrace1
+srcSetScope "toplevel_tb" -delim "." -win $_nTrace1
+srcHBSelect "toplevel_tb" -win $_nTrace1
+verdiSetActWin -win $_nWave2
+wvRestoreSignal -win $_nWave2 \
+           "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/top_level_no_macros_presyn.rc" \
+           -overWriteAutoAlias on -appendSignals on
+wvExpandGroup -win $_nWave2 "ALU"
+wvExpandGroup -win $_nWave2 "Regfile"
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "toplevel_tb.dut.cpu0.U2" -win $_nTrace1
+srcHBSelect "toplevel_tb.dut.cpu0.U2" -win $_nTrace1
+srcSetScope "toplevel_tb.dut.cpu0.U2" -delim "." -win $_nTrace1
+srcHBSelect "toplevel_tb.dut.cpu0.U2" -win $_nTrace1
+verdiSetActWin -win $_nWave2
+wvSetCursor -win $_nWave2 4514.424217 -snap {("Fetch" 0)}
+wvSetCursor -win $_nWave2 7537.720435 -snap {("Regfile" 7)}
+wvZoomAll -win $_nWave2
+wvExpandGroup -win $_nWave2 "dcache"
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+wvScrollDown -win $_nWave2 3
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 7
+wvScrollDown -win $_nWave2 20
+wvSelectSignal -win $_nWave2 {( "Regfile" 7 )} 
+wvScrollUp -win $_nWave2 27
+wvScrollUp -win $_nWave2 4
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+wvSelectGroup -win $_nWave2 {Fetch}
+wvSelectGroup -win $_nWave2 {Hazard_Detect}
+srcHBSelect "toplevel_tb.dut.cpu0" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "toplevel_tb.dut.cpu0" -win $_nTrace1
+srcSetScope "toplevel_tb.dut.cpu0" -delim "." -win $_nTrace1
+srcHBSelect "toplevel_tb.dut.cpu0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+debExit

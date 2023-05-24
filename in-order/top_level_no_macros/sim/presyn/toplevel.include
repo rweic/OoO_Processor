@@ -1,0 +1,14 @@
+verilog/PARAM.vh
+verilog/alu.v
+verilog/cpu.v
+verilog/dcache.v
+verilog/decode.v
+verilog/execute.v
+verilog/fetch.v
+verilog/hazard_detect.v
+verilog/icache.v
+verilog/memory_access.v
+verilog/regfile.v
+verilog/writeback.v
+verilog/toplevel.v
+verilog/toplevel_tb.sv
