@@ -1,4 +1,4 @@
-set design_name "fsm"  ;  # Name of the design
+set design_name "execute"  ;  # Name of the design
 
 # CONFIGURATION
 # ==========================================================================

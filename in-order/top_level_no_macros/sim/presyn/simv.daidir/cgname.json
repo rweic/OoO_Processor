@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "icache": [
+        "icache",
+        "sbRVE",
+        "module",
+        2
+    ],
+    "toplevel_tb": [
+        "toplevel_tb",
+        "CWUge",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}
