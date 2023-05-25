@@ -1,3 +1,4 @@
+SHELL = tcsh
 TOPLEVEL=toplevel
 
 dve: 
