@@ -3,13 +3,13 @@
  */
 module arith (
     // Inputs
-    clk_i, reset_i, pc_i, arith_request_i, inst_i, rs1_value_i, rs2_value_i,
+    clk_i, reset_i, pc_i, alu_request_i, inst_i, rs1_value_i, rs2_value_i,
     // Outputs
     writeback_value_o
 );
     input clk_i, reset_i;
     input [31:0] pc_i;
-    input arith_request_i;
+    input alu_request_i;
     input [31:0] inst_i;
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
@@ -34,7 +34,7 @@ module arith (
     reg [3:0]  alu_func;
     wire [31:0] alu_out;
 
-    assign writeback_valid_o = arith_request_i;
+    assign writeback_valid_o = alu_request_i;
     assign writeback_value_o = alu_out;
 
     alu alu (

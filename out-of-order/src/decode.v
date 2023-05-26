@@ -20,7 +20,7 @@ module decode (
     output [31:0] pc_o;
     output alu_o;
     output lsu_o;
-    output muldiv_o;
+    output mul_o;
     output br_o;
 
     // ----- Reg/wire Initialization -----
@@ -29,6 +29,10 @@ module decode (
     wire[4:0] rs2_addr = inst_i[24:20];
     wire[4:0] rd_addr = inst_i[11:7];
 
+    wire [4:0] prs1_addr;
+    wire [4:0] prs2_addr;
+    wire [4:0] prd_addr;
+
     // Predecode: decide which FU the inst goes into
     decoder dec0 (
         // Inputs
@@ -36,7 +40,7 @@ module decode (
         // Outputs
         .alu_o(alu_o), 
         .lsu_o(lsu_o), 
-        .mul_o(muldiv_o), 
+        .mul_o(mul_o), 
         .br_o(br_o));
 
     // Register rename
@@ -52,13 +56,13 @@ module decode (
         .cdb_en_i(cdb_en_i), 
         .cdb_reg_addr_i(cdb_reg_addr_i),
         // Outputs
-        .prs1_addr_o(), 
-        .prs2_addr_o(), 
-        .prd_addr_o()
+        .prs1_addr_o(prs1_addr), 
+        .prs2_addr_o(prs2_addr), 
+        .prd_addr_o(prd_addr)
     );
 
     // Dispatch
-    always @(*) begin
-    end
+    //always @(*) begin
+    //end
 
 endmodule
