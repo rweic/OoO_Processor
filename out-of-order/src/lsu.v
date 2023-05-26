@@ -18,13 +18,14 @@ module lsu
     // Value of registers should be known by this point
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
+
     // Outputs
     output busy_o;  // an output signal indicating that the resource is not valid
     // Signals to regfile writeback, valid signal and writeback value, the rd addr should be kept in rob
     output writeback_valid_o;
     output [31:0]  writeback_value_o;
 
-    // Wires to memory - add later, put dmem inside this module first
+    // Wires to memory
 
     // Decoded Signals
     wire [4:0] rs1_addr = inst_i[19:15];

@@ -103,7 +103,9 @@ module decoder (
             `OP_STORE: begin 
                 resource = 'b0100;
             end
-            default: begin end
+            default: begin 
+                resource = 'b0000;
+            end
         endcase
     end
 

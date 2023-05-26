@@ -6,7 +6,13 @@
  * DIV/DIVU division round towards zero
  * REM/REMU remainder (REM has the same sign as the div result)
  */
-module muldiv();
+
+module muldiv(
+    // Inputs
+    clk_i, reset_i, pc_i, muldiv_request_i, inst_i, rs1_value_i, rs2_value_i,
+    // Outputs
+    writeback_valid_o, writeback_value_o
+);
     input clk_i, reset_i;
     input [31:0] pc_i;
     // Should include the data that load/ store needs, or the original inst
@@ -28,7 +34,8 @@ module muldiv();
     `define FUNCT3_DIV      3'b100
     `define FUNCT3_DIVU     3'b101
     `define FUNCT3_REM      3'b110
-    `define FUNCT3_REMU     3'b111*/
+    `define FUNCT3_REMU     3'b111
+    */
 
     wire [2:0] funct3 = inst_i[14:12];
 

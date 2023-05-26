@@ -60,13 +60,17 @@ module rename (
             prs2_addr_o <= 'h0;
             prd_addr_o <= 'h0;
         end
-    end
-
-    always @(rs1_addr_i, rs2_addr_i, rd_addr_i) begin
-        prs1_addr_o = rat[rs1_addr_i];
-        prs2_addr_o = rat[rs2_addr_i];
-        rat[rd_addr_i] = reg_allocate_addr;
-        prd_addr_o = reg_allocate_addr;
+        else if (inst_valid_i) begin
+            prs1_addr_o <= rat[rs1_addr_i];
+            prs2_addr_o <= rat[rs2_addr_i];
+            rat[rd_addr_i] <= reg_allocate_addr;
+            prd_addr_o <= reg_allocate_addr;
+            busytable[reg_allocate_addr] <= 'h1;
+        end
+        else if (cdb_en_i) begin
+            busytable[cdb_reg_addr_i] <= 'h0;
+        end
+        else begin end
     end
 
 
