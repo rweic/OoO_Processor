@@ -8,7 +8,7 @@ module fetch(
     input logic [31:0] br_dest,
     input logic [31:0] instr_if, 
     output logic [31:0] pc_if,
-    output logic [31:0] pc_o,
+    output logic [31:0] pc_o, // pc_id
     output logic [31:0] instr_o, // Instruction output (32 bits)
     input logic hazard_flag_i
 );
@@ -25,9 +25,9 @@ module fetch(
     // TODO: ADD branch later
     always_ff @(posedge clk) begin
         if (reset)
-            pc <= 0;
-      //  else if (!hazard_flag_i) // dont increase counter if hazard
-       //     pc <= pc;
+            pc <= 32'b0;
+        else if (!hazard_flag_i) // dont increase counter if hazard
+            pc <= pc + 32'b0;
         else begin
             case (pcsel)
                 `PC_PC4:

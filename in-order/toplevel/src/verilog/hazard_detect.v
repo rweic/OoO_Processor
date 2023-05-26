@@ -16,9 +16,9 @@ module hazard_detect #(parameter WORD = 32, parameter INST_LEN = 32) (
         // hazards are flagged when same instruction is called twice in a row.
         // Need to add detection of RAW WAR and WAW hazards!
         if (inst_if == inst_id)
-            hazard_RAW = 1'b1;                // Hazard detected, set output to 1 (stall)
+            hazard_RAW <= 1'b1;                // Hazard detected, set output to 1 (stall)
         else
-            hazard_RAW = 0'b1;                // No hazard, set output to 0 (no stall)
+            hazard_RAW <= 0'b1;                // No hazard, set output to 0 (no stall)
     end
     
     assign hazard_o = hazard_RAW;
