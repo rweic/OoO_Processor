@@ -7,16 +7,16 @@
  * REM/REMU remainder (REM has the same sign as the div result)
  */
 
-module muldiv(
+module mul(
     // Inputs
-    clk_i, reset_i, pc_i, muldiv_request_i, inst_i, rs1_value_i, rs2_value_i,
+    clk_i, reset_i, pc_i, mul_request_i, inst_i, rs1_value_i, rs2_value_i,
     // Outputs
     writeback_valid_o, writeback_value_o
 );
     input clk_i, reset_i;
     input [31:0] pc_i;
     // Should include the data that load/ store needs, or the original inst
-    input muldiv_request_i;
+    input mul_request_i;
     input [31:0] inst_i;
     // Value of registers should be known by this point
     input [31:0] rs1_value_i;
