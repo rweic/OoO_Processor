@@ -3,14 +3,14 @@ module decoder (
     // Inputs
     inst_i,
     // Outputs
-    alu_o, lsu_o, muldiv_o, br_o
+    alu_o, lsu_o, mul_o, br_o
     );
     // Inputs
     input [31:0] inst_i;
     // Outputs
     output alu_o;
     output lsu_o;
-    output muldiv_o;
+    output mul_o;
     output br_o;
     // Any other outputs that might needed
 
@@ -18,6 +18,7 @@ module decoder (
 
     wire [6:0] opcode = inst_i[6:0];
     wire [6:0] funct7 = inst_i[31:25];
+    wire [2:0] funct3 = inst_i[14:12];
 
 /*  All decoding fields that could probably be used later
     wire[4:0] rs1_addr = inst_i[19:15];
@@ -32,7 +33,7 @@ module decoder (
     wire [31:0] imm_b = {{20{inst_i[31]}}, inst_i[7], inst_i[30:25], inst_i[11:8], 1'b0};
     wire [31:0] imm_j = {{12{inst_i[31]}}, inst_i[19:12], inst_i[20], inst_i[30:21], 1'b0};*/
 
-    assign {alu_o, lsu_o, muldiv_o, br_o} = resource;
+    assign {alu_o, lsu_o, mul_o, br_o} = resource;
 
     // Resource pre-allocate
     always @(*) begin
@@ -49,7 +50,10 @@ module decoder (
             // need to stop other from reading: rd
             `OP_OP: begin
                 if (funct7 == `FUNCT7_MULDIV) begin
-                    resource = 'b0010;
+                    if ((funct3 == 'b000) | (funct3 == 'b001) | (funct3 == 'b010))
+                        resource = 'b0010;
+                    else
+                        resource = 'b0000;
                 end else begin
                     resource = 'b1000;
                 end

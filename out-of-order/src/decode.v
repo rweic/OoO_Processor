@@ -5,7 +5,7 @@ module decode (
     // Inputs
     clk_i, reset_i, pc_i, inst_valid_i, inst_i,
     // Outputs
-    pc_o, alu_o, lsu_o, muldiv_o, br_o
+    pc_o, alu_o, lsu_o, mul_o, br_o
 );
     // ----- Input/Output Ports -----
     // Inputs
@@ -36,7 +36,7 @@ module decode (
         // Outputs
         .alu_o(alu_o), 
         .lsu_o(lsu_o), 
-        .muldiv_o(muldiv_o), 
+        .mul_o(muldiv_o), 
         .br_o(br_o));
 
     // Register rename
