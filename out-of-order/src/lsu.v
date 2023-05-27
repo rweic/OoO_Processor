@@ -64,7 +64,7 @@ module lsu
     wire lsb_empty;
 
     // Load mask & extension
-    reg mem_ls;
+    reg mem_ls;  // load? store?
     reg mem_signed;
     reg mem_h;
     reg mem_b;
