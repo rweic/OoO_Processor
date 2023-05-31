@@ -28,9 +28,9 @@ module lsu
     // Wires to memory
 
     // Decoded Signals
-    wire [4:0] rs1_addr = inst_i[19:15];
-	wire [4:0] rs2_addr = inst_i[24:20];
-    wire [4:0] rd_addr = inst_i[11:7];
+    // wire [4:0] rs1_addr = inst_i[19:15];
+	// wire [4:0] rs2_addr = inst_i[24:20];
+    // wire [4:0] rd_addr = inst_i[11:7];
     wire [6:0] opcode = inst_i[6:0];
 	wire [2:0] funct3 = inst_i[14:12];
 	wire [31:0] imm_i = {{20{inst_i[31]}}, inst_i[31:20]};
@@ -261,5 +261,87 @@ module lsu
             end
         endcase
     end
+
+endmodule
+
+module fifo 
+#(
+    parameter WIDTH = 8,
+    parameter DEPTH = 8,
+    parameter ADDR_LEN = 3
+) (
+    // Inputs
+    clk_i, reset_i, data_in_i, wr_i, rd_i, 
+    // Outputs
+    data_out_o, empty_o, full_o
+);
+    input clk_i, reset_i;
+    input wr_i, rd_i;
+    input [WIDTH-1:0] data_in_i;
+    output [WIDTH-1:0] data_out_o;
+    output empty_o, full_o;
+
+    reg [WIDTH-1:0] mem [0:DEPTH-1];
+    reg [ADDR_LEN-1:0] rd_ptr, wr_ptr;
+    reg [ADDR_LEN-1:0] fifo_cnt;
+
+    // generate fifo signals
+    assign empty_o = (fifo_cnt == 0);
+    assign full_o = (fifo_cnt == DEPTH);
+
+    // Comment out this : for DEBUG ONLY
+    //wire [WIDTH-1:0] line1 = mem[0];
+    //wire [WIDTH-1:0] line2 = mem[1];
+
+    // counter block
+    integer i;
+    always @(posedge clk_i)
+    begin
+        if(!reset_i) begin
+            fifo_cnt <= 0;
+            for (i = 0; i < DEPTH; i = i + 1) begin
+                mem[i] <= 'b0;
+            end
+        end
+        else begin
+            if ((wr_i && !full_o) & ~(rd_i && !empty_o))
+                fifo_cnt <= fifo_cnt-1;
+            else if (~(wr_i && !full_o) & (rd_i && !empty_o))
+                fifo_cnt <= fifo_cnt+1;
+        end
+    end
+
+    // pointer block
+    always @(posedge clk_i)
+    begin
+        if(reset_i) begin
+            wr_ptr <= 0;
+            rd_ptr <= 0;
+        end
+        else begin
+            wr_ptr <= (wr_i && !full_o) ? wr_ptr+1 : wr_ptr;
+            rd_ptr <= (rd_i) ? rd_ptr+1 : rd_ptr;
+        end
+    end
+
+    // write
+    always @(posedge clk_i)
+    begin
+        if (wr_i && !full_o)
+            mem[wr_ptr] <= data_in_i;
+        else begin end
+    end
+    
+    // read -> async
+    assign data_out_o = mem[rd_ptr];
+    /*always @(posedge clk_i)
+    begin
+        if(rd_i && !empty_o)
+            data_out_o <= mem[rd_ptr];
+        else if(wr_i && rd_i)
+            data_out_o <= mem[rd_ptr];
+        else
+            data_out_o <= 8'b0;
+    end*/
 
 endmodule

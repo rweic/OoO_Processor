@@ -6,7 +6,8 @@ module rename (
     // Inputs
     clk_i, reset_i, pc_i, inst_valid_i, rs1_addr_i, rs2_addr_i, rd_addr_i, cdb_en_i, cdb_reg_addr_i,
     // Outputs
-    prs1_addr_o, prs2_addr_o, prd_addr_o
+    prs1_addr_o, prs2_addr_o, prd_addr_o,
+    prs1_valid_o, prs2_valid_o
 );
     // Inputs
     input clk_i, reset_i;
@@ -24,7 +25,8 @@ module rename (
     output reg [4:0] prs1_addr_o;
     output reg [4:0] prs2_addr_o;
     output reg [4:0] prd_addr_o;
-    // Commit
+    output reg prs1_valid_o;
+    output reg prs2_valid_o;
 
     // Build a map (Register Alias Table): ISA reg -> phy reg
     reg [4:0] rat [0:31];
@@ -34,6 +36,9 @@ module rename (
 
     // Internal
     wire [4:0] reg_allocate_addr;
+
+    assign prs1_valid_o = ~busytable[prs1_addr_o];
+    assign prs2_valid_o = ~busytable[prs2_addr_o];
  
     freelist freelist0 (
         // Inputs

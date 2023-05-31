@@ -5,7 +5,8 @@ module decode (
     // Inputs
     clk_i, reset_i, pc_i, inst_valid_i, inst_i,
     // Outputs
-    pc_o, alu_o, lsu_o, mul_o, br_o
+    pc_o, alu_o, lsu_o, mul_o, br_o,
+    rs1_addr, rs2_addr, rd_addr
 );
     // ----- Input/Output Ports -----
     // Inputs
@@ -22,6 +23,9 @@ module decode (
     output lsu_o;
     output mul_o;
     output br_o;
+    output [4:0] rs1_addr;
+    output [4:0] rs2_addr;
+    output [4:0] rd_addr;
 
     // ----- Reg/wire Initialization -----
     // The register addr
