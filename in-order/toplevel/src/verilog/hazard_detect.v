@@ -12,8 +12,8 @@ module hazard_detect(
     input logic ProgramCounterSourceExec,
     output logic [1:0] ForwardingReg1Exec,
     output logic [1:0] ForwardingReg2Exec,
-    output logic StallDecode,
-    output logic StallFetch,
+    output logic StallDecode_o,
+    output logic StallFetch_o,
     output logic FlushDecode,
     output logic FlushExec
 );
@@ -24,25 +24,22 @@ module hazard_detect(
     // forward the ALUResultM or ResultW only when RegisterWrite is asserted.
 
     logic LoadWordStall;
+    logic RAW_hazard;
     
     always_comb begin
-        ForwardingReg1Exec = 2'b00;
-        ForwardingReg2Exec = 2'b00;
-        
-        // Check for RAW hazards for the first source register
-        if (SourceReg1Exec == DestRegMem && RegisterWriteMem && SourceReg1Exec != 0) begin
-            ForwardingReg1Exec = 2'b10; // For forwarding ALU Result in Memory Stage
+        if (SourceReg1Dec == 0) begin // this keeps from start flagging hazard
+            RAW_hazard = 1'b0;
         end
-        else if (SourceReg1Exec == DestRegWriteBack && RegisterWriteWriteBack && SourceReg1Exec != 0) begin
-            ForwardingReg1Exec = 2'b01; // For forwarding WriteBack Stage Result
+        // Check for RAW hazards for the first source register
+        else if ((SourceReg1Dec == DestRegExec) || (SourceReg1Dec == DestRegMem)) begin
+            RAW_hazard = 1'b1; // For forwarding ALU Result in Memory Stage
         end
                     
         // Check for RAW hazards for the second source register
-        if (SourceReg2Exec == DestRegMem && RegisterWriteMem && SourceReg2Exec != 0) begin
-            ForwardingReg2Exec = 2'b10; // For forwarding ALU Result in Memory Stage
-        end
-        else if (SourceReg2Exec == DestRegWriteBack && RegisterWriteWriteBack && SourceReg2Exec != 0) begin
-            ForwardingReg2Exec = 2'b01; // For forwarding WriteBack Stage Result
+        else if ((SourceReg2Dec == DestRegExec) || (SourceReg2Dec == DestRegMem)) begin
+            RAW_hazard = 1'b1; // For forwarding ALU Result in Memory Stage
+        end else begin
+            RAW_hazard = 1'b0;
         end
     end
   
@@ -53,8 +50,10 @@ module hazard_detect(
     // There is a two-cycle difference between Memory Access and the immediate next instruction.
     
     assign LoadWordStall = ResultSourceExec0 == 1 && (DestRegExec == SourceReg1Dec || DestRegExec == SourceReg2Dec);
-    assign StallFetch = LoadWordStall;
-    assign StallDecode = LoadWordStall;
+    
+    // Signal When Stall should occur in fetch and decode
+    assign StallFetch_o = (LoadWordStall || RAW_hazard);
+    assign StallDecode_o = (LoadWordStall || RAW_hazard);
   
     // Control Hazard
     // Whenever a branch has been taken, flush the following two instructions from the Decode and Execute pipeline registers.

@@ -20,12 +20,13 @@ module toplevel_tb();
     	`endif
         //$vcdpluson;
         $fsdbDumpfile("toplevel.fsdb");
-        $fsdbDumpvars(0, toplevel_tb);
+        $fsdbDumpvars(1000, toplevel_tb);
         $dumpfile("toplevel.vcd");
         $dumpvars();
         reset = 1; #20
         reset = 0;
         #1000
+        $fsdbDumpvars(0, dut.cpu0.regfile0.regfile_o);
         $finish;
     end
 

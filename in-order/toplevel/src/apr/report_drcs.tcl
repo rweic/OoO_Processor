@@ -164,9 +164,9 @@ proc report_drc {args} {
 define_proc_attributes report_drc \
 	-info "Report/Highlight routing DRCs by Layer and/or DRC_type\n" \
 	-define_args {
-		{-layer "Layer list on which to report DRC. eg: -layer {{metal2} {metal7}} " layer list optional}
+		{-layer "Layer list on which to report DRC. eg: -layer {{M2} {M7E}} " layer list optional}
 		{-type "List of DRC types to report. eg: -type {{Short} {Less than NDR width}} " type list optional}
-		{-ignore_layer "Layers to ignore. eg: -ignore_layer {{metal2} {metal7}} " ignore_layer list optional}
+		{-ignore_layer "Layers to ignore. eg: -ignore_layer {{M2} {M7E}} " ignore_layer list optional}
 		{-ignore_type "DRCs to ignore. eg: -ignore_type {{Short} {Less than NDR width} {Macro pin connection by offset}} " ignore_type list optional}
 		{-highlight "Highlight reported DRCs in the GUI" "" boolean optional}
 		{-color "Highlight color. Default: red. eg: green" color string optional}

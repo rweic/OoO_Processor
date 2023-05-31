@@ -45,8 +45,8 @@ if {[file isfile pin_placement.tcl]} {
 
 #### SET FLOORPLAN VARIABLES ######
 set CELL_HEIGHT 1.4
-set CORE_WIDTH_IN_CELL_HEIGHTS  10
-set CORE_HEIGHT_IN_CELL_HEIGHTS 10
+set CORE_WIDTH_IN_CELL_HEIGHTS  50
+set CORE_HEIGHT_IN_CELL_HEIGHTS 35
 set POWER_RING_CHANNEL_WIDTH [expr 10*$CELL_HEIGHT]
 
 set CORE_WIDTH  [expr $CORE_WIDTH_IN_CELL_HEIGHTS * $CELL_HEIGHT]
@@ -75,60 +75,34 @@ add_row \
 
 ### ADD STUFF HERE FOR THE MACRO PLACEMENT.
 ##### PLACING YOUR RAM AND DERIVING CELL INFO######
-#  set RAM_16B_512 "IMEM"
+set RAM_2B_16 "ram"
 
-#  # Get height and width of RAM
-#  set RAM_16B_512_HEIGHT [get_attribute $RAM_16B_512 height]
-#  set RAM_16B_512_WIDTH  [get_attribute $RAM_16B_512 width] 
+# Get height and width of RAM
+set RAM_2B_16_HEIGHT [get_attribute $RAM_2B_16 height]
+set RAM_2B_16_WIDTH  [get_attribute $RAM_2B_16 width] 
 
-#  # Set Origin of RAM
-#  set IRAM_16B_512_LLX [expr 30*$CELL_HEIGHT - 45]
-#  set IRAM_16B_512_LLY [expr 30*$CELL_HEIGHT - 45]
-#  # Derive URX and URY corner for placement blockage. "Width" and "Height" are along wrong axes because we rotated the RAM.
-#  set IRAM_16B_512_URX [expr $IRAM_16B_512_LLX + $RAM_16B_512_HEIGHT]
-#  set IRAM_16B_512_URY [expr $IRAM_16B_512_LLY + $RAM_16B_512_WIDTH]
+# Set Origin of RAM
+set RAM_2B_16_LLX [expr 14*$CELL_HEIGHT]
+set RAM_2B_16_LLY [expr 14*$CELL_HEIGHT]
+# Derive URX and URY corner for placement blockage. "Width" and "Height" are along wrong axes because we rotated the RAM.
+set RAM_2B_16_URX [expr $RAM_2B_16_LLX + $RAM_2B_16_HEIGHT]
+set RAM_2B_16_URY [expr $RAM_2B_16_LLY + $RAM_2B_16_WIDTH]
 
-#  set GUARD_SPACING [expr 2*$CELL_HEIGHT]
+set GUARD_SPACING [expr 2*$CELL_HEIGHT]
 
-#  set_attribute $RAM_16B_512 orientation "E"
+set_attribute $RAM_2B_16 orientation "E"
 
-#  set_cell_location \
-#     -coordinates [list [expr $IRAM_16B_512_LLX ] [expr $IRAM_16B_512_LLY]] \
-#     -fixed \
-#     $RAM_16B_512
+set_cell_location \
+   -coordinates [list [expr $RAM_2B_16_LLX ] [expr $RAM_2B_16_LLY]] \
+   -fixed \
+   $RAM_2B_16
 
-#  # Create blockage for filler-cell placement. 
-#  create_placement_blockage \
-#     -bbox [list [expr $IRAM_16B_512_LLX - $GUARD_SPACING] [expr $IRAM_16B_512_LLY - $GUARD_SPACING] \
-#                 [expr $IRAM_16B_512_URX + $GUARD_SPACING] [expr $IRAM_16B_512_URY + $GUARD_SPACING]] \
-#     -type hard
+# Create blockage for filler-cell placement. 
+create_placement_blockage \
+   -bbox [list [expr $RAM_2B_16_LLX - $GUARD_SPACING] [expr $RAM_2B_16_LLY - $GUARD_SPACING] \
+               [expr $RAM_2B_16_URX + $GUARD_SPACING] [expr $RAM_2B_16_URY + $GUARD_SPACING]] \
+   -type hard
 
-# #### ADD STUFF HERE FOR THE MACRO PLACEMENT.
-# ###### PLACING YOUR RAM AND DERIVING CELL INFO######
-#  set RAM_16B_512 "DMEM"
-
-#  # Get height and width of RAM
-#  set RAM_16B_512_HEIGHT [get_attribute $RAM_16B_512 height]
-#  set RAM_16B_512_WIDTH  [get_attribute $RAM_16B_512 width] 
-
-#  # Set Origin of RAM
-#  set DRAM_16B_512_LLX [expr 30*$CELL_HEIGHT + 45]
-#  set DRAM_16B_512_LLY [expr 30*$CELL_HEIGHT + 45]
-#  # Derive URX and URY corner for placement blockage. "Width" and "Height" are along wrong axes because we rotated the RAM.
-#  set DRAM_16B_512_URX [expr $DRAM_16B_512_LLX + $RAM_16B_512_HEIGHT]
-#  set DRAM_16B_512_URY [expr $DRAM_16B_512_LLY + $RAM_16B_512_WIDTH]
-
-#  set GUARD_SPACING [expr 2*$CELL_HEIGHT]
-
-#  set_attribute $RAM_16B_512 orientation "E"
-
-#  set_cell_location \
-#     -coordinates [list [expr $DRAM_16B_512_LLX ] [expr $DRAM_16B_512_LLY]] \
-#     -fixed \
-#     $RAM_16B_512
-
-#  # Create blockage for filler-cell placement. 
-#  create_placement_blockage \
-#     -bbox [list [expr $DRAM_16B_512_LLX - $GUARD_SPACING] [expr $DRAM_16B_512_LLY - $GUARD_SPACING] \
-#                 [expr $DRAM_16B_512_URX + $GUARD_SPACING] [expr $DRAM_16B_512_URY + $GUARD_SPACING]] \
-#     -type hard
+# Connect RAM power to power grid
+connect_net VDD [get_pins -all ram/vdd]
+connect_net VSS [get_pins -all ram/gnd]
