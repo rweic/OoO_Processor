@@ -1,7 +1,7 @@
 
 # Project and design
 # ==========================================================================
-set TOPLEVEL "toplevel"
+set TOPLEVEL "ram_test"
 set PROJECT_DIR "../.."
 
 set PROCESS "45GP"; # 45GP
@@ -11,19 +11,9 @@ set CORNER "LOW"
 # ==========================================================================
 set BASE "$PROJECT_DIR/src/verilog"
 
-#No hazard detect yet :(
 set RTL_SOURCE_FILES [list \
-	 "$BASE/PARAM.vh" \
-   "$BASE/alu.v" \
-   "$BASE/regfile.v" \
-   "$BASE/execute.v" \
-   "$BASE/decode.v" \
-   "$BASE/fetch.v" \
-   "$BASE/memory_access.v" \
-   "$BASE/writeback.v" \
-   "$BASE/cpu.v" \
-   "$BASE/toplevel.v" \
-   
+   "$BASE/ram_test.sv" \
+   "$PROJECT_DIR/macro_prep/sram_2_16_freepdk45/sram_2_16_freepdk45.v"
 ]
 
 set RTL_DEFINES ""
@@ -63,7 +53,7 @@ if {$PROCESS == "45GP"} {
 
    # Reference libraries 
    set MW_REFERENCE_LIBS "$ADK_PATH/stdcells.mwlib"
-   set MW_ADDITIONAL_REFERENCE_LIBS ""
+   set MW_ADDITIONAL_REFERENCE_LIBS "sram_2_16_freepdk45"
    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 
    # BC - 1.25 V
@@ -76,7 +66,7 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells-wc.db"
-      set ADDITIONAL_TARGET_LIBS ""
+      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
       # Worst case library
       set LIB_WC_FILE   "stdcells-wc.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -94,7 +84,7 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells.db"
-      set ADDITIONAL_TARGET_LIBS "{}"
+      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
       # Worst case library
       set LIB_WC_FILE   "stdcells.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -121,7 +111,7 @@ set NAND2_NAME    "NAND2_X1"
 set CLK_PORT   "clk"
 
 # Frequency 
-set CLK_PERIOD 5
+set CLK_PERIOD 10
 
 # Timing uncertainties
 set clk_critical_range 0.010

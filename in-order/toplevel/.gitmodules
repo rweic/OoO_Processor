@@ -1,3 +1,7 @@
+[submodule "OpenRAM"]
+	path = OpenRAM
+	url = https://github.com/VLSIDA/OpenRAM
+	branch = stable
 [submodule "freepdk-45nm"]
 	path = freepdk-45nm
 	url = git@bitbucket.org:ececadtauw/freepdk-45nm.git
