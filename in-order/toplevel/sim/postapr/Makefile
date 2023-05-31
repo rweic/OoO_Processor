@@ -1,13 +1,14 @@
-TOPLEVEL=fsm
+TOPLEVEL=ram_test
 
 SRC=$(ADK_PATH)/stdcells.v \
-	./fsm.apr_no_phys_pwr.v \
+	./sram_2_16_freepdk45.v \
+	./ram_test.apr_no_phys_pwr.v \
 	./tb.sv
 
 $(TOPLEVEL).include:
 	echo $(SRC) > $@
 
-dve: 
+dve:
 	-dve -full64 &
 
 verdi: $(TOPLEVEL).fsdb

@@ -120,7 +120,7 @@ set NAND2_NAME    "NAND2_X1"
 set CLK_PORT   "clk"
 
 # Frequency 
-set CLK_PERIOD 5
+set CLK_PERIOD 8
 
 # Timing uncertainties
 set clk_critical_range 0.010

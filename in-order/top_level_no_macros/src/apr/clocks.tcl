@@ -3,7 +3,7 @@
 # FIRST SETUP PREFERRED ROUTING DIRECTION
 # ==========================================================================
 
-set MAX_ROUTING_LAYER "metal6"
+set MAX_ROUTING_LAYER "metal8"
 set MIN_ROUTING_LAYER "metal1"
 set HORIZONTAL_ROUTING_LAYERS "metal2 metal4 metal6 metal8"
 set VERTICAL_ROUTING_LAYERS "metal3 metal5 metal7"

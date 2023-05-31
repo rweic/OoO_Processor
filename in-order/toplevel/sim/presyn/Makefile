@@ -1,4 +1,11 @@
-TOPLEVEL=fsm
+TOPLEVEL=ram_test
+
+SRC=./sram_2_16_freepdk45.v \
+	./ram_test.sv \
+	./tb.sv
+
+$(TOPLEVEL).include:
+	echo $(SRC) > $@
 
 dve: 
 	-dve -full64 &

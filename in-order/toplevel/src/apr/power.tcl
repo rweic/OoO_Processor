@@ -33,7 +33,7 @@ set_power_ring_strategy $vdd_ring_strategy_name \
 
 #### FIRST BLOCK POWER METALS FROM ROUTING OVER YOUR RAM ######
 # Grab the area for each RAM in your design. Create power plan region around them.
-set RAM_cells [get_cells -regexp -hierarchical -filter "ref_name =~ RAM_16B_512"]
+set RAM_cells [get_cells -regexp -hierarchical -filter "ref_name =~ sram_2_16_freepdk45"]
 
 # Create some lists defining macros with M4, and their regions. 
 set m4_macros [concat $RAM_cells]
@@ -44,8 +44,8 @@ set i 1
 foreach_in_collection cell $m4_macros {
     set name1 macro_region_m4_$i
     create_power_plan_regions $name1 \
-  -group_of_macros $cell \
-  -expand [list $CELL_HEIGHT $CELL_HEIGHT] 
+      -group_of_macros $cell \
+      -expand [list $CELL_HEIGHT $CELL_HEIGHT] 
     lappend m4_macro_regions macro_region_m4_$i
     incr i 1
 }

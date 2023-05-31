@@ -15,7 +15,7 @@ create_clock -name     "clk"                      \
              # [get_pins i_root_clk_gater/gclk]
 
 #High fanout net
-set_ideal_network [get_net reset] -no_propagate
+#set_ideal_network [get_net rst] -no_propagate
 
 # global margin
 set_critical_range $clk_critical_range $current_design
