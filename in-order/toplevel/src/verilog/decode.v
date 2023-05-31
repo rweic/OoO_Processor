@@ -4,12 +4,13 @@ Instruction Decode Module
 module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32)  (
     clk, reset, pc_i, inst, rs1_value_i, rs2_value_i, pc_o, alu_func, opsel1, opsel2, wbsel,
     rs1_addr, rs2_addr, rd_addr, rs1_value_o, rs2_value_o, rf_w_en, mem_w_en, imm, pcsel,
-    branch_tar
+    branch_tar, StallDecode_i
 );
     input clk, reset;
     input [ADDR_LEN-1:0] pc_i;
     input [WIDTH-1:0] inst;
     input [WIDTH-1:0] rs1_value_i, rs2_value_i;
+    input StallDecode_i;
 
     output reg [ADDR_LEN-1:0] pc_o;
     output reg [3:0] alu_func;
@@ -56,10 +57,10 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     // Set branch condition rs1 & rs2 comparison
     assign branch_cond_eq = rs1_value_i == rs2_value_i;
     assign branch_cond_ne = rs1_value_i != rs2_value_i;
-	assign branch_cond_lt = $signed(rs1_value_i) < $signed(rs2_value_i);
-	assign branch_cond_ge = $signed(rs1_value_i) >= $signed(rs2_value_i);
-	assign branch_cond_ltu = rs1_value_i < rs2_value_i;
-	assign branch_cond_geu = rs1_value_i >= rs2_value_i;
+	  assign branch_cond_lt = $signed(rs1_value_i) < $signed(rs2_value_i);
+	  assign branch_cond_ge = $signed(rs1_value_i) >= $signed(rs2_value_i);
+	  assign branch_cond_ltu = rs1_value_i < rs2_value_i;
+	  assign branch_cond_geu = rs1_value_i >= rs2_value_i;
 
     // Reg ID-EX
     always @(posedge clk) begin
@@ -75,6 +76,18 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             imm <= 'b0;
             rs1_value_o <= 'b0;
             rs2_value_o <= 'b0;
+        end else if (StallDecode_i) begin
+            pc_o <= pc_o;
+            alu_func <= alu_func;
+            opsel1 <= opsel1; 
+            opsel2 <= opsel2;
+            wbsel <= wbsel;
+            rd_addr <= rd_addr;
+            rf_w_en <= rf_w_en;
+            mem_w_en <= mem_w_en;
+            imm <= imm;
+            rs1_value_o <= rs1_value_o;
+            rs2_value_o <= rs2_value_o;
         end else begin
             pc_o <= pc_i;
             alu_func <= alu_func_id;
