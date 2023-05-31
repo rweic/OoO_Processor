@@ -1,0 +1,8 @@
+# 
+# LEF OUT API 
+# User Name : gbeatty3 
+# Date : Fri May 26 18:53:21 2023
+# 
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+END LIBRARY

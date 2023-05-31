@@ -26,8 +26,8 @@ module fetch(
     always_ff @(posedge clk) begin
         if (reset)
             pc <= 0;
-      //  else if (!hazard_flag_i) // dont increase counter if hazard
-       //     pc <= pc;
+        else if (!hazard_flag_i) // dont increase counter if hazard
+            pc <= pc;
         else begin
             case (pcsel)
                 `PC_PC4:

@@ -13,9 +13,9 @@ eval "place_opt $place_opt_args"
 
 connect_tie_cells -objects [get_cells *] -obj_type cell_inst -tie_high_lib_cell LOGIC1_X1 -tie_low_lib_cell LOGIC0_X1
 
-insert_stdcell_filler \
-   -cell_with_metal $FILL_CELLS \
-   -respect_keepout
+#insert_stdcell_filler \
+#   -cell_with_metal $FILL_CELLS \
+#   -respect_keepout
 
 # Connect all power and ground pins
 derive_pg_connection -all -reconnect -create_ports all
