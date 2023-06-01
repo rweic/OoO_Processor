@@ -3,8 +3,9 @@
  * Executing - busy, done-excuting - free
  * Structure: cirlular buffer
  * each entry includes: pc, valid, busy, rename state (log/phy reg addr)
- * 
+ * This module should also include the part of commitment/ retirement
  */
+
 module rob
 #(
     parameter NUM_ENTRIES = 32
@@ -16,19 +17,31 @@ module rob
     empty_o, full_o
 );
     // Inputs
-    input clk_i, reset_i;
+    input clk_i;
+    input reset_i;
     // Request indicators
-    input allocate_req_i;
-    input update_req_i;
+    input allocate_req_i;  // allocate request
+    input update_req_i;  // update request
     // Values (allocation)
+    input [4:0] prd_addr_i;
+    input [31:0] inst_i;
+
     // Values (update)
 
     // Outputs
     // Indicating the status of the circular buffer
-    output empty_o, full_o;
+    output empty_o;
+    output full_o;
     // Output data at commitment
+    output [31:0] inst_committed;
+    output [4:0] prd_addr_o;
+
 
     // Using seperate reg arrays to decrease power comsumption, and make data accessing easier
+    cbuf #(.WIDTH(4), .DEPTH(32), .ADDR_LEN(5)) cbuf1 (
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
+        .empty_o(), .reg_allocate_addr_o()
+    );
 
 
 endmodule

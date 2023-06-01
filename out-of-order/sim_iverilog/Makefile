@@ -1,4 +1,4 @@
-MODULE = rename
+MODULE = core
 
 DSRC = ../src
 DTST = ../test

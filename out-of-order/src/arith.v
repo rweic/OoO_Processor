@@ -5,7 +5,7 @@ module arith (
     // Inputs
     clk_i, reset_i, pc_i, alu_request_i, inst_i, rs1_value_i, rs2_value_i,
     // Outputs
-    writeback_value_o
+    writeback_valid_o, writeback_value_o
 );
     input clk_i, reset_i;
     input [31:0] pc_i;
