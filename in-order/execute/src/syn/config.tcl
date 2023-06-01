@@ -12,8 +12,8 @@ set CORNER "LOW"
 set BASE "$PROJECT_DIR/src/verilog"
 
 set RTL_SOURCE_FILES [list \
-	 "$BASE/PARAM.vh" \
-	 "$BASE/alu.v"	\
+   "$BASE/PARAM.vh" \
+   "$BASE/alu.v" \	
    "$BASE/execute.v" \
    
 ]

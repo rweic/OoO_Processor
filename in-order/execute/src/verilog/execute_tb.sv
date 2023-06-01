@@ -1,1 +1,0 @@
-../.././../test/execute_tb.sv

@@ -1,4 +1,4 @@
-TOPLEVEL=execute
+TOPLEVEL=fsm
 
 dve: 
 	-dve -full64 &

@@ -13,10 +13,12 @@
 `define ALU_OP_SLL  4'b1000     // Shift Left
 `define ALU_OP_SRA  4'b1001     // Shift right arithmatic
 `define ALU_OP_SRL  4'b1010     // Shift right
+`define ALU_OP_MUL  4'b1011
+`define ALU_OP_DIV  4'b1100
 
 // Opcode
-`define OP_ITYPE    7'b0010011
-`define OP_RTYPE    7'b0110011
+`define OP_OP_IMM   7'b0010011
+`define OP_OP       7'b0110011
 `define OP_BRANCH   7'b1100011
 `define OP_LUI      7'b0110111
 `define OP_AUIPC    7'b0010111
@@ -61,7 +63,16 @@
 `define FUNCT3_SB       3'b000
 `define FUNCT3_SH       3'b001
 `define FUNCT3_SW       3'b010
-
+//MUL
+`define FUNCT3_MUL    3'b000
+`define FUNCT3_MULH   3'b001
+`define FUNCT3_MULHSU 3'b010
+`define FUNCT3_MULHU  3'b011
+//DIV
+`define FUNCT3_DIV    3'b100
+`define FUNCT3_DIVU   3'b101
+`define FUNCT3_REMW   3'b110
+`define FUNCT3_REMUW  3'b111
 // FUNCT 7
 `define FUNCT7_SLLI 7'b0000000
 // SRI
@@ -74,6 +85,7 @@
 `define FUNCT7_SLT  7'b0000000
 `define FUNCT7_SLTU 7'b0000000
 `define FUNCT7_XOR  7'b0000000
+`define FUNCT7_MULDIV  7'b0110011
 // SR
 `define FUNCT7_SRL 7'b0000000
 `define FUNCT7_SRA 7'b0100000

@@ -1,4 +1,0 @@
-PARAM.vh
-alu.v
-execute.v
-execute_tb.sv
