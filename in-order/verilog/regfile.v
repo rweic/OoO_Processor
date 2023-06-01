@@ -4,11 +4,12 @@ Regfile 2r1w
 x0 - zero
 x1-x31 general purpose registers
 --------------------------------------------------*/
-module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_addr, w_data, ra_value, rb_value);
+module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_addr, w_data, ra_value, rb_value, regfile_o);
     input clk, reset, w_en;
     input [4:0] ra_addr, rb_addr, rd_addr;
     input [WIDTH-1:0] w_data;
     output [WIDTH-1:0] ra_value, rb_value;
+    output wire [WIDTH-1:0] regfile_o [0:31];
 
     reg [WIDTH-1:0] register [0:31];
     
@@ -27,5 +28,19 @@ module regfile #(parameter WIDTH=32) (clk, reset, w_en, ra_addr, rb_addr, rd_add
                 register[rd_addr] <= w_data;
         end
     end
+    
+    // for bugfixing
+    /*
+    always @(posedge clk) begin
+        for (i = 0; i < 32; i = i + 1) begin
+            if (i == 0) // x0 is always zero
+                regfile_o[i] <= 0;
+            else
+                regfile_o[i] <= register[i];
+        end
+    end
+    */
+    
+    assign regfile_o = register;
 
 endmodule

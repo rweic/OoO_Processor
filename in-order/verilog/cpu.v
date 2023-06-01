@@ -19,6 +19,9 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     
     // Hazard Detect
     wire hazard_flag;
+    wire [31:0] regfile_o [0:31];
+    wire StallFetch;
+    wire StallDecode;
     
     // IF stage
     // wire [WIDTH-1:0] pc_if;
@@ -28,6 +31,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [INST_LEN-1:0] instruction_id;
     wire [4:0] rs1_addr, rs2_addr;  //temp value
     wire [WIDTH-1:0] rs1_data, rs2_data;    // temp value
+		wire StallDecode_i;
 
     // EX stage
     wire [WIDTH-1:0] pc_ex;
@@ -83,8 +87,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .ProgramCounterSourceExec(pcsel),
         .ForwardingReg1Exec(),  // Update with appropriate signal
         .ForwardingReg2Exec(),  // Update with appropriate signal
-        .StallDecode(),  // Update with appropriate signal
-        .StallFetch(),  // Update with appropriate signal
+        .StallDecode_o(StallDecode),  // Update with appropriate signal
+        .StallFetch_o(StallFetch),  // Update with appropriate signal
         .FlushDecode(),  // Update with appropriate signal
         .FlushExec()  // Update with appropriate signal
     );
@@ -99,7 +103,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .pc_if(pc_if),
         .pc_o(pc_id),
         .instr_o(instruction_id),
-        .hazard_flag_i(hazard_flag));
+        .StallFetch_i(StallFetch));
+
 
     // Instruction Decode
     decode decode0 (
@@ -125,7 +130,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .mem_w_en(mem_w_en_ex), 
         .imm(imm_mem),
         .pcsel(pcsel),
-        .branch_tar(br_tar));
+        .branch_tar(br_tar),
+        .StallDecode_i(StallDecode_i));
 
     // Regfile
     regfile regfile0 (
@@ -137,7 +143,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .rd_addr(rd_addr_wb),
         .w_data(rf_wdata_wb),
         .ra_value(rs1_data), 
-        .rb_value(rs2_data));
+        .rb_value(rs2_data),
+        .regfile_o(regfile_o)); // for testing
 
     // Execution
     execute exec0 (

@@ -4,9 +4,9 @@
 Execute Module
 --------------------------------------------------*/
 module execute #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
-    clk, reset, funct7, funct3,
+    clk, reset, 
     opsel1, opsel2, alu_func, rs1_data_i, rs2_data_i, rd_addr_i, rf_w_en_i, imm, pc_i, wbsel_i, mem_w_en_i, 
-    pc_o, alu_out, rd_addr_o, rf_w_en_o, wbsel_o, mem_w_en_o, rs2_data_o
+    pc_o, alu_out, rd_addr_o, rf_w_en_o, wbsel_o, mem_w_en_o, rs2_data_o, funct7, funct3
 );
     input clk, reset;
     input [1:0] opsel1, opsel2; // need to change the length
