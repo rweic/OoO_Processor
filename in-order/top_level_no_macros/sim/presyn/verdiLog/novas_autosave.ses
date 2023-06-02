@@ -26,15 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/toplevel.fsdb
-syncTime = 0
-viewport = 0 27 1920 914 0 0 265 1918
-activeNode = "toplevel_tb.dut.cpu0.hazard_detect_inst"
-activeScope = "toplevel_tb.dut.cpu0.hazard_detect_inst"
-activeFile = "verilog/hazard_detect.v"
+syncTime = 787.054
+viewport = 0 27 1920 914 0 0 161 1918
+activeNode = "toplevel_tb.dut.cpu0.exec0.alu0"
+activeScope = "toplevel_tb.dut.cpu0.exec0.alu0"
+activeFile = "verilog/alu.v"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 4
+sourceBeginLine = 19
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -51,24 +51,25 @@ DnDtraceCrossHierOnly = True
 leadingZero = False
 signalPane = True
 SourceVerticalScrollLines = 5
-Scope1 = "toplevel_tb.dut.cpu0.hazard_detect_inst"
-Scope2 = "toplevel_tb"
-multipleSelection = 1 4 2 0 0
+Scope1 = "toplevel_tb.dut.cpu0.exec0.alu0"
+Scope2 = "toplevel_tb.dut.cpu0.hazard_detect0"
+Scope3 = "toplevel_tb"
+multipleSelection = 1 1 10 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
 importCmd = "-dbdir" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/simv.daidir" 
 invokeDir = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn
 [hb.sourceTab.1]
-scope = toplevel_tb.dut.cpu0.hazard_detect_inst
-File = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/verilog/hazard_detect.v
-Line = 5
+scope = toplevel_tb.dut.cpu0.exec0.alu0
+File = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/verilog/alu.v
+Line = 20
 [nMemoryManager]
 WaveformFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/toplevel.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1920 291 205 65
+viewPort = 0 25 1920 373 205 65
 primaryWindow = TRUE
 SessionFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

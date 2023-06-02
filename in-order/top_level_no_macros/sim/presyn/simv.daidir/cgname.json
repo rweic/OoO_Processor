@@ -5,11 +5,29 @@
         "module",
         1
     ],
+    "dcache": [
+        "dcache",
+        "W975R",
+        "module",
+        5
+    ],
     "icache": [
         "icache",
         "sbRVE",
         "module",
         2
+    ],
+    "regfile": [
+        "regfile",
+        "Nxspn",
+        "module",
+        6
+    ],
+    "writeback": [
+        "writeback",
+        "wFN4a",
+        "module",
+        7
     ],
     "toplevel_tb": [
         "toplevel_tb",

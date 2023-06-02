@@ -1,7 +1,7 @@
 
 # Project and design
 # ==========================================================================
-set TOPLEVEL "ram_test"
+set TOPLEVEL "toplevel"
 set PROJECT_DIR "../.."
 
 set PROCESS "45GP"; # 45GP
@@ -12,11 +12,22 @@ set CORNER "LOW"
 set BASE "$PROJECT_DIR/src/verilog"
 
 set RTL_SOURCE_FILES [list \
-   "$BASE/ram_test.sv" \
-   "$PROJECT_DIR/macro_prep/sram_2_16_freepdk45/sram_2_16_freepdk45.v"
+   "$BASE/PARAM.vh" \
+   "$BASE/alu.v" \
+   "$BASE/regfile.v" \
+   "$BASE/execute.v" \
+   "$BASE/decode.v" \
+   "$BASE/fetch.v" \
+   "$BASE/memory_access.v" \
+   "$BASE/hazard_detect.v" \
+   "$BASE/writeback.v" \
+   "$BASE/cpu.v" \  
+   "$BASE/toplevel.v" \
+   "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
+   "$PROJECT_DIR/macro_prep/imem/imem.v" \
 ]
 
-set RTL_DEFINES ""
+set RTL_DEFINES "$BASE/PARAM.vh"
 
 # Runtime options 
 # ==========================================================================
@@ -53,7 +64,11 @@ if {$PROCESS == "45GP"} {
 
    # Reference libraries 
    set MW_REFERENCE_LIBS "$ADK_PATH/stdcells.mwlib"
-   set MW_ADDITIONAL_REFERENCE_LIBS "sram_2_16_freepdk45"
+   set MW_ADDITIONAL_REFERENCE_LIBS [list \
+      "dmem" \
+			"imem" \
+			]
+				   
    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 
    # BC - 1.25 V
@@ -66,7 +81,10 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells-wc.db"
-      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
+      set ADDITIONAL_TARGET_LIBS [list \
+				  "dmem_TT_1p0V_25C.db" \
+				  "imem_TT_1p0V_25C.db" \
+				      ]
       # Worst case library
       set LIB_WC_FILE   "stdcells-wc.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -84,7 +102,10 @@ if {$PROCESS == "45GP"} {
          "stdcells-bc.db"
       ]
       set SYMBOL_LIB "stdcells.db"
-      set ADDITIONAL_TARGET_LIBS "sram_2_16_freepdk45_TT_1p0V_25C.db"
+      set ADDITIONAL_TARGET_LIBS [list \
+				  "dmem_TT_1p0V_25C.db" \
+				  "imem_TT_1p0V_25C.db" \
+				      ]
       # Worst case library
       set LIB_WC_FILE   "stdcells.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary

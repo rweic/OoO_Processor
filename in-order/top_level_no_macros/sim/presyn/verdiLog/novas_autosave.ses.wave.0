@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_U-2023.03
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1920 291 205 65
+viewPort 0 25 1920 373 205 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 10302.000000
-cursor 0.000000
+zoom 0.000000 32398.013793
+cursor 787.05422200560
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 3
 ; marker line index
-markerPos 0
+markerPos 67
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,7 +45,83 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "G1"
+addGroup "G2" -e FALSE
+activeDirFile "" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/toplevel.fsdb"
+addSignal -h 15 /toplevel_tb/dut/cpu0/fetch0/clk
+addSignal -h 15 -holdScope reset
+addGroup "Hazard_Detect" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /toplevel_tb/dut/cpu0/hazard_detect0/SourceReg1Dec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SourceReg2Dec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SourceReg1Exec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SourceReg2Exec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope DestRegExec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope DestRegMem[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope DestRegWriteBack[4:0]
+addSignal -h 15 -holdScope RegisterWriteMem
+addSignal -h 15 -holdScope RegisterWriteWriteBack
+addSignal -h 15 -holdScope ResultSourceExec0
+addSignal -h 15 -holdScope ProgramCounterSourceExec
+addSignal -h 15 -UNSIGNED -HEX -holdScope ForwardingReg1Exec[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ForwardingReg2Exec[1:0]
+addSignal -h 15 -holdScope StallDecode_o
+addSignal -h 15 -holdScope StallFetch_o
+addSignal -h 15 -holdScope FlushDecode
+addSignal -h 15 -holdScope FlushExec
+addSignal -h 15 -holdScope LoadWordStall
+addSignal -h 15 -holdScope RAW_hazard
+addGroup "Fetch" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /toplevel_tb/dut/cpu0/fetch0/pcsel[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope br_dest[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope instr_if[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope pc_if[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope pc_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope instr_o[31:0]
+addSignal -h 15 -holdScope hazard_flag_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope pc[31:0]
+addGroup "Decode" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /toplevel_tb/dut/cpu0/decode0/pc_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope pc_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope pcsel[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope inst[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs1_value_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs2_value_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_func[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope opsel1[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope opsel2[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wbsel[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs1_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs2_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rd_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs1_value_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rs2_value_o[31:0]
+addSignal -h 15 -holdScope rf_w_en
+addSignal -h 15 -holdScope mem_w_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope imm[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope branch_tar[31:0]
+addGroup "Regfile" -e FALSE
+addSignal -h 15 /toplevel_tb/dut/cpu0/regfile0/w_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope ra_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rb_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rd_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope w_data[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ra_value[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rb_value[31:0]
+addGroup "ALU"
+addSignal -h 15 -UNSIGNED -HEX /toplevel_tb/dut/cpu0/exec0/alu0/alu_op1[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_op2[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_func[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_out[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope funct7[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope funct3[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_out_temp[63:0]
+addGroup "dcache" -e FALSE
+addSignal -h 15 /toplevel_tb/dut/dcache0/w_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope raddr[5:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr[5:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdata[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope i[31:0]
+addGroup "G8"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

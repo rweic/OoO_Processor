@@ -43,14 +43,14 @@ toplevel.log
 toplevel.include
 95
 XMODIFIERS=@im=ibus
-XDG_SESSION_ID=570
+XDG_SESSION_ID=1280
 XDG_RUNTIME_DIR=/run/user/1007685
 XDG_MENU_PREFIX=gnome-
 XDG_DATA_DIRS=/homes/gbeatty3/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 XDG_CURRENT_DESKTOP=GNOME
 VTE_VERSION=5204
 VRST_HOME=/home/lab.apps/vlsiapps_new/incisive/current
-VNCDESKTOP=linux-lab-045.ece.uw.edu:7 (gbeatty3)
+VNCDESKTOP=linux-lab-045.ece.uw.edu:1 (gbeatty3)
 VMR_MODE_FLAG=64
 VG_GNU_PACKAGE=/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux
 VERDI_HOME=/home/lab.apps/vlsiapps_new/verdi/current
@@ -69,20 +69,20 @@ USE_CALIBRE_VCO=aoj
 UNAME=/bin/uname
 TOOL_HOME=/home/lab.apps/vlsiapps_new/vcs/current/linux64
 SYNOPSYS_LC_ROOT=/home/lab.apps/vlsiapps_new/lc/current
-SSH_TTY=/dev/pts/10
-SSH_CONNECTION=10.155.103.230 62715 10.159.224.45 22
-SSH_CLIENT=10.155.103.230 62715 22
+SSH_TTY=/dev/pts/3
+SSH_CONNECTION=10.18.253.239 55800 10.159.224.45 22
+SSH_CLIENT=10.18.253.239 55800 22
 SSH_AUTH_SOCK=/run/user/1007685/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=6255
+SSH_AGENT_PID=25288
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_VCS_CLANG_PATH=/home/lab.apps/vlsiapps_new/vcs/current/linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SKIP_OS_CHECKS=1
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/6149,unix/unix:/tmp/.ICE-unix/6149
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/25167,unix/unix:/tmp/.ICE-unix/25167
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=10.155.103.230
+REMOTEHOST=10.18.253.239
 QT_IM_MODULE=ibus
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
@@ -110,15 +110,15 @@ HSPICE=/home/lab.apps/vlsiapps_new/hspice/current/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
 GROUP=gbeatty3
-GNOME_TERMINAL_SERVICE=:1.105
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/0e85bac2_cfd7_4114_8134_442d5427abd5
+GNOME_TERMINAL_SERVICE=:1.107
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/b8726a8e_3246_4a5c_93aa_ebe0d884e81b
 GNOME_SHELL_SESSION_MODE=classic
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GJS_DEBUG_TOPICS=JS ERROR;JS LOG
 GJS_DEBUG_OUTPUT=stderr
 EDA_TOOLS_PATH=/home/lab.apps/vlsiapps_new
 EDA_CSHRC_PATH=/home/lab.apps/vlsiapps_new/cshrc
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-03mAovevDN,guid=9b2c8d176b294e80ae1a9347646c2330
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-mRxv0ggGNj,guid=ff87f6db951a8ce16921f9d164713370
 CVS_RSH=ssh
 COLORTERM=truecolor
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -136,24 +136,24 @@ CDN_SYNTH_ROOT=/home/lab.apps/vlsiapps_new/genus/current/tools
 CALIBRE_HOME=/home/lab.apps/vlsiapps_new/calibre/current
 BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
 ARCH=/home/lab.apps/vlsiapps_new/hspice/current/hspice/suse64
-ADK_PATH=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm
+ADK_PATH=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/execute/freepdk-45nm
 0
 0
 17
-1683755415 verilog/toplevel_tb.sv
+1684816958 verilog/toplevel_tb.sv
 1683699291 verilog/toplevel.v
 1683699291 verilog/writeback.v
-1683699291 verilog/regfile.v
+1685590711 verilog/regfile.v
 1683699291 verilog/memory_access.v
-1684808706 verilog/icache.v
-1684811082 verilog/hazard_detect.v
-1684808706 verilog/fetch.v
-1683699291 verilog/execute.v
-1683699291 verilog/decode.v
-1683699291 verilog/dcache.v
-1684808706 verilog/cpu.v
-1683699291 verilog/alu.v
-1683699291 verilog/PARAM.vh
+1685597292 verilog/icache.v
+1685590711 verilog/hazard_detect.v
+1685590711 verilog/fetch.v
+1685595082 verilog/execute.v
+1685595006 verilog/decode.v
+1685590711 verilog/dcache.v
+1685595213 verilog/cpu.v
+1685594972 verilog/alu.v
+1685565420 verilog/PARAM.vh
 1684813489 toplevel.include
 1676546067 /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcsdp_lite.tab
@@ -162,5 +162,5 @@ ADK_PATH=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macr
 1654053585 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/liberrorinf.so
 1654053489 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libsnpsmalloc.so
 1654053565 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libvfs.so
-1684813554 simv.daidir
+1685597354 simv.daidir
 -1 partitionlib
