@@ -12,9 +12,12 @@ module rob
 )
 (
     // Inputs
-    clk_i, reset_i, allocate_req_i, update_req_i, 
+    clk_i, reset_i, 
+    allocate_req_i, update_req_i, 
+    prd_addr_i, pc_i, inst_i,
     // Outputs
-    empty_o, full_o
+    empty_o, full_o,
+    inst_committed_o, pc_o, prd_addr_o
 );
     // Inputs
     input clk_i;
@@ -24,6 +27,7 @@ module rob
     input update_req_i;  // update request
     // Values (allocation)
     input [4:0] prd_addr_i;
+    input [31:0] pc_i;
     input [31:0] inst_i;
 
     // Values (update)
@@ -33,12 +37,27 @@ module rob
     output empty_o;
     output full_o;
     // Output data at commitment
-    output [31:0] inst_committed;
+    output [31:0] inst_committed_o;
+    output [31:0] pc_o;
     output [4:0] prd_addr_o;
 
 
-    // Using seperate reg arrays to decrease power comsumption, and make data accessing easier
-    cbuf #(.WIDTH(4), .DEPTH(32), .ADDR_LEN(5)) cbuf1 (
+    cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_valid (
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
+        .empty_o(), .reg_allocate_addr_o()
+    );
+
+    cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
+        .empty_o(), .reg_allocate_addr_o()
+    );
+
+    cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
+        .empty_o(), .reg_allocate_addr_o()
+    );
+
+    cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
         .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
         .empty_o(), .reg_allocate_addr_o()
     );

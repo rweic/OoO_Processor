@@ -60,7 +60,6 @@ module core (
     wire [4:0] wb_reg_addr;
     wire [31:0] wb_data;
 
-
     assign inst_valid_decode = alu_request | lsu_request | mul_request;
 
     // ----- Fetch & Decode -----
@@ -105,8 +104,8 @@ module core (
         .rs1_addr_i(rs1_addr_decoded), 
         .rs2_addr_i(rs2_addr_decoded), 
         .rd_addr_i(rd_addr_decoded), 
-        .cdb_en_i(), 
-        .cdb_reg_addr_i(),
+        .cdb_en_i(wb_en), 
+        .cdb_reg_addr_i(wb_reg_addr),
         // Outputs
         .prs1_addr_o(prs1_addr_decoded), 
         .prs2_addr_o(prs2_addr_decoded), 
@@ -146,11 +145,17 @@ module core (
     rob reorder_buf (
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .allocate_req_i(), 
+        .allocate_req_i(alu_exe_request|mul_exe_request|lsu_exe_request), 
         .update_req_i(), 
+        .prd_addr_i(), 
+        .pc_i(pc_issued), 
+        .inst_i(inst_issued),
         // Outputs
         .empty_o(), 
-        .full_o()
+        .full_o(),
+        .inst_committed_o(), 
+        .pc_o(), 
+        .prd_addr_o(wb_reg_addr)
     );
 
     // Regfile
@@ -172,7 +177,7 @@ module core (
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .pc_i(), 
+        .pc_i(pc_issued), 
         .alu_request_i(alu_exe_request), 
         .inst_i(inst_issued), 
         .rs1_value_i(prs1_value_fu), 
@@ -187,7 +192,7 @@ module core (
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .pc_i(),  // not needed?
+        .pc_i(pc_issued),  // not needed?
         .mul_request_i(mul_exe_request), 
         .inst_i(inst_issued), 
         .rs1_value_i(prs1_value_fu), 
@@ -202,7 +207,7 @@ module core (
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .pc_i(),  // not needed?
+        .pc_i(pc_issued),  // not needed?
         .lsu_request_i(lsu_exe_request), 
         .inst_i(inst_issued), 
         .rs1_value_i(prs1_value_fu), 

@@ -57,7 +57,6 @@ module imem(
       $display($time," Writing %m addr0=%b din0=%b",addr0_reg,din0_reg);
   end
 
-
   // FOR TEST ONLY, COMMENT OUT LATER
   initial begin
     mem[0] = 'h00518093; // addi x1, x3, 5
