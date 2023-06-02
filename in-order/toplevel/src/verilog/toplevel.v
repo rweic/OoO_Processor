@@ -24,34 +24,19 @@ module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_
         .pc_if(pc_if));
 
     // Data Memory
-    dmem dcache0 (
-        .clk0(clk),
-				.csb0(1'b0),
-				.addr0(dmem_addr), //write address
-				.wmask0(), //????
-				.din0(dmem_wdata), //write data
-				.clk1(clk),
-				.addr1(dmem_addr), // read addr
-				.dout1(dmem_rdata)  // read data
-
-       /* .w_en(dmem_w_en), 
+    dcache dcache0 (
+        .clk(clk), 
+        .reset(reset), 
+        .w_en(dmem_w_en), 
         .wdata(dmem_wdata), 
         .raddr(dmem_addr), 
         .waddr(dmem_addr),
-        .rdata(dmem_rdata)); */
+        .rdata(dmem_rdata));
 
     // Instruction Memory
-    imem instruction_memory(
-				.clk0(clk),
-				.csb0(1'b0),
-				.web0(1'b1),
-				.addr0(pc_if),
-				.din0(32'b0),
-				.dout0(instruction_if)
-			/*
+    icache instruction_memory(
         .addr(pc_if),
         .data(instruction_if)
-			*/
     );
 
 endmodule

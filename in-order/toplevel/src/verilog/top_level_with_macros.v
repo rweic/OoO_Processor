@@ -1,4 +1,4 @@
-module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
+module top_level_with_macros #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
     clk, reset
 );
     input clk, reset;
@@ -28,7 +28,7 @@ module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_
         .clk0(clk),
 				.csb0(1'b0),
 				.addr0(dmem_addr), //write address
-				.wmask0(), //????
+				.wmask0(dmem_w_en), //????
 				.din0(dmem_wdata), //write data
 				.clk1(clk),
 				.addr1(dmem_addr), // read addr

@@ -1,7 +1,7 @@
 
 # Project and design
 # ==========================================================================
-set TOPLEVEL "toplevel"
+set TOPLEVEL "top_level_with_macros"
 set PROJECT_DIR "../.."
 
 set PROCESS "45GP"; # 45GP
@@ -22,9 +22,9 @@ set RTL_SOURCE_FILES [list \
    "$BASE/hazard_detect.v" \
    "$BASE/writeback.v" \
    "$BASE/cpu.v" \  
-   "$BASE/toplevel.v" \
    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+   "$BASE/top_level_with_macros.v" \
 ]
 
 set RTL_DEFINES "$BASE/PARAM.vh"
@@ -67,7 +67,7 @@ if {$PROCESS == "45GP"} {
    set MW_ADDITIONAL_REFERENCE_LIBS [list \
       "dmem" \
 			"imem" \
-			]
+   ]
 				   
    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 
@@ -78,13 +78,14 @@ if {$PROCESS == "45GP"} {
       # Target corners
       set TARGET_LIBS [list \
          "stdcells-wc.db" \
-         "stdcells-bc.db"
+         "stdcells-bc.db" \
       ]
       set SYMBOL_LIB "stdcells-wc.db"
       set ADDITIONAL_TARGET_LIBS [list \
 				  "dmem_TT_1p0V_25C.db" \
 				  "imem_TT_1p0V_25C.db" \
-				      ]
+			]
+
       # Worst case library
       set LIB_WC_FILE   "stdcells-wc.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -99,13 +100,14 @@ if {$PROCESS == "45GP"} {
       # Target corners
       set TARGET_LIBS [list \
          "stdcells.db" \
-         "stdcells-bc.db"
+         "stdcells-bc.db" \
       ]
       set SYMBOL_LIB "stdcells.db"
       set ADDITIONAL_TARGET_LIBS [list \
 				  "dmem_TT_1p0V_25C.db" \
 				  "imem_TT_1p0V_25C.db" \
-				      ]
+		  ]
+
       # Worst case library
       set LIB_WC_FILE   "stdcells.db"
       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary

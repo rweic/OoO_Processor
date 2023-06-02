@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version T-2022.03-SP3 for linux64 -- Jul 12, 2022
-#@ # Date:   Fri Jun  2 10:45:56 2023
+#@ # Date:   Fri Jun  2 12:30:30 2023
 #@ # Run by: gbeatty3@linux-lab-045.ece.uw.edu
 #@ 
 
@@ -9846,7 +9846,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@ 
 #@ # Project and design
 #@ # ==========================================================================
-#@ set TOPLEVEL "toplevel"
+#@ set TOPLEVEL "top_level_with_macros"
 #@ set PROJECT_DIR "../.."
 #@ 
 #@ set PROCESS "45GP"; # 45GP
@@ -9867,9 +9867,9 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    "$BASE/hazard_detect.v" \
 #@    "$BASE/writeback.v" \
 #@    "$BASE/cpu.v" \  
-#@    "$BASE/toplevel.v" \
 #@    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
 #@    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+#@    "$BASE/top_level_with_macros.v" \
 #@ ]
 #@ 
 #@ set RTL_DEFINES "$BASE/PARAM.vh"
@@ -9912,7 +9912,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    set MW_ADDITIONAL_REFERENCE_LIBS [list \
 #@       "dmem" \
 #@ 			"imem" \
-#@ 			]
+#@    ]
 #@ 				   
 #@    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 #@ 
@@ -9923,13 +9923,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells-wc.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells-wc.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 			]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells-wc.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -9944,13 +9945,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 		  ]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10060,7 +10062,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@ 
 #@ # Project and design
 #@ # ==========================================================================
-#@ set TOPLEVEL "toplevel"
+#@ set TOPLEVEL "top_level_with_macros"
 #@ set PROJECT_DIR "../.."
 #@ 
 #@ set PROCESS "45GP"; # 45GP
@@ -10081,9 +10083,9 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    "$BASE/hazard_detect.v" \
 #@    "$BASE/writeback.v" \
 #@    "$BASE/cpu.v" \  
-#@    "$BASE/toplevel.v" \
 #@    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
 #@    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+#@    "$BASE/top_level_with_macros.v" \
 #@ ]
 #@ 
 #@ set RTL_DEFINES "$BASE/PARAM.vh"
@@ -10126,7 +10128,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    set MW_ADDITIONAL_REFERENCE_LIBS [list \
 #@       "dmem" \
 #@ 			"imem" \
-#@ 			]
+#@    ]
 #@ 				   
 #@    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 #@ 
@@ -10137,13 +10139,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells-wc.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells-wc.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 			]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells-wc.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10158,13 +10161,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 		  ]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10311,7 +10315,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@ 
 #@ # Project and design
 #@ # ==========================================================================
-#@ set TOPLEVEL "toplevel"
+#@ set TOPLEVEL "top_level_with_macros"
 #@ set PROJECT_DIR "../.."
 #@ 
 #@ set PROCESS "45GP"; # 45GP
@@ -10332,9 +10336,9 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    "$BASE/hazard_detect.v" \
 #@    "$BASE/writeback.v" \
 #@    "$BASE/cpu.v" \  
-#@    "$BASE/toplevel.v" \
 #@    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
 #@    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+#@    "$BASE/top_level_with_macros.v" \
 #@ ]
 #@ 
 #@ set RTL_DEFINES "$BASE/PARAM.vh"
@@ -10377,7 +10381,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    set MW_ADDITIONAL_REFERENCE_LIBS [list \
 #@       "dmem" \
 #@ 			"imem" \
-#@ 			]
+#@    ]
 #@ 				   
 #@    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 #@ 
@@ -10388,13 +10392,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells-wc.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells-wc.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 			]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells-wc.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10409,13 +10414,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 		  ]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10530,7 +10536,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@ 
 #@ # Project and design
 #@ # ==========================================================================
-#@ set TOPLEVEL "toplevel"
+#@ set TOPLEVEL "top_level_with_macros"
 #@ set PROJECT_DIR "../.."
 #@ 
 #@ set PROCESS "45GP"; # 45GP
@@ -10551,9 +10557,9 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    "$BASE/hazard_detect.v" \
 #@    "$BASE/writeback.v" \
 #@    "$BASE/cpu.v" \  
-#@    "$BASE/toplevel.v" \
 #@    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
 #@    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+#@    "$BASE/top_level_with_macros.v" \
 #@ ]
 #@ 
 #@ set RTL_DEFINES "$BASE/PARAM.vh"
@@ -10596,7 +10602,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    set MW_ADDITIONAL_REFERENCE_LIBS [list \
 #@       "dmem" \
 #@ 			"imem" \
-#@ 			]
+#@    ]
 #@ 				   
 #@    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 #@ 
@@ -10607,13 +10613,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells-wc.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells-wc.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 			]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells-wc.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10628,13 +10635,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 		  ]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10847,7 +10855,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@ 
 #@ # Project and design
 #@ # ==========================================================================
-#@ set TOPLEVEL "toplevel"
+#@ set TOPLEVEL "top_level_with_macros"
 #@ set PROJECT_DIR "../.."
 #@ 
 #@ set PROCESS "45GP"; # 45GP
@@ -10868,9 +10876,9 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    "$BASE/hazard_detect.v" \
 #@    "$BASE/writeback.v" \
 #@    "$BASE/cpu.v" \  
-#@    "$BASE/toplevel.v" \
 #@    "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
 #@    "$PROJECT_DIR/macro_prep/imem/imem.v" \
+#@    "$BASE/top_level_with_macros.v" \
 #@ ]
 #@ 
 #@ set RTL_DEFINES "$BASE/PARAM.vh"
@@ -10913,7 +10921,7 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@    set MW_ADDITIONAL_REFERENCE_LIBS [list \
 #@       "dmem" \
 #@ 			"imem" \
-#@ 			]
+#@    ]
 #@ 				   
 #@    set SYNOPSYS_SYNTHETIC_LIB "dw_foundation.sldb"
 #@ 
@@ -10924,13 +10932,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells-wc.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells-wc.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 			]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells-wc.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
@@ -10945,13 +10954,14 @@ source -echo -verbose /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-ord
 #@       # Target corners
 #@       set TARGET_LIBS [list \
 #@          "stdcells.db" \
-#@          "stdcells-bc.db"
+#@          "stdcells-bc.db" \
 #@       ]
 #@       set SYMBOL_LIB "stdcells.db"
 #@       set ADDITIONAL_TARGET_LIBS [list \
 #@ 				  "dmem_TT_1p0V_25C.db" \
 #@ 				  "imem_TT_1p0V_25C.db" \
-#@ 				      ]
+#@ 		  ]
+#@ 
 #@       # Worst case library
 #@       set LIB_WC_FILE   "stdcells.db"
 #@       set LIB_WC_NAME   $LIB_WC_FILE:NangateOpenCellLibrary
