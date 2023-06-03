@@ -38,10 +38,10 @@ module arith (
     assign writeback_value_o = alu_out;
 
     alu alu (
-        .alu_op1(alu_operand1), 
-        .alu_op2(alu_operand2), 
-        .alu_func(alu_func), 
-        .alu_out(alu_out));
+        .alu_op1_i(alu_operand1), 
+        .alu_op2_i(alu_operand2), 
+        .alu_func_i(alu_func), 
+        .alu_out_o(alu_out));
 
     // The two mux to choose the input to alu, and to set alu_func
     always @(*) begin
