@@ -41,54 +41,69 @@ module mul(
 
     reg [32:0] operand1;
     reg [32:0] operand2;
+    reg [32:0] operand1_reg;
+    reg [32:0] operand2_reg;
     reg high_low_sel;
+    reg high_low_sel_reg;
     wire [64:0] mult_result;
 
-    assign mult_result = operand1 * operand2;
+    assign mult_result = {{33{operand1_reg[32]}}, operand1_reg} * {{33{operand2_reg[32]}}, operand2_reg};
+    assign writeback_value_o = high_low_sel ? mult_result[63:32] : mult_result[31:0];
 
-    always @(posedge clk_i) begin
-        if (reset_i) begin
-            operand1 <= 'h0;
-            operand2 <= 'h0;
-            high_low_sel <= 1'b0;
-        end
-        else begin
+    // extend one bit only at this stage, to reduce the registers for holding the value
+    always @(*) begin
+        if (mul_request_i) begin
             case (funct3)
                 `FUNCT3_MULH: // signed×signed
                 begin
-                    operand1 <= {rs1_value_i[31], rs1_value_i};
-                    operand2 <= {rs2_value_i[31], rs2_value_i};
-                    high_low_sel <= 1;
+                    operand1 = {rs1_value_i[31], rs1_value_i};
+                    operand2 = {rs2_value_i[31], rs2_value_i};
+                    high_low_sel = 1'b1;
                 end
                 `FUNCT3_MULHU: // unsigned×unsigned
                 begin
-                    operand1 <= {1'b0, rs1_value_i};
-                    operand2 <= {1'b0, rs2_value_i};
-                    high_low_sel <= 1;
+                    operand1 = {1'b0, rs1_value_i};
+                    operand2 = {1'b0, rs2_value_i};
+                    high_low_sel <= 1'b1;
                 end
                 `FUNCT3_MULHSU: // signed×unsigned
                 begin
-                    operand1 <= {rs1_value_i[31], rs1_value_i};
-                    operand2 <= {1'b0, rs2_value_i};
-                    high_low_sel <= 1;
+                    operand1 = {rs1_value_i[31], rs1_value_i};
+                    operand2 = {1'b0, rs2_value_i};
+                    high_low_sel = 1'b1;
                 end
                 `FUNCT3_MUL: // lower bits
                 begin
-                    operand1 <= {1'b0, rs1_value_i};
-                    operand2 <= {1'b0, rs2_value_i};
-                    high_low_sel <= 0;
+                    operand1 = {1'b0, rs1_value_i};
+                    operand2 = {1'b0, rs2_value_i};
+                    high_low_sel = 1'b0;
                 end
-                default: begin end
+                default: begin 
+                    operand1 = 'h0;
+                    operand2 = 'h0;
+                    high_low_sel = 1'b0;
+                end
             endcase
+        end
+        else begin
+            operand1 = 'h0;
+            operand2 = 'h0;
+            high_low_sel = 1'b0;
         end
     end
 
-    always @(*) begin
-        if (high_low_sel)
-            writeback_value_o = mult_result[63:32];
-        else
-            writeback_value_o = mult_result[31:0];
+
+    always @(posedge clk_i) begin
+        if (reset_i) begin
+            operand1_reg <= 'h0;
+            operand2_reg <= 'h0;
+            high_low_sel_reg <= 1'b0;
+        end
+        else begin
+            operand1_reg <= operand1;
+            operand2_reg <= operand2;
+            high_low_sel_reg <= high_low_sel;
+        end
     end
-    
 
 endmodule
