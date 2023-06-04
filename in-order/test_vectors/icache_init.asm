@@ -40,15 +40,15 @@ label6:
 
 #OP_LOAD
 LB x1, 0(x2)
-LH x3, 4(x4)
-LW x5, -8(x6)
-LBU x7, 16(x8)
-LHU x9, 20(x10)
+LH x3, 4(x1)   # Dependency on the result of LB x1
+LW x5, -8(x3)  # Dependency on the result of LH x3
+LBU x7, 16(x5) # Dependency on the result of LW x5
+LHU x9, 20(x7) # Dependency on the result of LBU x7
 
 #OP_STORE
-SB x11, 24(x12)
-SH x13, -28(x14)
-SW x15, 32(x16)
+SB x11, 24(x9)  # Dependency on the result of LHU x9
+SH x13, -28(x11)
+SW x15, 32(x13)
 
 #OTHER
 LUI x13, 0xABCD

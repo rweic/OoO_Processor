@@ -45,7 +45,6 @@ clean:
 	-rm -r $(TOPLEVEL)_design
 	-rm -r reports
 	-rm -r netlist
-	-rm -r csrc
 	-rm -r simv.daidir
 	-rm -r DVEfiles
 	-rm *.log
@@ -64,9 +63,7 @@ clean:
 	-rm -rf urgReport
 	-rm -f verdi_config_file
 	-rm -f cm.log
-	-rm -rf csrc
 	-rm -f novas_dump.log
 	-rm -f novas.conf
 	-rm -f novas.rc
 	-rm -rf verdiLog
-
