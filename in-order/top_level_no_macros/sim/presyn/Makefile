@@ -18,27 +18,27 @@ coverage:
 	./simv
 	urg -full64 -dir simv.vdb
 
-clean:
-	-rm -r alib-52
-	-rm -r db
-	-rm -r ddc
-	-rm -r $(TOPLEVEL)_design
-	-rm -r reports
-	-rm -r netlist
-	-rm -r csrc
-	-rm -r simv.daidir
-	-rm -r DVEfiles
-	-rm *.log
-	-rm vcdplus.vpd
-	-rm ucli.key
-	-rm default.svf
-	-rm simv
-	-rm -r results
-	-rm -r tmp
-	-rm -rf design_lib
-	-rm -rf pna_output
+# clean-old:
+# 	-rm -r alib-52
+# 	-rm -r db
+# 	-rm -r ddc
+# 	-rm -r $(TOPLEVEL)_design
+# 	-rm -r reports
+# 	-rm -r netlist
+# 	-rm -r csrc
+# 	-rm -r simv.daidir
+# 	-rm -r DVEfiles
+# 	-rm *.log
+# 	-rm vcdplus.vpd
+# 	-rm ucli.key
+# 	-rm default.svf
+# 	-rm simv
+# 	-rm -r results
+# 	-rm -r tmp
+# 	-rm -rf design_lib
+# 	-rm -rf pna_output
 
-clean-all:
+clean:
 	-rm -r alib-52
 	-rm -r db
 	-rm -r ddc
