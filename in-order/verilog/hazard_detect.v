@@ -1,8 +1,8 @@
 module hazard_detect(
     input logic [4:0] SourceReg1Dec,
     input logic [4:0] SourceReg2Dec,
-    input logic [4:0] SourceReg1Exec,
-    input logic [4:0] SourceReg2Exec,
+    //input logic [4:0] SourceReg1Exec,
+    //input logic [4:0] SourceReg2Exec,
     input logic [4:0] DestRegExec,
     input logic [4:0] DestRegMem,
     input logic [4:0] DestRegWriteBack,

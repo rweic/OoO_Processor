@@ -77,8 +77,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     hazard_detect hazard_detect0 (
         .SourceReg1Dec(rs1_addr),
         .SourceReg2Dec(rs2_addr),
-        .SourceReg1Exec(rs1_data_ex),
-        .SourceReg2Exec(rs2_data_ex),
+        //.SourceReg1Exec(rs1_data_ex),
+        //.SourceReg2Exec(rs2_data_ex),
         .DestRegExec(rd_addr_ex),
         .DestRegMem(rd_addr_mem),
         .DestRegWriteBack(rd_addr_wb),
