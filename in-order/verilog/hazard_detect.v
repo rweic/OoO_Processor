@@ -46,8 +46,6 @@ module hazard_detect(
     // Load Word Dependency
     // If the destination register in the Execute stage matches the source registers in the Decode stage,
     // stall previous instructions until the load word is available at the WriteBack stage.
-    // Introduce one-cycle latency for subsequent instructions after the load word.
-    // There is a two-cycle difference between Memory Access and the immediate next instruction.
     
     assign LoadWordStall = ResultSourceExec0 == 1 && (DestRegExec == SourceReg1Dec || DestRegExec == SourceReg2Dec);
     
