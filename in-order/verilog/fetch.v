@@ -27,7 +27,7 @@ module fetch(
     always_ff @(posedge clk) begin
         if (reset) begin
             pc <= 32'b0;
-        end else if (!hazard_flag_i) begin // dont increase counter if hazard
+        end else if (StallFetch_i) begin // dont increase counter if hazard
             pc <= pc + 32'b0;
         end else begin
             case (pcsel)
