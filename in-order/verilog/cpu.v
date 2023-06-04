@@ -42,6 +42,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [1:0] wbsel_ex;
     wire [3:0] alu_func;
     wire mem_w_en_ex;
+    wire load_flag_ex;
 
     // MEM stage
     wire [WIDTH-1:0] pc_mem;
@@ -83,15 +84,14 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .DestRegWriteBack(rd_addr_wb),
         .RegisterWriteMem(rf_w_en_mem),
         .RegisterWriteWriteBack(rf_w_en_wb),
-        .ResultSourceExec0(),  // Delete later
+        .ResultSourceExec0(load_flag_ex),
         .ProgramCounterSourceExec(pcsel),
-        .ForwardingReg1Exec(),  // Delete later
-        .ForwardingReg2Exec(),  // Delete later
-        .StallDecode_o(StallDecode),  // Delete later
-        .StallFetch_o(StallFetch),  // Delete later
-        .FlushDecode(),  // Delete later
-        .FlushExec()  // Delete later
-
+        .ForwardingReg1Exec(),  // Update with appropriate signal
+        .ForwardingReg2Exec(),  // Update with appropriate signal
+        .StallDecode_o(StallDecode),  // Update with appropriate signal
+        .StallFetch_o(StallFetch),  // Update with appropriate signal
+        .FlushDecode(),  // Update with appropriate signal
+        .FlushExec()  // Update with appropriate signal
     );
     
     // Instruction Fetch
@@ -130,9 +130,11 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .rf_w_en(rf_w_en_ex),
         .mem_w_en(mem_w_en_ex), 
         .imm(imm_mem),
+        .load_flag_o(load_flag_ex),
         .pcsel(pcsel),
         .branch_tar(br_tar),
-        .StallDecode_i(StallDecode_i));
+        .StallDecode_i(StallDecode_i)
+    );
 
     // Regfile
     regfile regfile0 (

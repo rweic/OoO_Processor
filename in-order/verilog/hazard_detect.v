@@ -8,7 +8,7 @@ module hazard_detect(
     input logic [4:0] DestRegWriteBack,
     input logic RegisterWriteMem,
     input logic RegisterWriteWriteBack,
-    input logic ResultSourceExec0,
+    input logic ResultSourceExec0, // flagged when exec stage result is load type instruction
     input logic ProgramCounterSourceExec,
     output logic [1:0] ForwardingReg1Exec,
     output logic [1:0] ForwardingReg2Exec,
@@ -47,7 +47,7 @@ module hazard_detect(
     // If the destination register in the Execute stage matches the source registers in the Decode stage,
     // stall previous instructions until the load word is available at the WriteBack stage.
     
-    assign LoadWordStall = ResultSourceExec0 == 1 && (DestRegExec == SourceReg1Dec || DestRegExec == SourceReg2Dec);
+    assign LoadWordStall = (ResultSourceExec0 == 1) && ((DestRegExec == SourceReg1Dec) || (DestRegExec == SourceReg2Dec));
     
     // Signal When Stall should occur in fetch and decode
     assign StallFetch_o = (LoadWordStall || RAW_hazard);

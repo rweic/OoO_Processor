@@ -3,7 +3,7 @@ Instruction Decode Module
 --------------------------------------------------*/
 module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32)  (
     clk, reset, pc_i, inst, rs1_value_i, rs2_value_i, pc_o, alu_func, opsel1, opsel2, wbsel,
-    rs1_addr, rs2_addr, rd_addr, rs1_value_o, rs2_value_o, rf_w_en, mem_w_en, imm, pcsel,
+    rs1_addr, rs2_addr, rd_addr, rs1_value_o, rs2_value_o, rf_w_en, mem_w_en, imm, load_flag_o, pcsel,
     branch_tar, StallDecode_i
 );
     input clk, reset;
@@ -20,21 +20,22 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg [WIDTH-1:0] rs1_value_o, rs2_value_o;
     output reg rf_w_en, mem_w_en;
     output reg [WIDTH-1:0] imm;
+    output reg load_flag_o;
     output reg [1:0] pcsel;
     output reg [ADDR_LEN-1:0] branch_tar;
     
     // Get the register addresses from instruction
-	wire[4:0] rs1 = inst[19:15];
-	wire[4:0] rs2 = inst[24:20];
+	  wire[4:0] rs1 = inst[19:15];
+	  wire[4:0] rs2 = inst[24:20];
     wire[4:0] rd = inst[11:7];
 
     // Get the opcode, funct and imm from instruction
     wire [6:0] opcode = inst[6:0];
-	wire [2:0] funct3 = inst[14:12];
-	wire [6:0] funct7 = inst[31:25];
-	wire [11:0] imm_i = inst[31:20];
-	wire [19:0] imm_u = inst[31:12];
-	wire [11:0] imm_s = {inst[31:25], inst[11:7]};
+	  wire [2:0] funct3 = inst[14:12];
+	  wire [6:0] funct7 = inst[31:25];
+	  wire [11:0] imm_i = inst[31:20];
+	  wire [19:0] imm_u = inst[31:12];
+	  wire [11:0] imm_s = {inst[31:25], inst[11:7]};
     wire [ADDR_LEN-1:0] br_addr = pc_i + {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
     wire [ADDR_LEN-1:0] jal_addr = pc_i + {{12{inst[31]}}, inst[19:12], inst[20], inst[30:21], 1'b0};
     wire [ADDR_LEN-1:0] jalr_addr =  rs1 + {{20{imm_i[11]}}, imm_i};
@@ -53,6 +54,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     reg [4:0] rd_addr_id;
     reg rf_w_en_id, mem_w_en_id;
     reg [WIDTH-1:0] imm_id;
+    
+    wire load_flag;
 
     // Set branch condition rs1 & rs2 comparison
     assign branch_cond_eq = rs1_value_i == rs2_value_i;
@@ -76,6 +79,7 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             imm <= 'b0;
             rs1_value_o <= 'b0;
             rs2_value_o <= 'b0;
+            load_flag_o <= 'b0;
         end else if (StallDecode_i) begin
             pc_o <= pc_o;
             alu_func <= alu_func;
@@ -88,6 +92,7 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             imm <= imm;
             rs1_value_o <= rs1_value_o;
             rs2_value_o <= rs2_value_o;
+            load_flag_o <= 'b0;
         end else begin
             pc_o <= pc_i;
             alu_func <= alu_func_id;
@@ -100,6 +105,7 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
             imm <= imm_id;
             rs1_value_o <= rs1_value_i;
             rs2_value_o <= rs2_value_i;
+            load_flag_o <= load_flag;
         end
     end
 
@@ -125,6 +131,9 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
 		= ; \
         = ;*/
 
+    assign load_flag = (opcode == `OP_LOAD);
+    // assign load_flag = 1'b0; // for testing
+    
     always @(*) begin
         if (reset) begin
             `SET_CTRL(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
