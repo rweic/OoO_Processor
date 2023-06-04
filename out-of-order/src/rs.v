@@ -136,6 +136,15 @@ module rs #(
         .entry_allocate_o(alu_entry_allocate)
     );
 
+    priority_issue pi_alu (
+        .clk_i(clk_i), 
+        .reset_i(reset_i),
+        .allocate_i(alu_request_i), 
+        .resource_valid_i(alu_entry_free), 
+        .entry_ready_i(alu_ready),
+        .entry_sel_o(alu_entry_sel)
+    );
+
     // ----- Generate Reservation Station Entries -----
     genvar i;
 
