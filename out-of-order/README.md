@@ -4,10 +4,10 @@
 
 This folder includes the source files for the out-of-order cpu, which includes these files:
 
-1. fetch.v
+### fetch.v
 
 This module fetch instruction from instruction memory.
 
-2. decode.v
+### decode.v
 
 
