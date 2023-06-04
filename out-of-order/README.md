@@ -6,6 +6,6 @@ This folder includes the source files for the out-of-order cpu, which includes t
 
 - fetch.v
 
-This module fetch instruction from instruction memory.
+\t This module fetch instruction from instruction memory.
 
 
