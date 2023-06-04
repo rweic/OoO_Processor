@@ -9,8 +9,8 @@ SLTIU x7, x5, 9  # Dependency on x5 from SLTI
 XORI x9, x7, 12  # Dependency on x7 from SLTIU
 SRAI x11, x9, 4  # Dependency on x9 from XORI
 SRLI x13, x11, 5 # Dependency on x11 from SRAI
-ORI x15, x13, 10 # Dependency on x13 from SRLI
-ANDI x17, x15, 15 # Dependency on x15 from ORI
+ORI x15, x11, 10 # Dependency on x11 from SRAI
+ANDI x17, x7, 15 # No Dependency on x15 from ORI
 
 #OP_RTYPE
 ADD x1, x2, x3
