@@ -3,14 +3,14 @@
 
 #OP_ITYPE
 ADDI x1, x2, 2
-SLLI x3, x4, 3
-SLTI x5, x6, 7
-SLTIU x7, x8, 9
-XORI x9, x10, 12
-SRAI x11, x12, 4
-SRLI x13, x14, 5
-ORI x15, x16, 10
-ANDI x17, x18, 15
+SLLI x3, x1, 3   # Dependency on x1 from ADDI
+SLTI x5, x3, 7   # Dependency on x3 from SLLI
+SLTIU x7, x5, 9  # Dependency on x5 from SLTI
+XORI x9, x7, 12  # Dependency on x7 from SLTIU
+SRAI x11, x9, 4  # Dependency on x9 from XORI
+SRLI x13, x11, 5 # Dependency on x11 from SRAI
+ORI x15, x11, 10 # Dependency on x11 from SRAI
+ANDI x17, x7, 15 # No Dependency on x15 from ORI
 
 #OP_RTYPE
 ADD x1, x2, x3
@@ -40,15 +40,15 @@ label6:
 
 #OP_LOAD
 LB x1, 0(x2)
-LH x3, 4(x4)
-LW x5, -8(x6)
-LBU x7, 16(x8)
-LHU x9, 20(x10)
+LH x3, 4(x1)   # Dependency on the result of LB x1
+LW x5, -8(x3)  # Dependency on the result of LH x3
+LBU x7, 16(x5) # Dependency on the result of LW x5
+LHU x9, 20(x7) # Dependency on the result of LBU x7
 
 #OP_STORE
-SB x11, 24(x12)
-SH x13, -28(x14)
-SW x15, 32(x16)
+SB x11, 24(x9)  # Dependency on the result of LHU x9
+SH x13, -28(x11)
+SW x15, 32(x13)
 
 #OTHER
 LUI x13, 0xABCD

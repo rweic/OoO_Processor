@@ -1,0 +1,17 @@
+# sim files to be ignored
+.fsm.sch.verilog.xml
+simv.vdb/
+toplevel.fsdb
+toplevel.vcd
+urgReport/
+verdi_config_file
+cm.log
+csrc/
+novas_dump.log
+simv
+simv.daidir/
+toplevel.log
+ucli.key
+novas.conf
+novas.rc
+verdiLog/

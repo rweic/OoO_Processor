@@ -83,14 +83,15 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .DestRegWriteBack(rd_addr_wb),
         .RegisterWriteMem(rf_w_en_mem),
         .RegisterWriteWriteBack(rf_w_en_wb),
-        .ResultSourceExec0(),  // Update with appropriate signal
+        .ResultSourceExec0(),  // Delete later
         .ProgramCounterSourceExec(pcsel),
-        .ForwardingReg1Exec(),  // Update with appropriate signal
-        .ForwardingReg2Exec(),  // Update with appropriate signal
-        .StallDecode_o(StallDecode),  // Update with appropriate signal
-        .StallFetch_o(StallFetch),  // Update with appropriate signal
-        .FlushDecode(),  // Update with appropriate signal
-        .FlushExec()  // Update with appropriate signal
+        .ForwardingReg1Exec(),  // Delete later
+        .ForwardingReg2Exec(),  // Delete later
+        .StallDecode_o(StallDecode),  // Delete later
+        .StallFetch_o(StallFetch),  // Delete later
+        .FlushDecode(),  // Delete later
+        .FlushExec()  // Delete later
+
     );
     
     // Instruction Fetch
