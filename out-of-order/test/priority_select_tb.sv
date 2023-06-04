@@ -1,9 +1,9 @@
-module priority_management_tb();
+module priority_select_tb();
     reg allocate_i;  // enable signal
     reg [3:0] resource_valid_i;  // the resource is free - entry_free
-    wire [3:0] entry_sel_o;
+    wire [3:0] entry_allocate_o;
 
-    priority_management pm (.*);
+    priority_select ps (.*);
     initial begin
 	    $dumpfile("uut.vcd");
 	    $dumpvars();

@@ -66,14 +66,15 @@ module rs_tb ();    // Inputs
 	    $dumpvars();
         reset_i = 1'b1; 
         rs_allocate_i = 1'b0; pc_i = 'b0; inst_i = 'b0; prs1_addr_i = 'b0; prs2_addr_i = 'b0; prd_addr_i = 'b0; 
-        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
-        alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
-        cdb_en_i = 'b0; cdb_tag_i = 'b0; @(posedge clk_i); 
+        alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
+        cdb_en_i = 'b0; cdb_tag_i = 'b0; @(posedge clk_i); @(posedge clk_i); 
         reset_i = 1'b0; @(posedge clk_i); 
 
-        // 
-        rs_allocate_i = 1'b1; pc_i = 'h0; inst_i = 'h0; prs1_addr_i = 'd2; prs2_addr_i = 'd3; prd_addr_i = 'd0; 
-        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
+        // add x1, x2, x3
+        rs_allocate_i = 1'b1; pc_i = 'b0; inst_i = 'h003100b3; prs1_addr_i = 'h2; prs2_addr_i = 'h3; prd_addr_i = 'h1; 
+        alu_request_i = 1'b1; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b1; prs2_valid_i = 'b1; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
         @(posedge clk_i); 
 
 

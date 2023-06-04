@@ -95,6 +95,7 @@ module rs #(
     wire [RS_SIZE-1:0] mul_ready; 
 
     // ALU
+    wire [RS_SIZE-1:0] alu_entry_allocate;
     wire [RS_SIZE-1:0] alu_entry_sel;
     wire [31:0] alu_inst [0:RS_SIZE-1]; 
     wire [31:0] alu_pc [0:RS_SIZE-1]; 
@@ -129,10 +130,10 @@ module rs #(
     assign mul_prd_addr_o = mul_rd_addr[mul_idx_issued];
 
     // Priority Decider
-    priority_management pm_alu (
+    priority_select ps_alu (
         .allocate_i(alu_request_i), 
         .resource_valid_i(alu_entry_free),
-        .entry_sel_o(alu_entry_sel)
+        .entry_allocate_o(alu_entry_allocate)
     );
 
     // ----- Generate Reservation Station Entries -----
@@ -145,8 +146,8 @@ module rs #(
                 // Inputs
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
-                .entry_allocate_req_i(alu_request_i), 
-                .entry_sel(alu_entry_sel[i]),
+                .entry_allocate_req_i(alu_request_i & alu_entry_allocate[i]), 
+                .entry_sel_i(alu_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
@@ -176,7 +177,7 @@ module rs #(
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
                 .entry_allocate_req_i(rs_allocate_i), 
-                .entry_sel(mul_entry_sel[i]),
+                .entry_sel_i(mul_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
@@ -204,7 +205,7 @@ module rs_entry (
     // Inputs
     clk_i, reset_i,
     entry_allocate_req_i, 
-    entry_sel,  // execusion
+    entry_sel_i,  // execusion
     pc_i, inst_i,
     prs1_addr_i, prs2_addr_i, prd_addr_i,
     prs1_valid_i, prs2_valid_i,
@@ -220,7 +221,7 @@ module rs_entry (
     input clk_i;
     input reset_i;
     input entry_allocate_req_i;
-    input entry_sel;
+    input entry_sel_i;
     input [31:0] pc_i;
     input [31:0] inst_i;
     // Rs & Rd addr
@@ -235,6 +236,7 @@ module rs_entry (
     input [4:0] cdb_tag_i;  // basically the register index for single core
 
     // Outputs
+
     output reg entry_free_o;  // taken - 0; free - 1
     output reg ready_o;
     output reg [31:0] pc_o;
@@ -256,7 +258,7 @@ module rs_entry (
 
     always @(posedge clk_i) begin
         if (reset_i) begin
-            entry_free_o <= 1'b0;
+            entry_free_o <= 1'b1;
             inst_o <= 32'b0;
             prs1_addr_o <= 4'b0;
             prs2_addr_o <= 4'b0;
@@ -274,7 +276,7 @@ module rs_entry (
             prs2_ready <= prs2_valid_i;
         end
         else if (!entry_free_o) begin  // update the reg_state
-            entry_free_o <= entry_free_o & entry_sel;
+            entry_free_o <= entry_free_o | entry_sel_i;
             inst_o <= inst_o;
             prs1_addr_o <= prs1_addr_o;
             prs2_addr_o <= prs2_addr_o;
@@ -282,7 +284,15 @@ module rs_entry (
             prs1_ready <= prs1_ready | cdb_prs1_valid;
             prs2_ready <= prs2_ready | cdb_prs2_valid;
         end
-        else begin end
+        else begin 
+            entry_free_o <= entry_free_o | entry_sel_i;
+            inst_o <= inst_o;
+            prs1_addr_o <= prs1_addr_o;
+            prs2_addr_o <= prs2_addr_o;
+            prd_addr_o <= prd_addr_o;
+            prs1_ready <= prs1_ready | cdb_prs1_valid;
+            prs2_ready <= prs2_ready | cdb_prs2_valid;
+        end
     end
 
 endmodule

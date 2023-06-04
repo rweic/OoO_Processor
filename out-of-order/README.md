@@ -10,6 +10,8 @@ This module fetch instruction from instruction memory.
 
 ### decode.v
 
+This module pre-assign resource.
+
 ## Folder - test
 
 This folder includes the testbenches for the submodules of out-of-order cpu
