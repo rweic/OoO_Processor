@@ -1,4 +1,5 @@
 module rs_tb ();    // Inputs
+    // Inputs
     reg clk_i;
     reg reset_i;
     reg rs_allocate_i;  // allocate request
@@ -65,7 +66,8 @@ module rs_tb ();    // Inputs
 	    $dumpvars();
         reset_i = 1'b1; 
         rs_allocate_i = 1'b0; pc_i = 'b0; inst_i = 'b0; prs1_addr_i = 'b0; prs2_addr_i = 'b0; prd_addr_i = 'b0; 
-        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
         cdb_en_i = 'b0; cdb_tag_i = 'b0; @(posedge clk_i); 
         reset_i = 1'b0; @(posedge clk_i); 
 

@@ -102,15 +102,38 @@ module rs #(
     wire [4:0] alu_rs2_addr [0:RS_SIZE-1];
     wire [4:0] alu_rd_addr  [0:RS_SIZE-1];
 
+    // MUL
+    wire [RS_SIZE-1:0] mul_entry_sel;
+    wire [31:0] mul_inst [0:RS_SIZE-1]; 
+    wire [31:0] mul_pc [0:RS_SIZE-1]; 
+    wire [4:0] mul_rs1_addr [0:RS_SIZE-1]; 
+    wire [4:0] mul_rs2_addr [0:RS_SIZE-1];
+    wire [4:0] mul_rd_addr  [0:RS_SIZE-1];
+
     assign alu_request_o= | alu_ready;
     assign lsu_request_o= | lsu_ready;
     assign mul_request_o= | mul_ready;
 
+    // ALU
     assign alu_pc_o = alu_pc[alu_idx_issued];
     assign alu_inst_o = alu_inst[alu_idx_issued];
     assign alu_prs1_addr_o = alu_rs1_addr[alu_idx_issued];
     assign alu_prs2_addr_o = alu_rs2_addr[alu_idx_issued];
     assign alu_prd_addr_o = alu_rd_addr[alu_idx_issued];
+
+    // MUL
+    assign mul_pc_o = mul_pc[mul_idx_issued];
+    assign mul_inst_o = mul_inst[mul_idx_issued];
+    assign mul_prs1_addr_o = mul_rs1_addr[mul_idx_issued];
+    assign mul_prs2_addr_o = mul_rs2_addr[mul_idx_issued];
+    assign mul_prd_addr_o = mul_rd_addr[mul_idx_issued];
+
+    // Priority Decider
+    priority_management pm_alu (
+        .allocate_i(alu_request_i), 
+        .resource_valid_i(alu_entry_free),
+        .entry_sel_o(alu_entry_sel)
+    );
 
     // ----- Generate Reservation Station Entries -----
     genvar i;
@@ -122,7 +145,7 @@ module rs #(
                 // Inputs
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
-                .entry_allocate_req_i(rs_allocate_i), 
+                .entry_allocate_req_i(alu_request_i), 
                 .entry_sel(alu_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
@@ -141,6 +164,36 @@ module rs #(
                 .prs1_addr_o(alu_rs1_addr[i]), 
                 .prs2_addr_o(alu_rs2_addr[i]), 
                 .prd_addr_o(alu_rd_addr[i])
+            );
+        end
+    endgenerate
+
+    // MUL
+    generate
+        for(i = 0; i < RS_SIZE; i = i + 1) begin
+            rs_entry mul_entry (
+                // Inputs
+                .clk_i(clk_i), 
+                .reset_i(reset_i),
+                .entry_allocate_req_i(rs_allocate_i), 
+                .entry_sel(mul_entry_sel[i]),
+                .pc_i(pc_i), 
+                .inst_i(inst_i),
+                .prs1_addr_i(prs1_addr_i), 
+                .prs2_addr_i(prs2_addr_i), 
+                .prd_addr_i(prd_addr_i),
+                .prs1_valid_i(prs1_valid_i), 
+                .prs2_valid_i(prs1_valid_i),
+                .cdb_en_i(cdb_en_i), 
+                .cdb_tag_i(cdb_tag_i),
+                // Outputs
+                .entry_free_o(mul_entry_free[i]),
+                .ready_o(mul_ready[i]),
+                .pc_o(mul_pc[i]),
+                .inst_o(mul_inst[i]),
+                .prs1_addr_o(mul_rs1_addr[i]), 
+                .prs2_addr_o(mul_rs2_addr[i]), 
+                .prd_addr_o(mul_rd_addr[i])
             );
         end
     endgenerate
