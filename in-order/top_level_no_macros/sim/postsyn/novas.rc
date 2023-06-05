@@ -374,10 +374,10 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-unknownSave = 1039,571,461,245
-QwWarnMsgDlg = 650,375,600,250
+QwWarnMsgDlg = 650,449,600,250
 restoreSigDlg = 683,302,551,438
 QwUserAskDlg = 798,455,324,134
+unknownSave = 728,398,461,245
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -462,7 +462,7 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv
-vcs_svOption = +v2k +lint=all +neg_tchk +define+POST_SYN=1 -a toplevel.log
+vcs_svOption = +v2k +lint=all +neg_tchk +define+POST_SYN=1 -a top_level_no_macros.log
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
 [Source]
@@ -781,7 +781,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 1920 532 205 65
+viewPort = 0 25 1920 387 205 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -948,7 +948,8 @@ printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
 RecentFile1 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/top_level_no_macros_presyn.rc\""
-RecentFile2 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/toplevel.fsdb\""
+RecentFile2 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb\""
+RecentFile3 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/toplevel.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1314,7 +1315,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1920 532 205 65
+viewPort = 0 25 1920 387 205 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

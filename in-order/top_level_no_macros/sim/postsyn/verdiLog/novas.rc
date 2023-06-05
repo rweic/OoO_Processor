@@ -328,6 +328,8 @@ Wave_comment_string_font = -f COURIER12 -c ID_RED5
 HB_designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
 Text_font = COURIER12
 nMemory_font = Fixed 14
+Wave_getsignal_form_font = -f COURIER12
+Text_annotFont = Helvetica_M_R_10
 [OtherEditor]
 cmd1 = "xterm -font 9x15 -fg black -bg gray -e"
 name = "vi"
@@ -372,9 +374,10 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-restoreSigDlg = 994,475,551,438
-QwUserAskDlg = 1118,635,324,134
 unknownSave = 1039,571,461,245
+restoreSigDlg = 683,302,551,438
+QwWarnMsgDlg = 650,449,600,250
+QwUserAskDlg = 798,457,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -576,7 +579,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = Helvetica_M_R_10
 [Text.1]
-viewport = -1 27 2560 1274 45
+viewport = -1 27 1920 914 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -667,9 +670,9 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = Type
+name = Severity
 width = 60
-visualIndex = 3
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
@@ -691,9 +694,9 @@ visualIndex = 2
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = Severity
+name = Type
 width = 60
-visualIndex = 1
+visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [Vi]
@@ -774,8 +777,11 @@ ShowDeltaTime = TRUE
 WaveExtendLastTick = TRUE
 displayMessageLabelOnly = TRUE
 AutoApplySeverityColor = TRUE
+scope_to_save_with_macro
+open_file_dir
+open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 2560 544 205 65
+viewPort = 0 25 1920 298 205 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -915,7 +921,6 @@ displayDeltaY = FALSE
 signal_rc_abspath = TRUE
 signal_rc_no_natural_bus_range = FALSE
 save_scope_with_macro = FALSE
-scope_to_save_with_macro
 FitAnaByBusSize = FALSE
 DisplayVerticalZoomTools = FALSE
 DisplayIndicateBar = FALSE
@@ -945,8 +950,6 @@ curveWindow_Drag&Drop_Mode = TRUE
 RecentFile1 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/top_level_no_macros_presyn.rc\""
 RecentFile2 = "\"/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/toplevel.fsdb\""
 open_file_time_range = FALSE
-open_file_dir
-open_rc_file_dir
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
 curve_window_font = -f COURIER12 -c ID_CYAN5
@@ -1039,6 +1042,7 @@ HvpMergeTool =
 ShowMergeMenuItem = FALSE
 fsmScoreMode = transition
 [eco]
+NameRule = 
 IsFreezeSilicon = FALSE
 cellQuantityManagement = FALSE
 ManageMode = INSTANCE_NAME
@@ -1046,7 +1050,6 @@ SpareCellsPinsManagement = TRUE
 LogCommitReport = FALSE
 InputPinStatus = 1
 OutputPinStatus = 2
-NameRule = 
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
 UserName = gbeatty3
@@ -1311,7 +1314,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 2560 544 205 65
+viewPort = 0 25 1920 298 205 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

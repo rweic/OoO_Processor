@@ -25,13 +25,16 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/toplevel.fsdb
+postSimFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb
 syncTime = 787.054
-viewport = 0 27 1920 914 0 0 221 877
+viewport = 0 27 1920 914 0 0 155 1918
+activeNode = "top_level_no_macros_tb.cpu0.regfile0"
+activeScope = "top_level_no_macros_tb.cpu0.regfile0"
+activeFile = "cpu.syn.v"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 0
+sourceBeginLine = 22659
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -48,14 +51,25 @@ DnDtraceCrossHierOnly = True
 leadingZero = False
 signalPane = False
 SourceVerticalScrollLines = 5
+Scope1 = "top_level_no_macros_tb.cpu0.regfile0"
+Scope2 = "top_level_no_macros_tb.cpu0.hazard_detect0"
+Scope3 = "ANTENNA_X1"
+multipleSelection = 1 22659 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
+[hb.design]
+importCmd = "-dbdir" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir" 
+invokeDir = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn
+[hb.sourceTab.1]
+scope = top_level_no_macros_tb.cpu0.regfile0
+File = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/cpu.syn.v
+Line = 22660
 [nMemoryManager]
-WaveformFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/presyn/toplevel.fsdb
+WaveformFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1920 532 205 65
+viewPort = 0 25 1920 387 205 65
 primaryWindow = TRUE
 SessionFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
