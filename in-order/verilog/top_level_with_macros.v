@@ -1,4 +1,4 @@
-module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
+module top_level_with_macros #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32) (
     clk, reset
 );
     input clk, reset;
@@ -38,10 +38,11 @@ module toplevel #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_
         .wdata(dmem_wdata), 
         .raddr(dmem_addr), 
         .waddr(dmem_addr),
-        .rdata(dmem_rdata)); */
+        .rdata(dmem_rdata) */
+		);
 
     // Instruction Memory
-    imem instruction_memory(
+    imem instruction_memory (
 				.clk0(clk),
 				.csb0(1'b0),
 				.web0(1'b1),

@@ -14,7 +14,7 @@ module icache #(parameter MEM_DEP = 192) (
         for(i = 0; i < MEM_DEP; i = i + 1) begin
             instr_mem[i] = 8'b0;
         end
-        $readmemh("verilog/icache_init.txt", instr_mem, 0, 170);
+        $readmemh("test_vectors/icache_init.txt", instr_mem, 0, 170);
     end
 
 endmodule

@@ -1,2 +1,15 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03-SP3
+Date:        Mon Jun  5 13:08:46 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Designs                                                             1
+    Black box (LINT-55)                                             1
+--------------------------------------------------------------------------------
+
+Information: Design 'top_level_with_macros' does not contain any cells or nets. (LINT-55)
+1

@@ -52,6 +52,33 @@ module imem(
       $display($time," Writing %m addr0=%b din0=%b",addr0_reg,din0_reg);
   end
 
+	// FOR TEST ONLY, COMMENT OUT LATER
+  initial begin
+
+    for (integer i=0; i < RAM_DEPTH; i = i + 1 ) begin
+
+      mem[i] = i;
+
+    end
+
+    mem[0] = 'h003100b3; // add x1, x2, x3
+
+    mem[1] = 'h40208133; // sub x2, x1, x2
+
+    mem[2] = 'h029301b3; // mul x3, x6, x9
+
+    mem[3] = 'h003103b3; // add x7, x2, x3
+
+    mem[4] = 'h00310333; // add x6, x2, x3
+
+    mem[5] = 'h005212b3; // sll x5, x4, x5
+
+    mem[6] = 'h00608433; // add x8, x1, x6
+
+    mem[6] = 'h00608433; // add x8, x1, x6
+
+  end
+
 
   // Memory Write Block Port 0
   // Write Operation : When web0 = 0, csb0 = 0

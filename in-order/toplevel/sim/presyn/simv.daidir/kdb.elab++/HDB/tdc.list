@@ -1,0 +1,13 @@
+./SRAM/dmem/dmem.v
+./SRAM/imem/imem.v
+./verilog/alu.v
+./verilog/cpu.v
+./verilog/decode.v
+./verilog/execute.v
+./verilog/fetch.v
+./verilog/hazard_detect.v
+./verilog/memory_access.v
+./verilog/regfile.v
+./verilog/top_level_with_macros.v
+./verilog/top_level_with_macros_tb.sv
+./verilog/writeback.v

@@ -53,9 +53,9 @@ module top_level_no_macros_tb();
     	    $sdf_annotate("cpu.sdf", cpu0);
     	`endif
         //$vcdpluson;
-        $fsdbDumpfile("top_level_no_macros.fsdb");
+        $fsdbDumpfile("top_level_no_macros_tb.fsdb");
         $fsdbDumpvars(0, top_level_no_macros_tb);
-        $dumpfile("top_level_no_macros.vcd");
+        $dumpfile("top_level_no_macros_tb.vcd");
         $dumpvars();
         reset = 1; #20
         reset = 0;

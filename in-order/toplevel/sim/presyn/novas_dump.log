@@ -1,0 +1,381 @@
+#######################################################################################
+# log primitive debug message of FSDB dumping                                         #
+# This is for R&D to analyze when there are issues happening when FSDB dump           #
+#######################################################################################
+ANF: vcsd_get_serial_mode_status('simv: undefined symbol: vcsd_get_serial_mode_status')
+ANF: vcsd_enable_sva_success_callback('simv: undefined symbol: vcsd_enable_sva_success_callback')
+ANF: vcsd_disable_sva_success_callback('simv: undefined symbol: vcsd_disable_sva_success_callback')
+ANF: vcsd_get_power_scope_name('simv: undefined symbol: vcsd_get_power_scope_name')
+ANF: vcsd_begin_no_value_var_info('simv: undefined symbol: vcsd_begin_no_value_var_info')
+ANF: vcsd_end_no_value_var_info('simv: undefined symbol: vcsd_end_no_value_var_info')
+ANF: vcsd_remove_xprop_merge_mode_callback('simv: undefined symbol: vcsd_remove_xprop_merge_mode_callback')
+ANF: vcsd_get_info('simv: undefined symbol: vcsd_get_info')
+ANF: vcsd_check_debug_access('simv: undefined symbol: vcsd_check_debug_access')
+ANF: vhpi_get_cb_info('simv: undefined symbol: vhpi_get_cb_info')
+ANF: vhpi_free_handle('simv: undefined symbol: vhpi_free_handle')
+ANF: vhpi_fetch_vcsd_handle('simv: undefined symbol: vhpi_fetch_vcsd_handle')
+ANF: vhpi_fetch_vpi_handle('simv: undefined symbol: vhpi_fetch_vpi_handle')
+ANF: vhpi_has_verilog_parent('simv: undefined symbol: vhpi_has_verilog_parent')
+ANF: vhpi_is_verilog_scope('simv: undefined symbol: vhpi_is_verilog_scope')
+ANF: scsd_xprop_is_enabled('simv: undefined symbol: scsd_xprop_is_enabled')
+ANF: scsd_xprop_sig_is_promoted('simv: undefined symbol: scsd_xprop_sig_is_promoted')
+ANF: scsd_xprop_int_xvalue('simv: undefined symbol: scsd_xprop_int_xvalue')
+ANF: scsd_xprop_bool_xvalue('simv: undefined symbol: scsd_xprop_bool_xvalue')
+ANF: scsd_xprop_enum_xvalue('simv: undefined symbol: scsd_xprop_enum_xvalue')
+ANF: scsd_xprop_register_merge_mode_cb('simv: undefined symbol: scsd_xprop_register_merge_mode_cb')
+ANF: scsd_xprop_delete_merge_mode_cb('simv: undefined symbol: scsd_xprop_delete_merge_mode_cb')
+ANF: scsd_xprop_get_merge_mode('simv: undefined symbol: scsd_xprop_get_merge_mode')
+ANF: scsd_thread_get_info('simv: undefined symbol: scsd_thread_get_info')
+ANF: scsd_thread_vc_init('simv: undefined symbol: scsd_thread_vc_init')
+ANF: scsd_master_set_delta_sync_cbk('simv: undefined symbol: scsd_master_set_delta_sync_cbk')
+ANF: scsd_fgp_get_fsdb_cores('simv: undefined symbol: scsd_fgp_get_fsdb_cores')
+ANF: scsd_fgp_get_is_cpu_affinity_disabled('simv: undefined symbol: scsd_fgp_get_is_cpu_affinity_disabled')
+ANF: upf_obj_has_hdl_implementation('simv: undefined symbol: upf_obj_has_hdl_implementation')
+ANF: vdi_dt_get_vlog_variant_size_array_info('simv: undefined symbol: vdi_dt_get_vlog_variant_size_array_info')
+ANF: vdi_get('simv: undefined symbol: vdi_get')
+ANF: vdi_get_taint_var_name('simv: undefined symbol: vdi_get_taint_var_name')
+ANF: vdi_flat_node_get_total_bit_size('simv: undefined symbol: vdi_flat_node_get_total_bit_size')
+ANF: vhdi_dt_get_type('simv: undefined symbol: vhdi_dt_get_type')
+ANF: vhdi_dt_get_key('simv: undefined symbol: vhdi_dt_get_key')
+ANF: vhdi_dt_get_vhdl_enum_info('simv: undefined symbol: vhdi_dt_get_vhdl_enum_info')
+ANF: vhdi_dt_get_vhdl_physical_info('simv: undefined symbol: vhdi_dt_get_vhdl_physical_info')
+ANF: vhdi_dt_get_vhdl_array_info('simv: undefined symbol: vhdi_dt_get_vhdl_array_info')
+ANF: vhdi_dt_get_vhdl_record_info('simv: undefined symbol: vhdi_dt_get_vhdl_record_info')
+ANF: vhdi_dt_get_vhdl_integer_range_info('simv: undefined symbol: vhdi_dt_get_vhdl_integer_range_info')
+ANF: vhdi_def_traverse_module('simv: undefined symbol: vhdi_def_traverse_module')
+ANF: vhdi_def_traverse_scope('simv: undefined symbol: vhdi_def_traverse_scope')
+ANF: vhdi_def_traverse_variable('simv: undefined symbol: vhdi_def_traverse_variable')
+ANF: vhdi_def_get_module_id_by_vhpi('simv: undefined symbol: vhdi_def_get_module_id_by_vhpi')
+ANF: vhdi_def_get_handle_by_module_id('simv: undefined symbol: vhdi_def_get_handle_by_module_id')
+ANF: vhdi_def_get_variable_info_by_vhpi('simv: undefined symbol: vhdi_def_get_variable_info_by_vhpi')
+ANF: vhdi_def_free('simv: undefined symbol: vhdi_def_free')
+ANF: vhdi_ist_traverse_scope('simv: undefined symbol: vhdi_ist_traverse_scope')
+ANF: vhdi_ist_traverse_variable('simv: undefined symbol: vhdi_ist_traverse_variable')
+ANF: vhdi_ist_convert_by_vhpi('simv: undefined symbol: vhdi_ist_convert_by_vhpi')
+ANF: vhdi_ist_clone('simv: undefined symbol: vhdi_ist_clone')
+ANF: vhdi_ist_free('simv: undefined symbol: vhdi_ist_free')
+ANF: vhdi_ist_hash_key('simv: undefined symbol: vhdi_ist_hash_key')
+ANF: vhdi_ist_compare('simv: undefined symbol: vhdi_ist_compare')
+ANF: vhdi_ist_get_value_addr('simv: undefined symbol: vhdi_ist_get_value_addr')
+ANF: vhdi_set_scsd_callback('simv: undefined symbol: vhdi_set_scsd_callback')
+ANF: vhdi_cbk_set_force_callback('simv: undefined symbol: vhdi_cbk_set_force_callback')
+ANF: vhdi_trigger_init_force('simv: undefined symbol: vhdi_trigger_init_force')
+ANF: vhdi_ist_check_scsd_callback('simv: undefined symbol: vhdi_ist_check_scsd_callback')
+ANF: vhdi_ist_add_scsd_callback('simv: undefined symbol: vhdi_ist_add_scsd_callback')
+ANF: vhdi_ist_remove_scsd_callback('simv: undefined symbol: vhdi_ist_remove_scsd_callback')
+ANF: vhdi_ist_get_scsd_user_data('simv: undefined symbol: vhdi_ist_get_scsd_user_data')
+ANF: vhdi_add_time_change_callback('simv: undefined symbol: vhdi_add_time_change_callback')
+ANF: vhdi_get_real_value_by_value_addr('simv: undefined symbol: vhdi_get_real_value_by_value_addr')
+ANF: vhdi_get_64_value_by_value_addr('simv: undefined symbol: vhdi_get_64_value_by_value_addr')
+ANF: vhdi_xprop_inst_is_promoted('simv: undefined symbol: vhdi_xprop_inst_is_promoted')
+ANF: vdi_ist_convert_by_vhdi('simv: undefined symbol: vdi_ist_convert_by_vhdi')
+ANF: vhdi_ist_get_module_id('simv: undefined symbol: vhdi_ist_get_module_id')
+ANF: vhdi_refine_foreign_scope_type('simv: undefined symbol: vhdi_refine_foreign_scope_type')
+ANF: vhdi_flush_callback('simv: undefined symbol: vhdi_flush_callback')
+ANF: vhdi_set_orig_name('simv: undefined symbol: vhdi_set_orig_name')
+ANF: vhdi_set_dump_pt('simv: undefined symbol: vhdi_set_dump_pt')
+ANF: vhdi_set_int_subtype('simv: undefined symbol: vhdi_set_int_subtype')
+ANF: vhdi_get_fsdb_option('simv: undefined symbol: vhdi_get_fsdb_option')
+ANF: vhdi_fgp_get_mode('simv: undefined symbol: vhdi_fgp_get_mode')
+ANF: vhdi_node_register_composite_var('simv: undefined symbol: vhdi_node_register_composite_var')
+ANF: vhdi_node_analysis('simv: undefined symbol: vhdi_node_analysis')
+ANF: vhdi_node_id('simv: undefined symbol: vhdi_node_id')
+ANF: vhdi_node_ist_check_scsd_callback('simv: undefined symbol: vhdi_node_ist_check_scsd_callback')
+ANF: vhdi_node_ist_add_scsd_callback('simv: undefined symbol: vhdi_node_ist_add_scsd_callback')
+ANF: vhdi_node_ist_get_value_addr('simv: undefined symbol: vhdi_node_ist_get_value_addr')
+ANF: vhdi_enc_def_traverse_module('simv: undefined symbol: vhdi_enc_def_traverse_module')
+ANF: vhdi_enc_def_traverse_scope('simv: undefined symbol: vhdi_enc_def_traverse_scope')
+ANF: vhdi_enc_def_traverse_variable('simv: undefined symbol: vhdi_enc_def_traverse_variable')
+ANF: vhdi_enc_ist_traverse_scope('simv: undefined symbol: vhdi_enc_ist_traverse_scope')
+ANF: vhdi_enc_ist_traverse_variable('simv: undefined symbol: vhdi_enc_ist_traverse_variable')
+ANF: vhdi_enc_ist_get_module_id('simv: undefined symbol: vhdi_enc_ist_get_module_id')
+ANF: vhdi_enc_def_get_handle_by_module_id('simv: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
+VCS compile option:
+ option[0]: simv
+ option[1]: +v2k
+ option[2]: +lint=all
+ option[3]: +neg_tchk
+ option[4]: +define+PRE_SYN=1
+ option[5]: -a
+ option[6]: top_level_with_macros.log
+ option[7]: /home/lab.apps/vlsiapps_new/vcs/current/linux64/bin/vcs1
+ option[8]: -Mcc=gcc
+ option[9]: -Mcplusplus=g++
+ option[10]: -Masflags=
+ option[11]: -Mcfl= -pipe -fPIC -O -I/home/lab.apps/vlsiapps_new/vcs/current/include 
+ option[12]: -Mxllcflags=
+ option[13]: -Mxcflags= -pipe -fPIC -I/home/lab.apps/vlsiapps_new/vcs/current/include
+ option[14]: -Mldflags= -rdynamic 
+ option[15]: -Mout=simv
+ option[16]: -Mamsrun=
+ option[17]: -Mvcsaceobjs=
+ option[18]: -Mobjects= /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libvirsim.so /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/liberrorinf.so /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libsnpsmalloc.so /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libvfs.so 
+ option[19]: -Mexternalobj=
+ option[20]: -Msaverestoreobj=/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcs_save_restore_new.o
+ option[21]: -Mcrt0=
+ option[22]: -Mcrtn=
+ option[23]: -Mcsrc=
+ option[24]: -Msyslibs=/home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/pli.a -ldl 
+ option[25]: -l
+ option[26]: top_level_with_macros.log
+ option[27]: -Xvcs_run_simv=1
+ option[28]: +v2k
+ option[29]: +lint=all
+ option[30]: -full64
+ option[31]: +neg_tchk
+ option[32]: +define+PRE_SYN=1
+ option[33]: -kdb
+ option[34]: -Xufe=2steps
+ option[35]: -debug_access+all
+ option[36]: +vpi
+ option[37]: +vcsd1
+ option[38]: +itf+/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcsdp_lite.tab
+ option[39]: -timescale=1ns/10ps
+ option[40]: -picarchive
+ option[41]: -P
+ option[42]: /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/verdi.tab
+ option[43]: -fsdb
+ option[44]: -sverilog
+ option[45]: -gen_obj
+ option[46]: -f
+ option[47]: top_level_with_macros.include
+ option[48]: -load
+ option[49]: /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[50]: timescale=1ns/10ps
+Chronologic Simulation VCS Release T-2022.06_Full64
+Linux 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64
+CPU cores: 8
+Limit information:
+======================================
+cputime		unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		8193 kbytes
+coredumpsize		0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		4096
+memorylocked		64 kbytes
+maxproc		4096
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+REMOTEHOST=10.18.253.239
+SYNOPSYS_LC_ROOT=/home/lab.apps/vlsiapps_new/lc/current
+VNCDESKTOP=linux-lab-045.ece.uw.edu:1 (gbeatty3)
+MANPATH=/home/lab.apps/vlsiapps_new/genus/current/share/genus/man:/home/lab.apps/vlsiapps_new/genus/current/share/tcltools/man:/home/lab.apps/vlsiapps_new/innovus/current/share/innovus/man:/home/lab.apps/vlsiapps_new/innovus/current/share/tcltools/man:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/man:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/binutils-2.30_64/man:/home/lab.apps/vlsiapps_new/vcs/current/doc/man:/home/lab.apps/vlsiapps_new/genus/current/share/genus/man:/home/lab.apps/vlsiapps_new/genus/current/share/tcltools/man:/home/lab.apps/vlsiapps_new/innovus/current/share/innovus/man:/home/lab.apps/vlsiapps_new/innovus/current/share/tcltools/man:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/man:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/binutils-2.30_64/man:/home/lab.apps/vlsiapps_new/vcs/current/doc/man
+XDG_SESSION_ID=1280
+SSH_AGENT_PID=25288
+HOSTNAME=linux-lab-045.ece.uw.edu
+SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
+UNAME=/bin/uname
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+SCRNAME=vcs
+VCS_DEPTH=0
+HOST=linux-lab-045.ece.uw.edu
+TERM=xterm-256color
+XDG_MENU_PREFIX=gnome-
+VTE_VERSION=5204
+SHELL=/bin/bash
+USE_CALIBRE_VCO=aoj
+HISTSIZE=1000
+CDS_LOG_PATH=.
+MAKEFLAGS=
+SSH_CLIENT=10.18.253.239 55800 22
+GJS_DEBUG_OUTPUT=stderr
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/8d5b936d_7ce0_4168_9b91_f71449b5e751
+CDS_LOAD_ENV=CWDElseHome
+VCS_LOG_FILE=top_level_with_macros.log
+QTDIR=/usr/lib64/qt-3.3
+MSI2LMP_LIBRARY=/usr/share/lammps/frc_files
+QTINC=/usr/lib64/qt-3.3/include
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+LAMMPS_POTENTIALS=/usr/share/lammps/potentials
+SSH_TTY=/dev/pts/3
+LC_ALL=C
+SNPS_VCS_INTERNAL_ROOT_PID=25304
+IMSETTINGS_MODULE=none
+CLS_CDSD_COMPATIBILITY_LOCKING=NO
+QT_GRAPHICSSYSTEM_CHECKED=1
+GROUP=gbeatty3
+USER=gbeatty3
+LD_LIBRARY_PATH=/home/lab.apps/vlsiapps_new/vcs/current/lib:/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/lib64:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/lib:/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib
+HSPICE=/home/lab.apps/vlsiapps_new/hspice/current/hspice
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+GNOME_TERMINAL_SERVICE=:1.164
+CDS=/home/lab.apps/vlsiapps_new/virtuoso/current
+SCRIPT_NAME=vcs
+VCS_MX_HOME_INTERNAL=1
+HOSTTYPE=x86_64-linux
+SSH_AUTH_SOCK=/run/user/1007685/keyring/ssh
+SNPS_VCS_CLANG_PATH=/home/lab.apps/vlsiapps_new/vcs/current/linux64/clang
+MAKELEVEL=1
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/25167,unix/unix:/tmp/.ICE-unix/25167
+SNPSLMD_LICENSE_FILE=27008@synopsysls.s.uw.edu
+VCS_USER_OPTIONS=-f top_level_with_macros.include +v2k -R +lint=all -sverilog -full64 +neg_tchk +define+PRE_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l top_level_with_macros.log
+OVA_UUM=0
+MFLAGS=
+VCS_MODE_FLAG=64
+VC_STATIC_HOME=/home/lab.apps/vlsiapps_new/vc_static/current
+GNOME_SHELL_SESSION_MODE=classic
+MAIL=/var/spool/mail/gbeatty3
+VG_GNU_PACKAGE=/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux
+PATH=.:/home/lab.apps/vlsiapps_new/verdi/current/bin:/home/lab.apps/vlsiapps_new/fm/current/bin/:/home/lab.apps/vlsiapps_new/vc_static/current/bin:/home/lab.apps/vlsiapps_new/incisive/current/bin:/home/lab.apps/vlsiapps_new/incisive/current/tools.lnx86/bin/64bit:/home/lab.apps/vlsiapps_new/incisive/current/tools.lnx86/bin:/home/lab.apps/vlsiapps_new/spectre/current/tools.lnx86/bin:/home/lab.apps/vlsiapps_new/sentaurus/current/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/tools.lnx86/inca/bin/64bit:/home/lab.apps/vlsiapps_new/virtuoso/current/tools.lnx86/lib/64bit:/home/lab.apps/vlsiapps_new/virtuoso/current/tools/dfII/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/tools/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/bin:/home/lab.apps/vlsiapps_new/calibre/current/bin:/home/lab.apps/vlsiapps_new/modelsim/current//modelsim_dlx/bin:/home/lab.apps/vlsiapps_new/prime/current/bin:/home/lab.apps/vlsiapps_new/mw/current/bin/AMD.64:/home/lab.apps/vlsiapps_new/wv/current/bin:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/bin:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/binutils-2.30_64/bin:/home/lab.apps/vlsiapps_new/vcs/current/bin:/home/lab.apps/vlsiapps_new/xa/current/bin:/home/lab.apps/vlsiapps_new/hspice/current/hspice/bin:/home/lab.apps/vlsiapps_new/hspice/current/hspice//home/lab.apps/vlsiapps_new/hspice/current/hspice/suse64:/home/lab.apps/vlsiapps_new/icc/current/bin:/home/lab.apps/vlsiapps_new/verdi/current/bin:/home/lab.apps/vlsiapps_new/fm/current/bin/:/home/lab.apps/vlsiapps_new/vc_static/current/bin:/home/lab.apps/vlsiapps_new/incisive/current/bin:/home/lab.apps/vlsiapps_new/incisive/current/tools.lnx86/bin/64bit:/home/lab.apps/vlsiapps_new/incisive/current/tools.lnx86/bin:/home/lab.apps/vlsiapps_new/spectre/current/tools.lnx86/bin:/home/lab.apps/vlsiapps_new/sentaurus/current/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/tools.lnx86/inca/bin/64bit:/home/lab.apps/vlsiapps_new/virtuoso/current/tools.lnx86/lib/64bit:/home/lab.apps/vlsiapps_new/virtuoso/current/tools/dfII/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/tools/bin:/home/lab.apps/vlsiapps_new/virtuoso/current/bin:/home/lab.apps/vlsiapps_new/calibre/current/bin:/home/lab.apps/vlsiapps_new/modelsim/current//modelsim_dlx/bin:/home/lab.apps/vlsiapps_new/prime/current/bin:/home/lab.apps/vlsiapps_new/mw/current/bin/AMD.64:/home/lab.apps/vlsiapps_new/wv/current/bin:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/gcc-7.3.0_64-shared/bin:/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux/binutils-2.30_64/bin:/home/lab.apps/vlsiapps_new/vcs/current/bin:/home/lab.apps/vlsiapps_new/xa/current/bin:/home/lab.apps/vlsiapps_new/hspice/current/hspice/bin:/home/lab.apps/vlsiapps_new/hspice/current/hspice//home/lab.apps/vlsiapps_new/hspice/current/hspice/suse64:/home/lab.apps/vlsiapps_new/icc/current/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/lab.apps/vlsiapps_new/syn/current/bin:/home/lab.apps/vlsiapps_new/lc/current/bin:/home/lab.apps/vlsiapps_new/innovus/current/bin:/home/lab.apps/vlsiapps_new/genus/current/bin:/home/lab.apps/vlsiapps_new/syn/current/bin:/home/lab.apps/vlsiapps_new/lc/current/bin:/home/lab.apps/vlsiapps_new/innovus/current/bin:/home/lab.apps/vlsiapps_new/genus/current/bin
+EDA_TOOLS_PATH=/home/lab.apps/vlsiapps_new
+QT_IM_MODULE=ibus
+SNPS_VCS_INTERNAL_CURR_PID=25304
+VERDI_HOME=/home/lab.apps/vlsiapps_new/verdi/current
+CALIBRE_HOME=/home/lab.apps/vlsiapps_new/calibre/current
+CDSDIR=/home/lab.apps/vlsiapps_new/virtuoso/current/tools/dfII
+PWD=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn
+VCS_HOME=/home/lab.apps/vlsiapps_new/vcs/current
+XMODIFIERS=@im=ibus
+SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+EDA_CSHRC_PATH=/home/lab.apps/vlsiapps_new/cshrc
+VRST_HOME=/home/lab.apps/vlsiapps_new/incisive/current
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=
+TURBO_LOG_DIR=/tmp/vcs_20230605193146_25304
+VMR_MODE_FLAG=64
+MODELSIM_TOOLS=/home/lab.apps/vlsiapps_new/modelsim/current/
+CDSHOME=/home/lab.apps/vlsiapps_new/virtuoso/current
+CDS_Netlisting_Mode=Analog
+LM_LICENSE_FILE=27007@mentorls.s.uw.edu
+SKIP_OS_CHECKS=1
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+KRB5CCNAME=KEYRING:persistent:1007685
+HISTCONTROL=ignoredups
+VCS_ARG_ADDED_FOR_TMP=1
+SNPS_VCS_TMPDIR=/tmp/vcs_20230605193146_25304
+SHLVL=5
+HOME=/homes/gbeatty3
+OSTYPE=linux
+MGC_HOME=/home/lab.apps/vlsiapps_new/calibre/current
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+CDS_AUTO_64BIT=ALL
+CDN_SYNTH_ROOT=/home/lab.apps/vlsiapps_new/genus/current/tools
+VCS_COM=/home/lab.apps/vlsiapps_new/vcs/current/linux64/bin/vcs1
+VENDOR=unknown
+LOGNAME=gbeatty3
+MACHTYPE=x86_64
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+MGLS_LICENSE_FILE=27007@mentorls.s.uw.edu
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1685993506.103335013
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-mRxv0ggGNj,guid=ff87f6db951a8ce16921f9d164713370
+SSH_CONNECTION=10.18.253.239 55800 10.159.224.45 22
+XDG_DATA_DIRS=/homes/gbeatty3/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+MODULESHOME=/usr/share/Modules
+CDS_LIC_FILE=27006@cadencels.s.uw.edu
+CDS_DEFAULT_BROWSER=firefox
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+ARCH=/home/lab.apps/vlsiapps_new/hspice/current/hspice/suse64
+sysc_uni_pwd=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn
+DISPLAY=:1
+XDG_RUNTIME_DIR=/run/user/1007685
+VCS_ARCH=linux64
+TOOL_HOME=/home/lab.apps/vlsiapps_new/vcs/current/linux64
+XDG_CURRENT_DESKTOP=GNOME
+CDS_INST_DIR=/home/lab.apps/vlsiapps_new/virtuoso/current
+COLORTERM=truecolor
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=./simv
+OLDPWD=/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn/simv.daidir/debug_dump/fsearch
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_EXEC_DONE=1
+DVE=/home/lab.apps/vlsiapps_new/vcs/current/gui/dve
+SPECMAN_OUTPUT_TO_TTY=1
+FLEXLM_BORROWFILE=/homes/gbeatty3/.linux-lab-045.ece.uw.edu-borrow.txt
+Runtime command line arguments:
+argv[0]=simv
+argv[1]=+v2k
+argv[2]=+lint=all
+argv[3]=+neg_tchk
+argv[4]=+define+PRE_SYN=1
+argv[5]=-a
+argv[6]=top_level_with_macros.log
+298 profile - 100
+          CPU/Mem usage: 0.070 sys,  0.280 user,  271.19M mem
+299 Elapsed time:    0:00:04    Mon Jun  5 12:31:56 2023
+300 User CPU time used: 0 seconds
+301 System CPU time used: 0 seconds
+302 pliAppInit
+303 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+304 FSDB_GATE is set.
+305 FSDB_RTL is set.
+306 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+307 Enable Parallel Dumping.
+308 pliAppMiscSet: New Sim Round
+309 pliEntryInit
+310 LIBSSCORE=found /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/lib/LINUXAMD64/libsscore_vcs202206.so through $NOVAS_HOME setting.
+311 FSDB Dumper for VCS, Release Verdi_U-2023.03, Linux x86_64/64bit, 02/16/2023
+312 (C) 1996 - 2023 by Synopsys, Inc.
+313 sps_call_fsdbDumpfile_main at 0 : ./verilog/top_level_with_macros_tb.sv(22)
+314 argv[0]: (top_level_with_macros.fsdb)
+315 *Verdi* : Create FSDB file 'top_level_with_macros.fsdb'
+316 [spi_vcs_vd_ppi_create_root]: no upf option
+317 compile option from '/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn/simv.daidir/vcs_rebuild'.
+318   "vcs '-f' 'top_level_with_macros.include' '+v2k' '-R' '+lint=all' '-sverilog' '-full64' '+neg_tchk' '+define+PRE_SYN=1' '-kdb' '-debug_access+all' '-timescale=1ns/10ps' '-l' 'top_level_with_macros.log' 2>&1"
+319 DVDI_is_vir_unload_enabled is enable
+320 FSDB_VCS_ENABLE_NATIVE_VC is enable
+321 sps_call_fsdbDumpvars_vd_main at 0 : ./verilog/top_level_with_macros_tb.sv(23)
+322 argv[0]: (0)
+323 argv[1]: (handle) top_level_with_macros_tb
+324 *Verdi* : Begin traversing the scope (top_level_with_macros_tb), layer (0).
+325 *Verdi* : End of traversing.
+326 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.090 sys,  0.300 user,  371.91M mem
+                   incr: 0.000 sys,  0.010 user,  8.29M mem
+                   accu: 0.000 sys,  0.010 user,  8.29M mem
+              accu incr: 0.000 sys,  0.010 user,  8.29M mem
+
+          Count usage: 224 var,  168 idcode,  74 callback
+                 incr: 224 var,  168 idcode,  74 callback
+                 accu: 224 var,  168 idcode,  74 callback
+            accu incr: 224 var,  168 idcode,  74 callback
+327 Elapsed time:    0:00:04    Mon Jun  5 12:31:56 2023
+328 User CPU time used: 0 seconds
+329 System CPU time used: 0 seconds
+330 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.090 sys,  0.300 user,  372.96M mem
+                   incr: 0.000 sys,  0.000 user,  1.05M mem
+                   accu: 0.000 sys,  0.010 user,  9.35M mem
+              accu incr: 0.000 sys,  0.000 user,  1.05M mem
+
+          Count usage: 224 var,  168 idcode,  74 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 224 var,  168 idcode,  74 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+331 Elapsed time:    0:00:04    Mon Jun  5 12:31:56 2023
+332 User CPU time used: 0 seconds
+333 System CPU time used: 0 seconds
+334 End of simulation at 102000
+335 Memory usage: 373.121 M
+336 Maximum resident set size: 75 MB
+337 Hard page faults: 23
+338 Soft page faults: 29602
+339 Elapsed time:    0:00:04    Mon Jun  5 12:31:56 2023
+340 User CPU time used: 0 seconds
+341 System CPU time used: 0 seconds
+342 Begin FSDB profile info:
+343 FSDB Writer : bc1(255) bcn(1045) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.005013) io wait(0.000000) theadpool wait(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+344 End FSDB profile info
+345 FSDB closed. Name: top_level_with_macros.fsdb Size: 16385
+346 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+347                      - BlockUsed:1 Acquire:0 BufferUsed:26087
+348                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
+349                      - MainProducerTime:0.400217496 TotalConsumerTime:0.000000000
+350                      - ElapsedTime:0.103028000
+351 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:26087
+352 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+353                      - BlockUsed:2 Acquire:0 BufferUsed:26087
+354 SimExit
+355 Elapsed time:    0:00:04    Mon Jun  5 12:31:56 2023
+356 User CPU time used: 0 seconds
+357 System CPU time used: 0 seconds
+358 Sim process exit

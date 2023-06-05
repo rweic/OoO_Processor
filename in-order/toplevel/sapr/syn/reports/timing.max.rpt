@@ -1,2 +1,19 @@
-Error: Current design is not defined. (UID-4)
-0
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+        -nets
+        -max_paths 200
+        -capacitance
+Design : top_level_with_macros
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 13:08:46 2023
+****************************************
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+No paths.
+
+1

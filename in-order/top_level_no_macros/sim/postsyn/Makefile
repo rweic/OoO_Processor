@@ -1,4 +1,4 @@
-TOPLEVEL=top_level_no_macros
+TOPLEVEL=top_level_no_macros_tb
 
 SRC=$(ADK_PATH)/stdcells.v \
 	verilog/PARAM.vh \
