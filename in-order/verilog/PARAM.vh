@@ -71,8 +71,8 @@
 //DIV
 `define FUNCT3_DIV    3'b100
 `define FUNCT3_DIVU   3'b101
-`define FUNCT3_REMW   3'b110
-`define FUNCT3_REMUW  3'b111
+`define FUNCT3_REM    3'b110
+`define FUNCT3_REMU   3'b111
 // FUNCT 7
 `define FUNCT7_SLLI 7'b0000000
 // SRI
