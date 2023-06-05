@@ -210,6 +210,31 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
                         `FUNCT3_AND: begin
                             `SET_CTRL(`ALU_OP_AND, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                         end
+                        // mul & div
+                        `FUNCT3_MUL: begin
+                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_MULH: begin
+                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_MULHSU: begin
+                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_MULHU: begin
+                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_DIV: begin
+                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_DIVU: begin
+                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_REM: begin
+                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
+                        `FUNCT3_REMU: begin
+                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                        end
                         default: begin end
                     endcase
                 end
