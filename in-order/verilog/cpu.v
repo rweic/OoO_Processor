@@ -140,7 +140,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     regfile regfile0 (
         .clk(clk), 
         .reset(reset), 
-        .w_en(rf_w_en_wb),
+        .w_en(rf_w_en_wb && ~load_flag_ex), // should be load_flag_wb?
         .ra_addr(rs1_addr), 
         .rb_addr(rs2_addr), 
         .rd_addr(rd_addr_wb),

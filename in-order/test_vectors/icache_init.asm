@@ -1,28 +1,37 @@
-# RISC-V Assembly code to try each instruction in the RV32I and RV32M ISA
+## RISC-V Assembly code to try each instruction in the RV32I and RV32M ISA
 # Compile with https://venus.kvakil.me/
 
-#OP_ITYPE
-ADDI x1, x2, 2
-SLLI x3, x1, 3   # Dependency on x1 from ADDI
-SLTI x5, x3, 7   # Dependency on x3 from SLLI
-SLTIU x7, x5, 9  # Dependency on x5 from SLTI
-XORI x9, x7, 12  # Dependency on x7 from SLTIU
-SRAI x11, x9, 4  # Dependency on x9 from XORI
-SRLI x13, x11, 5 # Dependency on x11 from SRAI
-ORI x15, x11, 10 # Dependency on x11 from SRAI
-ANDI x17, x7, 15 # No Dependency on x15 from ORI
+# OP_ITYPE
+ADDI x1, x2, 2    # Answer = 2, Stored to x1; Dependency on x2
+SLLI x3, x1, 3    # Answer = 16, Stored to x3; Dependency on x1 from ADDI
+SLTI x5, x3, 7    # Answer = 0, Stored to x5; Dependency on x3 from SLLI
+SLTIU x7, x5, 9   # Answer = 1, Stored to x7; Dependency on x5 from SLTI
+XORI x9, x7, 12   # Answer = 13, Stored to x9; Dependency on x7 from SLTIU
+SRAI x11, x9, 4   # Answer = 0, Stored to x11; Dependency on x9 from XORI
+SRLI x13, x11, 5  # Answer = 0, Stored to x13; Dependency on x11 from SRAI
+ORI x15, x11, 10  # Answer = 10, Stored to x15; Dependency on x11 from SRAI
+ANDI x17, x7, 15  # Answer = 1, Stored to x17; No Dependency on x15 from ORI
 
-#OP_RTYPE
-ADD x1, x2, x3
-SUB x4, x5, x6
-SLL x7, x8, x9
-SLT x10, x11, x12
-SLTU x13, x14, x15
-XOR x16, x17, x18
-SRA x19, x20, x21
-SRL x22, x23, x24
-OR x25, x26, x27
-AND x28, x29, x30
+# OP_RTYPE
+ADD x1, x2, x3    # Answer = 16, Stored to x1
+SUB x4, x3, x9    # Answer = 3, Stored to x4
+SLL x7, x8, x9    # Answer = 0, Stored to x7
+SLT x10, x11, x12 # Answer = 0, Stored to x10
+SLTU x13, x14, x15# Answer = 1, Stored to x13
+XOR x16, x17, x18 # Answer = 1, Stored to x16
+SRA x19, x20, x21 # Answer = 0, Stored to x19
+SRL x22, x23, x24 # Answer = 0, Stored to x22
+OR x25, x26, x27  # Answer = 0, Stored to x25
+AND x28, x29, x30 # Answer = 0, Stored to x28
+
+MUL x17, x3, x1   # Answer = 256, Stored to x17
+MULH x20, x3, x1
+MULHSU x23, x3, x1 
+MULHU x26, x3, x1  
+DIV x29, x3, x1   
+DIVU x8, x3, x1   
+REM x4, x3, x1     
+REMU x7, x3, x1  
 
 #OP_BRANCH
 BEQ x1, x2, label1
