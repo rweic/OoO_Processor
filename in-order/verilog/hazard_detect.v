@@ -13,7 +13,7 @@ module hazard_detect(
     //output logic [1:0] ForwardingReg1Exec,
     //output logic [1:0] ForwardingReg2Exec,
     output logic StallDecode_o,
-    output logic StallFetch_o,
+    output logic StallFetch_o
     //output logic FlushDecode,
     //output logic FlushExec
 );
