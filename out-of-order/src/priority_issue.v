@@ -34,6 +34,7 @@ module priority_issue #(parameter SIZE = 4) (
     always @(posedge  clk_i) begin
     //always @(*) begin
         if (reset_i) begin
+            idx = 'b0;
             for (integer i = 0; i < SIZE; i = i+1) begin
                 age[i] = 'b0;  // all ages start with 0
             end
