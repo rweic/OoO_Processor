@@ -64,7 +64,7 @@ module mul(
                 begin
                     operand1 = {1'b0, rs1_value_i};
                     operand2 = {1'b0, rs2_value_i};
-                    high_low_sel <= 1'b1;
+                    high_low_sel = 1'b1;
                 end
                 `FUNCT3_MULHSU: // signed×unsigned
                 begin
