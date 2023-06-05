@@ -89,7 +89,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         //.ForwardingReg1Exec(),  // Update with appropriate signal
         //.ForwardingReg2Exec(),  // Update with appropriate signal
         .StallDecode_o(StallDecode),  // Update with appropriate signal
-        .StallFetch_o(StallFetch),  // Update with appropriate signal
+        .StallFetch_o(StallFetch)  // Update with appropriate signal
         //.FlushDecode(),  // Update with appropriate signal
         //.FlushExec()  // Update with appropriate signal
     );

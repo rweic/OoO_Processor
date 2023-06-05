@@ -43,10 +43,23 @@ if {[file isfile pin_placement.tcl]} {
     source pin_placement.tcl -echo
 }
 
+#### SET MODULE FLOORPLAN #####
+
+create_bounds -name "fetchBound" -coordinate {14.0 14.0 64.0 570} fetch0
+
+create_bounds -name "decodeBound" -coordinate {89.0 14.0 139.0 570} decode0
+
+create_bounds -name "regfileBound" -coordinate {164.0 14.0 314.0 570} regfile0
+
+create_bounds -name "execBound" -coordinate {339.0 14.0 539.0 570} exec0
+
+
+
+
 #### SET FLOORPLAN VARIABLES ######
 set CELL_HEIGHT 1.4
-set CORE_WIDTH_IN_CELL_HEIGHTS  300
-set CORE_HEIGHT_IN_CELL_HEIGHTS 300
+set CORE_WIDTH_IN_CELL_HEIGHTS  400
+set CORE_HEIGHT_IN_CELL_HEIGHTS 400
 set POWER_RING_CHANNEL_WIDTH [expr 10*$CELL_HEIGHT]
 
 set CORE_WIDTH  [expr $CORE_WIDTH_IN_CELL_HEIGHTS * $CELL_HEIGHT]
@@ -75,18 +88,18 @@ add_row \
 
 ### ADD STUFF HERE FOR THE MACRO PLACEMENT.
 ##### PLACING YOUR RAM AND DERIVING CELL INFO######
-#  set RAM_16B_512 "IMEM"
+#  set REGF "regfile0"
 
 #  # Get height and width of RAM
-#  set RAM_16B_512_HEIGHT [get_attribute $RAM_16B_512 height]
-#  set RAM_16B_512_WIDTH  [get_attribute $RAM_16B_512 width] 
+#  set REGF_HEIGHT [get_attribute $RAM_16B_512 height]
+#  set REGF_WIDTH  [get_attribute $RAM_16B_512 width] 
 
 #  # Set Origin of RAM
-#  set IRAM_16B_512_LLX [expr 30*$CELL_HEIGHT - 45]
-#  set IRAM_16B_512_LLY [expr 30*$CELL_HEIGHT - 45]
+#  set REGF_LLX [expr 30*$CELL_HEIGHT - 45]
+#  set REGF_LLY [expr 30*$CELL_HEIGHT - 45]
 #  # Derive URX and URY corner for placement blockage. "Width" and "Height" are along wrong axes because we rotated the RAM.
-#  set IRAM_16B_512_URX [expr $IRAM_16B_512_LLX + $RAM_16B_512_HEIGHT]
-#  set IRAM_16B_512_URY [expr $IRAM_16B_512_LLY + $RAM_16B_512_WIDTH]
+#  set REGF_URX [expr $IRAM_16B_512_LLX + $RAM_16B_512_HEIGHT]
+#  set REGF_URY [expr $IRAM_16B_512_LLY + $RAM_16B_512_WIDTH]
 
 #  set GUARD_SPACING [expr 2*$CELL_HEIGHT]
 

@@ -2,8 +2,8 @@ type = offset
 defaultOffset = 0.0
 
 #N, 15.95
-Clock, layer=metal3 +1.4
-Reset, layer=metal3 +1.4
+clk, layer=metal3 +1.4
+reset, layer=metal3 +1.4
 
 #W, 15.96
 A, layer=metal4 +1.4
