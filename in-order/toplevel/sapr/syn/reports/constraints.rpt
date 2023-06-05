@@ -1,2 +1,13 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : top_level_with_macros
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 13:08:46 2023
+****************************************
+
+This design has no violated constraints.
+
+1

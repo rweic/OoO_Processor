@@ -1,0 +1,38 @@
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[4]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[4]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[4]   $svf_impl/cpu/regfile0/rb_addr[4]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[4]  ~ hazard_detect0/IN0 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[4]  ~ regfile0/IN0 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[0]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[0]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[0]   $svf_impl/cpu/regfile0/rb_addr[0]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[0]  ~ hazard_detect0/IN1 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[0]  ~ regfile0/IN1 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[2]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[2]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[2]   $svf_impl/cpu/regfile0/rb_addr[2]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[2]  ~ hazard_detect0/IN2 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[2]  ~ regfile0/IN2 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[1]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[1]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[1]   $svf_impl/cpu/regfile0/rb_addr[1]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[1]  ~ hazard_detect0/IN3 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[1]  ~ regfile0/IN3 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[3]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[3]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[3]   $svf_impl/cpu/regfile0/ra_addr[3]
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[3]  ~ regfile0/IN4 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[1]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[1]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[1]   $svf_impl/cpu/regfile0/ra_addr[1]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[1]  ~ hazard_detect0/IN4 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[1]  ~ regfile0/IN5 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[0]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[0]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[0]   $svf_impl/cpu/regfile0/ra_addr[0]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[0]  ~ hazard_detect0/IN5 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[0]  ~ regfile0/IN6 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[2]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[2]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[2]   $svf_impl/cpu/regfile0/ra_addr[2]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[2]  ~ hazard_detect0/IN6 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[2]  ~ regfile0/IN7 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[4]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[4]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[4]   $svf_impl/cpu/regfile0/ra_addr[4]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[4]  ~ hazard_detect0/IN7 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[4]  ~ regfile0/IN8 }
+
+#-------------------------------------------------------------------
+

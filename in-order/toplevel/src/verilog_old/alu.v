@@ -5,7 +5,7 @@ module alu #(parameter WIDTH=32) (funct7, funct3, alu_op1, alu_op2, alu_func, al
     input [3:0] alu_func;
     output reg [WIDTH-1:0] alu_out;
 
-		wire [63:0] alu_out_temp;
+		reg [63:0] alu_out_temp;
 
     always @(*) begin
         case (alu_func)

@@ -1,0 +1,5 @@
+./cpu.apr_no_phys_pwr.v
+./verilog/dcache.v
+./verilog/icache.v
+./verilog/top_level_no_macros_tb.sv
+/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v

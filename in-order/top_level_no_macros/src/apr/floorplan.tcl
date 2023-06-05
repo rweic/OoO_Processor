@@ -45,21 +45,25 @@ if {[file isfile pin_placement.tcl]} {
 
 #### SET MODULE FLOORPLAN #####
 
-create_bounds -name "fetchBound" -coordinate {14.0 14.0 64.0 570} fetch0
+#create_bounds -name "regfileBound" -coordinate {14.0 14.0 164.0 570} regfile0
 
-create_bounds -name "decodeBound" -coordinate {89.0 14.0 139.0 570} decode0
+#create_bounds -name "execBound" -coordinate {189.0 14.0 439.0 570} exec0
 
-create_bounds -name "regfileBound" -coordinate {164.0 14.0 314.0 570} regfile0
+#create_bounds -name "fetchBound" -coordinate {464.0 14.0 514.0 570} fetch0
 
-create_bounds -name "execBound" -coordinate {339.0 14.0 539.0 570} exec0
+#create_bounds -name "decodeBound" -coordinate {514.0 14.0 570.0 570} decode0
+
+
+
+
 
 
 
 
 #### SET FLOORPLAN VARIABLES ######
 set CELL_HEIGHT 1.4
-set CORE_WIDTH_IN_CELL_HEIGHTS  400
-set CORE_HEIGHT_IN_CELL_HEIGHTS 400
+set CORE_WIDTH_IN_CELL_HEIGHTS  500
+set CORE_HEIGHT_IN_CELL_HEIGHTS 500
 set POWER_RING_CHANNEL_WIDTH [expr 10*$CELL_HEIGHT]
 
 set CORE_WIDTH  [expr $CORE_WIDTH_IN_CELL_HEIGHTS * $CELL_HEIGHT]

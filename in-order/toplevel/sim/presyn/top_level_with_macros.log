@@ -1,0 +1,1071 @@
+Command: vcs -f top_level_with_macros.include +v2k -R +lint=all -sverilog -full64 \
++neg_tchk +define+PRE_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l top_level_with_macros.log \
+
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Mon Jun  5 12:31:46 2023
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file './verilog/PARAM.vh'
+Parsing design file './verilog/alu.v'
+Parsing design file './verilog/regfile.v'
+Parsing design file './verilog/execute.v'
+Parsing design file './verilog/decode.v'
+Parsing design file './verilog/fetch.v'
+Parsing design file './verilog/memory_access.v'
+Parsing design file './verilog/hazard_detect.v'
+Parsing design file './verilog/writeback.v'
+Parsing design file './verilog/cpu.v'
+Parsing design file './SRAM/dmem/dmem.v'
+Parsing design file './SRAM/imem/imem.v'
+Parsing design file './verilog/top_level_with_macros.v'
+Parsing design file './verilog/top_level_with_macros_tb.sv'
+Top Level Modules:
+       top_level_with_macros_tb
+TimeScale is 1 ns / 10 ps
+
+Lint-[TFIPC-L] Too few instance port connections
+./verilog/cpu.v, 98
+cpu, "fetch fetch0( .clk (clk),  .reset (reset),  .pcsel (pcsel),  .br_dest (br_tar),  .instr_if (instruction_if),  .pc_if (pc_if),  .pc_o (pc_id),  .instr_o (instruction_id),  .StallFetch_i (StallFetch));"
+  The above instance has fewer port connections than the module definition,
+  There are 10 port(s) in module "fetch" definition, but only 9 port 
+  connect(s) in the instance.
+  input port 'hazard_flag_i' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+./verilog/top_level_with_macros.v, 27
+top_level_with_macros, "dmem dcache0( .clk0 (clk),  .csb0 (1'b0),  .addr0 (dmem_addr),  .din0 (dmem_wdata),  .clk1 (clk),  .addr1 (dmem_addr),  .dout1 (dmem_rdata));"
+  The above instance has fewer port connections than the module definition,
+  There are 9 port(s) in module "dmem" definition, but only 8 port connect(s) 
+  in the instance.
+  input port 'csb1' is not connected.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 13
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 + alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 15
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 - alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 17
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 & alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 19
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 | alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 21
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 ^ alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 23
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = {{(WIDTH - 1) {1'b0}}, ($signed(alu_op1) < 
+  $signed(alu_op2))};
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 25
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = {{(WIDTH - 1) {1'b0}}, (alu_op1 < alu_op2)};
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 27
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 << alu_op2[4:0]);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 29
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 >> alu_op2[4:0]);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 31
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 >>> alu_op2[4:0]);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 33
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 * alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 35
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = (alu_op1 / alu_op2);
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/alu.v, 37
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: alu_out_temp = 'b0;
+  Expression: alu_out_temp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/execute.v, 39
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_o <= 'b0;
+  Expression: rd_addr_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/execute.v, 40
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: rf_w_en_o <= 'b0;
+  Expression: rf_w_en_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/execute.v, 41
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_o <= 'b0;
+  Expression: wbsel_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/execute.v, 42
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: mem_w_en_o <= 'b0;
+  Expression: mem_w_en_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 78
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: alu_func <= 'b0;
+  Expression: alu_func
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 79
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel1 <= 'b0;
+  Expression: opsel1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 80
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2 <= 'b0;
+  Expression: opsel2
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 81
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel <= 'b0;
+  Expression: wbsel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 82
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr <= 'b0;
+  Expression: rd_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 83
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: rf_w_en <= 'b0;
+  Expression: rf_w_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 84
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: mem_w_en <= 'b0;
+  Expression: mem_w_en
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 88
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: load_flag_o <= 'b0;
+  Expression: load_flag_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 101
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: load_flag_o <= 'b0;
+  Expression: load_flag_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: alu_func_id = 0;
+  Expression: alu_func_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel1_id = 0;
+  Expression: opsel1_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_id = 0;
+  Expression: wbsel_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_id = 0;
+  Expression: rd_addr_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: rf_w_en_id = 0;
+  Expression: rf_w_en_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: mem_w_en_id = 0;
+  Expression: mem_w_en_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 146
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: pcsel = 0;
+  Expression: pcsel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: alu_func_id = 0;
+  Expression: alu_func_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel1_id = 0;
+  Expression: opsel1_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_id = 0;
+  Expression: wbsel_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_id = 0;
+  Expression: rd_addr_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: rf_w_en_id = 0;
+  Expression: rf_w_en_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: mem_w_en_id = 0;
+  Expression: mem_w_en_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 150
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: pcsel = 0;
+  Expression: pcsel
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 155
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 158
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 161
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 164
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 167
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 172
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 175
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 180
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 183
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 287
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel1_id = 0;
+  Expression: opsel1_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 287
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 287
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 'b0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 287
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 290
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 290
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 'b0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 290
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 293
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 'b0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 293
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 297
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs1_addr = 'b0;
+  Expression: rs1_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 297
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 304
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 304
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 307
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 307
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 310
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 310
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 313
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 313
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 316
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: opsel2_id = 0;
+  Expression: opsel2_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 316
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rs2_addr = 'b0;
+  Expression: rs2_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 323
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_id = 0;
+  Expression: wbsel_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 323
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_id = 0;
+  Expression: rd_addr_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 326
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_id = 0;
+  Expression: wbsel_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 326
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_id = 0;
+  Expression: rd_addr_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 329
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_id = 0;
+  Expression: wbsel_id
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/decode.v, 329
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_id = 0;
+  Expression: rd_addr_id
+
+
+Lint-[UI] Unused input
+./verilog/fetch.v, 13
+  Following is an unused input.
+  Source info: hazard_flag_i
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/memory_access.v, 28
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rd_addr_o <= 'b0;
+  Expression: rd_addr_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/memory_access.v, 29
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: rf_w_en_o <= 'b0;
+  Expression: rf_w_en_o
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/memory_access.v, 32
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: wbsel_o <= 'b0;
+  Expression: wbsel_o
+
+
+Lint-[UI] Unused input
+./verilog/hazard_detect.v, 8
+  Following is an unused input.
+  Source info: DestRegWriteBack
+
+
+Lint-[UI] Unused input
+./verilog/hazard_detect.v, 9
+  Following is an unused input.
+  Source info: RegisterWriteMem
+
+
+Lint-[UI] Unused input
+./verilog/hazard_detect.v, 10
+  Following is an unused input.
+  Source info: RegisterWriteWriteBack
+
+
+Lint-[UI] Unused input
+./verilog/hazard_detect.v, 12
+  Following is an unused input.
+  Source info: ProgramCounterSourceExec
+
+
+Lint-[UI] Unused input
+./verilog/hazard_detect.v, 19
+  Following is an unused input.
+  Source info: muldiv_hazard_i
+
+
+Lint-[VNGS] Variable never gets set
+./verilog/cpu.v, 35
+  Following variable has never been set any value.
+  Source info: StallDecode_i
+
+
+Lint-[PCWM-L] Port connection width mismatch
+./verilog/top_level_with_macros.v, 27
+"dmem dcache0( .clk0 (clk),  .csb0 (1'b0),  .addr0 (dmem_addr),  .din0 (dmem_wdata),  .clk1 (clk),  .addr1 (dmem_addr),  .dout1 (dmem_rdata));"
+  The following 6-bit expression is connected to 8-bit port "addr0" of module 
+  "dmem", instance "dcache0".
+  Expression: dmem_addr
+  The expression is from module top_level_with_macros, instance dut 
+
+
+Lint-[PCWM-L] Port connection width mismatch
+./verilog/top_level_with_macros.v, 27
+"dmem dcache0( .clk0 (clk),  .csb0 (1'b0),  .addr0 (dmem_addr),  .din0 (dmem_wdata),  .clk1 (clk),  .addr1 (dmem_addr),  .dout1 (dmem_rdata));"
+  The following 6-bit expression is connected to 8-bit port "addr1" of module 
+  "dmem", instance "dcache0".
+  Expression: dmem_addr
+  The expression is from module top_level_with_macros, instance dut 
+
+
+Lint-[PCWM-L] Port connection width mismatch
+./verilog/top_level_with_macros.v, 45
+"imem instruction_memory( .clk0 (clk),  .csb0 (1'b0),  .web0 (1'b1),  .addr0 (pc_if),  .din0 (32'b0),  .dout0 (instruction_if));"
+  The following 32-bit expression is connected to 8-bit port "addr0" of module
+  "imem", instance "instruction_memory".
+  Expression: pc_if
+  The expression is from module top_level_with_macros, instance dut 
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/top_level_with_macros_tb.sv, 26
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 1;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+./verilog/top_level_with_macros_tb.sv, 27
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+Starting vcs inline pass...
+
+7 modules and 0 UDP read.
+recompiling module regfile
+recompiling module execute
+recompiling module hazard_detect
+recompiling module writeback
+recompiling module dmem
+recompiling module imem
+recompiling module top_level_with_macros_tb
+All of 7 modules done
+make[1]: Entering directory `/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn/csrc' \
+
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib -L/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _26078_archive_1.so \
+SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcs_save_restore_new.o /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory `/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn/csrc' \
+
+Command: /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/toplevel/sim/presyn/./simv +v2k +lint=all +neg_tchk +define+PRE_SYN=1 -a top_level_with_macros.log
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Jun  5 12:31 2023
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_U-2023.03, Linux x86_64/64bit, 02/16/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'top_level_with_macros.fsdb'
+*Verdi* : Begin traversing the scope (top_level_with_macros_tb), layer (0).
+*Verdi* : End of traversing.
+                   5 Writing top_level_with_macros_tb.dut.dcache0 addr0=00xxxxxx din0=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx wmask0=zzzz
+                   6 Reading top_level_with_macros_tb.dut.instruction_memory addr0=xxxxxxxx dout0=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                  15 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  16 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00000000 dout0=00000000001100010000000010110011
+                  25 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  26 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00000000 dout0=00000000001100010000000010110011
+                  35 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  36 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00000100 dout0=00000000001100010000001100110011
+                  45 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  46 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00001000 dout0=00000000000000000000000000001000
+                  55 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  56 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00001100 dout0=00000000000000000000000000001100
+                  65 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  66 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00010000 dout0=00000000000000000000000000010000
+                  75 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  76 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00010100 dout0=00000000000000000000000000010100
+                  85 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  86 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00011000 dout0=00000000000000000000000000011000
+                  95 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                  96 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00011100 dout0=00000000000000000000000000011100
+                 105 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 106 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00100000 dout0=00000000000000000000000000100000
+                 115 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 116 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00100100 dout0=00000000000000000000000000100100
+                 125 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 126 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00101000 dout0=00000000000000000000000000101000
+                 135 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 136 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00101100 dout0=00000000000000000000000000101100
+                 145 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 146 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00110000 dout0=00000000000000000000000000110000
+                 155 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 156 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00110100 dout0=00000000000000000000000000110100
+                 165 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 166 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00111000 dout0=00000000000000000000000000111000
+                 175 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 176 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00111100 dout0=00000000000000000000000000111100
+                 185 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 186 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01000000 dout0=00000000000000000000000001000000
+                 195 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 196 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01000100 dout0=00000000000000000000000001000100
+                 205 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 206 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01001000 dout0=00000000000000000000000001001000
+                 215 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 216 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01001100 dout0=00000000000000000000000001001100
+                 225 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 226 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01010000 dout0=00000000000000000000000001010000
+                 235 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 236 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01010100 dout0=00000000000000000000000001010100
+                 245 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 246 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01011000 dout0=00000000000000000000000001011000
+                 255 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 256 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01011100 dout0=00000000000000000000000001011100
+                 265 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 266 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01100000 dout0=00000000000000000000000001100000
+                 275 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 276 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01100100 dout0=00000000000000000000000001100100
+                 285 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 286 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01101000 dout0=00000000000000000000000001101000
+                 295 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 296 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01101100 dout0=00000000000000000000000001101100
+                 305 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 306 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01110000 dout0=00000000000000000000000001110000
+                 315 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 316 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01110100 dout0=00000000000000000000000001110100
+                 325 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 326 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01111000 dout0=00000000000000000000000001111000
+                 335 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 336 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01111100 dout0=00000000000000000000000001111100
+                 345 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 346 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10000000 dout0=00000000000000000000000010000000
+                 355 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 356 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10000100 dout0=00000000000000000000000010000100
+                 365 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 366 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10001000 dout0=00000000000000000000000010001000
+                 375 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 376 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10001100 dout0=00000000000000000000000010001100
+                 385 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 386 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10010000 dout0=00000000000000000000000010010000
+                 395 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 396 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10010100 dout0=00000000000000000000000010010100
+                 405 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 406 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10011000 dout0=00000000000000000000000010011000
+                 415 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 416 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10011100 dout0=00000000000000000000000010011100
+                 425 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 426 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10100000 dout0=00000000000000000000000010100000
+                 435 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 436 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10100100 dout0=00000000000000000000000010100100
+                 445 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 446 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10101000 dout0=00000000000000000000000010101000
+                 455 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 456 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10101100 dout0=00000000000000000000000010101100
+                 465 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 466 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10110000 dout0=00000000000000000000000010110000
+                 475 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 476 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10110100 dout0=00000000000000000000000010110100
+                 485 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 486 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10111000 dout0=00000000000000000000000010111000
+                 495 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 496 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10111100 dout0=00000000000000000000000010111100
+                 505 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 506 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11000000 dout0=00000000000000000000000011000000
+                 515 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 516 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11000100 dout0=00000000000000000000000011000100
+                 525 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 526 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11001000 dout0=00000000000000000000000011001000
+                 535 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 536 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11001100 dout0=00000000000000000000000011001100
+                 545 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 546 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11010000 dout0=00000000000000000000000011010000
+                 555 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 556 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11010100 dout0=00000000000000000000000011010100
+                 565 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 566 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11011000 dout0=00000000000000000000000011011000
+                 575 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 576 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11011100 dout0=00000000000000000000000011011100
+                 585 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 586 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11100000 dout0=00000000000000000000000011100000
+                 595 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 596 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11100100 dout0=00000000000000000000000011100100
+                 605 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 606 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11101000 dout0=00000000000000000000000011101000
+                 615 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 616 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11101100 dout0=00000000000000000000000011101100
+                 625 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 626 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11110000 dout0=00000000000000000000000011110000
+                 635 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 636 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11110100 dout0=00000000000000000000000011110100
+                 645 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 646 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11111000 dout0=00000000000000000000000011111000
+                 655 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 656 Reading top_level_with_macros_tb.dut.instruction_memory addr0=11111100 dout0=00000000000000000000000011111100
+                 665 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 666 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00000000 dout0=00000000001100010000000010110011
+                 675 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 676 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00000100 dout0=00000000001100010000001100110011
+                 685 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 686 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00001000 dout0=00000000000000000000000000001000
+                 695 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 696 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00001100 dout0=00000000000000000000000000001100
+                 705 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 706 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00010000 dout0=00000000000000000000000000010000
+                 715 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 716 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00010100 dout0=00000000000000000000000000010100
+                 725 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 726 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00011000 dout0=00000000000000000000000000011000
+                 735 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 736 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00011100 dout0=00000000000000000000000000011100
+                 745 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 746 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00100000 dout0=00000000000000000000000000100000
+                 755 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 756 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00100100 dout0=00000000000000000000000000100100
+                 765 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 766 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00101000 dout0=00000000000000000000000000101000
+                 775 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 776 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00101100 dout0=00000000000000000000000000101100
+                 785 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 786 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00110000 dout0=00000000000000000000000000110000
+                 795 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 796 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00110100 dout0=00000000000000000000000000110100
+                 805 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 806 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00111000 dout0=00000000000000000000000000111000
+                 815 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 816 Reading top_level_with_macros_tb.dut.instruction_memory addr0=00111100 dout0=00000000000000000000000000111100
+                 825 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 826 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01000000 dout0=00000000000000000000000001000000
+                 835 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 836 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01000100 dout0=00000000000000000000000001000100
+                 845 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 846 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01001000 dout0=00000000000000000000000001001000
+                 855 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 856 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01001100 dout0=00000000000000000000000001001100
+                 865 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 866 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01010000 dout0=00000000000000000000000001010000
+                 875 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 876 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01010100 dout0=00000000000000000000000001010100
+                 885 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 886 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01011000 dout0=00000000000000000000000001011000
+                 895 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 896 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01011100 dout0=00000000000000000000000001011100
+                 905 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 906 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01100000 dout0=00000000000000000000000001100000
+                 915 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 916 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01100100 dout0=00000000000000000000000001100100
+                 925 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 926 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01101000 dout0=00000000000000000000000001101000
+                 935 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 936 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01101100 dout0=00000000000000000000000001101100
+                 945 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 946 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01110000 dout0=00000000000000000000000001110000
+                 955 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 956 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01110100 dout0=00000000000000000000000001110100
+                 965 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 966 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01111000 dout0=00000000000000000000000001111000
+                 975 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 976 Reading top_level_with_macros_tb.dut.instruction_memory addr0=01111100 dout0=00000000000000000000000001111100
+                 985 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 986 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10000000 dout0=00000000000000000000000010000000
+                 995 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                 996 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10000100 dout0=00000000000000000000000010000100
+                1005 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                1006 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10001000 dout0=00000000000000000000000010001000
+                1015 Writing top_level_with_macros_tb.dut.dcache0 addr0=00000000 din0=00000000000000000000000000000000 wmask0=zzzz
+                1016 Reading top_level_with_macros_tb.dut.instruction_memory addr0=10001100 dout0=00000000000000000000000010001100
+$finish called from file "./verilog/top_level_with_macros_tb.sv", line 29.
+$finish at simulation time               102000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1020000 ps
+CPU Time:      0.390 seconds;       Data structure size:   0.0Mb
+Mon Jun  5 12:31:56 2023
+CPU time: .441 seconds to compile + .259 seconds to elab + .393 seconds to link + .413 seconds in simulation
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)

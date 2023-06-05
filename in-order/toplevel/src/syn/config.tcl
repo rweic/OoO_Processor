@@ -20,11 +20,11 @@ set RTL_SOURCE_FILES [list \
    "$BASE/fetch.v" \
    "$BASE/memory_access.v" \
    "$BASE/hazard_detect.v" \
-   "$BASE/writeback.v" \
-   "$BASE/cpu.v" \  
-   "$PROJECT_DIR/macro_prep/dmem/dmem.v" \
-   "$PROJECT_DIR/macro_prep/imem/imem.v" \
-   "$BASE/top_level_with_macros.v" \
+		"$BASE/writeback.v" \
+		"$BASE/cpu.v" \
+		"$PROJECT_DIR/macro_prep/dmem/dmem.v" \
+		"$PROJECT_DIR/macro_prep/imem/imem.v" \
+		"$BASE/top_level_with_macros.v" \
 ]
 
 set RTL_DEFINES "$BASE/PARAM.vh"
@@ -65,7 +65,7 @@ if {$PROCESS == "45GP"} {
    # Reference libraries 
    set MW_REFERENCE_LIBS "$ADK_PATH/stdcells.mwlib"
    set MW_ADDITIONAL_REFERENCE_LIBS [list \
-      "dmem" \
+			"dmem" \
 			"imem" \
    ]
 				   

@@ -22,6 +22,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [31:0] regfile_o [0:31];
     wire StallFetch;
     wire StallDecode;
+		wire muldiv_hazard;
     
     // IF stage
     // wire [WIDTH-1:0] pc_if;

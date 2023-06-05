@@ -31,6 +31,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     wire [INST_LEN-1:0] instruction_id;
     wire [4:0] rs1_addr, rs2_addr;  //temp value
     wire [WIDTH-1:0] rs1_data, rs2_data;    // temp value
+		wire StallDecode_i;
 
     // EX stage
     wire [WIDTH-1:0] pc_ex;
@@ -104,6 +105,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .instr_o(instruction_id),
         .StallFetch_i(StallFetch));
 
+
     // Instruction Decode
     decode decode0 (
         // Inputs
@@ -150,7 +152,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .clk(clk), 
         .reset(reset),
 				.funct3(instruction_id[14:12]),
-				,funct7(instruction_id[31:25]), 
+				.funct7(instruction_id[31:25]), 
         .opsel1(opsel1),
         .opsel2(opsel2),
         .alu_func(alu_func),

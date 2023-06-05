@@ -1,2 +1,39 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : top_level_with_macros
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 13:08:46 2023
+****************************************
+
+
+Library(s) Used:
+
+    No libraries used.
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top_level_with_macros  5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+top_level_with_macros                     0.000    0.000    0.000    0.000   N/A
+1

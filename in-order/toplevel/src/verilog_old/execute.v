@@ -43,7 +43,7 @@ module execute #(parameter WIDTH = 32, parameter ADDR_LEN = 32) (
             rs2_data_o <= 'b0;
         end else begin
             pc_o <= pc_i;
-            alu_out <= (())alu_out_temp;
+            alu_out <= alu_out_temp;
             rd_addr_o <= rd_addr_i;
             rf_w_en_o <= rf_w_en_i;
             wbsel_o <= wbsel_i;

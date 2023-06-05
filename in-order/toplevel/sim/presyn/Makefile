@@ -1,8 +1,20 @@
-TOPLEVEL=ram_test
+TOPLEVEL=top_level_with_macros
 
-SRC=./sram_2_16_freepdk45.v \
-	./ram_test.sv \
-	./tb.sv
+SRC=./verilog/PARAM.vh \
+	./verilog/alu.v \
+	./verilog/regfile.v \
+	./verilog/execute.v \
+	./verilog/decode.v \
+	./verilog/fetch.v \
+	./verilog/memory_access.v \
+	./verilog/hazard_detect.v \
+	./verilog/writeback.v \
+	./verilog/cpu.v \
+	./SRAM/dmem/dmem.v \
+	./SRAM/imem/imem.v \
+	./verilog/top_level_with_macros.v \
+	./verilog/top_level_with_macros_tb.sv \
+
 
 $(TOPLEVEL).include:
 	echo $(SRC) > $@

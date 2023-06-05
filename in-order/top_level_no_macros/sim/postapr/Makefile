@@ -1,8 +1,11 @@
-TOPLEVEL=fsm
+TOPLEVEL=top_level_no_macros_tb
 
 SRC=$(ADK_PATH)/stdcells.v \
-	./fsm.apr_no_phys_pwr.v \
-	./tb.sv
+	./verilog/dcache.v \
+	./verilog/icache.v \
+	./cpu.apr_no_phys_pwr.v \
+	./verilog/top_level_no_macros_tb.sv \
+
 
 $(TOPLEVEL).include:
 	echo $(SRC) > $@

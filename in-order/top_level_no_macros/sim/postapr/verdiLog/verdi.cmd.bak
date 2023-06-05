@@ -1,0 +1,10 @@
+simSetSimulator "-vcssv" -exec \
+           "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postapr/simv" \
+           -args \
+           "+v2k +lint=all +neg_tchk +define+POST_APR=1 -a top_level_no_macros_tb.log"
+debImport "-dbdir" \
+          "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postapr/simv.daidir"
+debLoadSimResult \
+           /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postapr/top_level_no_macros_tb.fsdb
+wvCreateWindow
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1

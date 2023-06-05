@@ -1,0 +1,74 @@
+Magic 271485
+Revision Verdi_U-2023.03
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1920 536 173 47
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postapr/top_level_no_macros_tb.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 39404.685748 90404.685748
+cursor 66525.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 2
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "regfile0"
+activeDirFile "" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postapr/top_level_no_macros_tb.fsdb"
+addSignal -h 15 /top_level_no_macros_tb/cpu0/regfile0/reset
+addSignal -h 15 -holdScope w_en
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -UNSIGNED -HEX -holdScope rb_value[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ra_value[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope w_data[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rb_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rd_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ra_addr[4:0]
+addSubGroup "hazard_detect0"
+addSignal -h 15 -UNSIGNED -HEX /top_level_no_macros_tb/cpu0/hazard_detect0/DestRegWriteBack[4:0]
+addSignal -h 15 -holdScope ResultSourceExec0
+addSignal -h 15 -holdScope ProgramCounterSourceExec
+addSignal -h 15 -holdScope StallDecode_o
+addSignal -h 15 -holdScope StallFetch_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope DestRegMem[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SourceReg2Dec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope DestRegExec[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope SourceReg1Dec[4:0]
+endSubGroup "hazard_detect0"
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

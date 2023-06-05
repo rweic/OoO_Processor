@@ -1,0 +1,56 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "regfile": [
+        "regfile",
+        "Nxspn",
+        "module",
+        2
+    ],
+    "execute": [
+        "execute",
+        "sEyU5",
+        "module",
+        3
+    ],
+    "hazard_detect": [
+        "hazard_detect",
+        "jrIci",
+        "module",
+        4
+    ],
+    "writeback": [
+        "writeback",
+        "wFN4a",
+        "module",
+        5
+    ],
+    "dmem": [
+        "dmem",
+        "Iyg26",
+        "module",
+        6
+    ],
+    "imem": [
+        "imem",
+        "JixA0",
+        "module",
+        7
+    ],
+    "top_level_with_macros_tb": [
+        "top_level_with_macros_tb",
+        "kk4VD",
+        "module",
+        8
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        9
+    ]
+}
