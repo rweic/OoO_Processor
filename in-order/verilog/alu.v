@@ -38,6 +38,6 @@ module alu #(parameter WIDTH=32) (funct7, funct3, alu_op1, alu_op2, alu_func, al
         endcase
     end
 
-		assign alu_out = ((funct7 == `FUNCT7_MULDIV) && (funct3 != `FUNCT3_MUL)) ? alu_out_temp[63:32] : alu_out_temp[31:0];
+		assign alu_out = ((funct7 == `FUNCT7_MULDIV) && (funct3 != `FUNCT3_MUL)) ? alu_out_temp[31:0] : alu_out_temp[31:0];
 
 endmodule

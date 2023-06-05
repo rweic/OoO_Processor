@@ -1,4 +1,26 @@
-set_user_match   -inverted   $svf_ref/cpu/decode0/inst[5]   $svf_impl/cpu/decode0/inst[5]
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[3]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[3]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[3]   $svf_impl/cpu/regfile0/ra_addr[3]
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[3]  ~ regfile0/IN0 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[2]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[2]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[2]   $svf_impl/cpu/regfile0/ra_addr[2]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[2]  ~ hazard_detect0/IN0 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[2]  ~ regfile0/IN1 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg1Dec[4]   $svf_impl/cpu/hazard_detect0/SourceReg1Dec[4]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/ra_addr[4]   $svf_impl/cpu/regfile0/ra_addr[4]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg1Dec[4]  ~ hazard_detect0/IN1 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/ra_addr[4]  ~ regfile0/IN2 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[2]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[2]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[2]   $svf_impl/cpu/regfile0/rb_addr[2]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[2]  ~ hazard_detect0/IN2 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[2]  ~ regfile0/IN3 }
+set_user_match   -inverted   $svf_ref/cpu/hazard_detect0/SourceReg2Dec[4]   $svf_impl/cpu/hazard_detect0/SourceReg2Dec[4]
+set_user_match   -inverted   $svf_ref/cpu/regfile0/rb_addr[4]   $svf_impl/cpu/regfile0/rb_addr[4]
+guide_constraints -body { hazard_detect0 } -equivalent { hazard_detect0/SourceReg2Dec[4]  ~ hazard_detect0/IN3 }
+guide_constraints -body { regfile0 } -equivalent { regfile0/rb_addr[4]  ~ regfile0/IN4 }
+set_user_match   -inverted   $svf_ref/cpu/decode0/inst[30]   $svf_impl/cpu/decode0/inst[30]
+set_user_match   -inverted   $svf_ref/cpu/exec0/funct7[5]   $svf_impl/cpu/exec0/funct7[5]
+set_user_match   -inverted   $svf_ref/cpu/exec0/alu0/funct7[5]   $svf_impl/cpu/exec0/alu0/funct7[5]
+guide_constraints -body { decode0 } -equivalent { decode0/inst[30]  ~ decode0/IN0 }
 
 #-------------------------------------------------------------------
 

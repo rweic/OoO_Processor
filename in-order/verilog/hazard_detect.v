@@ -13,9 +13,10 @@ module hazard_detect(
     //output logic [1:0] ForwardingReg1Exec,
     //output logic [1:0] ForwardingReg2Exec,
     output logic StallDecode_o,
-    output logic StallFetch_o
+    output logic StallFetch_o,
     //output logic FlushDecode,
     //output logic FlushExec
+    input logic muldiv_hazard_i
 );
                      
     // RAW (Read After Write) Hazard
@@ -49,15 +50,19 @@ module hazard_detect(
     
     assign LoadWordStall = (ResultSourceExec0 == 1) && ((DestRegExec == SourceReg1Dec) || (DestRegExec == SourceReg2Dec));
     
-    // Signal When Stall should occur in fetch and decode
-    assign StallFetch_o = (LoadWordStall || RAW_hazard);
-    assign StallDecode_o = (LoadWordStall || RAW_hazard);
+
   
     // Control Hazard
     // Whenever a branch has been taken, flush the following two instructions from the Decode and Execute pipeline registers.
+    //assign FlushExec = ProgramCounterSourceExec;
+    //assign FlushDecode = ProgramCounterSourceExec;
     
-    assign FlushExec = LoadWordStall || ProgramCounterSourceExec;
-    assign FlushDecode = ProgramCounterSourceExec;
+    // MULDIV Hazard
+    //assign muldiv_hazard = 
+    
+    // Signal When Stall should occur in fetch and decode
+    assign StallFetch_o = (LoadWordStall || RAW_hazard);
+    assign StallDecode_o = (LoadWordStall || RAW_hazard);
 
 endmodule
 

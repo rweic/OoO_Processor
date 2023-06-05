@@ -1,5 +1,0 @@
-{"vcs1":{"timestamp_begin":1685924016.828303230, "rt":0.12, "ut":0.04, "st":0.02}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1685924016.536679111}
-{"VCS_COMP_START_TIME": 1685924016.536679111}
-{"VCS_COMP_END_TIME": 1685924018.802593271}
-{"VCS_USER_OPTIONS": "-f top_level_no_macros_tb.include +v2k -R +lint=all -sverilog -full64 +neg_tchk +define+POST_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l top_level_no_macros_tb.log"}
