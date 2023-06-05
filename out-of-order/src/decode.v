@@ -37,6 +37,8 @@ module decode (
     wire [4:0] prs2_addr;
     wire [4:0] prd_addr;
 
+
+
     // Predecode: decide which FU the inst goes into
     decoder dec0 (
         // Inputs
