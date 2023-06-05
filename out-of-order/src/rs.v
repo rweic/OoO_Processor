@@ -280,7 +280,7 @@ module rs_entry (
     reg prs1_ready_reg;
     reg prs2_ready_reg;
 
-    assign ready_o = prs1_ready & prs2_ready;
+    assign ready_o = prs1_ready & prs2_ready & (~entry_free_o);
     assign cdb_prs1_valid = cdb_en_i && (cdb_tag_i == prs1_addr_o);  // rs1 is updated
     assign cdb_prs2_valid = cdb_en_i && (cdb_tag_i == prs2_addr_o);  // rs2 is updated
 
@@ -305,15 +305,15 @@ module rs_entry (
             prs1_ready_reg = prs1_ready | cdb_prs1_valid;
             prs2_ready_reg = prs2_ready | cdb_prs2_valid;
         end
-        else begin  // entry_free_o == 1
+        else begin  // entry_free_o == 1 & not allocated
             entry_free_reg = entry_free_o | entry_sel_i;
             pc_reg = pc_o;
             inst_reg = inst_o;
-            prs1_addr_reg = prs1_addr_o;
-            prs2_addr_reg = prs2_addr_o;
-            prd_addr_reg = prd_addr_o;
-            prs1_ready_reg = prs1_ready | cdb_prs1_valid;
-            prs2_ready_reg = prs2_ready | cdb_prs2_valid;
+            prs1_addr_reg = 'b0;
+            prs2_addr_reg = 'b0;
+            prd_addr_reg = 'b0;
+            prs1_ready_reg = 1'b0;
+            prs2_ready_reg = 1'b0;
         end
     end
 
@@ -338,36 +338,6 @@ module rs_entry (
             prs1_ready <= prs1_ready_reg;
             prs2_ready <= prs2_ready_reg;
         end
-        /*else if (entry_allocate_req_i) begin  // allocated new entry
-            entry_free_o <= 1'b0;  // entry no longer free
-            pc_o <= pc_i;
-            inst_o <= inst_i;
-            prs1_addr_o <= prs1_addr_i;
-            prs2_addr_o <= prs2_addr_i;
-            prd_addr_o <= prd_addr_i;
-            prs1_ready <= prs1_valid_i;
-            prs2_ready <= prs2_valid_i;
-        end
-        else if (!entry_free_o) begin  // update the reg_state
-            entry_free_o <= entry_free_o | entry_sel_i;  // if entry is selcted_entry free should be set to zero
-            pc_o <= pc_o;
-            inst_o <= inst_o;
-            prs1_addr_o <= prs1_addr_o;
-            prs2_addr_o <= prs2_addr_o;
-            prd_addr_o <= prd_addr_o;
-            prs1_ready <= prs1_ready | cdb_prs1_valid;
-            prs2_ready <= prs2_ready | cdb_prs2_valid;
-        end
-        else begin  // entry_free_o == 1
-            entry_free_o <= entry_free_o | entry_sel_i;
-            pc_o <= pc_o;
-            inst_o <= inst_o;
-            prs1_addr_o <= prs1_addr_o;
-            prs2_addr_o <= prs2_addr_o;
-            prd_addr_o <= prd_addr_o;
-            prs1_ready <= prs1_ready | cdb_prs1_valid;
-            prs2_ready <= prs2_ready | cdb_prs2_valid;
-        end*/
     end
 
 endmodule

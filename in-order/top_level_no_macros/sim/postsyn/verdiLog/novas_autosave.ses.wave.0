@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_U-2023.03
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1920 387 205 65
+viewPort 0 25 1920 414 205 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 42502.093596
-cursor 787.05422200560
+zoom 0.000000 103020.000000
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 6
+top 0
 ; marker line index
-markerPos 17
+markerPos 10
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,13 +45,6 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "G2"
-addGroup "Hazard_Detect"
-addGroup "Fetch" -e FALSE
-addGroup "Decode"
-addGroup "Regfile"
-addGroup "ALU" -e FALSE
-addGroup "dcache"
 addGroup "regfile0"
 activeDirFile "" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb"
 addSignal -h 15 /top_level_no_macros_tb/cpu0/regfile0/clk
@@ -64,7 +57,7 @@ addSignal -h 15 -UNSIGNED -UDEC -holdScope w_data[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope ra_value[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope rb_value[31:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope regfile_o[1023:0]
-addGroup "G9"
+addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

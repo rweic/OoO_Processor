@@ -1,5 +1,5 @@
-set_pin_physical_constraints -pin_name {Clock} -layers {metal3} -width 0.1 -depth 0.1 -side 2 -offset 15.95
-set_pin_physical_constraints -pin_name {Reset} -layers {metal3} -width 0.1 -depth 0.1 -side 2 -offset 17.35
+set_pin_physical_constraints -pin_name {clk} -layers {metal3} -width 0.1 -depth 0.1 -side 2 -offset 15.95
+set_pin_physical_constraints -pin_name {reset} -layers {metal3} -width 0.1 -depth 0.1 -side 2 -offset 17.35
 set_pin_physical_constraints -pin_name {A} -layers {metal4} -width 0.1 -depth 0.1 -side 1 -offset 15.96
 set_pin_physical_constraints -pin_name {B} -layers {metal4} -width 0.1 -depth 0.1 -side 1 -offset 17.36
 set_pin_physical_constraints -pin_name {Output1} -layers {metal4} -width 0.1 -depth 0.1 -side 3 -offset 15.96

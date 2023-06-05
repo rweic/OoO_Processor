@@ -54,9 +54,8 @@ module hazard_detect(
   
     // Control Hazard
     // Whenever a branch has been taken, flush the following two instructions from the Decode and Execute pipeline registers.
-    
-    assign FlushExec = ProgramCounterSourceExec;
-    assign FlushDecode = ProgramCounterSourceExec;
+    //assign FlushExec = ProgramCounterSourceExec;
+    //assign FlushDecode = ProgramCounterSourceExec;
     
     // MULDIV Hazard
     //assign muldiv_hazard = 
