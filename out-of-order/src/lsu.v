@@ -7,7 +7,16 @@ module lsu
     // Inputs
     clk_i, reset_i, pc_i, lsu_request_i, inst_i, rs1_value_i, rs2_value_i,
     // Outputs
-    busy_o, writeback_valid_o, writeback_value_o
+    busy_o, writeback_valid_o, writeback_value_o,
+
+    // dmem
+    dmem_csb_write_o,
+    dmem_wmask_o,
+    dmem_waddr_o,
+    dmem_din_o,
+    dmem_csb_read_o,
+    dmem_raddr_o,
+    dmem_dout_i
 );
     // Inputs
     input clk_i, reset_i;
@@ -26,6 +35,13 @@ module lsu
     output [31:0]  writeback_value_o;
 
     // Wires to memory
+    output dmem_csb_write_o;
+    output [3:0] dmem_wmask_o;
+    output [7:0] dmem_waddr_o;
+    output [31:0] dmem_din_o;
+    output dmem_csb_read_o;
+    output [7:0] dmem_raddr_o;
+    input [31:0] dmem_dout_i;
 
     // Decoded Signals
     // wire [4:0] rs1_addr = inst_i[19:15];
@@ -75,6 +91,14 @@ module lsu
     reg lsu_out_h;
     reg lsu_out_b;
 
+    assign dmem_csb_write_o =mem_csb_write;
+    assign dmem_wmask_o = wmask;
+    assign dmem_waddr_o = mem_addr_w >> 2;
+    assign dmem_din_o = mem_data_in;
+    assign dmem_csb_read_o = mem_csb_read;
+    assign dmem_raddr_o = mem_addr_r >> 2;
+    assign mem_data_out = dmem_dout_i;
+
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
     //wire mem_load_success = (!mem_csb_read) | (!mem_csb_write);
     reg mem_load_success = 'b0;
@@ -114,7 +138,7 @@ module lsu
     );
 
     // csb need to be 0 when read is enabled or write is enabled
-    dmem dmem (
+    /*dmem dmem (
         // Port 0: Write
         .clk0(clk_i),
         .csb0(mem_csb_write),
@@ -125,7 +149,7 @@ module lsu
         .clk1(clk_i),
         .csb1(mem_csb_read),
         .addr1(mem_addr_r >> 2),
-        .dout1(mem_data_out));
+        .dout1(mem_data_out));*/
 
     // Set mem_aligned
     always @(*) begin

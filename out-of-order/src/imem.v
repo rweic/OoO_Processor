@@ -59,8 +59,14 @@ module imem(
 
   // FOR TEST ONLY, COMMENT OUT LATER
   initial begin
-    mem[0] = 'h00518093; // addi x1, x3, 5
-    mem[1] = 'h40208133; // sub x1, x1, x2
+    for (integer i=0; i < RAM_DEPTH; i = i + 1 ) begin
+      mem[i] = 'h00000000;
+    end
+    mem[0] = 'h003100b3; // add x1, x2, x3
+    mem[1] = 'h40208133; // sub x2, x1, x2
+    mem[2] = 'h029301b3; // mul x3, x6, x9
+    mem[3] = 'h003103b3; // add x7, x2, x3
+    mem[4] = 'h00310333; // add x6, x2, x3
   end
 
   // Memory Write Block Port 0

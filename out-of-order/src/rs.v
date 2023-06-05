@@ -104,6 +104,7 @@ module rs #(
     wire [4:0] alu_rd_addr  [0:RS_SIZE-1];
 
     // MUL
+    wire [RS_SIZE-1:0] mul_entry_allocate;
     wire [RS_SIZE-1:0] mul_entry_sel;
     wire [31:0] mul_inst [0:RS_SIZE-1]; 
     wire [31:0] mul_pc [0:RS_SIZE-1]; 
@@ -112,6 +113,7 @@ module rs #(
     wire [4:0] mul_rd_addr  [0:RS_SIZE-1];
 
     // LSU
+    wire [RS_SIZE-1:0] lsu_entry_allocate;
     wire [RS_SIZE-1:0] lsu_entry_sel;
     wire [31:0] lsu_inst [0:RS_SIZE-1]; 
     wire [31:0] lsu_pc [0:RS_SIZE-1]; 
@@ -124,6 +126,8 @@ module rs #(
     assign mul_request_o= | mul_entry_sel;
 
     assign alu_free_o = | alu_entry_free;
+    assign lsu_free_o = | lsu_entry_free;
+    assign mul_free_o = | mul_entry_free;
 
     // ALU
     assign alu_pc_o = alu_pc[alu_idx_issued];
@@ -139,7 +143,14 @@ module rs #(
     assign mul_prs2_addr_o = mul_rs2_addr[mul_idx_issued];
     assign mul_prd_addr_o = mul_rd_addr[mul_idx_issued];
 
-    // Priority Decider
+    // LSU
+    assign lsu_pc_o = lsu_pc[lsu_idx_issued];
+    assign lsu_inst_o = lsu_inst[lsu_idx_issued];
+    assign lsu_prs1_addr_o = lsu_rs1_addr[lsu_idx_issued];
+    assign lsu_prs2_addr_o = lsu_rs2_addr[lsu_idx_issued];
+    assign lsu_prd_addr_o = lsu_rd_addr[lsu_idx_issued];
+
+    // Priority
     priority_select ps_alu (
         .allocate_i(alu_request_i), 
         .resource_valid_i(alu_entry_free),
@@ -155,6 +166,39 @@ module rs #(
         .entry_sel_o(alu_entry_sel),
         .idx_issued_o(alu_idx_issued)
     );
+
+    priority_select ps_lsu (
+        .allocate_i(lsu_request_i), 
+        .resource_valid_i(lsu_entry_free),
+        .entry_allocate_o(lsu_entry_allocate)
+    );
+
+    priority_issue pi_lsu (
+        .clk_i(clk_i), 
+        .reset_i(reset_i),
+        .allocate_i(lsu_request_i), 
+        .resource_valid_i(lsu_entry_free), 
+        .entry_ready_i(lsu_ready),
+        .entry_sel_o(lsu_entry_sel),
+        .idx_issued_o(lsu_idx_issued)
+    );
+
+    priority_select ps_mul (
+        .allocate_i(mul_request_i), 
+        .resource_valid_i(mul_entry_free),
+        .entry_allocate_o(mul_entry_allocate)
+    );
+
+    priority_issue pi_mul (
+        .clk_i(clk_i), 
+        .reset_i(reset_i),
+        .allocate_i(mul_request_i), 
+        .resource_valid_i(mul_entry_free), 
+        .entry_ready_i(mul_ready),
+        .entry_sel_o(mul_entry_sel),
+        .idx_issued_o(mul_idx_issued)
+    );
+    
 
     // ----- Generate Reservation Station Entries -----
     genvar i;
@@ -196,7 +240,7 @@ module rs #(
                 // Inputs
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
-                .entry_allocate_req_i(rs_allocate_i), 
+                .entry_allocate_req_i(rs_allocate_i & mul_entry_allocate[i]), 
                 .entry_sel_i(mul_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
@@ -215,6 +259,36 @@ module rs #(
                 .prs1_addr_o(mul_rs1_addr[i]), 
                 .prs2_addr_o(mul_rs2_addr[i]), 
                 .prd_addr_o(mul_rd_addr[i])
+            );
+        end
+    endgenerate
+
+    // LSU
+    generate
+        for(i = 0; i < RS_SIZE; i = i + 1) begin
+            rs_entry lsu_entry (
+                // Inputs
+                .clk_i(clk_i), 
+                .reset_i(reset_i),
+                .entry_allocate_req_i(rs_allocate_i & lsu_entry_allocate[i]), 
+                .entry_sel_i(lsu_entry_sel[i]),
+                .pc_i(pc_i), 
+                .inst_i(inst_i),
+                .prs1_addr_i(prs1_addr_i), 
+                .prs2_addr_i(prs2_addr_i), 
+                .prd_addr_i(prd_addr_i),
+                .prs1_valid_i(prs1_valid_i), 
+                .prs2_valid_i(prs2_valid_i),
+                .cdb_en_i(cdb_en_i), 
+                .cdb_tag_i(cdb_tag_i),
+                // Outputs
+                .entry_free_o(lsu_entry_free[i]),
+                .ready_o(lsu_ready[i]),
+                .pc_o(lsu_pc[i]),
+                .inst_o(lsu_inst[i]),
+                .prs1_addr_o(lsu_rs1_addr[i]), 
+                .prs2_addr_o(lsu_rs2_addr[i]), 
+                .prd_addr_o(lsu_rd_addr[i])
             );
         end
     endgenerate

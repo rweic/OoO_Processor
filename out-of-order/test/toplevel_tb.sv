@@ -1,7 +1,7 @@
-module core_tb ();
+module toplevel_tb ();
     reg clk_i, reset_i;  
 
-    core core (.*);
+    toplevel toplevel (.*);
 
     initial begin
         clk_i = 1'b0;
@@ -11,9 +11,9 @@ module core_tb ();
     initial begin
 	    $dumpfile("uut.vcd");
 	    $dumpvars();
-        reset_i = 1'b1; # 10
-        reset_i = 1'b0; @(posedge clk_i); 
-        # 200
+        reset_i = 1'b1; @(posedge clk_i); @(posedge clk_i); 
+        reset_i = 1'b0; 
+        # 150
         $finish;
     end
 
