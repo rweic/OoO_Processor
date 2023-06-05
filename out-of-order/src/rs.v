@@ -95,6 +95,7 @@ module rs #(
     wire [RS_SIZE-1:0] mul_ready; 
 
     // ALU
+    wire [RS_SIZE-1:0] alu_entry_allocate;
     wire [RS_SIZE-1:0] alu_entry_sel;
     wire [31:0] alu_inst [0:RS_SIZE-1]; 
     wire [31:0] alu_pc [0:RS_SIZE-1]; 
@@ -110,9 +111,19 @@ module rs #(
     wire [4:0] mul_rs2_addr [0:RS_SIZE-1];
     wire [4:0] mul_rd_addr  [0:RS_SIZE-1];
 
-    assign alu_request_o= | alu_ready;
-    assign lsu_request_o= | lsu_ready;
-    assign mul_request_o= | mul_ready;
+    // LSU
+    wire [RS_SIZE-1:0] lsu_entry_sel;
+    wire [31:0] lsu_inst [0:RS_SIZE-1]; 
+    wire [31:0] lsu_pc [0:RS_SIZE-1]; 
+    wire [4:0] lsu_rs1_addr [0:RS_SIZE-1]; 
+    wire [4:0] lsu_rs2_addr [0:RS_SIZE-1];
+    wire [4:0] lsu_rd_addr  [0:RS_SIZE-1];
+
+    assign alu_request_o= | alu_entry_sel;
+    assign lsu_request_o= | lsu_entry_sel;
+    assign mul_request_o= | mul_entry_sel;
+
+    assign alu_free_o = | alu_entry_free;
 
     // ALU
     assign alu_pc_o = alu_pc[alu_idx_issued];
@@ -129,10 +140,20 @@ module rs #(
     assign mul_prd_addr_o = mul_rd_addr[mul_idx_issued];
 
     // Priority Decider
-    priority_management pm_alu (
+    priority_select ps_alu (
         .allocate_i(alu_request_i), 
         .resource_valid_i(alu_entry_free),
-        .entry_sel_o(alu_entry_sel)
+        .entry_allocate_o(alu_entry_allocate)
+    );
+
+    priority_issue pi_alu (
+        .clk_i(clk_i), 
+        .reset_i(reset_i),
+        .allocate_i(alu_request_i), 
+        .resource_valid_i(alu_entry_free), 
+        .entry_ready_i(alu_ready),
+        .entry_sel_o(alu_entry_sel),
+        .idx_issued_o(alu_idx_issued)
     );
 
     // ----- Generate Reservation Station Entries -----
@@ -145,15 +166,15 @@ module rs #(
                 // Inputs
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
-                .entry_allocate_req_i(alu_request_i), 
-                .entry_sel(alu_entry_sel[i]),
+                .entry_allocate_req_i(alu_request_i & alu_entry_allocate[i]), 
+                .entry_sel_i(alu_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
                 .prs2_addr_i(prs2_addr_i), 
                 .prd_addr_i(prd_addr_i),
                 .prs1_valid_i(prs1_valid_i), 
-                .prs2_valid_i(prs1_valid_i),
+                .prs2_valid_i(prs2_valid_i),
                 .cdb_en_i(cdb_en_i), 
                 .cdb_tag_i(cdb_tag_i),
                 // Outputs
@@ -176,14 +197,14 @@ module rs #(
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
                 .entry_allocate_req_i(rs_allocate_i), 
-                .entry_sel(mul_entry_sel[i]),
+                .entry_sel_i(mul_entry_sel[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
                 .prs2_addr_i(prs2_addr_i), 
                 .prd_addr_i(prd_addr_i),
                 .prs1_valid_i(prs1_valid_i), 
-                .prs2_valid_i(prs1_valid_i),
+                .prs2_valid_i(prs2_valid_i),
                 .cdb_en_i(cdb_en_i), 
                 .cdb_tag_i(cdb_tag_i),
                 // Outputs
@@ -204,7 +225,7 @@ module rs_entry (
     // Inputs
     clk_i, reset_i,
     entry_allocate_req_i, 
-    entry_sel,  // execusion
+    entry_sel_i,  // execusion
     pc_i, inst_i,
     prs1_addr_i, prs2_addr_i, prd_addr_i,
     prs1_valid_i, prs2_valid_i,
@@ -220,7 +241,7 @@ module rs_entry (
     input clk_i;
     input reset_i;
     input entry_allocate_req_i;
-    input entry_sel;
+    input entry_sel_i;
     input [31:0] pc_i;
     input [31:0] inst_i;
     // Rs & Rd addr
@@ -245,18 +266,61 @@ module rs_entry (
     output reg [4:0] prd_addr_o;
 
     // ----- Reg/wire Initialization -----
-    wire ready;  // ready to pass to FUs
-    wire cdb_prs1_valid;
-    wire cdb_prs2_valid;
+    reg cdb_prs1_valid;
+    reg cdb_prs2_valid;
     reg prs1_ready;
     reg prs2_ready;
 
+    reg entry_free_reg;
+    reg [31:0] pc_reg;
+    reg [31:0] inst_reg;
+    reg [4:0] prs1_addr_reg;
+    reg [4:0] prs2_addr_reg;
+    reg [4:0] prd_addr_reg;
+    reg prs1_ready_reg;
+    reg prs2_ready_reg;
+
+    assign ready_o = prs1_ready & prs2_ready;
     assign cdb_prs1_valid = cdb_en_i && (cdb_tag_i == prs1_addr_o);  // rs1 is updated
     assign cdb_prs2_valid = cdb_en_i && (cdb_tag_i == prs2_addr_o);  // rs2 is updated
 
+    always @(*) begin
+        if (entry_allocate_req_i) begin  // allocated new entry
+            entry_free_reg = 1'b0;  // entry no longer free
+            pc_reg = pc_i;
+            inst_reg = inst_i;
+            prs1_addr_reg = prs1_addr_i;
+            prs2_addr_reg = prs2_addr_i;
+            prd_addr_reg = prd_addr_i;
+            prs1_ready_reg = prs1_valid_i;
+            prs2_ready_reg = prs2_valid_i;
+        end
+        else if (!entry_free_o) begin  // update the reg_state
+            entry_free_reg = entry_free_o | entry_sel_i;  // if entry is selcted_entry free should be set to zero
+            pc_reg = pc_o;
+            inst_reg = inst_o;
+            prs1_addr_reg = prs1_addr_o;
+            prs2_addr_reg = prs2_addr_o;
+            prd_addr_reg = prd_addr_o;
+            prs1_ready_reg = prs1_ready | cdb_prs1_valid;
+            prs2_ready_reg = prs2_ready | cdb_prs2_valid;
+        end
+        else begin  // entry_free_o == 1
+            entry_free_reg = entry_free_o | entry_sel_i;
+            pc_reg = pc_o;
+            inst_reg = inst_o;
+            prs1_addr_reg = prs1_addr_o;
+            prs2_addr_reg = prs2_addr_o;
+            prd_addr_reg = prd_addr_o;
+            prs1_ready_reg = prs1_ready | cdb_prs1_valid;
+            prs2_ready_reg = prs2_ready | cdb_prs2_valid;
+        end
+    end
+
     always @(posedge clk_i) begin
         if (reset_i) begin
-            entry_free_o <= 1'b0;
+            entry_free_o <= 1'b1;
+            pc_o <= 32'b0;
             inst_o <= 32'b0;
             prs1_addr_o <= 4'b0;
             prs2_addr_o <= 4'b0;
@@ -264,8 +328,19 @@ module rs_entry (
             prs1_ready <= 1'b0;
             prs2_ready <= 1'b0;
         end
-        else if (entry_allocate_req_i) begin  // allocated new entry
+        else begin
+            entry_free_o <= entry_free_reg;  // entry no longer free
+            pc_o <= pc_reg;
+            inst_o <= inst_reg;
+            prs1_addr_o <= prs1_addr_reg;
+            prs2_addr_o <= prs2_addr_reg;
+            prd_addr_o <= prd_addr_reg;
+            prs1_ready <= prs1_ready_reg;
+            prs2_ready <= prs2_ready_reg;
+        end
+        /*else if (entry_allocate_req_i) begin  // allocated new entry
             entry_free_o <= 1'b0;  // entry no longer free
+            pc_o <= pc_i;
             inst_o <= inst_i;
             prs1_addr_o <= prs1_addr_i;
             prs2_addr_o <= prs2_addr_i;
@@ -274,7 +349,8 @@ module rs_entry (
             prs2_ready <= prs2_valid_i;
         end
         else if (!entry_free_o) begin  // update the reg_state
-            entry_free_o <= entry_free_o & entry_sel;
+            entry_free_o <= entry_free_o | entry_sel_i;  // if entry is selcted_entry free should be set to zero
+            pc_o <= pc_o;
             inst_o <= inst_o;
             prs1_addr_o <= prs1_addr_o;
             prs2_addr_o <= prs2_addr_o;
@@ -282,7 +358,16 @@ module rs_entry (
             prs1_ready <= prs1_ready | cdb_prs1_valid;
             prs2_ready <= prs2_ready | cdb_prs2_valid;
         end
-        else begin end
+        else begin  // entry_free_o == 1
+            entry_free_o <= entry_free_o | entry_sel_i;
+            pc_o <= pc_o;
+            inst_o <= inst_o;
+            prs1_addr_o <= prs1_addr_o;
+            prs2_addr_o <= prs2_addr_o;
+            prd_addr_o <= prd_addr_o;
+            prs1_ready <= prs1_ready | cdb_prs1_valid;
+            prs2_ready <= prs2_ready | cdb_prs2_valid;
+        end*/
     end
 
 endmodule

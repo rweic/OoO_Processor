@@ -8,14 +8,14 @@ module top_level_no_macros_tb();
     reg clk, reset;
 
      // CPU - DMEM
-    wire [WIDTH-1:0] dmem_rdata;
+    wire [31:0] dmem_rdata;
     wire dmem_w_en;
-    wire [WIDTH-1:0] dmem_wdata;
+    wire [31:0] dmem_wdata;
     wire [5:0] dmem_addr;
 
     // CPU - IMEM
-    wire [INST_LEN-1:0] instruction_if;
-    wire [WIDTH-1:0] pc_if;
+    wire [31:0] instruction_if;
+    wire [31:0] pc_if;
 
     cpu cpu0 (
         .clk(clk), 

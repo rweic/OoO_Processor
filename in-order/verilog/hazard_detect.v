@@ -1,8 +1,8 @@
 module hazard_detect(
     input logic [4:0] SourceReg1Dec,
     input logic [4:0] SourceReg2Dec,
-    input logic [4:0] SourceReg1Exec,
-    input logic [4:0] SourceReg2Exec,
+    //input logic [4:0] SourceReg1Exec,
+    //input logic [4:0] SourceReg2Exec,
     input logic [4:0] DestRegExec,
     input logic [4:0] DestRegMem,
     input logic [4:0] DestRegWriteBack,
@@ -10,12 +10,12 @@ module hazard_detect(
     input logic RegisterWriteWriteBack,
     input logic ResultSourceExec0, // flagged when exec stage result is load type instruction
     input logic ProgramCounterSourceExec,
-    output logic [1:0] ForwardingReg1Exec,
-    output logic [1:0] ForwardingReg2Exec,
+    //output logic [1:0] ForwardingReg1Exec,
+    //output logic [1:0] ForwardingReg2Exec,
     output logic StallDecode_o,
     output logic StallFetch_o,
-    output logic FlushDecode,
-    output logic FlushExec
+    //output logic FlushDecode,
+    //output logic FlushExec
 );
                      
     // RAW (Read After Write) Hazard

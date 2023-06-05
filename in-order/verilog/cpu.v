@@ -77,21 +77,21 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
     hazard_detect hazard_detect0 (
         .SourceReg1Dec(rs1_addr),
         .SourceReg2Dec(rs2_addr),
-        .SourceReg1Exec(rs1_data_ex),
-        .SourceReg2Exec(rs2_data_ex),
+        //.SourceReg1Exec(rs1_data_ex),
+        //.SourceReg2Exec(rs2_data_ex),
         .DestRegExec(rd_addr_ex),
         .DestRegMem(rd_addr_mem),
         .DestRegWriteBack(rd_addr_wb),
         .RegisterWriteMem(rf_w_en_mem),
         .RegisterWriteWriteBack(rf_w_en_wb),
         .ResultSourceExec0(load_flag_ex),
-        .ProgramCounterSourceExec(pcsel),
-        .ForwardingReg1Exec(),  // Update with appropriate signal
-        .ForwardingReg2Exec(),  // Update with appropriate signal
+        .ProgramCounterSourceExec(pcsel[0]),
+        //.ForwardingReg1Exec(),  // Update with appropriate signal
+        //.ForwardingReg2Exec(),  // Update with appropriate signal
         .StallDecode_o(StallDecode),  // Update with appropriate signal
         .StallFetch_o(StallFetch),  // Update with appropriate signal
-        .FlushDecode(),  // Update with appropriate signal
-        .FlushExec()  // Update with appropriate signal
+        //.FlushDecode(),  // Update with appropriate signal
+        //.FlushExec()  // Update with appropriate signal
     );
     
     // Instruction Fetch

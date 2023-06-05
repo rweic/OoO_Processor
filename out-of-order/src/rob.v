@@ -43,23 +43,23 @@ module rob
 
 
     cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_valid (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
-        .empty_o(), .reg_allocate_addr_o()
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
+        .empty_o(), .data_o()
     );
 
     cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
-        .empty_o(), .reg_allocate_addr_o()
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
+        .empty_o(), .data_o()
     );
 
     cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
-        .empty_o(), .reg_allocate_addr_o()
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
+        .empty_o(), .data_o()
     );
 
     cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(), .reg_free_addr_i(), .pop_en_i(),
-        .empty_o(), .reg_allocate_addr_o()
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
+        .empty_o(), .data_o()
     );
 
 
@@ -73,21 +73,21 @@ module cbuf
 )
 (
     // Inputs
-    clk_i, reset_i, push_en_i, reg_free_addr_i, pop_en_i,
+    clk_i, reset_i, push_en_i, data_i, pop_en_i,
 
     // Outputs
-    empty_o, reg_allocate_addr_o
+    empty_o, data_o
 );
     // Inputs
     input clk_i, reset_i;
     // the registers that are freed
     input push_en_i;
-    input [4:0] reg_free_addr_i;
+    input [4:0] data_i;
     input pop_en_i;
 
     // Outputs
     output empty_o; // if free list is empty should not continue executing
-    output [4:0] reg_allocate_addr_o;
+    output [4:0] data_o;
 
     reg [4:0] valid_registers [0:31];
     reg [4:0] num_free_reg;
@@ -98,7 +98,7 @@ module cbuf
     wire [4:0] tail_plus_one;
 
     assign empty_o = (num_free_reg == 0);
-    assign reg_allocate_addr_o = valid_registers[tail];
+    assign data_o = valid_registers[tail];
 
     integer i;
     always @(posedge clk_i) begin
@@ -119,7 +119,7 @@ module cbuf
 
             if (push_en_i) begin // add reg to free list
                 tail <= tail ^ (tail >> 1);
-                valid_registers[tail] <= reg_free_addr_i;
+                valid_registers[tail] <= data_i;
             end else if (pop_en_i) begin
                 head <= head ^ (head >> 1);
             end
