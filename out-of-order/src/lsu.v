@@ -9,6 +9,7 @@ module lsu
     // Outputs
     busy_o, writeback_valid_o, writeback_value_o,
 
+    // dmem
     dmem_csb_write_o,
     dmem_wmask_o,
     dmem_waddr_o,
