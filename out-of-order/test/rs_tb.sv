@@ -67,17 +67,54 @@ module rs_tb ();    // Inputs
         reset_i = 1'b1; 
         rs_allocate_i = 1'b0; pc_i = 'b0; inst_i = 'b0; prs1_addr_i = 'b0; prs2_addr_i = 'b0; prd_addr_i = 'b0; 
         alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
-        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b0; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
         cdb_en_i = 'b0; cdb_tag_i = 'b0; @(posedge clk_i); @(posedge clk_i); 
         reset_i = 1'b0; @(posedge clk_i); 
 
-        // add x1, x2, x3
+        // add x1, x2, x3 (phy 2, 3 -> 1)
+        // waiting for rs1 (x2), should be in alu rs entry
         rs_allocate_i = 1'b1; pc_i = 'b0; inst_i = 'h003100b3; prs1_addr_i = 'h2; prs2_addr_i = 'h3; prd_addr_i = 'h1; 
         alu_request_i = 1'b1; lsu_request_i = 1'b0; mul_request_i = 1'b0;
-        prs1_valid_i = 'b1; prs2_valid_i = 'b1; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        prs1_valid_i = 'b0; prs2_valid_i = 'b1; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        cdb_en_i = 'b0; cdb_tag_i = 'h0;
         @(posedge clk_i); 
 
+        // add x3, x1, x4 (phy 1, 4 -> 5)
+        // waiting for rs1 (x1) & rs2 (x4), should be in alu rs entry
+        rs_allocate_i = 1'b1; pc_i = 'h4; inst_i = 'h004081b3; prs1_addr_i = 'h1; prs2_addr_i = 'h4; prd_addr_i = 'h5; 
+        alu_request_i = 1'b1; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        cdb_en_i = 'b0; cdb_tag_i = 'h0; @(posedge clk_i);
 
+        // get the value from cdb (x2)
+        // should issue the first entry: add x1, x2, x3
+        rs_allocate_i = 1'b0; pc_i = 'h8; inst_i = 'h0; prs1_addr_i = 'h0; prs2_addr_i = 'h0; prd_addr_i = 'h0; 
+        alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        cdb_en_i = 'b1; cdb_tag_i = 'h2; @(posedge clk_i);
+
+        // get the value from cdb (x1)
+        // should issue the first entry: add x1, x2, x3
+        rs_allocate_i = 1'b0; pc_i = 'hc; inst_i = 'h0; prs1_addr_i = 'h0; prs2_addr_i = 'h0; prd_addr_i = 'h0; 
+        alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        cdb_en_i = 'b1; cdb_tag_i = 'h1; @(posedge clk_i);
+
+        // get the value from cdb (x4)
+        // should issue the first entry: add x1, x2, x3
+        rs_allocate_i = 1'b0; pc_i = 'h10; inst_i = 'h0; prs1_addr_i = 'h0; prs2_addr_i = 'h0; prd_addr_i = 'h0; 
+        alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b1; lsu_valid_i = 'b1; 
+        cdb_en_i = 'b1; cdb_tag_i = 'h4; @(posedge clk_i);
+
+        // Stop
+        rs_allocate_i = 1'b0; pc_i = 'h14; inst_i = 'b0; prs1_addr_i = 'b0; prs2_addr_i = 'b0; prd_addr_i = 'b0; 
+        alu_request_i = 1'b0; lsu_request_i = 1'b0; mul_request_i = 1'b0;
+        prs1_valid_i = 'b0; prs2_valid_i = 'b0; alu_valid_i = 'b1; mul_valid_i = 'b0; lsu_valid_i = 'b0; 
+        cdb_en_i = 'b0; cdb_tag_i = 'b0; @(posedge clk_i);
+
+        @(posedge clk_i); 
+        @(posedge clk_i); 
         @(posedge clk_i); 
         @(posedge clk_i); 
         $finish;
