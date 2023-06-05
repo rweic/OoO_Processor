@@ -4,13 +4,14 @@ Instruction Decode Module
 module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN = 32)  (
     clk, reset, pc_i, inst, rs1_value_i, rs2_value_i, pc_o, alu_func, opsel1, opsel2, wbsel,
     rs1_addr, rs2_addr, rd_addr, rs1_value_o, rs2_value_o, rf_w_en, mem_w_en, imm, load_flag_o, pcsel,
-    branch_tar, StallDecode_i
+    branch_tar, StallDecode_i, muldiv_hazard
 );
     input clk, reset;
     input [ADDR_LEN-1:0] pc_i;
     input [WIDTH-1:0] inst;
     input [WIDTH-1:0] rs1_value_i, rs2_value_i;
     input StallDecode_i;
+    wire FlushDecode;
 
     output reg [ADDR_LEN-1:0] pc_o;
     output reg [3:0] alu_func;
@@ -23,6 +24,8 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
     output reg load_flag_o;
     output reg [1:0] pcsel;
     output reg [ADDR_LEN-1:0] branch_tar;
+    
+    output wire muldiv_hazard;
     
     // Get the register addresses from instruction
 	  wire[4:0] rs1 = inst[19:15];
@@ -65,6 +68,9 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
 	  assign branch_cond_ltu = rs1_value_i < rs2_value_i;
 	  assign branch_cond_geu = rs1_value_i >= rs2_value_i;
 
+    // set muldiv hazard
+    assign muldiv_hazard = ((alu_func == `ALU_OP_DIV) || (alu_func == `ALU_OP_MUL)) && (alu_func_id == alu_func);
+    
     // Reg ID-EX
     always @(posedge clk) begin
         if (reset) begin
@@ -179,72 +185,79 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
                         default: begin end
                     endcase
                 end
-                `OP_OP:begin
-                    case (funct3)
-                        `FUNCT3_ADD_SUB:
-                            case (funct7)
-                                `FUNCT7_ADD: begin
-                                    `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                `OP_OP: begin
+                    case (funct7)
+                        `FUNCT7_MULDIV:
+                            // mul & div
+                            case (funct3)
+                                `FUNCT3_MUL: begin
+                                    `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                                 end
-                                `FUNCT7_SUB: begin
-                                    `SET_CTRL(`ALU_OP_SUB, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                `FUNCT3_MULH: begin
+                                    `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_MULHSU: begin
+                                    `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_MULHU: begin
+                                    `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_DIV: begin
+                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_DIVU: begin
+                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_REM: begin
+                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_REMU: begin
+                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                            endcase
+                        default: begin
+                            case (funct3)
+                                `FUNCT3_ADD_SUB:
+                                    case (funct7)
+                                        `FUNCT7_ADD: begin
+                                            `SET_CTRL(`ALU_OP_ADD, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                        end
+                                        `FUNCT7_SUB: begin
+                                            `SET_CTRL(`ALU_OP_SUB, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                        end
+                                        default: begin end
+                                    endcase
+                                `FUNCT3_SLL: begin
+                                    `SET_CTRL(`ALU_OP_SLL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_SLT: begin
+                                    `SET_CTRL(`ALU_OP_SLT, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_SLTU: begin
+                                    `SET_CTRL(`ALU_OP_SLTU, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_XOR: begin
+                                    `SET_CTRL(`ALU_OP_XOR, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_SR:
+                                    case (funct7)
+                                        `FUNCT7_SRA: begin
+                                            `SET_CTRL(`ALU_OP_SRA, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                        end
+                                        `FUNCT7_SRL: begin
+                                            `SET_CTRL(`ALU_OP_SRL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                        end
+                                        default: begin end
+                                    endcase
+                                `FUNCT3_OR: begin
+                                    `SET_CTRL(`ALU_OP_OR, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                end
+                                `FUNCT3_AND: begin
+                                    `SET_CTRL(`ALU_OP_AND, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                                 end
                                 default: begin end
                             endcase
-                        `FUNCT3_SLL: begin
-                            `SET_CTRL(`ALU_OP_SLL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                         end
-                        `FUNCT3_SLT: begin
-                            `SET_CTRL(`ALU_OP_SLT, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_SLTU: begin
-                            `SET_CTRL(`ALU_OP_SLTU, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_XOR: begin
-                            `SET_CTRL(`ALU_OP_XOR, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_SR:
-                            case (funct7)
-                                `FUNCT7_SRA: begin
-                                    `SET_CTRL(`ALU_OP_SRA, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                                end
-                                `FUNCT7_SRL: begin
-                                    `SET_CTRL(`ALU_OP_SRL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                                end
-                                default: begin end
-                            endcase
-                        `FUNCT3_OR: begin
-                            `SET_CTRL(`ALU_OP_OR, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_AND: begin
-                            `SET_CTRL(`ALU_OP_AND, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        // mul & div
-                        `FUNCT3_MUL: begin
-                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_MULH: begin
-                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_MULHSU: begin
-                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_MULHU: begin
-                            `SET_CTRL(`ALU_OP_MUL, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_DIV: begin
-                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_DIVU: begin
-                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_REM: begin
-                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        `FUNCT3_REMU: begin
-                            `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
-                        end
-                        default: begin end
                     endcase
                 end
                 `OP_BRANCH:begin

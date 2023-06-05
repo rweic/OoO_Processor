@@ -89,9 +89,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         //.ForwardingReg1Exec(),  // Update with appropriate signal
         //.ForwardingReg2Exec(),  // Update with appropriate signal
         .StallDecode_o(StallDecode),  // Update with appropriate signal
-        .StallFetch_o(StallFetch)  // Update with appropriate signal
-        //.FlushDecode(),  // Update with appropriate signal
-        //.FlushExec()  // Update with appropriate signal
+        .StallFetch_o(StallFetch),  // Update with appropriate signal
+        .muldiv_hazard_i(muldiv_hazard)
     );
     
     // Instruction Fetch
@@ -117,7 +116,7 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .rs1_value_i(rs1_data), 
         .rs2_value_i(rs2_data),
         .pc_o(pc_ex), 
-        .alu_func(alu_func), 
+        .alu_func(alu_func), // is this an output?
         .opsel1(opsel1), 
         .opsel2(opsel2), 
         .wbsel(wbsel_ex),
@@ -133,7 +132,8 @@ module cpu #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LEN =
         .load_flag_o(load_flag_ex),
         .pcsel(pcsel),
         .branch_tar(br_tar),
-        .StallDecode_i(StallDecode_i)
+        .StallDecode_i(StallDecode_i),// this should be deleted
+        .muldiv_hazard(muldiv_hazard) //output
     );
 
     // Regfile

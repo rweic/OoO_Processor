@@ -24,14 +24,14 @@ SRL x22, x23, x24 # Answer = 0, Stored to x22
 OR x25, x26, x27  # Answer = 0, Stored to x25
 AND x28, x29, x30 # Answer = 0, Stored to x28
 
-MUL x17, x3, x1   # Answer = 256, Stored to x17
-MULH x20, x3, x1
-MULHSU x23, x3, x1 
-MULHU x26, x3, x1  
-DIV x29, x3, x1   
-DIVU x8, x3, x1   
-REM x4, x3, x1     
-REMU x7, x3, x1  
+MUL x17, x3, x1     # Answer = 256, Stored to x17
+MULH x20, x3, x1    # Answer = 256, Stored to x20
+MULHSU x23, x3, x1  # Answer = 256, Stored to x23
+MULHU x26, x3, x1   # Answer = 256, Stored to x26
+DIV x29, x3, x1     # Answer = 1, Stored to x29
+DIVU x8, x3, x1     # Answer = 1, Stored to x8
+REM x4, x3, x1      # Answer = 1, Stored to x4
+REMU x7, x3, x1     # Answer = 1, Stored to x7
 
 #OP_BRANCH
 BEQ x1, x2, label1
