@@ -1,6 +1,4 @@
-/* Out-of-Order Processor Core
- * 
- */
+/* Out-of-Order Processor Core */
 
 module core (
     clk_i, reset_i,
