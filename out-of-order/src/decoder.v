@@ -54,7 +54,8 @@ module decoder (
                         resource = 'b0010;
                     else
                         resource = 'b0000;
-                end else begin
+                end 
+                else begin
                     resource = 'b1000;
                 end
             end

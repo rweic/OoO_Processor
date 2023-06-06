@@ -18,15 +18,15 @@ module priority_management #(parameter SIZE = 4) (
 
     reg [2:0] age [0:SIZE-1];
     reg [1:0] idx;
-    reg [1:0] oldest_age;
+    reg [2:0] oldest_age;
 
     //reg allocate_reg;
 
     // for testing readability
-    wire [2:0] age0 = age[0];
+    /*wire [2:0] age0 = age[0];
     wire [2:0] age1 = age[1];
     wire [2:0] age2 = age[2];
-    wire [2:0] age3 = age[3];
+    wire [2:0] age3 = age[3];*/
 
     assign idx_issued_o = idx;
 
@@ -42,24 +42,17 @@ module priority_management #(parameter SIZE = 4) (
     // Issue Decider
     // The oldest ready entry will be issued
     always @(*) begin
-        /*if (reset_i) begin
-            for (integer i = 0; i < SIZE; i = i+1) begin
-                age[i] = 'b0;  // all ages start with 0
+        for (integer i = 0; i < SIZE; i = i+1) begin
+            if (~resource_valid_i[i] & allocate_i) begin  // if the entry has something in, add the age to it
+                age[i] = age[i] + 1'b1;
+            end
+            else if (resource_valid_i[i]) begin
+                age[i] = 'b0;
+            end
+            else begin 
+                age[i] = age[i];
             end
         end
-        else begin*/
-            for (integer i = 0; i < SIZE; i = i+1) begin
-                if (~resource_valid_i[i] & allocate_i) begin  // if the entry has something in, add the age to it
-                    age[i] = age[i] + 1'b1;
-                end
-                else if (resource_valid_i[i]) begin
-                    age[i] = 'b0;
-                end
-                else begin 
-                    age[i] = age[i];
-                end
-            end
-        //end
     end    
 
     always @(*) begin
