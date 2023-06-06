@@ -65,13 +65,13 @@ out-of-order/src
 ### Pre-Syn Simulation
 
 
-### Post-Syn Netlist
+### Synthesis
 
 
-### Post-Syn Simulatino
+### Post-Syn Simulation
 
 
-### Chip Layout
+### APR
 
 
 ### Post-APR Simulation
