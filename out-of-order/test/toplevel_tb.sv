@@ -13,7 +13,7 @@ module toplevel_tb ();
 	    $dumpvars();
         reset_i = 1'b1; @(posedge clk_i); @(posedge clk_i); 
         reset_i = 1'b0; 
-        # 150
+        # 100
         $finish;
     end
 

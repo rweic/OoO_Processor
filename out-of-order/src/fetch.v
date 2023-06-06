@@ -56,7 +56,7 @@ module fetch (
             pc_o <= pc;
             inst_o <= imem_dout;
             inst_valid <= 1'b1;
-            inst_valid_o <= inst_valid;
+            inst_valid_o <= inst_valid & (imem_inst_i != 0);
         end
     end
 
@@ -71,8 +71,6 @@ module fetch (
                     pc <=  pc + 4;
                 1'b1:
                     pc <=  br_dest;
-                default: 
-                    pc <= pc;
             endcase
         end
     end

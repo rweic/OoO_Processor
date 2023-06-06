@@ -50,8 +50,8 @@ module core (
     wire [4:0] prs1_addr_decoded;
     wire [4:0] prs2_addr_decoded;
     wire [4:0] prd_addr_decoded;
-    wire prs1_valid_o;
-    wire prs2_valid_o;
+    wire prs1_valid;
+    wire prs2_valid;
 
     wire rs_alu_valid;
     wire [31:0] alu_pc_issued;
@@ -156,8 +156,8 @@ module core (
         .prs1_addr_o(prs1_addr_decoded), 
         .prs2_addr_o(prs2_addr_decoded), 
         .prd_addr_o(prd_addr_decoded),
-        .prs1_valid_o(prs1_valid_o), 
-        .prs2_valid_o(prs2_valid_o)
+        .prs1_valid_o(prs1_valid), 
+        .prs2_valid_o(prs2_valid)
     );
 
     // Reservation Station
@@ -165,21 +165,21 @@ module core (
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i),
-        .rs_allocate_i(inst_valid_fetch),
+        //.rs_allocate_i(inst_valid_fetch),
         .pc_i(pc_fetch),
         .inst_i(inst_fetch),
         .prs1_addr_i(prs1_addr_decoded), 
         .prs2_addr_i(prs2_addr_decoded), 
         .prd_addr_i(prd_addr_decoded),
-        .prs1_valid_i(prs1_valid_o), 
-        .prs2_valid_i(prs2_valid_o),
+        .prs1_valid_i(prs1_valid), 
+        .prs2_valid_i(prs2_valid),
         .alu_request_i(alu_request), 
         .lsu_request_i(lsu_request), 
         .mul_request_i(mul_request),
         .alu_valid_i(1'b1), 
         .mul_valid_i(1'b1), 
         .lsu_valid_i(!lsu_busy),
-        .cdb_en_i(wb_en), 
+        .cdb_en_i('b0), 
         .cdb_tag_i(wb_reg_addr),
         
         // Outputs
@@ -231,9 +231,9 @@ module core (
         .clk_i(clk_i), 
         .reset_i(reset_i), 
         .w_en_i(wb_en),  // this should happens while during commitment stage
-        .ra1_addr_i(alu_prs1_addr_issued), .rb1_addr_i(alu_prs1_addr_issued), 
-        .ra2_addr_i(lsu_prs1_addr_issued), .rb2_addr_i(lsu_prs1_addr_issued), 
-        .ra3_addr_i(mul_prs1_addr_issued), .rb3_addr_i(mul_prs1_addr_issued), 
+        .ra1_addr_i(alu_prs1_addr_issued), .rb1_addr_i(alu_prs2_addr_issued), 
+        .ra2_addr_i(lsu_prs1_addr_issued), .rb2_addr_i(lsu_prs2_addr_issued), 
+        .ra3_addr_i(mul_prs1_addr_issued), .rb3_addr_i(mul_prs2_addr_issued), 
         .rd_addr_i(wb_reg_addr),  // this should happens while during commitment stage
         .w_data_i(wb_data),  // this should happens while during commitment stage
 

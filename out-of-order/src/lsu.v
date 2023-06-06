@@ -72,8 +72,8 @@ module lsu
     wire [31:0] mem_data_in = rs2_value_i;
     wire [31:0] mem_data_out; // The whole word read from memory
     reg [3:0] wmask;
-    reg mem_csb_read = 1'b1;
-    reg mem_csb_write = 1'b1;
+    reg mem_csb_read;
+    reg mem_csb_write;
     wire [31:0] rs1_value;
     wire [31:0] rs2_value;  // convert to mem input according to funct3
     wire lsb_full;  // load store buffer is full
@@ -175,6 +175,7 @@ module lsu
     always @(*) begin
         if (opcode == `OP_STORE & mem_aligned) begin
             mem_ls = 0;
+
             {mem_signed, mem_h, mem_b} = 'b0;
             case(funct3)
                 `FUNCT3_LW_SW: wmask = 'b1111;
@@ -196,6 +197,7 @@ module lsu
         end
         else if (opcode == `OP_LOAD & mem_aligned) begin
             mem_ls = 1;
+            wmask = 'b0000;
             case (funct3)
                 `FUNCT3_LW_SW: begin 
                     mem_signed = 0;
@@ -217,7 +219,10 @@ module lsu
                     mem_signed = 0;
                     {mem_h, mem_b} = 2'b01;
                 end
-                default: wmask = 'b0000;
+                default: begin
+                    mem_signed = 0;
+                    {mem_h, mem_b} = 2'b00;
+                end
             endcase
         end
     end
@@ -323,9 +328,6 @@ module fifo
     begin
         if(!reset_i) begin
             fifo_cnt <= 0;
-            for (i = 0; i < DEPTH; i = i + 1) begin
-                mem[i] <= 'b0;
-            end
         end
         else begin
             if ((wr_i && !full_o) & ~(rd_i && !empty_o))
@@ -351,10 +353,15 @@ module fifo
     // write
     always @(posedge clk_i)
     begin
-        if (wr_i && !full_o)
+        if(!reset_i) begin
+            for (i = 0; i < DEPTH; i = i + 1) begin
+                mem[i] <= 'b0;
+            end
+        end
+        else if (wr_i && !full_o)
             mem[wr_ptr] <= data_in_i;
         else begin end
-    end
+    end  // TODO: something wrong with this mem
     
     // read -> async
     assign data_out_o = mem[rd_ptr];

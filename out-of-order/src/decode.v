@@ -29,24 +29,30 @@ module decode (
 
     // ----- Reg/wire Initialization -----
     // The register addr
-    wire[4:0] rs1_addr = inst_i[19:15];
-    wire[4:0] rs2_addr = inst_i[24:20];
+    wire[4:0] rs1_addr = inst_valid_i ? inst_i[19:15] : 'h0;
+    wire[4:0] rs2_addr = inst_valid_i ? inst_i[24:20] : 'h0;
     wire[4:0] rd_addr = inst_i[11:7];
 
     wire [4:0] prs1_addr;
     wire [4:0] prs2_addr;
     wire [4:0] prd_addr;
 
+    wire alu_request;
+    wire lsu_request;
+    wire mul_request;
 
+    assign alu_o = alu_request & inst_valid_i;
+    assign lsu_o = lsu_request & inst_valid_i;
+    assign mul_o = mul_request & inst_valid_i;
 
     // Predecode: decide which FU the inst goes into
     decoder dec0 (
         // Inputs
         .inst_i(inst_i),
         // Outputs
-        .alu_o(alu_o), 
-        .lsu_o(lsu_o), 
-        .mul_o(mul_o), 
+        .alu_o(alu_request), 
+        .lsu_o(lsu_request), 
+        .mul_o(mul_request), 
         .br_o(br_o));
 
     // Register rename

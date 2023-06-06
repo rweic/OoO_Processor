@@ -48,7 +48,10 @@ module regfile #(parameter WIDTH=32) (
             for (i = 0; i < 32; i = i + 1)
                 register[i] <= 0;
             // For testing only, please comment out later
-            //register[2] = 'h5;
+            /*register[2] <= 'h5;
+            register[3] <= 'h4;
+            register[6] <= 'h3;
+            register[9] <= 'h10;*/
         end
         else begin
             if (w_en_i & (|rd_addr_i != 0)) // x0 will always be zero

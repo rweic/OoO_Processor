@@ -86,7 +86,6 @@ module arith (
                     `FUNCT3_ANDI: begin
                         alu_func = `ALU_OP_AND;
                     end
-                    default: begin end
                 endcase
             end
             `OP_OP:begin
@@ -136,7 +135,6 @@ module arith (
                     `FUNCT3_AND: begin
                         alu_func = `ALU_OP_AND;
                     end
-                    default: begin end
                 endcase
             end
             `OP_LUI: begin 
