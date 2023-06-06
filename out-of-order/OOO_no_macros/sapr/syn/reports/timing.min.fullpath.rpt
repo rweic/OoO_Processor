@@ -1,0 +1,696 @@
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nets
+        -max_paths 50
+        -capacitance
+Design : core
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 18:07:18 2023
+****************************************
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[8] (internal pin)
+  Endpoint: dmem_raddr_o[2]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[8] (fifo)                  0.00       0.00 f
+  lsu0/inst_i[24] (net)          2         1.36      0.00       0.00 f
+  lsu0/U142/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_raddr_o[2] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[2] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[2] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[2] (out)                              0.12       0.30 f
+  data arrival time                                             0.30
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[6] (internal pin)
+  Endpoint: dmem_raddr_o[0]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[6] (fifo)                  0.00       0.00 f
+  lsu0/inst_i[22] (net)          2         1.36      0.00       0.00 f
+  lsu0/U18/Z (CLKBUF_X1)                             0.18       0.18 f
+  lsu0/dmem_raddr_o[0] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[0] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[0] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[0] (out)                              0.12       0.30 f
+  data arrival time                                             0.30
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[7] (internal pin)
+  Endpoint: dmem_raddr_o[1]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[7] (fifo)                  0.00       0.00 f
+  lsu0/inst_i[23] (net)          2         1.36      0.00       0.00 f
+  lsu0/U141/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_raddr_o[1] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[1] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[1] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[1] (out)                              0.12       0.30 f
+  data arrival time                                             0.30
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[9] (internal pin)
+  Endpoint: dmem_waddr_o[3]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[9] (fifo)                  0.00       0.00 f
+  lsu0/inst_i[25] (net)          3         2.46      0.00       0.00 f
+  lsu0/U144/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_waddr_o[3] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_waddr_o[3] (lsu)                         0.00       0.18 f
+  dmem_waddr_o[3] (net)                   25.00      0.00       0.18 f
+  dmem_waddr_o[3] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[9] (internal pin)
+  Endpoint: dmem_raddr_o[3]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[9] (fifo)                  0.00       0.00 f
+  lsu0/inst_i[25] (net)          3         2.46      0.00       0.00 f
+  lsu0/U143/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_raddr_o[3] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[3] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[3] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[3] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[11] (internal pin)
+  Endpoint: dmem_waddr_o[5]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[11] (fifo)                 0.00       0.00 f
+  lsu0/inst_i[27] (net)          3         2.46      0.00       0.00 f
+  lsu0/U148/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_waddr_o[5] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_waddr_o[5] (lsu)                         0.00       0.18 f
+  dmem_waddr_o[5] (net)                   25.00      0.00       0.18 f
+  dmem_waddr_o[5] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[10] (internal pin)
+  Endpoint: dmem_waddr_o[4]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[10] (fifo)                 0.00       0.00 f
+  lsu0/inst_i[26] (net)          3         2.46      0.00       0.00 f
+  lsu0/U146/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_waddr_o[4] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_waddr_o[4] (lsu)                         0.00       0.18 f
+  dmem_waddr_o[4] (net)                   25.00      0.00       0.18 f
+  dmem_waddr_o[4] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[11] (internal pin)
+  Endpoint: dmem_raddr_o[5]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[11] (fifo)                 0.00       0.00 f
+  lsu0/inst_i[27] (net)          3         2.46      0.00       0.00 f
+  lsu0/U147/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_raddr_o[5] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[5] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[5] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[5] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/lsu_fifo/data_in_i[10] (internal pin)
+  Endpoint: dmem_raddr_o[4]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/lsu_fifo/data_in_i[10] (fifo)                 0.00       0.00 f
+  lsu0/inst_i[26] (net)          3         2.46      0.00       0.00 f
+  lsu0/U145/Z (CLKBUF_X1)                            0.18       0.18 f
+  lsu0/dmem_raddr_o[4] (net)     1        25.00      0.00       0.18 f
+  lsu0/dmem_raddr_o[4] (lsu)                         0.00       0.18 f
+  dmem_raddr_o[4] (net)                   25.00      0.00       0.18 f
+  dmem_raddr_o[4] (out)                              0.12       0.31 f
+  data arrival time                                             0.31
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/wmask_reg[3]
+              (positive level-sensitive latch)
+  Endpoint: dmem_wmask_o[3]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/wmask_reg[3]/G (DLH_X1)                       0.00       0.00 r
+  lsu0/wmask_reg[3]/Q (DLH_X1)                       0.28       0.28 f
+  lsu0/dmem_wmask_o[3] (net)     1        25.00      0.00       0.28 f
+  lsu0/dmem_wmask_o[3] (lsu)                         0.00       0.28 f
+  dmem_wmask_o[3] (net)                   25.00      0.00       0.28 f
+  dmem_wmask_o[3] (out)                              0.12       0.41 f
+  data arrival time                                             0.41
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/wmask_reg[2]
+              (positive level-sensitive latch)
+  Endpoint: dmem_wmask_o[2]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/wmask_reg[2]/G (DLH_X1)                       0.00       0.00 r
+  lsu0/wmask_reg[2]/Q (DLH_X1)                       0.28       0.28 f
+  lsu0/dmem_wmask_o[2] (net)     1        25.00      0.00       0.28 f
+  lsu0/dmem_wmask_o[2] (lsu)                         0.00       0.28 f
+  dmem_wmask_o[2] (net)                   25.00      0.00       0.28 f
+  dmem_wmask_o[2] (out)                              0.12       0.41 f
+  data arrival time                                             0.41
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/wmask_reg[1]
+              (positive level-sensitive latch)
+  Endpoint: dmem_wmask_o[1]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/wmask_reg[1]/G (DLH_X1)                       0.00       0.00 r
+  lsu0/wmask_reg[1]/Q (DLH_X1)                       0.28       0.28 f
+  lsu0/dmem_wmask_o[1] (net)     1        25.00      0.00       0.28 f
+  lsu0/dmem_wmask_o[1] (lsu)                         0.00       0.28 f
+  dmem_wmask_o[1] (net)                   25.00      0.00       0.28 f
+  dmem_wmask_o[1] (out)                              0.12       0.41 f
+  data arrival time                                             0.41
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: lsu0/wmask_reg[0]
+              (positive level-sensitive latch)
+  Endpoint: dmem_wmask_o[0]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  lsu0/wmask_reg[0]/G (DLH_X1)                       0.00       0.00 r
+  lsu0/wmask_reg[0]/Q (DLH_X1)                       0.28       0.28 f
+  lsu0/dmem_wmask_o[0] (net)     1        25.00      0.00       0.28 f
+  lsu0/dmem_wmask_o[0] (lsu)                         0.00       0.28 f
+  dmem_wmask_o[0] (net)                   25.00      0.00       0.28 f
+  dmem_wmask_o[0] (out)                              0.12       0.41 f
+  data arrival time                                             0.41
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[5]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[3]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[5]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[5]/Q (DFF_X1)                         0.32       0.32 f
+  fetch/imem_addr_o[3] (net)     1        25.00      0.00       0.32 f
+  fetch/imem_addr_o[3] (fetch)                       0.00       0.32 f
+  imem_addr_o[3] (net)                    25.00      0.00       0.32 f
+  imem_addr_o[3] (out)                               0.12       0.44 f
+  data arrival time                                             0.44
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[9]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[7]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[9]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[9]/Q (DFF_X1)                         0.32       0.32 f
+  fetch/imem_addr_o[7] (net)     1        25.00      0.00       0.32 f
+  fetch/imem_addr_o[7] (fetch)                       0.00       0.32 f
+  imem_addr_o[7] (net)                    25.00      0.00       0.32 f
+  imem_addr_o[7] (out)                               0.12       0.45 f
+  data arrival time                                             0.45
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[7]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[5]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[7]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[7]/Q (DFF_X1)                         0.32       0.32 f
+  fetch/imem_addr_o[5] (net)     1        25.00      0.00       0.32 f
+  fetch/imem_addr_o[5] (fetch)                       0.00       0.32 f
+  imem_addr_o[5] (net)                    25.00      0.00       0.32 f
+  imem_addr_o[5] (out)                               0.12       0.45 f
+  data arrival time                                             0.45
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[3]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[1]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[3]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[3]/Q (DFF_X1)                         0.33       0.33 f
+  fetch/imem_addr_o[1] (net)     3        28.84      0.00       0.33 f
+  fetch/imem_addr_o[1] (fetch)                       0.00       0.33 f
+  imem_addr_o[1] (net)                    28.84      0.00       0.33 f
+  imem_addr_o[1] (out)                               0.15       0.48 f
+  data arrival time                                             0.48
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: reservation_station/pi_lsu/idx_issued_o[0] (internal pin)
+  Endpoint: dmem_waddr_o[2]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  reservation_station/pi_lsu/idx_issued_o[0] (priority_issue)       0.00       0.00 r
+  reservation_station/lsu_idx_issued[0] (net)     3       6.07      0.00       0.00 r
+  reservation_station/U493/ZN (NOR2_X1)                             0.06       0.06 f
+  reservation_station/n490 (net)               12        22.35      0.00       0.06 f
+  reservation_station/U39/ZN (AOI22_X1)                             0.09       0.14 r
+  reservation_station/n14 (net)                 1         1.88      0.00       0.14 r
+  reservation_station/U42/ZN (NAND2_X1)                             0.04       0.18 f
+  reservation_station/lsu_inst_o[11] (net)      1         0.97      0.00       0.18 f
+  reservation_station/lsu_inst_o[11] (rs)                           0.00       0.18 f
+  lsu_inst_issued[11] (net)                               0.97      0.00       0.18 f
+  lsu0/inst_i[11] (lsu)                                             0.00       0.18 f
+  lsu0/inst_i[11] (net)                                   0.97      0.00       0.18 f
+  lsu0/U19/Z (CLKBUF_X1)                                            0.18       0.36 f
+  lsu0/dmem_waddr_o[2] (net)                    1        25.00      0.00       0.36 f
+  lsu0/dmem_waddr_o[2] (lsu)                                        0.00       0.36 f
+  dmem_waddr_o[2] (net)                                  25.00      0.00       0.36 f
+  dmem_waddr_o[2] (out)                                             0.12       0.48 f
+  data arrival time                                                            0.48
+  ------------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: reservation_station/pi_lsu/idx_issued_o[0] (internal pin)
+  Endpoint: dmem_waddr_o[0]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  reservation_station/pi_lsu/idx_issued_o[0] (priority_issue)       0.00       0.00 r
+  reservation_station/lsu_idx_issued[0] (net)     3       6.07      0.00       0.00 r
+  reservation_station/U493/ZN (NOR2_X1)                             0.06       0.06 f
+  reservation_station/n490 (net)               12        22.35      0.00       0.06 f
+  reservation_station/U43/ZN (AOI22_X1)                             0.09       0.14 r
+  reservation_station/n16 (net)                 1         1.88      0.00       0.14 r
+  reservation_station/U45/ZN (NAND2_X1)                             0.04       0.18 f
+  reservation_station/lsu_inst_o[9] (net)       1         0.97      0.00       0.18 f
+  reservation_station/lsu_inst_o[9] (rs)                            0.00       0.18 f
+  lsu_inst_issued[9] (net)                                0.97      0.00       0.18 f
+  lsu0/inst_i[9] (lsu)                                              0.00       0.18 f
+  lsu0/inst_i[9] (net)                                    0.97      0.00       0.18 f
+  lsu0/U20/Z (CLKBUF_X1)                                            0.18       0.36 f
+  lsu0/dmem_waddr_o[0] (net)                    1        25.00      0.00       0.36 f
+  lsu0/dmem_waddr_o[0] (lsu)                                        0.00       0.36 f
+  dmem_waddr_o[0] (net)                                  25.00      0.00       0.36 f
+  dmem_waddr_o[0] (out)                                             0.12       0.48 f
+  data arrival time                                                            0.48
+  ------------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[8]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[6]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[8]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[8]/Q (DFF_X1)                         0.33       0.33 f
+  fetch/imem_addr_o[6] (net)     4        30.06      0.00       0.33 f
+  fetch/imem_addr_o[6] (fetch)                       0.00       0.33 f
+  imem_addr_o[6] (net)                    30.06      0.00       0.33 f
+  imem_addr_o[6] (out)                               0.17       0.50 f
+  data arrival time                                             0.50
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[6]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[4]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[6]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[6]/Q (DFF_X1)                         0.33       0.33 f
+  fetch/imem_addr_o[4] (net)     4        30.06      0.00       0.33 f
+  fetch/imem_addr_o[4] (fetch)                       0.00       0.33 f
+  imem_addr_o[4] (net)                    30.06      0.00       0.33 f
+  imem_addr_o[4] (out)                               0.17       0.50 f
+  data arrival time                                             0.50
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[4]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[2]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[4]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[4]/Q (DFF_X1)                         0.33       0.33 f
+  fetch/imem_addr_o[2] (net)     4        30.60      0.00       0.33 f
+  fetch/imem_addr_o[2] (fetch)                       0.00       0.33 f
+  imem_addr_o[2] (net)                    30.60      0.00       0.33 f
+  imem_addr_o[2] (out)                               0.17       0.50 f
+  data arrival time                                             0.50
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: fetch/pc_reg[2]
+              (rising edge-triggered flip-flop)
+  Endpoint: imem_addr_o[0]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  fetch/pc_reg[2]/CK (DFF_X1)                        0.00       0.00 r
+  fetch/pc_reg[2]/Q (DFF_X1)                         0.34       0.34 f
+  fetch/imem_addr_o[0] (net)     5        32.58      0.00       0.34 f
+  fetch/imem_addr_o[0] (fetch)                       0.00       0.34 f
+  imem_addr_o[0] (net)                    32.58      0.00       0.34 f
+  imem_addr_o[0] (out)                               0.17       0.51 f
+  data arrival time                                             0.51
+  ---------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: reservation_station/pi_lsu/idx_issued_o[0] (internal pin)
+  Endpoint: dmem_csb_read_o
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  reservation_station/pi_lsu/idx_issued_o[0] (priority_issue)       0.00       0.00 r
+  reservation_station/lsu_idx_issued[0] (net)     3       6.07      0.00       0.00 r
+  reservation_station/U493/ZN (NOR2_X1)                             0.06       0.06 f
+  reservation_station/n490 (net)               12        22.35      0.00       0.06 f
+  reservation_station/U64/ZN (AOI22_X1)                             0.09       0.14 r
+  reservation_station/n28 (net)                 1         1.88      0.00       0.14 r
+  reservation_station/U66/ZN (NAND2_X1)                             0.06       0.20 f
+  reservation_station/lsu_inst_o[5] (net)       3         4.91      0.00       0.20 f
+  reservation_station/lsu_inst_o[5] (rs)                            0.00       0.20 f
+  lsu_inst_issued[5] (net)                                4.91      0.00       0.20 f
+  lsu0/inst_i[5] (lsu)                                              0.00       0.20 f
+  lsu0/inst_i[5] (net)                                    4.91      0.00       0.20 f
+  lsu0/U15/ZN (INV_X1)                                              0.05       0.25 r
+  lsu0/n5 (net)                                 1         1.92      0.00       0.25 r
+  lsu0/U35/ZN (NAND2_X1)                                            0.14       0.39 f
+  lsu0/dmem_csb_read_o (net)                    3        28.74      0.00       0.39 f
+  lsu0/dmem_csb_read_o (lsu)                                        0.00       0.39 f
+  dmem_csb_read_o (net)                                  28.74      0.00       0.39 f
+  dmem_csb_read_o (out)                                             0.15       0.55 f
+  data arrival time                                                            0.55
+  ------------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: reservation_station/pi_lsu/idx_issued_o[0] (internal pin)
+  Endpoint: dmem_csb_write_o
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  reservation_station/pi_lsu/idx_issued_o[0] (priority_issue)       0.00       0.00 r
+  reservation_station/lsu_idx_issued[0] (net)     3       6.07      0.00       0.00 r
+  reservation_station/U493/ZN (NOR2_X1)                             0.06       0.06 f
+  reservation_station/n490 (net)               12        22.35      0.00       0.06 f
+  reservation_station/U64/ZN (AOI22_X1)                             0.09       0.14 r
+  reservation_station/n28 (net)                 1         1.88      0.00       0.14 r
+  reservation_station/U66/ZN (NAND2_X1)                             0.06       0.20 f
+  reservation_station/lsu_inst_o[5] (net)       3         4.91      0.00       0.20 f
+  reservation_station/lsu_inst_o[5] (rs)                            0.00       0.20 f
+  lsu_inst_issued[5] (net)                                4.91      0.00       0.20 f
+  lsu0/inst_i[5] (lsu)                                              0.00       0.20 f
+  lsu0/inst_i[5] (net)                                    4.91      0.00       0.20 f
+  lsu0/U49/ZN (NAND2_X1)                                            0.22       0.43 r
+  lsu0/dmem_csb_write_o (net)                   2        26.98      0.00       0.43 r
+  lsu0/dmem_csb_write_o (lsu)                                       0.00       0.43 r
+  dmem_csb_write_o (net)                                 26.98      0.00       0.43 r
+  dmem_csb_write_o (out)                                            0.14       0.57 r
+  data arrival time                                                            0.57
+  ------------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: reservation_station/pi_lsu/idx_issued_o[0] (internal pin)
+  Endpoint: dmem_waddr_o[1]
+            (output port)
+  Path Group: (none)
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  reservation_station/pi_lsu/idx_issued_o[0] (priority_issue)       0.00       0.00 r
+  reservation_station/lsu_idx_issued[0] (net)     3       6.07      0.00       0.00 r
+  reservation_station/U493/ZN (NOR2_X1)                             0.06       0.06 f
+  reservation_station/n490 (net)               12        22.35      0.00       0.06 f
+  reservation_station/U19/Z (CLKBUF_X1)                             0.19       0.24 f
+  reservation_station/n176 (net)               12        23.14      0.00       0.24 f
+  reservation_station/U35/ZN (AOI22_X1)                             0.11       0.36 r
+  reservation_station/n12 (net)                 1         1.88      0.00       0.36 r
+  reservation_station/U37/ZN (NAND2_X1)                             0.04       0.40 f
+  reservation_station/lsu_inst_o[10] (net)      1         0.97      0.00       0.40 f
+  reservation_station/lsu_inst_o[10] (rs)                           0.00       0.40 f
+  lsu_inst_issued[10] (net)                               0.97      0.00       0.40 f
+  lsu0/inst_i[10] (lsu)                                             0.00       0.40 f
+  lsu0/inst_i[10] (net)                                   0.97      0.00       0.40 f
+  lsu0/U21/Z (CLKBUF_X1)                                            0.18       0.58 f
+  lsu0/dmem_waddr_o[1] (net)                    1        25.00      0.00       0.58 f
+  lsu0/dmem_waddr_o[1] (lsu)                                        0.00       0.58 f
+  dmem_waddr_o[1] (net)                                  25.00      0.00       0.58 f
+  dmem_waddr_o[1] (out)                                             0.12       0.70 f
+  data arrival time                                                            0.70
+  ------------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

@@ -1,0 +1,11 @@
+Warning: bus naming style '' is not valid. (UCN-32)
+icc_shell> read_def cpu.def
+No valid cell found, read_def command failed 
+0
+icc_shell> read_def cpu
+No valid cell found, read_def command failed 
+0
+icc_shell> read_def cpu.def
+No valid cell found, read_def command failed 
+0
+icc_shell> 

@@ -1,0 +1,1241 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 14:24:57 2023
+****************************************
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2811/ZN (OAI21_X1)           0.10      15.80 f
+  exec0/alu0/U542/ZN (INV_X1)              0.08      15.87 r
+  exec0/alu0/U3124/ZN (NAND3_X1)           0.08      15.95 f
+  exec0/alu0/U371/ZN (AND4_X4)             0.17      16.12 f
+  exec0/alu0/U11011/ZN (INV_X2)            0.10      16.23 r
+  exec0/alu0/U11012/ZN (OR2_X4)            0.23      16.45 r
+  exec0/alu0/U12028/ZN (OAI22_X1)          0.13      16.58 f
+  exec0/alu0/U12039/ZN (NOR2_X2)           0.17      16.76 r
+  exec0/alu0/U509/ZN (NAND4_X2)            0.14      16.89 f
+  exec0/alu0/U12060/ZN (NOR2_X2)           0.13      17.03 r
+  exec0/alu0/U12153/ZN (OAI21_X1)          0.07      17.10 f
+  exec0/alu0/U12154/ZN (AOI21_X2)          0.17      17.27 r
+  exec0/alu0/U3008/ZN (OAI21_X2)           0.08      17.34 f
+  exec0/alu0/U3574/ZN (NOR2_X1)            0.11      17.45 r
+  exec0/alu0/U332/ZN (AND2_X2)             0.12      17.57 r
+  exec0/alu0/U3197/ZN (OAI21_X2)           0.07      17.64 f
+  exec0/alu0/U3180/ZN (NOR2_X1)            0.11      17.75 r
+  exec0/alu0/U3179/ZN (INV_X1)             0.04      17.79 f
+  exec0/alu0/U2848/ZN (OR2_X1)             0.17      17.96 f
+  exec0/alu0/U3613/ZN (NAND4_X1)           0.08      18.04 r
+  exec0/U283/ZN (AND2_X1)                  0.10      18.14 r
+  exec0/alu_out_reg[0]/D (DFF_X1)          0.01      18.15 r
+  data arrival time                                  18.15
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[0]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.07      14.88
+  data required time                                 14.88
+  -----------------------------------------------------------
+  data required time                                 14.88
+  data arrival time                                 -18.15
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -3.27
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2811/ZN (OAI21_X1)           0.10      15.80 f
+  exec0/alu0/U542/ZN (INV_X1)              0.08      15.87 r
+  exec0/alu0/U3124/ZN (NAND3_X1)           0.08      15.95 f
+  exec0/alu0/U371/ZN (AND4_X4)             0.17      16.12 f
+  exec0/alu0/U11011/ZN (INV_X2)            0.10      16.23 r
+  exec0/alu0/U11007/ZN (OR2_X4)            0.22      16.45 r
+  exec0/alu0/U2896/ZN (INV_X1)             0.10      16.55 f
+  exec0/alu0/U2895/ZN (AOI22_X2)           0.21      16.76 r
+  exec0/alu0/U11713/ZN (NAND4_X4)          0.21      16.97 f
+  exec0/alu0/U12144/ZN (NAND2_X1)          0.10      17.07 r
+  exec0/alu0/U12146/ZN (OAI21_X1)          0.06      17.13 f
+  exec0/alu0/U2897/ZN (NAND2_X1)           0.08      17.20 r
+  exec0/alu0/U373/ZN (AND2_X2)             0.09      17.30 r
+  exec0/alu0/U3572/ZN (OAI21_X1)           0.06      17.35 f
+  exec0/alu0/U3286/ZN (NAND2_X1)           0.08      17.44 r
+  exec0/alu0/U1851/ZN (AND2_X1)            0.12      17.56 r
+  exec0/alu0/U3681/ZN (OAI21_X2)           0.08      17.64 f
+  exec0/alu0/U12161/ZN (NAND2_X1)          0.08      17.72 r
+  exec0/alu0/U4053/ZN (AND2_X1)            0.11      17.84 r
+  exec0/alu0/U12297/ZN (NAND4_X1)          0.07      17.91 f
+  exec0/U285/ZN (AND2_X1)                  0.11      18.02 f
+  exec0/alu_out_reg[2]/D (DFF_X1)          0.01      18.03 f
+  data arrival time                                  18.03
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[2]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.13      14.82
+  data required time                                 14.82
+  -----------------------------------------------------------
+  data required time                                 14.82
+  data arrival time                                 -18.03
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -3.21
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2811/ZN (OAI21_X1)           0.10      15.80 f
+  exec0/alu0/U542/ZN (INV_X1)              0.08      15.87 r
+  exec0/alu0/U3124/ZN (NAND3_X1)           0.08      15.95 f
+  exec0/alu0/U371/ZN (AND4_X4)             0.17      16.12 f
+  exec0/alu0/U11011/ZN (INV_X2)            0.10      16.23 r
+  exec0/alu0/U11012/ZN (OR2_X4)            0.23      16.45 r
+  exec0/alu0/U11042/ZN (OAI22_X1)          0.11      16.57 f
+  exec0/alu0/U11043/ZN (INV_X1)            0.08      16.64 r
+  exec0/alu0/U2977/ZN (NAND3_X1)           0.08      16.73 f
+  exec0/alu0/U12313/ZN (OR3_X4)            0.33      17.06 f
+  exec0/alu0/U12590/ZN (NAND2_X1)          0.09      17.14 r
+  exec0/alu0/U12591/ZN (OAI21_X1)          0.07      17.21 f
+  exec0/alu0/U12595/ZN (AOI21_X1)          0.13      17.35 r
+  exec0/alu0/U469/ZN (OAI21_X1)            0.08      17.43 f
+  exec0/alu0/U12618/ZN (AOI21_X1)          0.14      17.57 r
+  exec0/alu0/U3682/ZN (OAI21_X2)           0.09      17.67 f
+  exec0/alu0/U13970/ZN (NAND3_X1)          0.09      17.75 r
+  exec0/alu0/U1088/ZN (AND2_X1)            0.11      17.86 r
+  exec0/alu0/U3195/ZN (NAND2_X1)           0.05      17.91 f
+  exec0/U284/ZN (AND2_X1)                  0.10      18.00 f
+  exec0/alu_out_reg[1]/D (DFF_X1)          0.01      18.01 f
+  data arrival time                                  18.01
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[1]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.13      14.82
+  data required time                                 14.82
+  -----------------------------------------------------------
+  data required time                                 14.82
+  data arrival time                                 -18.01
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -3.20
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2812/ZN (OAI21_X1)           0.09      15.78 f
+  exec0/alu0/U3047/ZN (AND2_X1)            0.12      15.90 f
+  exec0/alu0/U363/ZN (NAND2_X1)            0.08      15.98 r
+  exec0/alu0/U371/ZN (AND4_X4)             0.21      16.19 r
+  exec0/alu0/U5738/Z (BUF_X1)              0.14      16.34 r
+  exec0/alu0/U13780/ZN (OAI211_X1)         0.09      16.42 f
+  exec0/U167/ZN (AND2_X1)                  0.13      16.56 f
+  exec0/alu_out_reg[3]/D (DFF_X1)          0.01      16.56 f
+  data arrival time                                  16.56
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[3]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.13      14.82
+  data required time                                 14.82
+  -----------------------------------------------------------
+  data required time                                 14.82
+  data arrival time                                 -16.56
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.75
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2812/ZN (OAI21_X1)           0.09      15.78 f
+  exec0/alu0/U3047/ZN (AND2_X1)            0.12      15.90 f
+  exec0/alu0/U557/Z (CLKBUF_X1)            0.10      16.00 f
+  exec0/alu0/U4213/ZN (INV_X1)             0.12      16.12 r
+  exec0/alu0/U3771/ZN (NAND2_X1)           0.07      16.19 f
+  exec0/alu0/U13732/ZN (NAND2_X1)          0.06      16.25 r
+  exec0/alu0/U13758/ZN (NAND4_X1)          0.08      16.33 f
+  exec0/U166/ZN (AND2_X1)                  0.12      16.45 f
+  exec0/alu_out_reg[4]/D (DFF_X1)          0.01      16.46 f
+  data arrival time                                  16.46
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[4]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.13      14.82
+  data required time                                 14.82
+  -----------------------------------------------------------
+  data required time                                 14.82
+  data arrival time                                 -16.46
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.64
+
+
+  Startpoint: decode0/opsel2_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: exec0/alu_out_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  decode0/opsel2_reg[0]/CK (DFF_X1)        0.00 #     0.00 r
+  decode0/opsel2_reg[0]/QN (DFF_X1)        0.25       0.25 f
+  decode0/U357/ZN (INV_X1)                 0.08       0.33 r
+  exec0/U128/ZN (INV_X1)                   0.04       0.37 f
+  exec0/U129/ZN (AND2_X2)                  0.11       0.48 f
+  exec0/U110/Z (BUF_X4)                    0.11       0.60 f
+  exec0/U36/ZN (NAND2_X1)                  0.07       0.66 r
+  exec0/U37/ZN (NAND2_X1)                  0.06       0.72 f
+  exec0/alu0/U3053/ZN (OR2_X2)             0.20       0.93 f
+  exec0/alu0/U1497/ZN (NOR2_X4)            0.15       1.08 r
+  exec0/alu0/U1493/ZN (AND2_X2)            0.11       1.19 r
+  exec0/alu0/U1475/ZN (AND3_X2)            0.13       1.32 r
+  exec0/alu0/U1474/ZN (NAND2_X1)           0.08       1.40 f
+  exec0/alu0/U375/ZN (OAI21_X2)            0.10       1.50 r
+  exec0/alu0/U3046/Z (MUX2_X1)             0.27       1.77 f
+  exec0/alu0/U4243/ZN (NOR2_X1)            0.11       1.88 r
+  exec0/alu0/U14934/ZN (OAI21_X1)          0.07       1.95 f
+  exec0/alu0/U14933/ZN (NAND2_X1)          0.06       2.01 r
+  exec0/alu0/U3250/ZN (NAND2_X1)           0.06       2.07 f
+  exec0/alu0/U1659/ZN (NAND2_X1)           0.07       2.14 r
+  exec0/alu0/U3133/ZN (INV_X1)             0.05       2.19 f
+  exec0/alu0/U458/ZN (NAND2_X1)            0.07       2.26 r
+  exec0/alu0/U1530/ZN (NAND2_X2)           0.09       2.35 f
+  exec0/alu0/U344/ZN (NAND2_X2)            0.09       2.44 r
+  exec0/alu0/U3714/ZN (AND4_X2)            0.19       2.62 r
+  exec0/alu0/U3549/Z (MUX2_X1)             0.31       2.93 f
+  exec0/alu0/U3541/ZN (OR2_X2)             0.22       3.15 f
+  exec0/alu0/U3542/ZN (NAND2_X1)           0.08       3.23 r
+  exec0/alu0/U2837/ZN (AND3_X2)            0.13       3.37 r
+  exec0/alu0/U3536/ZN (OAI211_X2)          0.07       3.44 f
+  exec0/alu0/U3282/ZN (NAND3_X1)           0.11       3.56 r
+  exec0/alu0/U3251/ZN (NAND2_X1)           0.09       3.64 f
+  exec0/alu0/U3356/ZN (AND2_X4)            0.13       3.77 f
+  exec0/alu0/U3346/ZN (NAND2_X1)           0.07       3.84 r
+  exec0/alu0/U4721/ZN (NAND4_X1)           0.07       3.92 f
+  exec0/alu0/U3334/Z (MUX2_X1)             0.30       4.21 f
+  exec0/alu0/U4775/ZN (NOR2_X2)            0.16       4.37 r
+  exec0/alu0/U4782/ZN (OAI21_X1)           0.07       4.45 f
+  exec0/alu0/U318/ZN (AOI21_X1)            0.17       4.61 r
+  exec0/alu0/U4783/ZN (OAI21_X1)           0.08       4.69 f
+  exec0/alu0/U4797/ZN (NAND2_X1)           0.08       4.77 r
+  exec0/alu0/U436/ZN (NAND2_X2)            0.07       4.85 f
+  exec0/alu0/U3215/ZN (AND2_X1)            0.11       4.96 f
+  exec0/alu0/U687/ZN (NAND2_X1)            0.08       5.03 r
+  exec0/alu0/U3481/ZN (AND4_X4)            0.22       5.25 r
+  exec0/alu0/U1840/ZN (INV_X1)             0.07       5.32 f
+  exec0/alu0/U1624/ZN (AND2_X4)            0.13       5.45 f
+  exec0/alu0/U5296/ZN (NAND2_X1)           0.07       5.51 r
+  exec0/alu0/U5297/ZN (NAND2_X1)           0.06       5.58 f
+  exec0/alu0/U5306/ZN (OR3_X4)             0.35       5.93 f
+  exec0/alu0/U600/ZN (NOR2_X1)             0.21       6.13 r
+  exec0/alu0/U4164/ZN (OAI21_X1)           0.08       6.22 f
+  exec0/alu0/U4183/ZN (AOI21_X1)           0.12       6.34 r
+  exec0/alu0/U1342/ZN (OR2_X1)             0.13       6.47 r
+  exec0/alu0/U5640/ZN (AND2_X1)            0.11       6.58 r
+  exec0/alu0/U413/ZN (AND2_X2)             0.12       6.70 r
+  exec0/alu0/U533/ZN (NAND2_X1)            0.06       6.76 f
+  exec0/alu0/U3097/ZN (AND3_X2)            0.12       6.88 f
+  exec0/alu0/U3711/ZN (NAND3_X2)           0.13       7.01 r
+  exec0/alu0/U5638/ZN (OAI22_X1)           0.11       7.12 f
+  exec0/alu0/U5639/ZN (OR4_X4)             0.51       7.63 f
+  exec0/alu0/U7668/ZN (NAND2_X1)           0.10       7.74 r
+  exec0/alu0/U463/ZN (OAI21_X1)            0.07       7.81 f
+  exec0/alu0/U462/ZN (AOI21_X2)            0.17       7.98 r
+  exec0/alu0/U5999/ZN (OAI21_X1)           0.08       8.06 f
+  exec0/alu0/U3383/ZN (NAND3_X1)           0.07       8.13 r
+  exec0/alu0/U3382/ZN (NAND2_X1)           0.06       8.19 f
+  exec0/alu0/U3185/ZN (INV_X1)             0.06       8.25 r
+  exec0/alu0/U3175/ZN (OR2_X2)             0.08       8.32 r
+  exec0/alu0/U6215/ZN (NOR2_X1)            0.04       8.36 f
+  exec0/alu0/U6216/ZN (NOR3_X1)            0.26       8.62 r
+  exec0/alu0/U3667/ZN (AND2_X4)            0.20       8.82 r
+  exec0/alu0/U3463/ZN (AND2_X4)            0.20       9.01 r
+  exec0/alu0/U3540/ZN (NAND2_X1)           0.08       9.09 f
+  exec0/alu0/U277/ZN (AND4_X2)             0.17       9.26 f
+  exec0/alu0/U1545/ZN (NAND2_X4)           0.14       9.40 r
+  exec0/alu0/U378/ZN (NAND2_X1)            0.09       9.49 f
+  exec0/alu0/U139/ZN (OAI21_X1)            0.12       9.61 r
+  exec0/alu0/U4160/ZN (AOI21_X2)           0.08       9.69 f
+  exec0/alu0/U6873/ZN (OAI21_X1)           0.16       9.85 r
+  exec0/alu0/U6874/ZN (NAND2_X1)           0.07       9.92 f
+  exec0/alu0/U6876/ZN (AND2_X2)            0.11      10.03 f
+  exec0/alu0/U6890/ZN (OAI21_X2)           0.14      10.17 r
+  exec0/alu0/U721/ZN (AND2_X1)             0.15      10.32 r
+  exec0/alu0/U7073/ZN (INV_X1)             0.06      10.37 f
+  exec0/alu0/U124/ZN (INV_X4)              0.15      10.53 r
+  exec0/alu0/U3722/ZN (NAND2_X4)           0.18      10.71 f
+  exec0/alu0/U7165/ZN (OAI22_X1)           0.20      10.91 r
+  exec0/alu0/U7166/ZN (INV_X1)             0.05      10.96 f
+  exec0/alu0/U3022/ZN (NAND3_X1)           0.08      11.04 r
+  exec0/alu0/U7188/ZN (OR3_X4)             0.15      11.19 r
+  exec0/alu0/U7676/ZN (NOR2_X2)            0.07      11.26 f
+  exec0/alu0/U6144/ZN (INV_X1)             0.08      11.34 r
+  exec0/alu0/U3465/ZN (AND2_X2)            0.12      11.46 r
+  exec0/alu0/U7679/ZN (NAND2_X1)           0.07      11.53 f
+  exec0/alu0/U1410/ZN (NOR2_X1)            0.11      11.64 r
+  exec0/alu0/U1439/ZN (NAND2_X1)           0.06      11.71 f
+  exec0/alu0/U1437/ZN (AND2_X2)            0.11      11.82 f
+  exec0/alu0/U7972/ZN (OAI21_X1)           0.12      11.93 r
+  exec0/alu0/U7997/ZN (INV_X1)             0.06      12.00 f
+  exec0/alu0/U3373/ZN (AND2_X2)            0.12      12.12 f
+  exec0/alu0/U8057/ZN (NAND2_X2)           0.10      12.21 r
+  exec0/alu0/U3316/ZN (NAND4_X4)           0.16      12.37 f
+  exec0/alu0/U3677/ZN (AND2_X2)            0.18      12.55 f
+  exec0/alu0/U8571/ZN (NAND2_X1)           0.09      12.63 r
+  exec0/alu0/U1552/ZN (NAND3_X1)           0.08      12.71 f
+  exec0/alu0/U8581/ZN (OR4_X4)             0.46      13.18 f
+  exec0/alu0/U3410/ZN (NAND2_X1)           0.10      13.28 r
+  exec0/alu0/U8942/ZN (OAI21_X1)           0.07      13.35 f
+  exec0/alu0/U417/ZN (AOI21_X2)            0.13      13.48 r
+  exec0/alu0/U8945/ZN (OAI21_X1)           0.08      13.57 f
+  exec0/alu0/U8946/ZN (NAND2_X1)           0.07      13.64 r
+  exec0/alu0/U3239/ZN (AND2_X2)            0.12      13.76 r
+  exec0/alu0/U3238/ZN (OAI21_X4)           0.09      13.85 f
+  exec0/alu0/U9382/ZN (NAND2_X1)           0.08      13.93 r
+  exec0/alu0/U9383/ZN (OR2_X2)             0.10      14.03 r
+  exec0/alu0/U3730/ZN (AND4_X4)            0.22      14.25 r
+  exec0/alu0/U3142/ZN (INV_X1)             0.06      14.31 f
+  exec0/alu0/U9384/ZN (AND2_X4)            0.15      14.45 f
+  exec0/alu0/U455/ZN (AOI22_X2)            0.16      14.61 r
+  exec0/alu0/U8720/ZN (NAND2_X1)           0.07      14.68 f
+  exec0/alu0/U9742/ZN (OR3_X4)             0.34      15.03 f
+  exec0/alu0/U9743/ZN (NOR2_X2)            0.16      15.19 r
+  exec0/alu0/U9915/ZN (OAI21_X1)           0.08      15.27 f
+  exec0/alu0/U9916/ZN (AOI21_X2)           0.17      15.43 r
+  exec0/alu0/U389/ZN (OAI21_X1)            0.08      15.51 f
+  exec0/alu0/U9921/ZN (AOI21_X2)           0.19      15.70 r
+  exec0/alu0/U2811/ZN (OAI21_X1)           0.10      15.80 f
+  exec0/alu0/U9291/Z (CLKBUF_X1)           0.13      15.93 f
+  exec0/alu0/U13716/ZN (AOI21_X1)          0.12      16.04 r
+  exec0/alu0/U13718/ZN (NAND4_X1)          0.11      16.15 f
+  exec0/alu0/U13731/ZN (OR2_X1)            0.18      16.33 f
+  exec0/U165/ZN (AND2_X1)                  0.10      16.43 f
+  exec0/alu_out_reg[5]/D (DFF_X1)          0.01      16.44 f
+  data arrival time                                  16.44
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (ideal)              0.00      15.00
+  clock reconvergence pessimism            0.00      15.00
+  clock uncertainty                       -0.05      14.95
+  exec0/alu_out_reg[5]/CK (DFF_X1)         0.00      14.95 r
+  library setup time                      -0.13      14.82
+  data required time                                 14.82
+  -----------------------------------------------------------
+  data required time                                 14.82
+  data arrival time                                 -16.44
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.63
+
+
+    Net: exec0/alu0/n2770
+
+    max_transition         0.50
+  - Transition Time        0.69
+  ------------------------------
+    Slack                 -0.19  (VIOLATED)
+
+    List of pins on net "exec0/alu0/n2770" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   exec0/alu0/U13077/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U13161/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U13168/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U13930/B
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14487/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14501/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14519/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14533/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14551/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14573/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14591/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14613/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14639/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14661/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14687/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14721/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14752/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14786/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14821/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14851/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/intadd_0/U21/A
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/intadd_0/U20/A
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U4842/A2
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U4852/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U3653/A3
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U3225/A2
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U3230/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U2946/A2
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U2951/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U12841/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14353/B1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U14901/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U5050/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U5052/A1
+                                0.50           0.69          -0.19  (VIOLATED)
+       PIN :   exec0/alu0/U5049/ZN
+                                0.50           0.69          -0.19  (VIOLATED)
+
+    Net: exec0/alu0/n11887
+
+    max_transition         0.50
+  - Transition Time        0.60
+  ------------------------------
+    Slack                 -0.10  (VIOLATED)
+
+    List of pins on net "exec0/alu0/n11887" with transition violations :
+   -----------------------------------------------------------------
+                             Required        Actual
+                            Transition     Transition       Slack
+   -----------------------------------------------------------------
+       PIN :   exec0/alu0/U1633/C1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14337/B1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U12920/A2
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13407/S
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U12194/A2
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U12225/A2
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13112/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13118/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13630/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14805/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14771/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14738/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14709/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14561/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14403/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14363/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13939/B
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13377/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13349/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13331/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U12205/A2
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U12254/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13108/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13135/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13327/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13373/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13394/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U13398/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14437/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14507/A1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U14888/B1
+                                0.50           0.60          -0.10  (VIOLATED)
+       PIN :   exec0/alu0/U301/ZN
+                                0.50           0.60          -0.10  (VIOLATED)
+
+    Net: exec0/alu0/n2770
+
+    max_fanout            32.00
+  - Fanout                34.00
+  ------------------------------
+    Slack                 -2.00  (VIOLATED)
+
+
+    Net: exec0/alu0/n2770
+
+    max_capacitance       60.69
+  - Capacitance           83.66
+  ------------------------------
+    Slack                -22.97  (VIOLATED)
+
+
+    Net: exec0/alu0/n11887
+
+    max_capacitance       60.69
+  - Capacitance           72.71
+  ------------------------------
+    Slack                -12.02  (VIOLATED)
+
+
+    Design: cpu
+
+    max_leakage_power          0.00
+  - Current Leakage Power  442123.41
+  ----------------------------------
+    Slack                  -442123.41  (VIOLATED)
+
+
+1

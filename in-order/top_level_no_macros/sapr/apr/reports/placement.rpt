@@ -1,0 +1,26 @@
+Reference Point: Lower Left-hand corner of Core Base Array
+Number of plan group pins = 0
+  172 blocks freed
+  0 bytes freed
+*********************************************
+Report     : Virtual Flat Placement
+Design     : cpu
+Version    : T-2022.03-SP3
+Date       : Mon Jun  5 00:40:25 2023
+*********************************************
+
+Total wirelength: 735475.61
+Number of 100x100 tracks cell density regions: 2401
+Number of low (< 10%) cell density regions: 0 (0.000%)
+Number of high (> 200%) cell density regions: 0 (0.000%)
+Maximum cell density: 100.00% (at 14 684 27 698)
+Checking hard macro to hard macro overlaps...
+Number of hard macro to hard macro overlaps: 0
+Checking hard macro to std cell overlaps...
+Number of hard macro to std cell overlaps: 0
+Checking plan group to plan group overlaps...
+Number of plan group to plan group overlaps: 0
+Number of TL cells overlapping PG: 0
+Number of cells violating core area: 0
+Total number of cells violating plan group or core area: 0
+1

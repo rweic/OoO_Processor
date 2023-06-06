@@ -1,0 +1,107 @@
+Warning: Could not read any link_library files. The link_library setting {"*", "stdcells-wc.db", "stdcells-bc.db", "dw_foundation.sldb"} may be invalid. (UID-349)
+
+  Loading design 'cpu'
+Warning: Layer 'metal1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal7' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal8' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal9' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal10' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+
+
+Information: The design has 4501 physical cells. (PSYN-105)
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Warning: Mismatch in the main library and the Milkyway library resistance units. In the main library it is 1000.000 kohm and in the Milkyway design library it is 1.000 kohm. Check and correct the resistance units in the .tf and .db files. (PSYN-476)
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Warning: Mismatch in the main and the Milkyway library capacitance units. In the main library it is 0.001 pf and in the Milkyway design library it is 1.000 pf. Check and correct the capacitance units in the .tf and .db files. (PSYN-477)
+Information: Layer metal9 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal10 is ignored for resistance and capacitance computation. (RCEX-019)
+Error: Initialization of the detail route TLU+ RC model failed. (RCEX-030)
+Error: Extraction failed. (RCEX-205)
+Information: Updating graph... (UID-83)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+ 
+****************************************
+Report : clock tree
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 00:40:26 2023
+****************************************
+
+Information: Float pin scale factor for the 'max' operating condition of scenario 'default' is set to 1.000 (CTS-375)
+
+============ Global Skew Report ================
+
+Clock Tree Name                : "clk"
+Clock Period                   : 15.00000       
+Clock Tree root pin            : "clk"
+Number of Levels               : 6
+Number of Sinks                : 1475
+Number of CT Buffers           : 11
+Number of CTS added gates      : 0
+Number of Preexisting Gates    : 0
+Number of Preexisting Buf/Inv  : 0
+Total Number of Clock Cells    : 11
+Total Area of CT Buffers       : 55.06200       
+Total Area of CT cells         : 55.06200       
+Max Global Skew                : 0.07689   
+Number of MaxTran Violators    : 0
+Number of MaxCap Violators     : 0
+Number of MaxFanout Violators  : 0
+
+
+Operating Condition               worst
+Clock global Skew                 0.077
+Longest path delay                0.343
+Shortest path delay               0.266
+
+The longest path delay end pin: exec0/alu_out_reg_3_/CK
+The shortest path delay end pin: exec0/rs2_data_o_reg_4_/CK
+
+The longest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+clk                                         0.000            1  0.000     0.000     0.000     r
+clk                                         3.136            1  0.027     0.027     0.027     r
+INV_X8_G1B4I1/A                             3.136            1  0.027     0.000     0.027     r
+INV_X8_G1B4I1/ZN                            24.695           1  0.026     0.047     0.074     f
+INV_X32_G1B3I1/A                            24.695           1  0.026     0.001     0.075     f
+INV_X32_G1B3I1/ZN                           27.831           2  0.024     0.045     0.120     r
+INV_X32_G1B2I2/A                            27.831           1  0.024     0.001     0.121     r
+INV_X32_G1B2I2/ZN                           146.506          4  0.021     0.039     0.160     f
+INV_X32_G1B1I2/A                            146.506          1  0.021     0.001     0.161     f
+INV_X32_G1B1I2/ZN                           12.271           1  0.017     0.033     0.193     r
+CTS_clk_CTO_delay4/A                        12.271           1  0.017     0.000     0.194     r
+CTS_clk_CTO_delay4/Z                        194.643        214  0.108     0.149     0.343     r
+exec0/alu_out_reg_3_/CK                     194.643          0  0.108     0.000     0.343     r
+[clock delay]                                                                       0.343
+----------------------------------------------------------------------------------------------------
+
+The Shortest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+clk                                         0.000            1  0.000     0.000     0.000     r
+clk                                         3.136            1  0.027     0.027     0.027     r
+INV_X8_G1B4I1/A                             3.136            1  0.027     0.000     0.027     r
+INV_X8_G1B4I1/ZN                            24.695           1  0.026     0.047     0.074     f
+INV_X32_G1B3I1/A                            24.695           1  0.026     0.001     0.075     f
+INV_X32_G1B3I1/ZN                           27.831           2  0.024     0.045     0.120     r
+INV_X32_G1B2I2/A                            27.831           1  0.024     0.001     0.121     r
+INV_X32_G1B2I2/ZN                           146.506          4  0.021     0.039     0.160     f
+INV_X32_G1B1I5/A                            146.506          1  0.021     0.001     0.161     f
+INV_X32_G1B1I5/ZN                           285.631        314  0.082     0.104     0.266     r
+exec0/rs2_data_o_reg_4_/CK                  285.631          0  0.082     0.000     0.266     r
+[clock delay]                                                                       0.266
+----------------------------------------------------------------------------------------------------
+
+1

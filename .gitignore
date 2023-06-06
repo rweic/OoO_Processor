@@ -1,0 +1,5 @@
+/in-order/alu
+/in-order/executive
+/in-order/regfile
+/in-order/toplevel_old
+*.log

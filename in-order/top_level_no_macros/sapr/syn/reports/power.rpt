@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+        -verbose
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 14:27:54 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+cpu                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 508.7164 uW   (94%)
+  Net Switching Power  =  33.2586 uW    (6%)
+                         ---------
+Total Dynamic Power    = 541.9750 uW  (100%)
+
+Cell Leakage Power     = 425.7765 uW
+
+                 Internal         Switching           Leakage            Total                         Cell
+Power Group      Power            Power               Power              Power   (   %    )  Attrs  Count
+---------------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+clock_network    487.7863            0.0000            0.0000          487.7863  (  50.40%)            0 i
+register           5.8948            2.8350        7.7492e+04           86.2222  (   8.91%)            1475
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+combinational     15.0350           30.4240        3.4828e+05          393.7431  (  40.69%)            19502
+---------------------------------------------------------------------------------------------------------
+Total            508.7161 uW        33.2590 uW     4.2578e+05 nW       967.7516 uW
+1

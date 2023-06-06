@@ -1,0 +1,70 @@
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : core
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 18:07:18 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/ece477_fsm_freepdk45_sapr_flow/freepdk-45nm/stdcells-wc.db)
+
+Number of ports:                         3198
+Number of nets:                          3654
+Number of cells:                         2859
+Number of combinational cells:           1370
+Number of sequential cells:               391
+Number of macros/black boxes:               0
+Number of buf/inv:                        369
+Number of references:                       7
+
+Combinational area:               1439.858027
+Buf/Inv area:                      208.278001
+Noncombinational area:            1733.255939
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  3173.113966
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------
+core                              3173.1140    100.0    22.3440     0.0000  0.0000  core
+decode                              30.0580      0.9    14.3640     0.0000  0.0000  decode
+decode/dec0                         15.6940      0.5    15.6940     0.0000  0.0000  decoder
+fetch                              251.6360      7.9    61.7120   189.9240  0.0000  fetch
+lsu0                                76.3420      2.4    47.8800    28.4620  0.0000  lsu
+rename                            1770.4960     55.8   802.7880   913.4440  0.0000  rename_1
+rename/freelist0                    54.2640      1.7    31.6540    22.6100  0.0000  freelist_1
+reservation_station               1022.2380     32.2   102.4100     0.0000  0.0000  rs
+reservation_station/genblk1[0].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_11
+reservation_station/genblk1[1].alu_entry   26.0680     0.8   12.5020   13.5660 0.0000 rs_entry_10
+reservation_station/genblk1[2].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_9
+reservation_station/genblk1[3].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_8
+reservation_station/genblk2[0].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_7
+reservation_station/genblk2[1].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_6
+reservation_station/genblk2[2].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_5
+reservation_station/genblk2[3].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_4
+reservation_station/genblk3[0].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_3
+reservation_station/genblk3[1].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_2
+reservation_station/genblk3[2].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_1
+reservation_station/genblk3[3].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_0
+reservation_station/ps_alu           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_2
+reservation_station/ps_lsu           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_1
+reservation_station/ps_mul           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_0
+--------------------------------  ---------  -------  ---------  ---------  ------  -----------------
+Total                                                 1439.8580  1733.2559  0.0000
+
+1

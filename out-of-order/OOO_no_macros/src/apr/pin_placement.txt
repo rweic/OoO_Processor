@@ -1,0 +1,17 @@
+type = offset
+defaultOffset = 0.0
+
+#N, 15.95
+Clock, layer=metal3 +1.4
+Reset, layer=metal3 +1.4
+
+#W, 15.96
+A, layer=metal4 +1.4
+B, layer=metal4 +1.4
+
+#E, 15.96
+Output1, layer=metal4 +1.4
+Output2, layer=metal4 +1.4
+
+#S, 15.95
+Status[2:0], layer=metal3, pitch=1.4 +1.4

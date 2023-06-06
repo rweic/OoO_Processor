@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+        -verbose
+Design : core
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 18:07:18 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/ece477_fsm_freepdk45_sapr_flow/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+core                   5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 161.8628 uW   (53%)
+  Net Switching Power  = 144.4366 uW   (47%)
+                         ---------
+Total Dynamic Power    = 306.2994 uW  (100%)
+
+Cell Leakage Power     =  39.0982 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+                 Internal         Switching           Leakage            Total                         Cell
+Power Group      Power            Power               Power              Power   (   %    )  Attrs  Count
+---------------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)            0 i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
+sequential       112.8939            6.0947        2.0217e+04          139.2061  (  40.30%)            387
+combinational     48.9690          138.3418        1.8881e+04          206.1916  (  59.70%)            1374
+---------------------------------------------------------------------------------------------------------
+Total            161.8629 uW       144.4365 uW     3.9098e+04 nW       345.3977 uW
+1

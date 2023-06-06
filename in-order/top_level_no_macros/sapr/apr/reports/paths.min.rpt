@@ -1,0 +1,255 @@
+Warning: Could not read any link_library files. The link_library setting {"*", "stdcells-wc.db", "stdcells-bc.db", "dw_foundation.sldb"} may be invalid. (UID-349)
+
+  Loading design 'cpu'
+Warning: Layer 'metal1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal7' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal8' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal9' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal10' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+
+
+Information: The design has 4501 physical cells. (PSYN-105)
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Warning: Mismatch in the main library and the Milkyway library resistance units. In the main library it is 1000.000 kohm and in the Milkyway design library it is 1.000 kohm. Check and correct the resistance units in the .tf and .db files. (PSYN-476)
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Warning: Mismatch in the main and the Milkyway library capacitance units. In the main library it is 0.001 pf and in the Milkyway design library it is 1.000 pf. Check and correct the capacitance units in the .tf and .db files. (PSYN-477)
+Information: Layer metal9 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal10 is ignored for resistance and capacitance computation. (RCEX-019)
+Error: Initialization of the detail route TLU+ RC model failed. (RCEX-030)
+Error: Extraction failed. (RCEX-205)
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Warning: Clock network timing may not be up-to-date since only 0.000000 percentage of clock nets are routed. (TIM-233)
+ 
+****************************************
+Report : timing
+        -path end
+        -delay min
+        -max_paths 200
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 00:40:19 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary
+
+Information: Percent of Arnoldi-based delays =  0.00%
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+regfile0/register_reg_10__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_20__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_4__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_14__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_18__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_11__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_1__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_7__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_2__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_6__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_18__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_19__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_1__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_19__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_19__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_28__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_28__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_18__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_8__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_16__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_19__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_18__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_23__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_20__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_29__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_20__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_11__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_27__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_8__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_7__17_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_10__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_3__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_21__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_8__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_3__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_24__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_22__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_31__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_31__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_9__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_11__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_26__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_21__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_13__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_4__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_29__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_14__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_29__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_7__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_8__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_7__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_31__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_20__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_20__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_27__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_30__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_9__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_25__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_8__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_21__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_11__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_2__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_6__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_6__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_9__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_24__9_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_2__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_1__9_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_3__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_1__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_22__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_30__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_7__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_3__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_27__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_13__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_22__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_31__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_25__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_19__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_27__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_10__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_18__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_15__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_4__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_28__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_16__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_24__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_9__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_26__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_18__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_11__29_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_12__29_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_4__24_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_29__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_15__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_7__6_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_30__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_24__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_18__28_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_29__24_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_1__17_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_3__26_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_3__29_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_5__23_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_21__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_23__23_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_20__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__29_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_30__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_22__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__12_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_5__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_12__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_2__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_24__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_5__9_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_21__24_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_21__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_2__28_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_25__9_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_24__4_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_29__9_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_1__24_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_12__28_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_29__26_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_8__28_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_25__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_14__28_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_4__28_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_12__24_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_4__4_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_16__6_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_1__14_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_15__28_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_18__24_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_6__3_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_18__29_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_28__29_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_25__29_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_2__29_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_14__24_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_15__12_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_13__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_14__3_/D (DFF_X1)     0.51 f     0.39        0.12
+regfile0/register_reg_21__29_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_7__9_/D (DFF_X1)     0.51 f     0.39         0.12
+regfile0/register_reg_30__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_4__29_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_25__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_10__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_13__14_/D (DFF_X1)     0.51 f     0.39       0.12
+regfile0/register_reg_27__29_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_16__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_31__29_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_10__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_17__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_6__29_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_23__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_30__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_31__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_9__6_/D (DFF_X1)     0.52 f     0.39         0.12
+regfile0/register_reg_11__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_13__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_16__4_/D (DFF_X1)     0.52 f     0.39        0.12
+regfile0/register_reg_28__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_3__28_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_2__24_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_1__28_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_8__29_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_16__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_25__14_/D (DFF_X1)     0.52 f     0.39       0.12
+regfile0/register_reg_12__15_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_17__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_15__24_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_4__6_/D (DFF_X1)     0.52 f     0.39         0.12
+regfile0/register_reg_5__17_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_16__15_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_1__4_/D (DFF_X1)     0.52 f     0.39         0.12
+regfile0/register_reg_24__3_/D (DFF_X1)     0.52 f     0.39        0.12
+regfile0/register_reg_19__17_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_5__24_/D (DFF_X1)     0.49 f     0.36        0.12
+regfile0/register_reg_16__29_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_23__28_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_29__17_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_22__28_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_4__30_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_21__31_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_7__23_/D (DFF_X1)     0.48 f     0.36        0.12
+regfile0/register_reg_25__6_/D (DFF_X1)     0.52 f     0.39        0.12
+regfile0/register_reg_17__17_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_14__15_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_31__30_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_12__30_/D (DFF_X1)     0.49 f     0.36       0.12
+regfile0/register_reg_13__31_/D (DFF_X1)     0.48 f     0.36       0.12
+regfile0/register_reg_28__3_/D (DFF_X1)     0.52 f     0.39        0.12
+regfile0/register_reg_7__29_/D (DFF_X1)     0.49 f     0.36        0.12
+
+1

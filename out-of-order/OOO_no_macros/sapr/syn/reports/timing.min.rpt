@@ -1,0 +1,47 @@
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path end
+        -delay min
+        -nets
+        -max_paths 200
+        -capacitance
+Design : core
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 18:07:18 2023
+****************************************
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+dmem_raddr_o[2] (out)               0.30 f        infinity     infinity
+dmem_raddr_o[0] (out)               0.30 f        infinity     infinity
+dmem_raddr_o[1] (out)               0.30 f        infinity     infinity
+dmem_waddr_o[3] (out)               0.31 f        infinity     infinity
+dmem_raddr_o[3] (out)               0.31 f        infinity     infinity
+dmem_waddr_o[5] (out)               0.31 f        infinity     infinity
+dmem_waddr_o[4] (out)               0.31 f        infinity     infinity
+dmem_raddr_o[5] (out)               0.31 f        infinity     infinity
+dmem_raddr_o[4] (out)               0.31 f        infinity     infinity
+dmem_wmask_o[3] (out)               0.41 f        infinity     infinity
+dmem_wmask_o[2] (out)               0.41 f        infinity     infinity
+dmem_wmask_o[1] (out)               0.41 f        infinity     infinity
+dmem_wmask_o[0] (out)               0.41 f        infinity     infinity
+imem_addr_o[3] (out)                0.44 f        infinity     infinity
+imem_addr_o[7] (out)                0.45 f        infinity     infinity
+imem_addr_o[5] (out)                0.45 f        infinity     infinity
+imem_addr_o[1] (out)                0.48 f        infinity     infinity
+dmem_waddr_o[2] (out)               0.48 f        infinity     infinity
+dmem_waddr_o[0] (out)               0.48 f        infinity     infinity
+imem_addr_o[6] (out)                0.50 f        infinity     infinity
+imem_addr_o[4] (out)                0.50 f        infinity     infinity
+imem_addr_o[2] (out)                0.50 f        infinity     infinity
+imem_addr_o[0] (out)                0.51 f        infinity     infinity
+dmem_csb_read_o (out)               0.55 f        infinity     infinity
+dmem_csb_write_o (out)              0.57 r        infinity     infinity
+dmem_waddr_o[1] (out)               0.70 f        infinity     infinity
+
+1

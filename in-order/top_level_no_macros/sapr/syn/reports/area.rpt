@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : area
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 14:25:10 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+
+Number of ports:                         2603
+Number of nets:                         23823
+Number of cells:                        21015
+Number of combinational cells:          19502
+Number of sequential cells:              1475
+Number of macros/black boxes:               0
+Number of buf/inv:                       3363
+Number of references:                       8
+
+Combinational area:              20787.900038
+Buf/Inv area:                     1988.616007
+Noncombinational area:            6669.949758
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 27457.849796
+Total area:                 undefined
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -------------
+cpu                               27457.8498    100.0      0.7980     0.0000  0.0000  cpu
+decode0                            1377.8800      5.0    717.6680   660.2120  0.0000  decode
+exec0                             16430.2879     59.8    311.4860   474.8100  0.0000  execute
+exec0/alu0                        15643.9919     57.0  15643.9919     0.0000  0.0000  alu
+fetch0                              789.7540      2.9    355.6420   434.1120  0.0000  fetch
+hazard_detect0                       45.7520      0.2     45.7520     0.0000  0.0000  hazard_detect
+memaccess0                          763.4200      2.8    148.4280   614.9920  0.0000  memory_access
+regfile0                           7870.1419     28.7   3384.3181  4485.8238  0.0000  regfile
+wb0                                 179.8160      0.7    179.8160     0.0000  0.0000  writeback
+--------------------------------  ----------  -------  ----------  ---------  ------  -------------
+Total                                                  20787.9000  6669.9498  0.0000
+
+1

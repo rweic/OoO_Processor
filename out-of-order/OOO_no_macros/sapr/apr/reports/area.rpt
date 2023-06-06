@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : area
+Design : fsm
+Version: T-2022.03-SP3
+Date   : Tue May 16 23:07:53 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/ece477_fsm_freepdk45_sapr_flow/freepdk-45nm/stdcells-wc.db)
+
+Number of ports:                            9
+Number of nets:                            43
+Number of cells:                           37
+Number of combinational cells:             31
+Number of sequential cells:                 6
+Number of macros/black boxes:               0
+Number of buf/inv:                          6
+Number of references:                      12
+
+Combinational area:                 28.728000
+Buf/Inv area:                        3.192000
+Noncombinational area:              27.131999
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                    55.859999
+Total area:                 undefined
+
+Core Area:                       194
+Aspect Ratio:                 1.0094
+Utilization Ratio:            1.0000
+
+
+The above information was reported from the logical library. The following are from the physical library:
+
+  Total moveable cell area: 55.9
+  Total fixed cell area: 0.0
+  Total physical cell area: 55.9
+  Core area: (28000 28000 55740 56000)
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+fsm                                 55.8600    100.0   28.7280    27.1320  0.0000  fsm
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  28.7280    27.1320  0.0000
+
+1
