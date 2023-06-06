@@ -11,7 +11,7 @@ module rs #(
     clk_i, reset_i,
     //rs_allocate_i,
     pc_i, inst_i,
-    prs1_addr_i, prs2_addr_i, prd_addr_i,
+    prs1_addr_i, prs2_addr_i, rob_idx_i,
     prs1_valid_i, prs2_valid_i,
     alu_request_i, lsu_request_i, mul_request_i,
     //alu_valid_i, mul_valid_i, 
@@ -19,9 +19,9 @@ module rs #(
     cdb_en_i, cdb_tag_i,
     // Outputs
     alu_free_o, lsu_free_o, mul_free_o,
-    alu_request_o, alu_pc_o, alu_inst_o, alu_prs1_addr_o, alu_prs2_addr_o, alu_prd_addr_o,
-    lsu_request_o, lsu_pc_o, lsu_inst_o, lsu_prs1_addr_o, lsu_prs2_addr_o, lsu_prd_addr_o,
-    mul_request_o, mul_pc_o, mul_inst_o, mul_prs1_addr_o, mul_prs2_addr_o, mul_prd_addr_o
+    alu_request_o, alu_pc_o, alu_inst_o, alu_prs1_addr_o, alu_prs2_addr_o, alu_rob_idx_o,
+    lsu_request_o, lsu_pc_o, lsu_inst_o, lsu_prs1_addr_o, lsu_prs2_addr_o, lsu_rob_idx_o,
+    mul_request_o, mul_pc_o, mul_inst_o, mul_prs1_addr_o, mul_prs2_addr_o, mul_rob_idx_o
 );
     // ----- Input & Output Ports -----
     // Inputs
@@ -33,7 +33,7 @@ module rs #(
     // Rs & Rd addr
     input [4:0] prs1_addr_i;
     input [4:0] prs2_addr_i;
-    input [4:0] prd_addr_i;
+    input [4:0] rob_idx_i;
     // Input type of inst
     input alu_request_i;
     input lsu_request_i;
@@ -61,7 +61,7 @@ module rs #(
     output reg [31:0] alu_inst_o;
     output reg [4:0] alu_prs1_addr_o;
     output reg [4:0] alu_prs2_addr_o;
-    output reg [4:0] alu_prd_addr_o;
+    output reg [4:0] alu_rob_idx_o;
 
     // MUL allocated
     output reg mul_request_o;
@@ -69,7 +69,7 @@ module rs #(
     output reg [31:0] mul_inst_o;
     output reg [4:0] mul_prs1_addr_o;
     output reg [4:0] mul_prs2_addr_o;
-    output reg [4:0] mul_prd_addr_o;
+    output reg [4:0] mul_rob_idx_o;
 
     //  allocated
     output reg lsu_request_o;
@@ -77,7 +77,7 @@ module rs #(
     output reg [31:0] lsu_inst_o;
     output reg [4:0] lsu_prs1_addr_o;
     output reg [4:0] lsu_prs2_addr_o;
-    output reg [4:0] lsu_prd_addr_o;
+    output reg [4:0] lsu_rob_idx_o;
 
     // ----- Reg/wire Initialization -----
     wire [1:0] alu_idx_issued;
@@ -102,7 +102,7 @@ module rs #(
     wire [31:0] alu_pc [0:RS_SIZE-1]; 
     wire [4:0] alu_rs1_addr [0:RS_SIZE-1]; 
     wire [4:0] alu_rs2_addr [0:RS_SIZE-1];
-    wire [4:0] alu_rd_addr  [0:RS_SIZE-1];
+    wire [4:0] alu_rob_idx  [0:RS_SIZE-1];
 
     // MUL
     wire [RS_SIZE-1:0] mul_entry_allocate;
@@ -111,7 +111,7 @@ module rs #(
     wire [31:0] mul_pc [0:RS_SIZE-1]; 
     wire [4:0] mul_rs1_addr [0:RS_SIZE-1]; 
     wire [4:0] mul_rs2_addr [0:RS_SIZE-1];
-    wire [4:0] mul_rd_addr  [0:RS_SIZE-1];
+    wire [4:0] mul_rob_idx  [0:RS_SIZE-1];
 
     // LSU
     wire [RS_SIZE-1:0] lsu_entry_allocate;
@@ -120,7 +120,7 @@ module rs #(
     wire [31:0] lsu_pc [0:RS_SIZE-1]; 
     wire [4:0] lsu_rs1_addr [0:RS_SIZE-1]; 
     wire [4:0] lsu_rs2_addr [0:RS_SIZE-1];
-    wire [4:0] lsu_rd_addr  [0:RS_SIZE-1];
+    wire [4:0] lsu_rob_idx  [0:RS_SIZE-1];
 
     assign alu_request_o= | alu_entry_issue;
     assign lsu_request_o= | lsu_entry_issue;
@@ -135,21 +135,21 @@ module rs #(
     assign alu_inst_o = alu_inst[alu_idx_issued];
     assign alu_prs1_addr_o = alu_rs1_addr[alu_idx_issued];
     assign alu_prs2_addr_o = alu_rs2_addr[alu_idx_issued];
-    assign alu_prd_addr_o = alu_rd_addr[alu_idx_issued];
+    assign alu_rob_idx_o = alu_rob_idx[alu_idx_issued];
 
     // MUL
     assign mul_pc_o = mul_pc[mul_idx_issued];
     assign mul_inst_o = mul_inst[mul_idx_issued];
     assign mul_prs1_addr_o = mul_rs1_addr[mul_idx_issued];
     assign mul_prs2_addr_o = mul_rs2_addr[mul_idx_issued];
-    assign mul_prd_addr_o = mul_rd_addr[mul_idx_issued];
+    assign mul_rob_idx_o = mul_rob_idx[mul_idx_issued];
 
     // LSU
     assign lsu_pc_o = lsu_pc[lsu_idx_issued];
     assign lsu_inst_o = lsu_inst[lsu_idx_issued];
     assign lsu_prs1_addr_o = lsu_rs1_addr[lsu_idx_issued];
     assign lsu_prs2_addr_o = lsu_rs2_addr[lsu_idx_issued];
-    assign lsu_prd_addr_o = lsu_rd_addr[lsu_idx_issued];
+    assign lsu_rob_idx_o = lsu_rob_idx[lsu_idx_issued];
 
     // Priority
     priority_management pm_alu (
@@ -198,7 +198,7 @@ module rs #(
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
                 .prs2_addr_i(prs2_addr_i), 
-                .prd_addr_i(prd_addr_i),
+                .rob_idx_i(rob_idx_i),
                 .prs1_valid_i(prs1_valid_i), 
                 .prs2_valid_i(prs2_valid_i),
                 .cdb_en_i(cdb_en_i), 
@@ -210,7 +210,7 @@ module rs #(
                 .inst_o(alu_inst[i]),
                 .prs1_addr_o(alu_rs1_addr[i]), 
                 .prs2_addr_o(alu_rs2_addr[i]), 
-                .prd_addr_o(alu_rd_addr[i])
+                .rob_idx_o(alu_rob_idx[i])
             );
         end
     endgenerate
@@ -228,7 +228,7 @@ module rs #(
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
                 .prs2_addr_i(prs2_addr_i), 
-                .prd_addr_i(prd_addr_i),
+                .rob_idx_i(rob_idx_i),
                 .prs1_valid_i(prs1_valid_i), 
                 .prs2_valid_i(prs2_valid_i),
                 .cdb_en_i(cdb_en_i), 
@@ -240,7 +240,7 @@ module rs #(
                 .inst_o(mul_inst[i]),
                 .prs1_addr_o(mul_rs1_addr[i]), 
                 .prs2_addr_o(mul_rs2_addr[i]), 
-                .prd_addr_o(mul_rd_addr[i])
+                .rob_idx_o(mul_rob_idx[i])
             );
         end
     endgenerate
@@ -258,7 +258,7 @@ module rs #(
                 .inst_i(inst_i),
                 .prs1_addr_i(prs1_addr_i), 
                 .prs2_addr_i(prs2_addr_i), 
-                .prd_addr_i(prd_addr_i),
+                .rob_idx_i(rob_idx_i),
                 .prs1_valid_i(prs1_valid_i), 
                 .prs2_valid_i(prs2_valid_i),
                 .cdb_en_i(cdb_en_i), 
@@ -270,7 +270,7 @@ module rs #(
                 .inst_o(lsu_inst[i]),
                 .prs1_addr_o(lsu_rs1_addr[i]), 
                 .prs2_addr_o(lsu_rs2_addr[i]), 
-                .prd_addr_o(lsu_rd_addr[i])
+                .rob_idx_o(lsu_rob_idx[i])
             );
         end
     endgenerate
@@ -283,14 +283,14 @@ module rs_entry (
     entry_allocate_req_i, 
     entry_issue_i,  // execusion
     pc_i, inst_i,
-    prs1_addr_i, prs2_addr_i, prd_addr_i,
+    prs1_addr_i, prs2_addr_i, rob_idx_i,
     prs1_valid_i, prs2_valid_i,
     cdb_en_i, cdb_tag_i,
     // Outputs
     entry_free_o,
     ready_o,
     pc_o, inst_o,
-    prs1_addr_o, prs2_addr_o, prd_addr_o
+    prs1_addr_o, prs2_addr_o, rob_idx_o
 );
     // ----- Input & Output Ports -----
     // Inputs
@@ -303,7 +303,7 @@ module rs_entry (
     // Rs & Rd addr
     input [4:0] prs1_addr_i;
     input [4:0] prs2_addr_i;
-    input [4:0] prd_addr_i;
+    input [4:0] rob_idx_i;
     // The availability of the source registers
     input prs1_valid_i;
     input prs2_valid_i;
@@ -319,7 +319,7 @@ module rs_entry (
     // Rs & Rd addr
     output reg [4:0] prs1_addr_o;
     output reg [4:0] prs2_addr_o;
-    output reg [4:0] prd_addr_o;
+    output reg [4:0] rob_idx_o;
 
     // ----- Reg/wire Initialization -----
     reg cdb_prs1_valid;
@@ -332,7 +332,7 @@ module rs_entry (
     reg [31:0] inst_reg;
     reg [4:0] prs1_addr_reg;
     reg [4:0] prs2_addr_reg;
-    reg [4:0] prd_addr_reg;
+    reg [4:0] rob_idx_reg;
     reg prs1_ready_reg;
     reg prs2_ready_reg;
 
@@ -347,7 +347,7 @@ module rs_entry (
             inst_reg = inst_i;
             prs1_addr_reg = prs1_addr_i;
             prs2_addr_reg = prs2_addr_i;
-            prd_addr_reg = prd_addr_i;
+            rob_idx_reg = rob_idx_i;
             prs1_ready_reg = prs1_valid_i;
             prs2_ready_reg = prs2_valid_i;
         end
@@ -357,7 +357,7 @@ module rs_entry (
             inst_reg = inst_o;
             prs1_addr_reg = prs1_addr_o;
             prs2_addr_reg = prs2_addr_o;
-            prd_addr_reg = prd_addr_o;
+            rob_idx_reg = rob_idx_o;
             prs1_ready_reg = prs1_ready | cdb_prs1_valid;
             prs2_ready_reg = prs2_ready | cdb_prs2_valid;
         end
@@ -367,7 +367,7 @@ module rs_entry (
             inst_reg = inst_o;
             prs1_addr_reg = 'b0;
             prs2_addr_reg = 'b0;
-            prd_addr_reg = 'b0;
+            rob_idx_reg = 'b0;
             prs1_ready_reg = 1'b0;
             prs2_ready_reg = 1'b0;
         end
@@ -380,7 +380,7 @@ module rs_entry (
             inst_o <= 32'b0;
             prs1_addr_o <= 4'b0;
             prs2_addr_o <= 4'b0;
-            prd_addr_o <= 4'b0;
+            rob_idx_o <= 4'b0;
             prs1_ready <= 1'b0;
             prs2_ready <= 1'b0;
         end
@@ -390,7 +390,7 @@ module rs_entry (
             inst_o <= inst_reg;
             prs1_addr_o <= prs1_addr_reg;
             prs2_addr_o <= prs2_addr_reg;
-            prd_addr_o <= prd_addr_reg;
+            rob_idx_o <= rob_idx_reg;
             prs1_ready <= prs1_ready_reg;
             prs2_ready <= prs2_ready_reg;
         end

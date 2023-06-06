@@ -13,61 +13,83 @@ module rob
 (
     // Inputs
     clk_i, reset_i, 
-    allocate_req_i, update_req_i, 
+    allocate_req_i,
+    update_req_alu_i, update_req_lsu_i, update_req_mul_i, 
     prd_addr_i, pc_i, inst_i,
-    pc_alu_i, reg_value_alu_i,
+    rob_idx_alu_i, reg_value_alu_i,
+    rob_idx_lsu_i, reg_value_lsu_i,
+    rob_idx_mul_i, reg_value_mul_i,
     // Outputs
     empty_o, full_o,
-    inst_committed_o, pc_o, prd_addr_o
+    rob_idx_o,
+    commitment_valid_o, inst_committed_o, pc_commited_o, prd_addr_commited_o, prd_value_commited_o
 );
     // Inputs
     input clk_i;
     input reset_i;
     // Request indicators
     input allocate_req_i;  // allocate request
-    input update_req_i;  // update request
+    input update_req_alu_i;  // update request
+    input update_req_lsu_i;  // update request
+    input update_req_mul_i;  // update request
     // Values (allocation)
     input [4:0] prd_addr_i;
     input [31:0] pc_i;
     input [31:0] inst_i;
-
     // Values (update)
-    input [31:0] pc_alu_i;
+    input [31:0] rob_idx_alu_i;
     input [31:0] reg_value_alu_i;
-
+    input [31:0] rob_idx_lsu_i;
+    input [31:0] reg_value_lsu_i;
+    input [31:0] rob_idx_mul_i;
+    input [31:0] reg_value_mul_i;
 
     // Outputs
-    // Indicating the status of the circular buffer
+    // Indicating the status of the rob
     output empty_o;
     output full_o;
+    // Allocated rob idx
+    output [4:0] rob_idx_o;
     // Output data at commitment
+    output commitment_valid_o;
     output [31:0] inst_committed_o;
-    output [31:0] pc_o;
-    output [4:0] prd_addr_o;
+    output [31:0] pc_commited_o;
+    output [4:0]  prd_addr_commited_o;
+    output [31:0] prd_value_commited_o;
 
-    cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_valid (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(1'b0), .pop_en_i(),
-        .empty_o(), .data_o()
+    // Pointers
+    reg [4:0] head;
+    reg [4:0] tail;
+
+    // Need updates (valid & rd_value)
+    reg [NUM_ENTRIES-1:0] valid;
+    reg [31:0] reg_value [0:NUM_ENTRIES-1]; 
+
+    // Not updated
+    fifo #(.WIDTH(5), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
+        .clk_i(clk_i), .reset_i(reset_i), 
+        .data_in_i(prd_addr_i), .wr_i(allocate_req_i), .rd_i(), 
+        .data_out_o(prd_committed_o), 
+        .empty_o(), .full_o()
     );
 
-    cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
-        .empty_o(), .data_o()
+    fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
+        .clk_i(clk_i), .reset_i(reset_i), 
+        .data_in_i(pc_i), .wr_i(allocate_req_i), .rd_i(), 
+        .data_out_o(pc_committed_o), 
+        .empty_o(), .full_o()
     );
 
-    cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
-        .empty_o(), .data_o()
-    );
-
-    cbuf #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
-        .empty_o(), .data_o()
+    fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
+        .clk_i(clk_i), .reset_i(reset_i), 
+        .data_in_i(inst_i), .wr_i(allocate_req_i), .rd_i(), 
+        .data_out_o(inst_committed_o), 
+        .empty_o(), .full_o()
     );
 
 
 endmodule
-
+/*
 module cbuf
 #(
     parameter WIDTH = 4,
@@ -92,7 +114,7 @@ module cbuf
     output empty_o; // if free list is empty should not continue executing
     output [4:0] data_o;
 
-    reg [4:0] valid_registers [0:31];
+    reg [4:0] data [0:31];
     reg [4:0] num_free_reg;
     reg [4:0] head;
     reg [4:0] tail;
@@ -101,14 +123,14 @@ module cbuf
     wire [4:0] tail_plus_one;
 
     assign empty_o = (num_free_reg == 0);
-    assign data_o = valid_registers[tail];
+    assign data_o = data[tail];
 
     integer i;
     always @(posedge clk_i) begin
         if (reset_i) begin
             // all 
             for (i = 0; i < 31; i ++ ) begin
-                valid_registers[i] <= i+1;
+                data[i] <= 0;
             end
             num_free_reg <= 'b10000; // gray code 31
             head <= 'b00000; // gray code 0
@@ -122,7 +144,7 @@ module cbuf
 
             if (push_en_i) begin // add reg to free list
                 tail <= tail ^ (tail >> 1);
-                valid_registers[tail] <= data_i;
+                data[tail] <= data_i;
             end else if (pop_en_i) begin
                 head <= head ^ (head >> 1);
             end
@@ -132,4 +154,4 @@ module cbuf
     //assign count_up = gray_count ^ (gray_count >> 1);
     //assign count_down = {~gray_count[4], gray_count[3:0]} ^ ({~gray_count[4], gray_count[3:0]} >> 1);
 
-endmodule
+endmodule*/

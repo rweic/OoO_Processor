@@ -1,4 +1,36 @@
 module rob_tb();
+    // regs
+    reg clk_i;
+    reg reset_i;
+    // Request indicators
+    reg allocate_req_i;  // allocate request
+    reg update_req_alu_i;  // update request
+    reg update_req_lsu_i;  // update request
+    reg update_req_mul_i;  // update request
+    // Values (allocation)
+    reg [4:0] prd_addr_i;
+    reg [31:0] pc_i;
+    reg [31:0] inst_i;
+    // Values (update)
+    reg [31:0] rob_idx_alu_i;
+    reg [31:0] reg_value_alu_i;
+    reg [31:0] rob_idx_lsu_i;
+    reg [31:0] reg_value_lsu_i;
+    reg [31:0] rob_idx_mul_i;
+    reg [31:0] reg_value_mul_i;
+
+    // wires
+    // Indicating the status of the rob
+    wire empty_o;
+    wire full_o;
+    // Allocated rob idx
+    wire [4:0] rob_idx_o;
+    // wire data at commitment
+    wire commitment_valid_o;
+    wire [31:0] inst_committed_o;
+    wire [31:0] pc_commited_o;
+    wire [4:0]  prd_addr_commited_o;
+    wire [31:0] prd_value_commited_o;
 
     rob rob0 (.*);
     

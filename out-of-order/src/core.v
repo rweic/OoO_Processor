@@ -49,6 +49,7 @@ module core (
     wire [4:0] prs1_addr_decoded;
     wire [4:0] prs2_addr_decoded;
     wire [4:0] prd_addr_decoded;
+    wire [4:0] rob_idx_allocated;
     wire prs1_valid;
     wire prs2_valid;
 
@@ -57,7 +58,7 @@ module core (
     wire [31:0] alu_inst_issued;
     wire [4:0] alu_prs1_addr_issued;
     wire [4:0] alu_prs2_addr_issued;
-    wire [4:0] alu_prd_addr_issued;
+    wire [4:0] alu_rob_idx_issued;
     wire [31:0] alu_prs1_value;
     wire [31:0] alu_prs2_value;
 
@@ -66,7 +67,7 @@ module core (
     wire [31:0] lsu_inst_issued;
     wire [4:0] lsu_prs1_addr_issued;
     wire [4:0] lsu_prs2_addr_issued;
-    wire [4:0] lsu_prd_addr_issued;
+    wire [4:0] lsu_rob_idx_issued;
     wire [31:0] lsu_prs1_value;
     wire [31:0] lsu_prs2_value;
 
@@ -75,7 +76,7 @@ module core (
     wire [31:0] mul_inst_issued;
     wire [4:0] mul_prs1_addr_issued;
     wire [4:0] mul_prs2_addr_issued;
-    wire [4:0] mul_prd_addr_issued;
+    wire [4:0] mul_rob_idx_issued;
     wire [31:0] mul_prs1_value;
     wire [31:0] mul_prs2_value;
 
@@ -170,7 +171,7 @@ module core (
         .inst_i(inst_fetch),
         .prs1_addr_i(prs1_addr_decoded), 
         .prs2_addr_i(prs2_addr_decoded), 
-        .prd_addr_i(prd_addr_decoded),
+        .rob_idx_i(rob_idx_allocated),
         .prs1_valid_i(prs1_valid), 
         .prs2_valid_i(prs2_valid),
         .alu_request_i(alu_request), 
@@ -192,21 +193,21 @@ module core (
         .alu_inst_o(alu_inst_issued), 
         .alu_prs1_addr_o(alu_prs1_addr_issued), 
         .alu_prs2_addr_o(alu_prs2_addr_issued), 
-        .alu_prd_addr_o(alu_prd_addr_issued),
+        .alu_rob_idx_o(alu_rob_idx_issued),
 
         .lsu_request_o(lsu_exe_request), 
         .lsu_pc_o(lsu_pc_issued), 
         .lsu_inst_o(lsu_inst_issued), 
         .lsu_prs1_addr_o(lsu_prs1_addr_issued), 
         .lsu_prs2_addr_o(lsu_prs2_addr_issued), 
-        .lsu_prd_addr_o(lsu_prd_addr_issued),
+        .lsu_rob_idx_o(lsu_rob_idx_issued),
 
         .mul_request_o(mul_exe_request), 
         .mul_pc_o(mul_pc_issued), 
         .mul_inst_o(mul_inst_issued), 
         .mul_prs1_addr_o(mul_prs1_addr_issued), 
         .mul_prs2_addr_o(mul_prs2_addr_issued), 
-        .mul_prd_addr_o(mul_prd_addr_issued)
+        .mul_rob_idx_o(mul_rob_idx_issued)
     );
 
     // Reorder Buffer
@@ -223,18 +224,20 @@ module core (
         .pc_i(pc_fetch), 
         .inst_i(alu_inst_issued),
         // Update Value (ALU)
-        .pc_alu_i(), 
+        .rob_idx_alu_i(), 
         .reg_value_alu_i(wb_value_alu),
         // Update Value (LSU)
-        .pc_lsu_i(), 
+        .rob_idx_lsu_i(), 
         .reg_value_lsu_i(wb_value_lsu),
         // Update Value (MUL)
-        .pc_mul_i(), 
+        .rob_idx_mul_i(), 
         .reg_value_mul_i(wb_value_mul),
         
         // ROB Status
         .empty_o(), 
         .full_o(),
+        // Allocated ROB Index
+        .rob_idx_o(),
         // Commitment
         .commitment_valid_o(cdb_en), 
         .inst_committed_o(), 
