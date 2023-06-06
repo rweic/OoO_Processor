@@ -101,7 +101,7 @@ module lsu
 
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
     //wire mem_load_success = (!mem_csb_read) | (!mem_csb_write);
-    reg mem_load_success = 'b0;
+    reg mem_load_success;
     always @(posedge clk_i) begin
         mem_load_success <= (!mem_csb_read) | (!mem_csb_write);
     end

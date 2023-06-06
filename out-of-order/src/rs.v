@@ -152,8 +152,6 @@ module rs #(
 
     // Priority
     priority_management pm_alu (
-        .clk_i(clk_i), 
-        .reset_i(reset_i),
         .allocate_i(alu_request_i), 
         .resource_valid_i(alu_entry_free), 
         .entry_ready_i(alu_ready),
@@ -163,8 +161,6 @@ module rs #(
     );
 
     priority_management pm_lsu (
-        .clk_i(clk_i), 
-        .reset_i(reset_i),
         .allocate_i(lsu_request_i), 
         .resource_valid_i(lsu_entry_free), 
         .entry_ready_i(lsu_ready),
@@ -174,8 +170,8 @@ module rs #(
     );
 
     priority_management pm_mul (
-        .clk_i(clk_i), 
-        .reset_i(reset_i),
+        //.clk_i(clk_i), 
+        //.reset_i(reset_i),
         .allocate_i(mul_request_i), 
         .resource_valid_i(mul_entry_free), 
         .entry_ready_i(mul_ready),

@@ -1,13 +1,14 @@
 module priority_management #(parameter SIZE = 4) (
     // Inputs
-    clk_i, reset_i,
+    //clk_i, 
+    //reset_i,
     allocate_i, resource_valid_i, entry_ready_i,
     // Outputs
     entry_allocate_o,
     entry_issue_o, idx_issued_o
 );
-    input clk_i;
-    input reset_i;
+    //input clk_i;
+    //input reset_i;
     input allocate_i;  // enable signal
     input [SIZE-1:0] resource_valid_i;  // the resource is free - entry_free
     input [SIZE-1:0] entry_ready_i;  // the entry is ready to be released
@@ -41,12 +42,12 @@ module priority_management #(parameter SIZE = 4) (
     // Issue Decider
     // The oldest ready entry will be issued
     always @(*) begin
-        if (reset_i) begin
+        /*if (reset_i) begin
             for (integer i = 0; i < SIZE; i = i+1) begin
                 age[i] = 'b0;  // all ages start with 0
             end
         end
-        else begin
+        else begin*/
             for (integer i = 0; i < SIZE; i = i+1) begin
                 if (~resource_valid_i[i] & allocate_i) begin  // if the entry has something in, add the age to it
                     age[i] = age[i] + 1'b1;
@@ -58,7 +59,7 @@ module priority_management #(parameter SIZE = 4) (
                     age[i] = age[i];
                 end
             end
-        end
+        //end
     end    
 
     always @(*) begin
