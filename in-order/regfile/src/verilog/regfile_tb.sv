@@ -1,1 +1,0 @@
-../../../test/regfile_tb.sv
