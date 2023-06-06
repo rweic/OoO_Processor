@@ -31,6 +31,7 @@ To Re-Run Synthesis
 3. make verdi
 
 ### APR
+- TCL Scripts: in-order/top_level_no_macros/src/apr
 - Die Area: 500x500
 - Clk Speed: 15 ns
 - DRC: Clean
