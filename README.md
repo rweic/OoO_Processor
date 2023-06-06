@@ -60,9 +60,11 @@ To Open Layout:
 Out-of-Order is almost complete. We are still copmleting the debugging process, but the RTL is mostly complete and we are beginnign 
 to synthesize the modules. 
 
-out-of-order/src
+Directory: out-of-order/src
+List of Files:
 
 1. toplevel.v
+This file includes the
 
 2. core.v
 
@@ -103,6 +105,30 @@ This is the header files for holding the commonly used parameters among modules.
 
 
 ### Pre-Syn Simulation
+Sub-module Simulations:
+
+Directory: out-of-order/test
+List of Files:
+
+1. toplevel_tb.sv
+This is the toplevel testbench which basically includes the clk_i and reset_i manipulation. And the acutal instruction for test is in the source file imem.v
+
+2. rename_tb.sv
+This testbench test for the rename correctness, it feeds in some combination of logic register indexes with name dependencies, and check for the correctness of the renaming.
+
+3. rs_tb.sv
+This testbench test for the reservation station, it feeds in some combination of logic register indexes with name dependencies, and check for the correctness of the renaming.
+
+4. priority_select_tb.sv & priority_issue_tb.sv
+These two testbenches are both for priority_management module, which were two modules but later merged into one because of the high similarity in the input signals.
+
+5. arith_tb.sv
+This testbench test for functional unit arith.
+
+6. lsu_tb.sv
+This testbench test for load store unit.
+
+7. mul_tb.sv
 
 
 ### Synthesis
