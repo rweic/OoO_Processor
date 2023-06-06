@@ -61,44 +61,69 @@ Out-of-Order is almost complete. We are still copmleting the debugging process, 
 to synthesize the modules. 
 
 Directory: out-of-order/src
+
 List of Files:
 
 1. toplevel.v
-This file includes the
+
+Toplevel module includes the core, the data memory and instruction memory.
 
 2. core.v
 
 3. dmem.v
 
+This is the OpenRAM generated verilog file which is used in the design.
+
 4. imem.v
 
+This is the OpenRAM generated verilog file which is used in the design. Instruction for testing were added here by initializing the memory. This is for testing only.
+
 5. fetch.v
+
 This module fetch instruction from instruction memory.
 
 6. decode.v
+
 This module pre-assign resource.
 
 7. decoder.v
 
+This is the submodule for decode, which could be reused for superscalar machine.
+
 8. rename.v
+
+The rename module was supposed to solve the name dependencies. The file also holds the module freelist.
 
 9. rs.v
 
+The rs module is for reservation station. The file also holds the module reservation_station_entry.
+
 10. priority_management.v
+
+This module select the entry for allocate and the entry for issueing with certain priority.
 
 11. regfile.v
 
 12. arith.v
 
+Funtion unit arithmetic, including alu and part of the decoding remaining, takes one cycle to execute.
+
 13. alu.v
 
 14. lsu.v
 
+Funtion unit load store unit, takes two cycle to execute.
+
 15. mul.v
+
+Funtion unit multiplier, takes two cycle to execute.
 
 16. rob.v
 
+Reorder buffer, used for commitment.
+
 17. PARAM.vh
+
 This is the header files for holding the commonly used parameters among modules.
 
 ### VCS Coverage Report
@@ -108,6 +133,7 @@ This is the header files for holding the commonly used parameters among modules.
 Sub-module Simulations:
 
 Directory: out-of-order/test
+
 List of Files:
 
 1. toplevel_tb.sv
@@ -128,14 +154,15 @@ These two testbenches are both for priority_management module, which were two mo
 
 5. arith_tb.sv
 
-This testbench test for functional unit arith.
+This testbench test for functional unit (arith/ALU unit).
 
 6. lsu_tb.sv
 
-This testbench test for load store unit.
+This testbench test for functional unit (load store unit).
 
 7. mul_tb.sv
 
+This testbench test for functional unit (multiplier unit).
 
 ### Synthesis
 
