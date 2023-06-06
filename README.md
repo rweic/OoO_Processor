@@ -145,9 +145,16 @@ This testbench test for load store unit.
 
 
 # Processor Performance Comparison 
-### GCD
 
-### Fibonacci Sequence
+## Comparing runtimes of each processor in doing the following:
+##### 1. GCD
+##### 2. Fibonacci Sequence
+##### 3. Matrix Multiplication
+
+#### Written algorithims in C and compiled into RISC Assembly with either:
+https://godbolt.org/
+
+risc-v compiler toolchain: https://github.com/riscv-collab/riscv-gnu-toolchain
 
 
 
