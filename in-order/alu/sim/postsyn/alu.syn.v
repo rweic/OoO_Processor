@@ -1,1 +1,0 @@
-../../sapr/syn/results/alu.syn.v
