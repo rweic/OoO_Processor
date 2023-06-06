@@ -1,1 +1,0 @@
-../../src/verilog/tb.sv
