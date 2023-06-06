@@ -31,6 +31,9 @@ module rob
     input [31:0] inst_i;
 
     // Values (update)
+    input [31:0] pc_alu_i;
+    input [31:0] reg_value_alu_i;
+
 
     // Outputs
     // Indicating the status of the circular buffer
@@ -41,9 +44,8 @@ module rob
     output [31:0] pc_o;
     output [4:0] prd_addr_o;
 
-
     cbuf #(.WIDTH(1), .DEPTH(32), .ADDR_LEN(5)) cbuf_valid (
-        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(), .pop_en_i(),
+        .clk_i(clk_i), .reset_i(reset_i), .push_en_i(allocate_req_i), .data_i(1'b0), .pop_en_i(),
         .empty_o(), .data_o()
     );
 

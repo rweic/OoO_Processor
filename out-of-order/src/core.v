@@ -129,10 +129,9 @@ module core (
         .pc_i(pc_fetch), 
         .inst_valid_i(inst_valid_fetch),
         .inst_i(inst_fetch),
-				.cdb_en_i(1'b0),
-				.cdb_reg_addr_i(5'b00000),
+        .cdb_en_i(1'b0),
+        .cdb_reg_addr_i(5'b00000),
         // Outputs
-        .pc_o(pc_decode), 
         .alu_o(alu_request), 
         .lsu_o(lsu_request), 
         .mul_o(mul_request), 

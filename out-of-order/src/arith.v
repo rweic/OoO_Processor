@@ -77,7 +77,9 @@ module arith (
                             `FUNCT7_SRLI: begin 
                                 alu_func = `ALU_OP_SRL;
                             end
-                            default: begin end
+                            default: begin 
+                                alu_func = `ALU_OP_NOP;
+                            end
                         endcase
                     end
                     `FUNCT3_ORI: begin
@@ -100,7 +102,9 @@ module arith (
                             `FUNCT7_SUB: begin
                                 alu_func = `ALU_OP_SUB;
                             end
-                            default: begin end
+                            default: begin 
+                                alu_func = `ALU_OP_NOP;
+                            end
                         endcase
                     `FUNCT3_SLL: begin
                         alu_func = `ALU_OP_SLL;
@@ -126,7 +130,9 @@ module arith (
                             `FUNCT7_SRL: begin
                                 alu_func = `ALU_OP_SRL;
                             end
-                            default: begin end
+                            default: begin 
+                                alu_func = `ALU_OP_NOP;
+                            end
                         endcase
                     end
                     `FUNCT3_OR: begin
@@ -153,7 +159,9 @@ module arith (
                 alu_operand1 = pc_i;
                 alu_operand2 = 'h4;
             end
-            default: begin end
+            default: begin 
+                alu_func = `ALU_OP_NOP;
+            end
         endcase 
     end
 

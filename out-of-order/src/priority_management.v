@@ -42,7 +42,6 @@ module priority_management #(parameter SIZE = 4) (
     // The oldest ready entry will be issued
     always @(*) begin
         if (reset_i) begin
-            idx = 'b0;
             for (integer i = 0; i < SIZE; i = i+1) begin
                 age[i] = 'b0;  // all ages start with 0
             end
@@ -55,7 +54,9 @@ module priority_management #(parameter SIZE = 4) (
                 else if (resource_valid_i[i]) begin
                     age[i] = 'b0;
                 end
-                else begin end
+                else begin 
+                    age[i] = age[i];
+                end
             end
         end
     end    

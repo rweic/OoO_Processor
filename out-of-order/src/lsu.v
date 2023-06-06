@@ -159,14 +159,18 @@ module lsu
                     mem_aligned = mem_addr_w[1:0] == 2'b0;
                 else if (opcode == `OP_LOAD)
                     mem_aligned = mem_addr_r[1:0] == 2'b0;
+                else
+                    mem_aligned = 1'b0;
             end
             `FUNCT3_LH_SH: begin
                 if (opcode == `OP_STORE)
                     mem_aligned = mem_addr_w[0] == 1'b0;
                 else if (opcode == `OP_LOAD)
                     mem_aligned = mem_addr_r[0] == 1'b0;
+                else
+                    mem_aligned = 1'b0;
             end
-            default: mem_aligned = 1'b1;
+            default: mem_aligned = 1'b0;
         endcase
     end
 
@@ -175,7 +179,6 @@ module lsu
     always @(*) begin
         if (opcode == `OP_STORE & mem_aligned) begin
             mem_ls = 0;
-
             {mem_signed, mem_h, mem_b} = 'b0;
             case(funct3)
                 `FUNCT3_LW_SW: wmask = 'b1111;
@@ -193,6 +196,7 @@ module lsu
                         default: wmask = 'b0001;
                     endcase
                 end
+                default: wmask = 'b0000;
             endcase
         end
         else if (opcode == `OP_LOAD & mem_aligned) begin
@@ -225,6 +229,11 @@ module lsu
                 end
             endcase
         end
+        else begin
+            mem_ls = 0;
+            {mem_signed, mem_h, mem_b} = 'b0;
+            wmask = 'b0000;
+        end
     end
 
     // Load extension
@@ -244,7 +253,7 @@ module lsu
                         2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
                         2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
                         2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
-                        default: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
+                        2'b00: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
                     endcase
                 end
                 'b010:
@@ -257,7 +266,7 @@ module lsu
                         2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
                         2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
                         2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
-                        default: mem_load_data = {24'h0, mem_data_out[7:0]};
+                        2'b00: mem_load_data = {24'h0, mem_data_out[7:0]};
                     endcase
                 default: begin 
                     mem_load_data = 'h0;

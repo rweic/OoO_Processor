@@ -5,7 +5,7 @@ module decode (
     // Inputs
     clk_i, reset_i, pc_i, inst_valid_i, inst_i, cdb_en_i, cdb_reg_addr_i,
     // Outputs
-    pc_o, alu_o, lsu_o, mul_o, br_o,
+    alu_o, lsu_o, mul_o, br_o,
     rs1_addr, rs2_addr, rd_addr
 );
     // ----- Input/Output Ports -----
@@ -18,7 +18,6 @@ module decode (
     input cdb_en_i;
     input [4:0] cdb_reg_addr_i;
     // Outputs
-    output [31:0] pc_o;
     output alu_o;
     output lsu_o;
     output mul_o;
