@@ -1,0 +1,21 @@
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : core
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 18:07:18 2023
+****************************************
+
+
+    Design: core
+
+    max_leakage_power          0.00
+  - Current Leakage Power  44420.20
+  ----------------------------------
+    Slack                  -44420.20  (VIOLATED)
+
+
+1

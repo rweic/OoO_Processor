@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 14:27:42 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+cpu                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+cpu                                      33.259  508.716 4.26e+05  967.751 100.0
+  wb0 (writeback)                         0.121    0.112 2.67e+03    2.907   0.3
+  memaccess0 (memory_access)              1.200   43.930 9.15e+03   54.282   5.6
+  exec0 (execute)                        12.931   46.516 2.90e+05  349.904  36.2
+    alu0 (alu)                           12.207   10.893 2.81e+05  303.988  31.4
+  regfile0 (regfile)                     14.012  337.329 9.49e+04  446.235  46.1
+  decode0 (decode)                        1.200   49.998 1.82e+04   69.365   7.2
+  fetch0 (fetch)                          3.731   30.736 9.58e+03   44.051   4.6
+  hazard_detect0 (hazard_detect)       6.28e-02 9.42e-02  841.681    0.999   0.1
+1

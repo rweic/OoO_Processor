@@ -1,0 +1,255 @@
+Warning: Could not read any link_library files. The link_library setting {"*", "stdcells-wc.db", "stdcells-bc.db", "dw_foundation.sldb"} may be invalid. (UID-349)
+
+  Loading design 'cpu'
+Warning: Layer 'metal1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal7' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal8' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal9' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal10' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+
+
+Information: The design has 4501 physical cells. (PSYN-105)
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Warning: Mismatch in the main library and the Milkyway library resistance units. In the main library it is 1000.000 kohm and in the Milkyway design library it is 1.000 kohm. Check and correct the resistance units in the .tf and .db files. (PSYN-476)
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Warning: Mismatch in the main and the Milkyway library capacitance units. In the main library it is 0.001 pf and in the Milkyway design library it is 1.000 pf. Check and correct the capacitance units in the .tf and .db files. (PSYN-477)
+Information: Layer metal9 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal10 is ignored for resistance and capacitance computation. (RCEX-019)
+Error: Initialization of the detail route TLU+ RC model failed. (RCEX-030)
+Error: Extraction failed. (RCEX-205)
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Warning: Clock network timing may not be up-to-date since only 0.000000 percentage of clock nets are routed. (TIM-233)
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+        -max_paths 200
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 00:40:12 2023
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+
+Information: Percent of Arnoldi-based delays =  0.00%
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+exec0/alu_out_reg_0_/D (DFF_X1)    23.39 f           15.10        -8.29
+exec0/alu_out_reg_1_/D (DFF_X1)    23.20 f           15.10        -8.11
+exec0/alu_out_reg_2_/D (DFF_X1)    23.19 f           15.10        -8.09
+exec0/alu_out_reg_3_/D (DFF_X1)    22.04 r           15.16        -6.88
+exec0/alu_out_reg_4_/D (DFF_X1)    21.91 f           15.12        -6.79
+exec0/alu_out_reg_5_/D (DFF_X1)    21.87 f           15.12        -6.75
+exec0/alu_out_reg_6_/D (DFF_X1)    19.79 f           15.12        -4.66
+exec0/alu_out_reg_7_/D (DFF_X2)    19.52 r           15.18        -4.35
+exec0/alu_out_reg_8_/D (DFF_X1)    19.28 f           15.12        -4.16
+exec0/alu_out_reg_31_/D (DFF_X1)    17.93 r          15.17        -2.76
+exec0/alu_out_reg_30_/D (DFF_X1)    17.84 f          15.12        -2.72
+exec0/alu_out_reg_29_/D (DFF_X1)    17.77 f          15.12        -2.65
+exec0/alu_out_reg_28_/D (DFF_X1)    17.50 f          15.12        -2.38
+exec0/alu_out_reg_27_/D (DFF_X1)    17.41 f          15.12        -2.29
+exec0/alu_out_reg_26_/D (DFF_X1)    17.39 f          15.12        -2.27
+exec0/alu_out_reg_25_/D (DFF_X1)    17.20 f          15.12        -2.08
+exec0/alu_out_reg_10_/D (DFF_X1)    17.13 f          15.12        -2.01
+exec0/alu_out_reg_24_/D (DFF_X1)    17.12 f          15.12        -2.00
+exec0/alu_out_reg_22_/D (DFF_X1)    16.96 f          15.12        -1.84
+exec0/alu_out_reg_23_/D (DFF_X1)    16.92 f          15.12        -1.80
+exec0/alu_out_reg_9_/D (DFF_X1)    16.84 f           15.12        -1.72
+exec0/alu_out_reg_11_/D (DFF_X1)    16.83 f          15.12        -1.71
+exec0/alu_out_reg_21_/D (DFF_X1)    16.68 r          15.17        -1.51
+exec0/alu_out_reg_20_/D (DFF_X1)    16.45 f          15.12        -1.33
+exec0/alu_out_reg_19_/D (DFF_X1)    16.37 r          15.17        -1.20
+exec0/alu_out_reg_18_/D (DFF_X1)    16.27 f          15.12        -1.15
+exec0/alu_out_reg_17_/D (DFF_X1)    16.16 f          15.12        -1.04
+exec0/alu_out_reg_14_/D (DFF_X1)    15.92 f          15.12        -0.80
+exec0/alu_out_reg_16_/D (DFF_X1)    15.92 f          15.12        -0.79
+exec0/alu_out_reg_15_/D (DFF_X1)    15.77 f          15.12        -0.65
+exec0/alu_out_reg_13_/D (DFF_X1)    15.74 f          15.12        -0.61
+exec0/alu_out_reg_12_/D (DFF_X1)    15.49 f          15.12        -0.37
+fetch0/pc_reg_31_/D (DFF_X1)       14.63 f           15.09         0.47
+fetch0/pc_reg_30_/D (DFF_X1)       14.52 f           15.09         0.57
+fetch0/pc_reg_29_/D (DFF_X1)       14.38 f           15.09         0.72
+fetch0/pc_reg_28_/D (DFF_X1)       14.24 f           15.09         0.85
+fetch0/pc_reg_27_/D (DFF_X1)       14.11 f           15.09         0.98
+fetch0/pc_reg_26_/D (DFF_X1)       13.96 f           15.09         1.14
+fetch0/pc_reg_25_/D (DFF_X1)       13.83 f           15.09         1.27
+fetch0/pc_reg_24_/D (DFF_X1)       13.69 f           15.09         1.41
+fetch0/pc_reg_23_/D (DFF_X1)       13.38 f           15.10         1.72
+fetch0/pc_reg_22_/D (DFF_X1)       13.24 f           15.10         1.86
+fetch0/pc_reg_21_/D (DFF_X1)       13.11 f           15.10         1.99
+fetch0/pc_reg_20_/D (DFF_X1)       12.97 f           15.10         2.13
+fetch0/pc_reg_19_/D (DFF_X1)       12.82 f           15.10         2.28
+fetch0/pc_reg_18_/D (DFF_X2)       12.70 f           15.08         2.39
+fetch0/pc_reg_31_/D (DFF_X1)       12.66 f           15.09         2.43
+fetch0/pc_reg_17_/D (DFF_X2)       12.56 f           15.08         2.53
+fetch0/pc_reg_30_/D (DFF_X1)       12.54 f           15.09         2.55
+fetch0/pc_reg_16_/D (DFF_X2)       12.42 f           15.08         2.66
+fetch0/pc_reg_29_/D (DFF_X1)       12.39 f           15.09         2.70
+fetch0/pc_reg_15_/D (DFF_X2)       12.29 f           15.08         2.80
+fetch0/pc_reg_14_/D (DFF_X2)       12.24 f           15.09         2.85
+fetch0/pc_reg_28_/D (DFF_X1)       12.25 f           15.09         2.85
+fetch0/pc_reg_27_/D (DFF_X1)       12.11 f           15.09         2.99
+fetch0/pc_reg_13_/D (DFF_X2)       12.10 f           15.09         2.99
+fetch0/pc_reg_12_/D (DFF_X1)       11.95 f           15.10         3.15
+fetch0/pc_reg_26_/D (DFF_X1)       11.94 f           15.09         3.16
+fetch0/pc_reg_11_/D (DFF_X1)       11.82 f           15.10         3.28
+fetch0/pc_reg_25_/D (DFF_X1)       11.80 f           15.09         3.29
+fetch0/pc_reg_10_/D (DFF_X1)       11.68 f           15.10         3.42
+fetch0/pc_reg_24_/D (DFF_X1)       11.66 f           15.09         3.44
+fetch0/pc_reg_9_/D (DFF_X1)        11.56 f           15.10         3.54
+fetch0/pc_reg_23_/D (DFF_X1)       11.48 r           15.16         3.68
+fetch0/pc_reg_8_/D (DFF_X1)        11.41 f           15.10         3.69
+fetch0/pc_reg_7_/D (DFF_X1)        11.27 f           15.10         3.83
+fetch0/pc_reg_22_/D (DFF_X1)       11.32 r           15.16         3.84
+fetch0/pc_reg_21_/D (DFF_X1)       11.19 r           15.16         3.97
+fetch0/pc_reg_6_/D (DFF_X1)        11.12 f           15.10         3.98
+fetch0/pc_reg_20_/D (DFF_X1)       11.03 r           15.16         4.13
+fetch0/pc_reg_5_/D (DFF_X1)        10.96 f           15.10         4.14
+fetch0/pc_reg_19_/D (DFF_X1)       10.88 r           15.16         4.28
+fetch0/pc_reg_4_/D (DFF_X1)        10.81 f           15.10         4.29
+fetch0/pc_reg_18_/D (DFF_X2)       10.75 r           15.15         4.39
+fetch0/pc_reg_3_/D (DFF_X1)        10.66 f           15.10         4.44
+fetch0/pc_reg_17_/D (DFF_X2)       10.60 r           15.15         4.55
+fetch0/pc_reg_16_/D (DFF_X2)       10.46 r           15.15         4.69
+fetch0/pc_reg_2_/D (DFF_X1)        10.44 r           15.16         4.72
+fetch0/pc_reg_15_/D (DFF_X2)       10.31 r           15.15         4.83
+fetch0/pc_reg_0_/D (DFF_X1)        10.25 f           15.10         4.85
+fetch0/pc_reg_1_/D (DFF_X1)        10.24 f           15.10         4.85
+fetch0/pc_reg_14_/D (DFF_X2)       10.21 f           15.09         4.88
+fetch0/pc_reg_13_/D (DFF_X2)       10.06 f           15.09         5.03
+fetch0/pc_reg_12_/D (DFF_X1)        9.91 f           15.10         5.19
+fetch0/pc_reg_11_/D (DFF_X1)        9.78 f           15.10         5.32
+fetch0/pc_reg_10_/D (DFF_X1)        9.64 f           15.10         5.45
+fetch0/pc_reg_9_/D (DFF_X1)         9.52 f           15.10         5.58
+fetch0/pc_reg_8_/D (DFF_X1)         9.37 f           15.10         5.72
+fetch0/pc_reg_7_/D (DFF_X1)         9.23 f           15.10         5.86
+fetch0/pc_reg_6_/D (DFF_X1)         9.09 f           15.10         6.01
+fetch0/pc_reg_5_/D (DFF_X1)         8.92 f           15.10         6.18
+fetch0/pc_reg_4_/D (DFF_X1)         8.78 f           15.10         6.32
+fetch0/pc_reg_3_/D (DFF_X1)         8.62 f           15.10         6.47
+fetch0/pc_reg_2_/D (DFF_X1)         8.41 f           15.10         6.69
+fetch0/pc_reg_0_/D (DFF_X1)         8.22 f           15.10         6.87
+fetch0/pc_reg_1_/D (DFF_X1)         8.22 f           15.10         6.88
+decode0/rs2_value_o_reg_21_/D (DFF_X1)     7.92 f    15.08         7.16
+decode0/rs2_value_o_reg_28_/D (DFF_X1)     7.88 f    15.10         7.21
+decode0/rs2_value_o_reg_16_/D (DFF_X1)     7.85 f    15.08         7.22
+decode0/rs2_value_o_reg_18_/D (DFF_X1)     7.84 f    15.10         7.27
+decode0/rs2_value_o_reg_30_/D (DFF_X1)     7.76 f    15.08         7.31
+decode0/rs2_value_o_reg_13_/D (DFF_X1)     7.76 f    15.10         7.34
+decode0/rs2_value_o_reg_2_/D (DFF_X1)     7.73 f     15.08         7.34
+decode0/rs2_value_o_reg_24_/D (DFF_X1)     7.70 f    15.08         7.37
+decode0/rs2_value_o_reg_20_/D (DFF_X1)     7.72 f    15.10         7.38
+decode0/rs2_value_o_reg_31_/D (DFF_X1)     7.69 f    15.08         7.39
+decode0/rs2_value_o_reg_27_/D (DFF_X1)     7.69 f    15.08         7.39
+decode0/rs2_value_o_reg_25_/D (DFF_X1)     7.68 f    15.08         7.39
+decode0/rs2_value_o_reg_1_/D (DFF_X1)     7.68 f     15.08         7.39
+decode0/rs2_value_o_reg_22_/D (DFF_X1)     7.70 f    15.10         7.40
+decode0/rs2_value_o_reg_0_/D (DFF_X1)     7.67 f     15.08         7.41
+decode0/rs2_value_o_reg_19_/D (DFF_X1)     7.67 f    15.08         7.41
+decode0/rs2_value_o_reg_26_/D (DFF_X1)     7.67 f    15.08         7.41
+decode0/rs2_value_o_reg_29_/D (DFF_X1)     7.65 f    15.08         7.42
+decode0/rs2_value_o_reg_7_/D (DFF_X1)     7.66 f     15.10         7.45
+decode0/rs2_value_o_reg_9_/D (DFF_X1)     7.64 f     15.10         7.46
+decode0/rs2_value_o_reg_10_/D (DFF_X1)     7.64 f    15.10         7.46
+decode0/rs2_value_o_reg_17_/D (DFF_X1)     7.64 f    15.10         7.46
+decode0/rs2_value_o_reg_11_/D (DFF_X1)     7.64 f    15.10         7.46
+decode0/rs2_value_o_reg_5_/D (DFF_X1)     7.63 f     15.10         7.47
+decode0/rs2_value_o_reg_23_/D (DFF_X1)     7.60 f    15.08         7.48
+decode0/rs2_value_o_reg_8_/D (DFF_X1)     7.62 f     15.10         7.48
+decode0/rs2_value_o_reg_15_/D (DFF_X1)     7.62 f    15.10         7.48
+decode0/rs2_value_o_reg_14_/D (DFF_X1)     7.59 f    15.10         7.51
+decode0/rs2_value_o_reg_4_/D (DFF_X1)     7.58 f     15.10         7.52
+fetch0/instr_o_reg_25_/D (DFF_X1)     7.64 r         15.16         7.52
+fetch0/instr_o_reg_26_/D (DFF_X1)     7.64 r         15.16         7.52
+fetch0/instr_o_reg_27_/D (DFF_X1)     7.64 r         15.16         7.53
+fetch0/instr_o_reg_29_/D (DFF_X1)     7.64 r         15.16         7.53
+fetch0/instr_o_reg_24_/D (DFF_X1)     7.63 r         15.16         7.53
+decode0/rs2_value_o_reg_3_/D (DFF_X1)     7.57 f     15.10         7.53
+fetch0/instr_o_reg_28_/D (DFF_X1)     7.63 r         15.16         7.53
+decode0/rs2_value_o_reg_6_/D (DFF_X1)     7.56 f     15.10         7.54
+decode0/rs2_value_o_reg_12_/D (DFF_X1)     7.53 f    15.10         7.57
+fetch0/instr_o_reg_30_/D (DFF_X1)     7.58 r         15.16         7.58
+fetch0/instr_o_reg_31_/D (DFF_X1)     7.57 r         15.16         7.58
+fetch0/instr_o_reg_23_/D (DFF_X1)     7.57 r         15.16         7.59
+fetch0/instr_o_reg_22_/D (DFF_X1)     7.57 r         15.16         7.59
+decode0/rs1_value_o_reg_18_/D (DFF_X1)     7.16 f    15.08         7.92
+decode0/rs1_value_o_reg_27_/D (DFF_X1)     7.12 f    15.08         7.96
+decode0/rs1_value_o_reg_21_/D (DFF_X1)     7.10 f    15.08         7.97
+decode0/rs1_value_o_reg_25_/D (DFF_X1)     7.08 f    15.08         7.99
+decode0/rs1_value_o_reg_16_/D (DFF_X1)     7.08 f    15.08         8.00
+decode0/rs1_value_o_reg_22_/D (DFF_X1)     7.08 f    15.08         8.00
+decode0/rs1_value_o_reg_20_/D (DFF_X1)     7.07 f    15.08         8.00
+decode0/rs1_value_o_reg_26_/D (DFF_X1)     7.07 f    15.08         8.01
+decode0/rs1_value_o_reg_15_/D (DFF_X1)     7.06 f    15.10         8.04
+decode0/rs1_value_o_reg_19_/D (DFF_X1)     7.04 f    15.08         8.04
+decode0/rs1_value_o_reg_29_/D (DFF_X1)     7.03 f    15.08         8.05
+decode0/rs1_value_o_reg_2_/D (DFF_X1)     7.05 f     15.10         8.05
+decode0/rs1_value_o_reg_1_/D (DFF_X1)     7.02 f     15.08         8.06
+decode0/rs1_value_o_reg_28_/D (DFF_X1)     7.02 f    15.08         8.06
+decode0/rs1_value_o_reg_23_/D (DFF_X1)     7.00 f    15.08         8.08
+decode0/rs1_value_o_reg_0_/D (DFF_X1)     7.00 f     15.08         8.08
+decode0/rs1_value_o_reg_13_/D (DFF_X1)     7.02 f    15.10         8.08
+decode0/rs1_value_o_reg_11_/D (DFF_X1)     7.02 f    15.10         8.09
+decode0/rs1_value_o_reg_7_/D (DFF_X1)     7.01 f     15.10         8.10
+decode0/rs1_value_o_reg_4_/D (DFF_X1)     6.98 f     15.08         8.10
+decode0/rs1_value_o_reg_10_/D (DFF_X1)     7.00 f    15.10         8.11
+decode0/rs1_value_o_reg_8_/D (DFF_X1)     7.00 f     15.10         8.11
+decode0/rs1_value_o_reg_5_/D (DFF_X1)     6.97 f     15.08         8.11
+decode0/rs1_value_o_reg_17_/D (DFF_X1)     6.97 f    15.08         8.11
+decode0/rs1_value_o_reg_24_/D (DFF_X1)     6.96 f    15.08         8.11
+decode0/rs1_value_o_reg_3_/D (DFF_X1)     6.98 f     15.10         8.12
+decode0/rs1_value_o_reg_31_/D (DFF_X1)     6.95 f    15.08         8.13
+decode0/rs1_value_o_reg_6_/D (DFF_X1)     6.95 f     15.10         8.16
+decode0/rs1_value_o_reg_30_/D (DFF_X1)     6.92 f    15.08         8.16
+decode0/rs1_value_o_reg_9_/D (DFF_X1)     6.94 f     15.10         8.16
+decode0/rs1_value_o_reg_14_/D (DFF_X1)     6.92 f    15.10         8.18
+decode0/rs1_value_o_reg_12_/D (DFF_X1)     6.90 f    15.10         8.20
+fetch0/pc_o_reg_7_/D (DFF_X1)       6.81 r           15.16         8.35
+fetch0/pc_o_reg_3_/D (DFF_X1)       6.81 r           15.16         8.35
+fetch0/pc_o_reg_9_/D (DFF_X1)       6.81 r           15.16         8.35
+fetch0/pc_o_reg_12_/D (DFF_X1)      6.80 r           15.16         8.35
+fetch0/pc_o_reg_1_/D (DFF_X1)       6.80 r           15.16         8.35
+fetch0/pc_o_reg_10_/D (DFF_X1)      6.80 r           15.16         8.36
+fetch0/instr_o_reg_9_/D (DFF_X1)     6.73 f          15.08         8.36
+fetch0/pc_o_reg_2_/D (DFF_X1)       6.80 r           15.16         8.36
+fetch0/pc_o_reg_8_/D (DFF_X1)       6.80 r           15.16         8.36
+fetch0/pc_o_reg_0_/D (DFF_X1)       6.80 r           15.16         8.36
+fetch0/pc_o_reg_11_/D (DFF_X1)      6.79 r           15.16         8.36
+fetch0/pc_o_reg_4_/D (DFF_X1)       6.79 r           15.16         8.36
+fetch0/pc_o_reg_14_/D (DFF_X1)      6.79 r           15.16         8.37
+fetch0/pc_o_reg_13_/D (DFF_X1)      6.79 r           15.16         8.37
+fetch0/pc_o_reg_31_/D (DFF_X1)      6.79 r           15.16         8.37
+fetch0/pc_o_reg_6_/D (DFF_X1)       6.79 r           15.16         8.37
+fetch0/pc_o_reg_28_/D (DFF_X1)      6.79 r           15.16         8.37
+fetch0/pc_o_reg_5_/D (DFF_X1)       6.79 r           15.16         8.37
+fetch0/pc_o_reg_15_/D (DFF_X1)      6.79 r           15.16         8.37
+fetch0/pc_o_reg_17_/D (DFF_X1)      6.78 r           15.16         8.37
+fetch0/pc_o_reg_18_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_24_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_19_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_29_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/instr_o_reg_2_/D (DFF_X1)     6.71 f          15.09         8.38
+fetch0/pc_o_reg_27_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_16_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_30_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/pc_o_reg_23_/D (DFF_X1)      6.78 r           15.16         8.38
+fetch0/instr_o_reg_8_/D (DFF_X1)     6.70 f          15.09         8.38
+
+1

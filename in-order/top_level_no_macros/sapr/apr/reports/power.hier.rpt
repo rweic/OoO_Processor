@@ -1,0 +1,51 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+        -verbose
+Design : cpu
+Version: T-2022.03-SP3
+Date   : Mon Jun  5 00:40:23 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+cpu                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+cpu                                     146.459  538.648 6.73e+05 1.36e+03 100.0
+  hazard_detect0 (hazard_detect)       3.56e-02 5.29e-02  780.653    0.869   0.1
+  fetch0 (fetch)                          6.873   33.186 1.42e+04   54.304   4.0
+  decode0 (decode)                        1.820   50.461 3.83e+04   90.560   6.7
+  regfile0 (regfile)                     24.495  342.613 1.10e+05  477.194  35.1
+  exec0 (execute)                         8.729   41.325 4.83e+05  533.273  39.3
+    alu0 (alu)                            7.791    5.279 4.70e+05  482.873  35.6
+  memaccess0 (memory_access)              1.890   44.570 9.70e+03   56.162   4.1
+  wb0 (writeback)                         0.149 9.60e-02 2.81e+03    3.055   0.2
+1

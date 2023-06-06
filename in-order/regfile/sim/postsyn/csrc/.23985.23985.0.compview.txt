@@ -1,5 +1,0 @@
-{"vcs1":{"timestamp_begin":1684114955.644729254, "rt":0.40, "ut":0.12, "st":0.03}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1684114955.091987376}
-{"VCS_COMP_START_TIME": 1684114955.091987376}
-{"VCS_COMP_END_TIME": 1684114956.780821280}
-{"VCS_USER_OPTIONS": "-f regfile.include +v2k -R +lint=all -sverilog -full64 +neg_tchk +define+POST_SYN=1 -kdb -debug_access+all -timescale=1ns/10ps -l regfile.log"}

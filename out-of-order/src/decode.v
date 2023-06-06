@@ -3,7 +3,7 @@
  */
 module decode (
     // Inputs
-    clk_i, reset_i, pc_i, inst_valid_i, inst_i,
+    clk_i, reset_i, pc_i, inst_valid_i, inst_i, cdb_en_i, cdb_reg_addr_i,
     // Outputs
     pc_o, alu_o, lsu_o, mul_o, br_o,
     rs1_addr, rs2_addr, rd_addr

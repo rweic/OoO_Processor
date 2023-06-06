@@ -1,0 +1,17 @@
+Loading db file '/home/lab.apps/vlsiapps_new/icc/current/libraries/syn/gtech.db'
+Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
+Error: No valid link library specified, please check library setup. (PSYN-958)
+Error: Could not read the following target libraries:
+your_library.db 
+ (UIO-3)
+Error: Fail to rebuild timing design from database (UID-841)

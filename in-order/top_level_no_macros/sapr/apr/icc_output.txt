@@ -5,80 +5,13 @@ icc_shell> open_mw_lib /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-or
 {design_lib}
 icc_shell> ::iccGUI::open_mw_cel  cpu_finished
 icc_shell> open_mw_cel cpu_finished
-Preparing data for query................... 
-Warning: No valid link library found; check the link_library variable. (IFS-008)
-Information: Opened "cpu_finished.CEL;1" from "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sapr/apr/design_lib" library. (MWUI-068)
-{cpu_finished}
+INFO: cell is locked by gbeatty3 (pid 21416 linux-lab-045.ece.uw.edu) check again...
+INFO: cell is locked by gbeatty3 (pid 21416 linux-lab-045.ece.uw.edu) check again...
+INFO: cell is locked by gbeatty3 (pid 21416 linux-lab-045.ece.uw.edu) check again...
+INFO: cell is locked by gbeatty3 (pid 21416 linux-lab-045.ece.uw.edu) check again...
+INFO: cell is locked by gbeatty3 (pid 21416 linux-lab-045.ece.uw.edu) check again...
+INFO: Could not lock the cell for write, giving up
+INFO: Please remove the lock to proceed.
+Error: Failed to open design:'cpu_finished.CEL;0'for 'w'. (MWUI-007)
 icc_shell> 
-icc_shell> uplevel #0 { report_clock -nosplit }
-Loading db file '/home/lab.apps/vlsiapps_new/icc/current/libraries/syn/gtech.db'
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Error: Fail to rebuild timing design from database (UID-841)
-icc_shell> uplevel #0 check_design
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Error: Fail to rebuild timing design from database (UID-841)
-icc_shell> import_designs -format db {/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sapr/apr/cpu.syn.db}
-Warning: No valid link library found; check the link_library variable. (IFS-008)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Error: Failed to link physical library with link library. (LINK-37)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Error: Fail to rebuild timing design from database (UID-841)
-Information: Saved design named alt1. (UIG-5)
-1
-icc_shell> 
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Information: linking reference library : /home/projects/ee478.2023spr/gbeatty3/ram_test_freepdk45_sapr_flow/freepdk-45nm/stdcells.mwlib. (PSYN-878)
-Error: No valid link library specified, please check library setup. (PSYN-958)
-Error: Could not read the following target libraries:
-your_library.db 
- (UIO-3)
-Error: Fail to rebuild timing design from database (UID-841)
-icc_shell> save_mw_cel
-Information: Saved design named cpu_finished.CEL;1. (UIG-5)
-1
-icc_shell> signoff_drc -show_stream_error_environment false -run_dir {/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sapr/apr/signoff_drc_run/}
-Error: The ICV environment variable has not been specified. (RT-022)
-Error: Failed in executing ICV. (RT-050)
-Error: Due to Milkyway schema 8.1 change, ICV verison 2013.12-SP2-1 or newer is required for the tool to work correctly  (RT-119)
-0
 icc_shell> 
