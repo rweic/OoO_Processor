@@ -6,15 +6,16 @@
 
 ## In-Order Processor 
 ### Pre-Syn Simulation
+- repo: OoO_Processor/in-order/top_level_no_macros/sim/presyn
 - Use Makefile to prepare the simulation and generate the coverage report
-- in-order/top_level_no_macros/sim/presyn
 
 1. make vcs
 2. make coverage (in-order/top_level_no_macros/sim/presyn/urgReport/hierarchy.html)
 3. make verdi
 
 ### Synthesis
-- Reports: in-order/top_level_no_macros/sapr/syn/reports
+- repo: OoO_Processor/OoO_Processor/in-order/top_level_no_macros/sapr/syn
+- Reports: OoO_Processor/in-order/top_level_no_macros/sapr/syn/reports
 - TCL Scripts: in-order/top_level_no_macros/src/syn
 - Synthesized Netlist: in-order/top_level_no_macros/sapr/syn/results/cpu.syn.v
 
@@ -24,13 +25,14 @@ To Re-Run Synthesis
 3. dc_shell -f syn.tcl
 
 ### Post-Syn Simulation
-- in-order/top_level_no_macros/sim/postsyn
+- repo: OoO_Processor/in-order/top_level_no_macros/sim/postsyn
 - To re-make th simulation, delete .fsdb, .vcd, and .include files
 - 
 1. make vcs
 3. make verdi
 
 ### APR
+- repo: OoO_Processor/OoO_Processor/in-order/top_level_no_macros/sapr/apr
 - TCL Scripts: in-order/top_level_no_macros/src/apr
 - Die Area: 500x500
 - Clk Speed: 15 ns
@@ -45,7 +47,7 @@ To Open Layout:
 5. choose the final layout
 
 ### Post-APR Simulation
-- in-order/top_level_no_macros/sim/postapr
+- repo: OoO_Processor/in-order/top_level_no_macros/sim/postapr
 - Use Makefile to prepare the simulation and generate the coverage report
 - To re-make th simulation, delete .fsdb, .vcd, and .include files
 
