@@ -64,8 +64,8 @@ module imem(
     end
     mem[0] = 'h003100b3; // add x1, x2, x3
     mem[1] = 'h40730233; // sub x4, x6, x7
-    mem[2] = 'h003103b3; // mul x3, x6, x9
-    mem[3] = 'h029301b3; // add x7, x2, x3
+    mem[2] = 'h029301b3; // mul x3, x6, x9
+    mem[3] = 'h003103b3; // add x7, x2, x3
     mem[4] = 'h00610433; // sll x8, x2, x6
   end
 
