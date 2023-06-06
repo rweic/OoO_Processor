@@ -1,4 +1,4 @@
-# EE478 In-Order and Out-of-Order RISCV 32IM Processor Performance Comparison
+### EE478 In-Order and Out-of-Order RISCV 32IM Processor Performance Comparison
 # - Rouwei Chen, Elijah Carino, George Beatty
 Project Summary with goals and deliverables
 
