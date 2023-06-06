@@ -33,7 +33,7 @@ module core (
     input [31:0] dmem_dout_i;
 
     // ----- Reg/wire Initialization -----
-    wire fetch_stall = 1'b0;
+    wire fetch_stall;
     wire [31:0] pc_fetch;
     wire [31:0] inst_fetch;
     wire inst_valid_fetch;
@@ -102,7 +102,7 @@ module core (
     reg stall_fetch;
 
     assign inst_valid_decode = alu_request | lsu_request | mul_request;
-    assign stall_fetch = br_request | (~rs_alu_valid) | (~rs_lsu_valid) | (~rs_mul_valid);
+    assign fetch_stall = br_request | (~rs_alu_valid) | (~rs_lsu_valid) | (~rs_mul_valid);
 
     // ----- Fetch & Decode -----
     fetch fetch (
@@ -110,8 +110,8 @@ module core (
         .clk_i(clk_i), 
         .reset_i(reset_i), 
         .stall_i(fetch_stall), 
-        .pc_sel_i(1'b0), 
-        .br_dest('b0),
+        .pc_sel_i(br_request), 
+        .br_dest(),
         // Outputs
         .pc_o(pc_fetch), 
         .inst_o(inst_fetch), 
@@ -129,8 +129,8 @@ module core (
         .pc_i(pc_fetch), 
         .inst_valid_i(inst_valid_fetch),
         .inst_i(inst_fetch),
-        .cdb_en_i(1'b0),
-        .cdb_reg_addr_i(5'b00000),
+        .cdb_en_i(wb_en),
+        .cdb_reg_addr_i(wb_reg_addr),
         // Outputs
         .alu_o(alu_request), 
         .lsu_o(lsu_request), 
@@ -177,10 +177,10 @@ module core (
         .alu_request_i(alu_request), 
         .lsu_request_i(lsu_request), 
         .mul_request_i(mul_request),
-        .alu_valid_i(1'b1), 
-        .mul_valid_i(1'b1), 
+        //.alu_valid_i(1'b1), 
+        //.mul_valid_i(1'b1), 
         .lsu_valid_i(!lsu_busy),
-        .cdb_en_i('b0), 
+        .cdb_en_i(wb_en), 
         .cdb_tag_i(wb_reg_addr),
         
         // Outputs
@@ -219,6 +219,8 @@ module core (
         .prd_addr_i(), 
         .pc_i(alu_pc_issued), 
         .inst_i(alu_inst_issued),
+        .pc_alu_i(), 
+        .reg_value_alu_i(),
         // Outputs
         .empty_o(), 
         .full_o(),

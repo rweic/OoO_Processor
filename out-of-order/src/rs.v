@@ -14,7 +14,8 @@ module rs #(
     prs1_addr_i, prs2_addr_i, prd_addr_i,
     prs1_valid_i, prs2_valid_i,
     alu_request_i, lsu_request_i, mul_request_i,
-    alu_valid_i, mul_valid_i, lsu_valid_i,
+    //alu_valid_i, mul_valid_i, 
+    lsu_valid_i,
     cdb_en_i, cdb_tag_i,
     // Outputs
     alu_free_o, lsu_free_o, mul_free_o,
@@ -41,8 +42,8 @@ module rs #(
     input prs1_valid_i;
     input prs2_valid_i;
     // The availability of the FU
-    input alu_valid_i;
-    input mul_valid_i;
+    //input alu_valid_i;
+    //input mul_valid_i;
     input lsu_valid_i;
     // CDB updates
     input cdb_en_i;

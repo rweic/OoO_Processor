@@ -15,6 +15,7 @@ module rob
     clk_i, reset_i, 
     allocate_req_i, update_req_i, 
     prd_addr_i, pc_i, inst_i,
+    pc_alu_i, reg_value_alu_i,
     // Outputs
     empty_o, full_o,
     inst_committed_o, pc_o, prd_addr_o
