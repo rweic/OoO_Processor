@@ -28,9 +28,9 @@ module rob_tb();
     // wire data at commitment
     wire commitment_valid_o;
     wire [31:0] inst_committed_o;
-    wire [31:0] pc_commited_o;
-    wire [4:0]  prd_addr_commited_o;
-    wire [31:0] prd_value_commited_o;
+    wire [31:0] pc_committed_o;
+    wire [4:0]  prd_addr_committed_o;
+    wire [31:0] prd_value_committed_o;
 
     rob rob0 (.*);
     

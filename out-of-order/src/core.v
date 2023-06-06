@@ -241,9 +241,9 @@ module core (
         // Commitment
         .commitment_valid_o(cdb_en), 
         .inst_committed_o(), 
-        .pc_commited_o(), 
-        .prd_addr_commited_o(cdb_tag), 
-        .prd_value_commited_o(cdb_data)
+        .pc_committed_o(), 
+        .prd_addr_committed_o(cdb_tag), 
+        .prd_value_committed_o(cdb_data)
     );
 
     // Regfile

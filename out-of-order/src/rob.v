@@ -22,7 +22,7 @@ module rob
     // Outputs
     empty_o, full_o,
     rob_idx_o,
-    commitment_valid_o, inst_committed_o, pc_commited_o, prd_addr_commited_o, prd_value_commited_o
+    commitment_valid_o, inst_committed_o, pc_committed_o, prd_addr_committed_o, prd_value_committed_o
 );
     // Inputs
     input clk_i;
@@ -53,42 +53,63 @@ module rob
     // Output data at commitment
     output commitment_valid_o;
     output [31:0] inst_committed_o;
-    output [31:0] pc_commited_o;
-    output [4:0]  prd_addr_commited_o;
-    output [31:0] prd_value_commited_o;
+    output [31:0] pc_committed_o;
+    output [4:0]  prd_addr_committed_o;
+    output [31:0] prd_value_committed_o;
 
     // Pointers
     reg [4:0] head;
     reg [4:0] tail;
 
+    // Reg
+    wire ready;
+    wire full;
+
     // Need updates (valid & rd_value)
     reg [NUM_ENTRIES-1:0] valid;
     reg [31:0] reg_value [0:NUM_ENTRIES-1]; 
 
+    assign full_o = full;
+    assign rob_idx_o = tail;
+
+    // Pointer Updates
+    always @(posedge clk_i)
+    begin
+        if(reset_i) begin
+            tail <= 0;
+            head <= 0;
+        end
+        else begin
+            tail <= (allocate_req_i && !full) ? tail+1 : tail;
+            head <= ready ? head+1 : head;
+        end
+    end
+
     // Not updated
     fifo #(.WIDTH(5), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
         .clk_i(clk_i), .reset_i(reset_i), 
-        .data_in_i(prd_addr_i), .wr_i(allocate_req_i), .rd_i(), 
-        .data_out_o(prd_committed_o), 
+        .data_in_i(prd_addr_i), .wr_i(allocate_req_i), .rd_i(ready), 
+        .data_out_o(prd_addr_committed_o), 
         .empty_o(), .full_o()
     );
 
     fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
         .clk_i(clk_i), .reset_i(reset_i), 
-        .data_in_i(pc_i), .wr_i(allocate_req_i), .rd_i(), 
+        .data_in_i(pc_i), .wr_i(allocate_req_i), .rd_i(ready), 
         .data_out_o(pc_committed_o), 
         .empty_o(), .full_o()
     );
 
     fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
         .clk_i(clk_i), .reset_i(reset_i), 
-        .data_in_i(inst_i), .wr_i(allocate_req_i), .rd_i(), 
+        .data_in_i(inst_i), .wr_i(allocate_req_i), .rd_i(ready), 
         .data_out_o(inst_committed_o), 
         .empty_o(), .full_o()
     );
 
-
 endmodule
+
+
 /*
 module cbuf
 #(
