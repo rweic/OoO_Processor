@@ -7,9 +7,9 @@ Project Summary with goals and deliverables
 - risc-v compiler toolchain: https://github.com/riscv-collab/riscv-gnu-toolchain
 
 
-## Coverage report with VCS
+# Coverage report with VCS
 ./simv \
 urg -full64 -dir simv.vdb
 
-### Alternatively,
+# Alternatively,
 make coverage
