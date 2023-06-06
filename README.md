@@ -62,6 +62,43 @@ to synthesize the modules.
 
 out-of-order/src
 
+1. toplevel.v
+
+2. core.v
+
+3. dmem.v
+
+4. imem.v
+
+5. fetch.v
+This module fetch instruction from instruction memory.
+
+6. decode.v
+This module pre-assign resource.
+
+7. decoder.v
+
+8. rename.v
+
+9. rs.v
+
+10. priority_management.v
+
+11. regfile.v
+
+12. arith.v
+
+13. alu.v
+
+14. lsu.v
+
+15. mul.v
+
+16. rob.v
+
+17. PARAM.vh
+This is the header files for holding the commonly used parameters among modules.
+
 ### VCS Coverage Report
 
 
