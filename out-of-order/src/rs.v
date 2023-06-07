@@ -171,8 +171,6 @@ module rs #(
     );
 
     priority_management pm_mul (
-        //.clk_i(clk_i), 
-        //.reset_i(reset_i),
         .allocate_i(mul_request_i), 
         .resource_valid_i(mul_entry_free), 
         .entry_ready_i(mul_ready),
