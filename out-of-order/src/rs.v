@@ -252,7 +252,7 @@ module rs #(
                 // Inputs
                 .clk_i(clk_i), 
                 .reset_i(reset_i),
-                .entry_allocate_req_i(lsu_request_i & lsu_entry_allocate[i]), 
+                .entry_allocate_req_i(lsu_request_i & lsu_entry_allocate[i] & lsu_valid_i), 
                 .entry_issue_i(lsu_entry_issue[i]),
                 .pc_i(pc_i), 
                 .inst_i(inst_i),
