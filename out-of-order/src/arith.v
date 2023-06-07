@@ -3,9 +3,9 @@
  */
 module arith (
     // Inputs
-    clk_i, reset_i, pc_i, alu_request_i, inst_i, rs1_value_i, rs2_value_i,
+    clk_i, reset_i, pc_i, alu_request_i, inst_i, rs1_value_i, rs2_value_i, rob_idx_i,
     // Outputs
-    writeback_valid_o, writeback_value_o
+    writeback_valid_o, writeback_value_o, rob_idx_o
 );
     input clk_i, reset_i;
     input [31:0] pc_i;
@@ -13,10 +13,12 @@ module arith (
     input [31:0] inst_i;
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
+    input [4:0] rob_idx_i;
 
     //output busy_o;  // an output signal indicating that the resource is not valid
     output writeback_valid_o;
     output [31:0]  writeback_value_o;
+    output [4:0] rob_idx_o;
 
     wire [6:0] opcode = inst_i[6:0];
     wire [2:0] funct3 = inst_i[14:12];
@@ -36,6 +38,7 @@ module arith (
 
     assign writeback_valid_o = alu_request_i;
     assign writeback_value_o = alu_out;
+    assign rob_idx_o = rob_idx_i;
 
     alu alu (
         .alu_op1_i(alu_operand1), 

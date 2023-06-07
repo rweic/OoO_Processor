@@ -40,6 +40,10 @@ module rename (
     assign prs1_valid_o = ~busytable[prs1_addr_o] & inst_valid_i;
     assign prs2_valid_o = ~busytable[prs2_addr_o] & inst_valid_i;
 
+    assign prd_addr_o = reg_allocate_addr;
+    assign prs1_addr_o = rat[rs1_addr_i];
+    assign prs2_addr_o = rat[rs2_addr_i];
+
     /*wire r0_busy = busytable[0];
     wire r1_busy = busytable[1];
     wire r2_busy = busytable[2];
@@ -68,15 +72,15 @@ module rename (
             for (i = 0; i < 32; i ++ ) begin
                 busytable[i] <= 'h0;
             end
-            prs1_addr_o <= 'h0;
-            prs2_addr_o <= 'h0;
-            prd_addr_o <= 'h0;
+            //prs1_addr_o <= 'h0;
+            //prs2_addr_o <= 'h0;
+            //prd_addr_o <= 'h0;
         end
         else if (inst_valid_i) begin
-            prs1_addr_o <= rat[rs1_addr_i];
-            prs2_addr_o <= rat[rs2_addr_i];
+            //prs1_addr_o <= rat[rs1_addr_i];
+            //prs2_addr_o <= rat[rs2_addr_i];
             rat[rd_addr_i] <= reg_allocate_addr;
-            prd_addr_o <= reg_allocate_addr;
+            //prd_addr_o <= reg_allocate_addr;
             busytable[reg_allocate_addr] <= 'h1 & (reg_allocate_addr != 'h0);
         end
         else if (cdb_en_i) begin

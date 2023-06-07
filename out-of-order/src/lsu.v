@@ -5,9 +5,9 @@ module lsu
 #(parameter DMEM_ADDR_LEN = 8) 
 (
     // Inputs
-    clk_i, reset_i, pc_i, lsu_request_i, inst_i, rs1_value_i, rs2_value_i,
+    clk_i, reset_i, pc_i, lsu_request_i, inst_i, rs1_value_i, rs2_value_i, rob_idx_i,
     // Outputs
-    busy_o, writeback_valid_o, writeback_value_o,
+    busy_o, writeback_valid_o, writeback_value_o, rob_idx_o,
 
     // dmem
     dmem_csb_write_o,
@@ -28,12 +28,14 @@ module lsu
     // Value of registers should be known by this point
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
+    input [4:0] rob_idx_i;
 
     // Outputs
     output busy_o;  // an output signal indicating that the resource is not valid
     // Signals to regfile writeback, valid signal and writeback value, the rd addr should be kept in rob
     output writeback_valid_o;
     output [31:0]  writeback_value_o;
+    output reg [4:0] rob_idx_o;
 
     // Wires to memory
     output dmem_csb_write_o;
@@ -97,6 +99,10 @@ module lsu
     assign dmem_din_o = mem_data_in;
     assign dmem_csb_read_o = mem_csb_read;
     assign dmem_raddr_o = mem_addr_r >> 2;
+
+    always @(posedge clk_i) begin
+        rob_idx_o <= rob_idx_i;
+    end
 
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
     //wire mem_load_success = (!mem_csb_read) | (!mem_csb_write);

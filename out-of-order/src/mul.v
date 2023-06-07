@@ -9,9 +9,9 @@
 
 module mul(
     // Inputs
-    clk_i, reset_i, pc_i, mul_request_i, inst_i, rs1_value_i, rs2_value_i,
+    clk_i, reset_i, pc_i, mul_request_i, inst_i, rs1_value_i, rs2_value_i, rob_idx_i,
     // Outputs
-    writeback_valid_o, writeback_value_o
+    writeback_valid_o, writeback_value_o, rob_idx_o
 );
     input clk_i, reset_i;
     input [31:0] pc_i;
@@ -21,10 +21,12 @@ module mul(
     // Value of registers should be known by this point
     input [31:0] rs1_value_i;
     input [31:0] rs2_value_i;
+    input [4:0] rob_idx_i;
     
     // Outputs
     output writeback_valid_o;
     output reg [31:0]  writeback_value_o;
+    output [4:0] rob_idx_o;
 
     /*
     `define FUNCT3_MUL      3'b000
