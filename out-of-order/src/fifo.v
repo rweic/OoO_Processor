@@ -24,11 +24,10 @@ module fifo
     assign full_o = (fifo_cnt == DEPTH);
 
     // Comment out this : for DEBUG ONLY
-    wire [WIDTH-1:0] line1 = mem[1];
+    /*wire [WIDTH-1:0] line1 = mem[1];
     wire [WIDTH-1:0] line2 = mem[2];
     wire [WIDTH-1:0] line3 = mem[3];
-    wire [WIDTH-1:0] line4 = mem[4];
-    wire [WIDTH-1:0] line31 = mem[31];
+    wire [WIDTH-1:0] line4 = mem[4];*/
 
     // counter block
     integer i;

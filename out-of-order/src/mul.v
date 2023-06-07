@@ -26,7 +26,7 @@ module mul(
     // Outputs
     output writeback_valid_o;
     output reg [31:0]  writeback_value_o;
-    output [4:0] rob_idx_o;
+    output reg [4:0] rob_idx_o;
 
     /*
     `define FUNCT3_MUL      3'b000
@@ -52,6 +52,10 @@ module mul(
     assign mult_result = {{33{operand1_reg[32]}}, operand1_reg} * {{33{operand2_reg[32]}}, operand2_reg};
     assign writeback_value_o = high_low_sel ? mult_result[63:32] : mult_result[31:0];
 
+    always @(posedge clk_i) begin
+        rob_idx_o <= rob_idx_i;
+    end
+    
     // extend one bit only at this stage, to reduce the registers for holding the value
     always @(*) begin
         if (mul_request_i) begin
