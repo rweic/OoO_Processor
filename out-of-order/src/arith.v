@@ -144,9 +144,13 @@ module arith (
                 endcase
             end
             `OP_LUI: begin 
-                alu_func = `ALU_OP_NOP;
+                alu_operand1 = imm_i;
+                alu_operand2 = 'b0;
+                alu_func = `ALU_OP_OR;
             end
             `OP_AUIPC: begin 
+                alu_operand1 = imm_i;
+                alu_operand2 = pc_i;
                 alu_func = `ALU_OP_ADD;
             end
             `OP_JAL: begin 
