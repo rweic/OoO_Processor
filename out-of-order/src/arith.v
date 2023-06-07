@@ -161,6 +161,8 @@ module arith (
             end
             default: begin 
                 alu_func = `ALU_OP_NOP;
+                alu_operand1 = 'b0;
+                alu_operand2 = 'b0;
             end
         endcase 
     end

@@ -272,7 +272,9 @@ module lsu
                     mem_load_data = 'h0;
                 end
             endcase
-        end
+        end 
+        else
+            mem_load_data = 'h0;
     end
 
     // Set control signals

@@ -61,13 +61,13 @@ module rob
     reg [4:0] head;
     reg [4:0] tail;
 
-    // Reg
-    wire ready = valid[head];
-    wire full;
-
     // Need updates (valid & rd_value)
     reg [NUM_ENTRIES-1:0] valid;
     reg [31:0] reg_value [0:NUM_ENTRIES-1]; 
+
+    // Wires
+    wire ready = valid[head];
+    wire full;
 
     assign full_o = full;
     assign rob_idx_o = tail;
