@@ -1,5 +1,7 @@
-SHELL = tcsh
+SHELL=tcsh
 TOPLEVEL=toplevel
+TESTS=../../../../comparison_tests/
+ICACHE=../../../test_vectors/
 
 dve: 
 	-dve -full64 &
@@ -18,25 +20,17 @@ coverage:
 	./simv
 	urg -full64 -dir simv.vdb
 
-# clean-old:
-# 	-rm -r alib-52
-# 	-rm -r db
-# 	-rm -r ddc
-# 	-rm -r $(TOPLEVEL)_design
-# 	-rm -r reports
-# 	-rm -r netlist
-# 	-rm -r csrc
-# 	-rm -r simv.daidir
-# 	-rm -r DVEfiles
-# 	-rm *.log
-# 	-rm vcdplus.vpd
-# 	-rm ucli.key
-# 	-rm default.svf
-# 	-rm simv
-# 	-rm -r results
-# 	-rm -r tmp
-# 	-rm -rf design_lib
-# 	-rm -rf pna_output
+gcd:
+	cp $(TESTS)/gcd/gcd.hex $(ICACHE)/icache_init.txt
+
+fib:
+	cp $(TESTS)/fibonacci/fibonacci.hex $(ICACHE)/icache_init.txt
+    
+matrix:
+	cp $(TESTS)/matrix/matrix.hex $(ICACHE)/icache_init.txt
+
+all_inst:
+	cp $(TESTS)/all_inst/all_inst.hex $(ICACHE)/icache_init.txt
 
 clean:
 	-rm -r alib-52
