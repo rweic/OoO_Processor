@@ -1,70 +1,83 @@
-Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : core
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 18:07:18 2023
+Date   : Tue Jun  6 19:43:09 2023
 ****************************************
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/ece477_fsm_freepdk45_sapr_flow/freepdk-45nm/stdcells-wc.db)
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/OOO_no_macros/freepdk-45nm/stdcells-wc.db)
+    gtech (File: /home/lab.apps/vlsiapps_new/syn/current/libraries/syn/gtech.db)
 
-Number of ports:                         3198
-Number of nets:                          3654
-Number of cells:                         2859
-Number of combinational cells:           1370
-Number of sequential cells:               391
+Number of ports:                         3759
+Number of nets:                         12334
+Number of cells:                         9923
+Number of combinational cells:           6099
+Number of sequential cells:              2797
 Number of macros/black boxes:               0
-Number of buf/inv:                        369
-Number of references:                       7
+Number of buf/inv:                        912
+Number of references:                       9
 
-Combinational area:               1439.858027
-Buf/Inv area:                      208.278001
-Noncombinational area:            1733.255939
+Combinational area:               7076.132167
+Buf/Inv area:                      550.087997
+Noncombinational area:           12372.191551
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  3173.113966
+Total cell area:                 19448.323718
 Total area:                 undefined
 
-Information: This design contains black box (unknown) components. (RPT-8)
+Information: This design contains unmapped logic. (RPT-7)
 
 The above information was reported from the logical library. The following are from the physical library:
 
 Hierarchical area distribution
 ------------------------------
 
-                                  Global cell area          Local cell area
-                                  ------------------  ---------------------------- 
-Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
-                                  Total      Total    national   national   boxes   Design
---------------------------------  ---------  -------  ---------  ---------  ------  -----------------
-core                              3173.1140    100.0    22.3440     0.0000  0.0000  core
-decode                              30.0580      0.9    14.3640     0.0000  0.0000  decode
-decode/dec0                         15.6940      0.5    15.6940     0.0000  0.0000  decoder
-fetch                              251.6360      7.9    61.7120   189.9240  0.0000  fetch
-lsu0                                76.3420      2.4    47.8800    28.4620  0.0000  lsu
-rename                            1770.4960     55.8   802.7880   913.4440  0.0000  rename_1
-rename/freelist0                    54.2640      1.7    31.6540    22.6100  0.0000  freelist_1
-reservation_station               1022.2380     32.2   102.4100     0.0000  0.0000  rs
-reservation_station/genblk1[0].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_11
-reservation_station/genblk1[1].alu_entry   26.0680     0.8   12.5020   13.5660 0.0000 rs_entry_10
-reservation_station/genblk1[2].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_9
-reservation_station/genblk1[3].alu_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_8
-reservation_station/genblk2[0].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_7
-reservation_station/genblk2[1].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_6
-reservation_station/genblk2[2].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_5
-reservation_station/genblk2[3].mul_entry   25.5360     0.8   11.9700   13.5660 0.0000 rs_entry_4
-reservation_station/genblk3[0].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_3
-reservation_station/genblk3[1].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_2
-reservation_station/genblk3[2].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_1
-reservation_station/genblk3[3].lsu_entry  173.1660     5.5   55.5940  117.5720 0.0000 rs_entry_0
-reservation_station/ps_alu           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_2
-reservation_station/ps_lsu           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_1
-reservation_station/ps_mul           7.4480      0.2     7.4480     0.0000  0.0000  priority_select_0
---------------------------------  ---------  -------  ---------  ---------  ------  -----------------
-Total                                                 1439.8580  1733.2559  0.0000
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-   Black-
+                                  Total       Total    national   national    boxes   Design
+--------------------------------  ----------  -------  ---------  ----------  ------  --------------------------------
+core                              19448.3237    100.0    21.5460      0.0000  0.0000  core
+decode                               33.5160      0.2    17.8220      0.0000  0.0000  decode
+decode/dec0                          15.6940      0.1    15.6940      0.0000  0.0000  decoder
+fetch                               614.4600      3.2   189.3920    425.0680  0.0000  fetch
+lsu0                                 35.1120      0.2    30.5900      4.5220  0.0000  lsu
+lsu0/lsu_fifo                         0.0000      0.0     0.0000      0.0000  0.0000  fifo_WIDTH12_DEPTH4_ADDR_LEN2
+lsu0/lsu_fifo/add_41                  0.0000      0.0     0.0000      0.0000  0.0000  *ADD_UNS_OP_2_1_2
+lsu0/lsu_fifo/add_41/*cell*47963      0.0000      0.0     0.0000      0.0000  0.0000  DW01_inc_width2
+lsu0/lsu_fifo/add_53                  0.0000      0.0     0.0000      0.0000  0.0000  *ADD_UNS_OP_2_1_2
+lsu0/lsu_fifo/add_53/*cell*47965      0.0000      0.0     0.0000      0.0000  0.0000  DW01_inc_width2
+lsu0/lsu_fifo/add_54                  0.0000      0.0     0.0000      0.0000  0.0000  *ADD_UNS_OP_2_1_2
+lsu0/lsu_fifo/add_54/*cell*47967      0.0000      0.0     0.0000      0.0000  0.0000  DW01_inc_width2
+lsu0/lsu_fifo/sub_39                  0.0000      0.0     0.0000      0.0000  0.0000  *SUB_UNS_OP_2_1_2
+lsu0/lsu_fifo/sub_39/*cell*47961      0.0000      0.0     0.0000      0.0000  0.0000  DW01_dec_width2
+rename0                            1867.3200      9.6   853.0620    931.5320  0.0000  rename
+rename0/freelist0                    82.7260      0.4    60.1160     22.6100  0.0000  freelist
+reorder_buf                       14730.8138     75.7     0.0000      0.0000  0.0000  rob
+reorder_buf/cbuf_inst              6967.0719     35.8  2291.3241   4675.7478  0.0000  fifo_WIDTH32_DEPTH32_ADDR_LEN5_0
+reorder_buf/cbuf_pc                6553.4419     33.7  2167.1021   4386.3398  0.0000  fifo_WIDTH32_DEPTH32_ADDR_LEN5_1
+reorder_buf/cbuf_prd               1210.3000      6.2   441.5600    768.7400  0.0000  fifo_WIDTH5_DEPTH32_ADDR_LEN5
+reservation_station                2145.5560     11.0   223.7060      0.0000  0.0000  rs
+reservation_station/genblk1[0].alu_entry   229.8240     1.2   71.5540   158.2700 0.0000 rs_entry_11
+reservation_station/genblk1[1].alu_entry   230.0900     1.2   71.8200   158.2700 0.0000 rs_entry_10
+reservation_station/genblk1[2].alu_entry   229.8240     1.2   71.5540   158.2700 0.0000 rs_entry_9
+reservation_station/genblk1[3].alu_entry   229.8240     1.2   71.5540   158.2700 0.0000 rs_entry_8
+reservation_station/genblk2[0].mul_entry    23.9400     0.1   10.3740    13.5660 0.0000 rs_entry_7
+reservation_station/genblk2[1].mul_entry    23.9400     0.1   10.3740    13.5660 0.0000 rs_entry_6
+reservation_station/genblk2[2].mul_entry    23.9400     0.1   10.3740    13.5660 0.0000 rs_entry_5
+reservation_station/genblk2[3].mul_entry    23.9400     0.1   10.3740    13.5660 0.0000 rs_entry_4
+reservation_station/genblk3[0].lsu_entry   171.5700     0.9   53.9980   117.5720 0.0000 rs_entry_3
+reservation_station/genblk3[1].lsu_entry   171.5700     0.9   53.9980   117.5720 0.0000 rs_entry_2
+reservation_station/genblk3[2].lsu_entry   171.5700     0.9   53.9980   117.5720 0.0000 rs_entry_1
+reservation_station/genblk3[3].lsu_entry   171.5700     0.9   53.9980   117.5720 0.0000 rs_entry_0
+reservation_station/pm_alu           73.4160      0.4    73.4160      0.0000  0.0000  priority_management_2
+reservation_station/pm_lsu           73.4160      0.4    73.4160      0.0000  0.0000  priority_management_1
+reservation_station/pm_mul           73.4160      0.4    73.4160      0.0000  0.0000  priority_management_0
+--------------------------------  ----------  -------  ---------  ----------  ------  --------------------------------
+Total                                                  7076.1322  12372.1916  0.0000
 
 1

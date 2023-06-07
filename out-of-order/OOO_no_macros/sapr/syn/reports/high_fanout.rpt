@@ -1,11 +1,10 @@
-Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : net fanout
         -threshold 32
 Design : core
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 18:07:18 2023
+Date   : Tue Jun  6 19:43:09 2023
 ****************************************
 
 
@@ -29,4 +28,7 @@ Attributes:
 
 Net                 Fanout   Attributes   Capacitance   Driver
 --------------------------------------------------------------------------------
+clk_i                 2790   dr, h        1001882.06    clk_i
+reset_i                227   d, I             0.00      reset_i
+lsu0/lsu_fifo/*Logic0*    402 dr, d         350.72      lsu0/lsu_fifo/U2/**logic_0**
 1

@@ -1,0 +1,5 @@
+/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/OOO_no_macros/freepdk-45nm/stdcells.v
+core.syn.v
+test/OOO_no_macros_tb.sv
+verilog/dmem.v
+verilog/imem.v
