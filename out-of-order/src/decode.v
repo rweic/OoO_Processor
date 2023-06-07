@@ -7,7 +7,7 @@ module decode (
     inst_valid_i, inst_i, //cdb_en_i, cdb_reg_addr_i,
     // Outputs
     alu_o, lsu_o, mul_o, br_o,
-    rs1_addr, rs2_addr, rd_addr
+    rs1_addr_o, rs2_addr_o, rd_addr_o
 );
     // ----- Input/Output Ports -----
     // Inputs
@@ -23,15 +23,11 @@ module decode (
     output lsu_o;
     output mul_o;
     output br_o;
-    output [4:0] rs1_addr;
-    output [4:0] rs2_addr;
-    output [4:0] rd_addr;
+    output [4:0] rs1_addr_o;
+    output [4:0] rs2_addr_o;
+    output [4:0] rd_addr_o;
 
     // ----- Reg/wire Initialization -----
-    wire [4:0] prs1_addr;
-    wire [4:0] prs2_addr;
-    wire [4:0] prd_addr;
-
     wire alu_request;
     wire lsu_request;
     wire mul_request;
@@ -42,11 +38,6 @@ module decode (
     assign mul_o = mul_request & inst_valid_i;
     assign br_o = br_request & inst_valid_i;
 
-    // The register addr
-    assign rs1_addr = inst_valid_i ? inst_i[19:15] : 'h0;
-    assign rs2_addr = inst_valid_i ? inst_i[24:20] : 'h0;
-    assign rd_addr = inst_i[11:7];
-
     // Predecode: decide which FU the inst goes into
     decoder dec0 (
         // Inputs
@@ -55,24 +46,10 @@ module decode (
         .alu_o(alu_request), 
         .lsu_o(lsu_request), 
         .mul_o(mul_request), 
-        .br_o(br_request));
-
-    // Register rename
-    /*rename rename0 (
-        // Inputs
-        .clk_i(clk_i), 
-        .reset_i(reset_i), 
-        .pc_i(pc_i), 
-        .inst_valid_i(inst_valid_i), 
-        .rs1_addr_i(rs1_addr), 
-        .rs2_addr_i(rs2_addr), 
-        .rd_addr_i(rd_addr), 
-        .cdb_en_i(cdb_en_i), 
-        .cdb_reg_addr_i(cdb_reg_addr_i),
-        // Outputs
-        .prs1_addr_o(prs1_addr), 
-        .prs2_addr_o(prs2_addr), 
-        .prd_addr_o(prd_addr)
-    );*/
+        .br_o(br_request),
+        .rs1_addr_o(rs1_addr_o), 
+        .rs2_addr_o(rs2_addr_o), 
+        .rd_addr_o(rd_addr_o)
+    );
 
 endmodule

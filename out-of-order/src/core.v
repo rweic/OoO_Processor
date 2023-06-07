@@ -139,9 +139,9 @@ module core (
         .lsu_o(lsu_request), 
         .mul_o(mul_request), 
         .br_o(br_request),
-        .rs1_addr(rs1_addr_decoded), 
-        .rs2_addr(rs2_addr_decoded), 
-        .rd_addr(rd_addr_decoded)
+        .rs1_addr_o(rs1_addr_decoded), 
+        .rs2_addr_o(rs2_addr_decoded), 
+        .rd_addr_o(rd_addr_decoded)
     );
 
     // Rename Block
