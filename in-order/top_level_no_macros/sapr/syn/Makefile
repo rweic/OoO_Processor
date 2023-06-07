@@ -1,3 +1,4 @@
+SHELL = /bin/bash
 .PHONY: syn clean
 
 RESULTDIR=./results
@@ -5,9 +6,9 @@ REPORTDIR=./reports
 LOGDIR=./results
 
 syn:
-	if [ ! -d $(RESULTDIR) ]; then mkdir $(RESULTDIR); fi
-	if [ ! -d $(REPORTDIR) ]; then mkdir $(REPORTDIR); fi
-	dc_shell -f ../src/syn/syn.tcl | tee $(LOGDIR)/syn.log
+	@if [ ! -d $(RESULTDIR) ]; then mkdir $(RESULTDIR); fi
+	@if [ ! -d $(REPORTDIR) ]; then mkdir $(REPORTDIR); fi
+	@$(shell which tcsh) -c 'dc_shell -f syn.tcl | tee $(LOGDIR)/syn.log'
 
 clean:
 	-@ rm -rf $(LOGDIR) \
@@ -22,3 +23,4 @@ clean:
 			  tmp \
 			  alib-52 \
 			  WORK
+
