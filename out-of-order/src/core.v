@@ -146,7 +146,7 @@ module core (
     rename rename (
         .clk_i(clk_i), 
         .reset_i(reset_i), 
-        .pc_i(pc_fetch), 
+        //.pc_i(pc_fetch), 
         .inst_valid_i(inst_valid_fetch), 
         .rs1_addr_i(rs1_addr_decoded), 
         .rs2_addr_i(rs2_addr_decoded), 

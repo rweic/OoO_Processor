@@ -4,14 +4,14 @@
 
 module rename (
     // Inputs
-    clk_i, reset_i, pc_i, inst_valid_i, rs1_addr_i, rs2_addr_i, rd_addr_i, cdb_en_i, cdb_reg_addr_i,
+    clk_i, reset_i, /*pc_i,*/ inst_valid_i, rs1_addr_i, rs2_addr_i, rd_addr_i, cdb_en_i, cdb_reg_addr_i,
     // Outputs
     prs1_addr_o, prs2_addr_o, prd_addr_o,
     prs1_valid_o, prs2_valid_o
 );
     // Inputs
     input clk_i, reset_i;
-    input [31:0] pc_i;
+    //input [31:0] pc_i;
     // The register addr of inst being decoded
     input inst_valid_i;
     input [4:0] rs1_addr_i;

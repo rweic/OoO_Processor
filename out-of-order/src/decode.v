@@ -55,7 +55,7 @@ module decode (
         .br_o(br_o));
 
     // Register rename
-    rename rename0 (
+    /*rename rename0 (
         // Inputs
         .clk_i(clk_i), 
         .reset_i(reset_i), 
@@ -70,10 +70,6 @@ module decode (
         .prs1_addr_o(prs1_addr), 
         .prs2_addr_o(prs2_addr), 
         .prd_addr_o(prd_addr)
-    );
-
-    // Dispatch
-    //always @(*) begin
-    //end
+    );*/
 
 endmodule
