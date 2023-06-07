@@ -67,7 +67,7 @@ module rename (
     always @(posedge clk_i) begin
         if (reset_i) begin
             for (i = 0; i < 31; i ++ ) begin
-                rat[i] <= i;
+                rat[i] <= 'b0;
             end
             for (i = 0; i < 32; i ++ ) begin
                 busytable[i] <= 'h0;
