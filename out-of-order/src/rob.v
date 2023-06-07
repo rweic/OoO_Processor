@@ -62,7 +62,7 @@ module rob
     reg [4:0] tail;
 
     // Reg
-    wire ready;
+    wire ready = valid[head];
     wire full;
 
     // Need updates (valid & rd_value)
@@ -82,6 +82,34 @@ module rob
         else begin
             tail <= (allocate_req_i && !full) ? tail+1 : tail;
             head <= ready ? head+1 : head;
+        end
+    end
+
+    // Updating the valid & rd_value
+    always @(posedge clk_i)
+    begin
+        if (update_req_alu_i) begin
+            valid[rob_idx_alu_i] <= 1'b1;
+            reg_value[rob_idx_alu_i] <= reg_value_alu_i;
+        end else begin 
+            valid[rob_idx_alu_i] <= valid[rob_idx_alu_i];
+            reg_value[rob_idx_alu_i] <= reg_value[rob_idx_alu_i];
+        end
+
+        if (update_req_mul_i) begin
+            valid[rob_idx_mul_i] <= 1'b1;
+            reg_value[rob_idx_mul_i] <= reg_value_mul_i;
+        end else begin 
+            valid[rob_idx_mul_i] <= valid[rob_idx_mul_i];
+            reg_value[rob_idx_mul_i] <= reg_value[rob_idx_mul_i];
+        end
+
+        if (update_req_lsu_i) begin
+            valid[rob_idx_lsu_i] <= 1'b1;
+            reg_value[rob_idx_lsu_i] <= reg_value_lsu_i;
+        end else begin 
+            valid[rob_idx_lsu_i] <= valid[rob_idx_lsu_i];
+            reg_value[rob_idx_lsu_i] <= reg_value[rob_idx_lsu_i];
         end
     end
 
