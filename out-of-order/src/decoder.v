@@ -75,21 +75,21 @@ module decoder (
             // pc + 4 -> rd
             // need to stop other from reading: rd
             `OP_JAL: begin 
-                resource = 'b1000;
+                resource = 'b1001;
             end
             // jump to rs1 + imm_i
             // pc + 4 -> rd
             // need to wait for: rs1
             // need to stop other from reading: rd
             `OP_JALR: begin 
-                resource = 'b1000;
+                resource = 'b1001;
             end
             // QUESTION: what would happen if there's no branch predictor? always assume taken?
             // cond: compare rs1 rs2
             // if take: jump to pc + imm_b
             // need to wait for: rs1, rs2
             `OP_BRANCH: begin
-                resource = 'b1000;
+                resource = 'b0001;
             end
 
             // For load and store: resource used is lsu

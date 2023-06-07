@@ -19,7 +19,8 @@ module lsu
     dmem_dout_i
 );
     // Inputs
-    input clk_i, reset_i;
+    input clk_i;
+    input reset_i;
     input [31:0] pc_i;
     // Should include the data that load/ store needs, or the original inst
     input lsu_request_i;  // The signal indicating that a inst is dispatched to lsu
@@ -70,7 +71,6 @@ module lsu
 
     // Internal signals
     wire [31:0] mem_data_in = rs2_value_i;
-    wire [31:0] mem_data_out; // The whole word read from memory
     reg [3:0] wmask;
     reg mem_csb_read;
     reg mem_csb_write;
@@ -97,7 +97,6 @@ module lsu
     assign dmem_din_o = mem_data_in;
     assign dmem_csb_read_o = mem_csb_read;
     assign dmem_raddr_o = mem_addr_r >> 2;
-    assign mem_data_out = dmem_dout_i;
 
     // NEED TO IMPLEMENT THIS SIGNAL WHEN CACHE IS BUILT
     //wire mem_load_success = (!mem_csb_read) | (!mem_csb_write);
@@ -136,20 +135,6 @@ module lsu
         .empty_o(lsb_empty), 
         .full_o(lsb_full)
     );
-
-    // csb need to be 0 when read is enabled or write is enabled
-    /*dmem dmem (
-        // Port 0: Write
-        .clk0(clk_i),
-        .csb0(mem_csb_write),
-        .wmask0(wmask),
-        .addr0(mem_addr_w >> 2),
-        .din0(mem_data_in),
-        // Port 1: Read
-        .clk1(clk_i),
-        .csb1(mem_csb_read),
-        .addr1(mem_addr_r >> 2),
-        .dout1(mem_data_out));*/
 
     // Set mem_aligned
     always @(*) begin
@@ -241,32 +226,32 @@ module lsu
     always @(*) begin
         if(mem_load_success & lsu_out_ls) begin // response received, and it's a load
             case({lsu_out_signed, lsu_out_h, lsu_out_b})
-                'b000: mem_load_data = mem_data_out;
+                'b000: mem_load_data = dmem_dout_i;
                 'b110: begin
                     if (lsu_out_addr[1] == 1'b1)
-                        mem_load_data = {mem_data_out[15:0], 16'h0};
+                        mem_load_data = {dmem_dout_i[15:0], 16'h0};
                     else
-                        mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[15:0]};
+                        mem_load_data = {{16{dmem_dout_i[15]}}, dmem_dout_i[15:0]};
                 end
                 'b101: begin
                     case (lsu_out_addr[1:0])
-                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                        2'b10: mem_load_data = {{8{mem_data_out[15]}}, mem_data_out[7:0], 16'h0};
-                        2'b01: mem_load_data = {{16{mem_data_out[15]}}, mem_data_out[7:0], 8'h0};
-                        2'b00: mem_load_data = {{24{mem_data_out[15]}}, mem_data_out[7:0]};
+                        2'b11: mem_load_data = {dmem_dout_i[7:0], 24'h0};
+                        2'b10: mem_load_data = {{8{dmem_dout_i[15]}}, dmem_dout_i[7:0], 16'h0};
+                        2'b01: mem_load_data = {{16{dmem_dout_i[15]}}, dmem_dout_i[7:0], 8'h0};
+                        2'b00: mem_load_data = {{24{dmem_dout_i[15]}}, dmem_dout_i[7:0]};
                     endcase
                 end
                 'b010:
                     if (lsu_out_addr[1] == 1'b1)
-                        mem_load_data = {mem_data_out[15:0], 16'h0};
+                        mem_load_data = {dmem_dout_i[15:0], 16'h0};
                     else
-                        mem_load_data = {16'h0, mem_data_out[15:0]};
+                        mem_load_data = {16'h0, dmem_dout_i[15:0]};
                 'b001:
                     case (lsu_out_addr[1:0])
-                        2'b11: mem_load_data = {mem_data_out[7:0], 24'h0};
-                        2'b10: mem_load_data = {8'h0, mem_data_out[7:0], 16'h0};
-                        2'b01: mem_load_data = {16'h0, mem_data_out[7:0], 8'h0};
-                        2'b00: mem_load_data = {24'h0, mem_data_out[7:0]};
+                        2'b11: mem_load_data = {dmem_dout_i[7:0], 24'h0};
+                        2'b10: mem_load_data = {8'h0, dmem_dout_i[7:0], 16'h0};
+                        2'b01: mem_load_data = {16'h0, dmem_dout_i[7:0], 8'h0};
+                        2'b00: mem_load_data = {24'h0, dmem_dout_i[7:0]};
                     endcase
                 default: begin 
                     mem_load_data = 'h0;

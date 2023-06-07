@@ -124,13 +124,13 @@ module core (
 
     decode decode (
         // Inputs
-        .clk_i(clk_i), 
-        .reset_i(reset_i), 
-        .pc_i(pc_fetch), 
+        //.clk_i(clk_i), 
+        //.reset_i(reset_i), 
+        //.pc_i(pc_fetch), 
         .inst_valid_i(inst_valid_fetch),
         .inst_i(inst_fetch),
-        .cdb_en_i(cdb_en),
-        .cdb_reg_addr_i(cdb_tag),
+        //.cdb_en_i(cdb_en),
+        //.cdb_reg_addr_i(cdb_tag),
         // Outputs
         .alu_o(alu_request), 
         .lsu_o(lsu_request), 
