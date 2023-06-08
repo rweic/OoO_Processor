@@ -75,9 +75,13 @@ module rob
     wire [4:0] prd_addr_committed;
     wire [31:0] pc_committed;
     wire [31:0] inst_committed;
+    wire [NUM_ENTRIES-1:0] new_valid;
 
+    assign empty_o = (fifo_cnt == 0);
+    assign full_o = (fifo_cnt == NUM_ENTRIES);
     assign ready = valid[head];
     assign rob_idx_o = tail;
+    assign new_valid = valid | ((1 << rob_idx_alu_i) & {5{update_req_alu_i}}) | ((1 << rob_idx_lsu_i) & {5{update_req_lsu_i}} ) | ((1 << rob_idx_mul_i) & {5{update_req_mul_i}}) & (~((1 << tail) & {5{allocate_req_i}}));
 
     // Pointer Updates
     always @(posedge clk_i)
@@ -102,9 +106,6 @@ module rob
         end
     end
 
-    
-    assign empty_o = (fifo_cnt == 0);
-    assign full_o = (fifo_cnt == NUM_ENTRIES);
     // counter block
     integer i;
     always @(posedge clk_i)
@@ -124,34 +125,29 @@ module rob
     always @(posedge clk_i)
     begin
         if (reset_i) begin
+            valid <= 'b0;
+        end
+        else begin
+            valid <= new_valid;
+        end
+    end
+    
+    always @(posedge clk_i)
+    begin
+        if (reset_i) begin
             for (integer i = 0; i < NUM_ENTRIES; i = i + 1) begin
-                valid[i] <= 1'b0;
                 reg_value[i] <= 'b0;
             end
         end
         else begin
             if (update_req_alu_i) begin
-                valid[rob_idx_alu_i] <= 1'b1;
                 reg_value[rob_idx_alu_i] <= reg_value_alu_i;
-            end else begin 
-                valid[rob_idx_alu_i] <= valid[rob_idx_alu_i];
-                reg_value[rob_idx_alu_i] <= reg_value[rob_idx_alu_i];
             end
-
             if (update_req_mul_i) begin
-                valid[rob_idx_mul_i] <= 1'b1;
                 reg_value[rob_idx_mul_i] <= reg_value_mul_i;
-            end else begin 
-                valid[rob_idx_mul_i] <= valid[rob_idx_mul_i];
-                reg_value[rob_idx_mul_i] <= reg_value[rob_idx_mul_i];
             end
-
             if (update_req_lsu_i) begin
-                valid[rob_idx_lsu_i] <= 1'b1;
                 reg_value[rob_idx_lsu_i] <= reg_value_lsu_i;
-            end else begin 
-                valid[rob_idx_lsu_i] <= valid[rob_idx_lsu_i];
-                reg_value[rob_idx_lsu_i] <= reg_value[rob_idx_lsu_i];
             end
         end
     end
