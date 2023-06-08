@@ -24,8 +24,10 @@ module fifo
     assign full_o = (fifo_cnt == DEPTH);
 
     // Comment out this : for DEBUG ONLY
-    //wire [WIDTH-1:0] line1 = mem[0];
-    //wire [WIDTH-1:0] line2 = mem[1];
+    /*wire [WIDTH-1:0] line1 = mem[1];
+    wire [WIDTH-1:0] line2 = mem[2];
+    wire [WIDTH-1:0] line3 = mem[3];
+    wire [WIDTH-1:0] line4 = mem[4];*/
 
     // counter block
     integer i;
@@ -36,9 +38,9 @@ module fifo
         end
         else begin
             if ((wr_i && !full_o) & ~(rd_i && !empty_o))
-                fifo_cnt <= fifo_cnt-1;
+                fifo_cnt <= fifo_cnt + 1;
             else if (~(wr_i && !full_o) & (rd_i && !empty_o))
-                fifo_cnt <= fifo_cnt+1;
+                fifo_cnt <= fifo_cnt - 1;
         end
     end
 
@@ -50,15 +52,15 @@ module fifo
             rd_ptr <= 0;
         end
         else begin
-            wr_ptr <= (wr_i && !full_o) ? wr_ptr+1 : wr_ptr;
-            rd_ptr <= (rd_i) ? rd_ptr+1 : rd_ptr;
+            wr_ptr <= (wr_i && !full_o) ? wr_ptr + 1 : wr_ptr;
+            rd_ptr <= (rd_i) ? rd_ptr + 1 : rd_ptr;
         end
     end
 
     // write
     always @(posedge clk_i)
     begin
-        if(!reset_i) begin
+        if(reset_i) begin
             for (i = 0; i < DEPTH; i = i + 1) begin
                 mem[i] <= 'b0;
             end
@@ -66,10 +68,11 @@ module fifo
         else if (wr_i && !full_o)
             mem[wr_ptr] <= data_in_i;
         else begin end
-    end  // TODO: something wrong with this mem
+    end
     
     // read -> async
     assign data_out_o = mem[rd_ptr];
+    
     /*always @(posedge clk_i)
     begin
         if(rd_i && !empty_o)

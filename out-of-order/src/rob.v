@@ -37,11 +37,11 @@ module rob
     input [31:0] pc_i;
     input [31:0] inst_i;
     // Values (update)
-    input [31:0] rob_idx_alu_i;
+    input [4:0] rob_idx_alu_i;
     input [31:0] reg_value_alu_i;
-    input [31:0] rob_idx_lsu_i;
+    input [4:0] rob_idx_lsu_i;
     input [31:0] reg_value_lsu_i;
-    input [31:0] rob_idx_mul_i;
+    input [4:0] rob_idx_mul_i;
     input [31:0] reg_value_mul_i;
 
     // Outputs
@@ -51,25 +51,32 @@ module rob
     // Allocated rob idx
     output [4:0] rob_idx_o;
     // Output data at commitment
-    output commitment_valid_o;
-    output [31:0] inst_committed_o;
-    output [31:0] pc_committed_o;
-    output [4:0]  prd_addr_committed_o;
-    output [31:0] prd_value_committed_o;
+    output reg commitment_valid_o;
+    output reg [31:0] inst_committed_o;
+    output reg [31:0] pc_committed_o;
+    output reg [4:0]  prd_addr_committed_o;
+    output reg [31:0] prd_value_committed_o;
 
     // Pointers
     reg [4:0] head;
     reg [4:0] tail;
+    reg [4:0] fifo_cnt;
 
     // Need updates (valid & rd_value)
     reg [NUM_ENTRIES-1:0] valid;
     reg [31:0] reg_value [0:NUM_ENTRIES-1]; 
 
-    // Wires
-    wire ready = valid[head];
-    wire full;
+    /*wire [31:0] reg_rob_0 = reg_value[0];
+    wire [31:0] reg_rob_1 = reg_value[1];
+    wire [31:0] reg_rob_2 = reg_value[2];*/
 
-    assign full_o = full;
+    // Wires
+    wire ready;
+    wire [4:0] prd_addr_committed;
+    wire [31:0] pc_committed;
+    wire [31:0] inst_committed;
+
+    assign ready = valid[head];
     assign rob_idx_o = tail;
 
     // Pointer Updates
@@ -78,60 +85,96 @@ module rob
         if(reset_i) begin
             tail <= 0;
             head <= 0;
+            commitment_valid_o <= 1'b0;
+            pc_committed_o <= 'b0;
+            inst_committed_o <= 'b0;
+            prd_addr_committed_o <= 'b0;
+            prd_value_committed_o <= 'b0;
         end
         else begin
-            tail <= (allocate_req_i && !full) ? tail+1 : tail;
+            tail <= (allocate_req_i && !full_o) ? tail+1 : tail;
             head <= ready ? head+1 : head;
+            commitment_valid_o <= ready;
+            pc_committed_o <= pc_committed;
+            inst_committed_o <= inst_committed;
+            prd_addr_committed_o <= prd_addr_committed;
+            prd_value_committed_o <= reg_value[head];
+        end
+    end
+
+    
+    assign empty_o = (fifo_cnt == 0);
+    assign full_o = (fifo_cnt == NUM_ENTRIES);
+    // counter block
+    integer i;
+    always @(posedge clk_i)
+    begin
+        if(reset_i) begin
+            fifo_cnt <= 0;
+        end
+        else begin
+            if ((allocate_req_i && !full_o) & ~(ready && !empty_o))
+                fifo_cnt <= fifo_cnt+1;
+            else if (~(allocate_req_i && !full_o) & (ready && !empty_o))
+                fifo_cnt <= fifo_cnt-1;
         end
     end
 
     // Updating the valid & rd_value
     always @(posedge clk_i)
     begin
-        if (update_req_alu_i) begin
-            valid[rob_idx_alu_i] <= 1'b1;
-            reg_value[rob_idx_alu_i] <= reg_value_alu_i;
-        end else begin 
-            valid[rob_idx_alu_i] <= valid[rob_idx_alu_i];
-            reg_value[rob_idx_alu_i] <= reg_value[rob_idx_alu_i];
+        if (reset_i) begin
+            for (integer i = 0; i < NUM_ENTRIES; i = i + 1) begin
+                valid[i] <= 1'b0;
+                reg_value[i] <= 'b0;
+            end
         end
+        else begin
+            if (update_req_alu_i) begin
+                valid[rob_idx_alu_i] <= 1'b1;
+                reg_value[rob_idx_alu_i] <= reg_value_alu_i;
+            end else begin 
+                valid[rob_idx_alu_i] <= valid[rob_idx_alu_i];
+                reg_value[rob_idx_alu_i] <= reg_value[rob_idx_alu_i];
+            end
 
-        if (update_req_mul_i) begin
-            valid[rob_idx_mul_i] <= 1'b1;
-            reg_value[rob_idx_mul_i] <= reg_value_mul_i;
-        end else begin 
-            valid[rob_idx_mul_i] <= valid[rob_idx_mul_i];
-            reg_value[rob_idx_mul_i] <= reg_value[rob_idx_mul_i];
-        end
+            if (update_req_mul_i) begin
+                valid[rob_idx_mul_i] <= 1'b1;
+                reg_value[rob_idx_mul_i] <= reg_value_mul_i;
+            end else begin 
+                valid[rob_idx_mul_i] <= valid[rob_idx_mul_i];
+                reg_value[rob_idx_mul_i] <= reg_value[rob_idx_mul_i];
+            end
 
-        if (update_req_lsu_i) begin
-            valid[rob_idx_lsu_i] <= 1'b1;
-            reg_value[rob_idx_lsu_i] <= reg_value_lsu_i;
-        end else begin 
-            valid[rob_idx_lsu_i] <= valid[rob_idx_lsu_i];
-            reg_value[rob_idx_lsu_i] <= reg_value[rob_idx_lsu_i];
+            if (update_req_lsu_i) begin
+                valid[rob_idx_lsu_i] <= 1'b1;
+                reg_value[rob_idx_lsu_i] <= reg_value_lsu_i;
+            end else begin 
+                valid[rob_idx_lsu_i] <= valid[rob_idx_lsu_i];
+                reg_value[rob_idx_lsu_i] <= reg_value[rob_idx_lsu_i];
+            end
         end
     end
 
     // Not updated
-    fifo #(.WIDTH(5), .DEPTH(32), .ADDR_LEN(5)) cbuf_prd (
+    fifo #(.WIDTH(5), .DEPTH(NUM_ENTRIES), .ADDR_LEN(5)) cbuf_prd (
         .clk_i(clk_i), .reset_i(reset_i), 
         .data_in_i(prd_addr_i), .wr_i(allocate_req_i), .rd_i(ready), 
-        .data_out_o(prd_addr_committed_o), 
+        .data_out_o(prd_addr_committed), 
         .empty_o(), .full_o()
     );
 
-    fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_pc (
+    fifo #(.WIDTH(32), .DEPTH(NUM_ENTRIES), .ADDR_LEN(5)) cbuf_pc (
         .clk_i(clk_i), .reset_i(reset_i), 
         .data_in_i(pc_i), .wr_i(allocate_req_i), .rd_i(ready), 
-        .data_out_o(pc_committed_o), 
+        .data_out_o(pc_committed), 
         .empty_o(), .full_o()
     );
 
-    fifo #(.WIDTH(32), .DEPTH(32), .ADDR_LEN(5)) cbuf_inst (
+    fifo #(.WIDTH(32), .DEPTH(NUM_ENTRIES), .ADDR_LEN(5)) cbuf_inst (
         .clk_i(clk_i), .reset_i(reset_i), 
         .data_in_i(inst_i), .wr_i(allocate_req_i), .rd_i(ready), 
-        .data_out_o(inst_committed_o), 
+        .data_out_o(inst_committed), 
         .empty_o(), .full_o()
     );
 

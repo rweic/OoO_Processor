@@ -92,6 +92,9 @@ module core (
     wire [31:0] wb_value_alu;
     wire [31:0] wb_value_lsu;
     wire [31:0] wb_value_mul;
+    wire [4:0] wb_rob_idx_alu;
+    wire [4:0] wb_rob_idx_lsu;
+    wire [4:0] wb_rob_idx_mul;
 
     // Commitment
     wire cdb_en;
@@ -136,12 +139,11 @@ module core (
         .lsu_o(lsu_request), 
         .mul_o(mul_request), 
         .br_o(br_request),
-        .rs1_addr(rs1_addr_decoded), 
-        .rs2_addr(rs2_addr_decoded), 
-        .rd_addr(rd_addr_decoded)
+        .rs1_addr_o(rs1_addr_decoded), 
+        .rs2_addr_o(rs2_addr_decoded), 
+        .rd_addr_o(rd_addr_decoded)
     );
 
-    // ----- Out-of-Order Control Blocks -----
     // Rename Block
     rename rename0 (
         .clk_i(clk_i), 
@@ -161,6 +163,7 @@ module core (
         .prs2_valid_o(prs2_valid)
     );
 
+    // ----- Out-of-Order Control Blocks -----
     // Reservation Station
     rs reservation_station (
         // Inputs
@@ -222,22 +225,22 @@ module core (
         // Allocate Value
         .prd_addr_i(prd_addr_decoded), 
         .pc_i(pc_fetch), 
-        .inst_i(alu_inst_issued),
+        .inst_i(inst_fetch),
         // Update Value (ALU)
-        .rob_idx_alu_i(), 
+        .rob_idx_alu_i(wb_rob_idx_alu), 
         .reg_value_alu_i(wb_value_alu),
         // Update Value (LSU)
-        .rob_idx_lsu_i(), 
+        .rob_idx_lsu_i(wb_rob_idx_lsu), 
         .reg_value_lsu_i(wb_value_lsu),
         // Update Value (MUL)
-        .rob_idx_mul_i(), 
+        .rob_idx_mul_i(wb_rob_idx_mul), 
         .reg_value_mul_i(wb_value_mul),
         
         // ROB Status
         .empty_o(), 
         .full_o(),
         // Allocated ROB Index
-        .rob_idx_o(),
+        .rob_idx_o(rob_idx_allocated),
         // Commitment
         .commitment_valid_o(cdb_en), 
         .inst_committed_o(), 
@@ -273,9 +276,11 @@ module core (
         .inst_i(alu_inst_issued), 
         .rs1_value_i(alu_prs1_value), 
         .rs2_value_i(alu_prs2_value),
+        .rob_idx_i(alu_rob_idx_issued),
         // Outputs
         .writeback_valid_o(wb_valid_alu), 
-        .writeback_value_o(wb_value_alu)
+        .writeback_value_o(wb_value_alu),
+        .rob_idx_o(wb_rob_idx_alu)
     );
 
     // Muliplexing Unit
@@ -288,9 +293,11 @@ module core (
         .inst_i(mul_inst_issued), 
         .rs1_value_i(mul_prs1_value), 
         .rs2_value_i(mul_prs2_value),
+        .rob_idx_i(mul_rob_idx_issued),
         // Outputs
         .writeback_valid_o(wb_valid_mul), 
-        .writeback_value_o(wb_value_mul)
+        .writeback_value_o(wb_value_mul),
+        .rob_idx_o(wb_rob_idx_mul)
     );
 
     // Load/Store Unit
@@ -303,10 +310,12 @@ module core (
         .inst_i(lsu_inst_issued), 
         .rs1_value_i(lsu_prs1_value), 
         .rs2_value_i(lsu_prs2_value),
+        .rob_idx_i(lsu_rob_idx_issued),
         // Outputs
         .busy_o(lsu_busy), 
         .writeback_valid_o(wb_valid_lsu), 
         .writeback_value_o(wb_value_lsu),
+        .rob_idx_o(wb_rob_idx_lsu),
 
         .dmem_csb_write_o(dmem_csb_write_o),
         .dmem_wmask_o(dmem_wmask_o),

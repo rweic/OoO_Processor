@@ -33,6 +33,8 @@ module alu #(parameter WIDTH=32) (funct7, funct3, alu_op1, alu_op2, alu_func, al
 								alu_out_temp = alu_op1 * alu_op2;
             `ALU_OP_DIV:
 								alu_out_temp = alu_op1 / alu_op2;
+						`ALU_OP_DIV:
+						    alu_out_temp = alu_op1 % alu_op2;
             default:
                 alu_out_temp = 'b0;
         endcase

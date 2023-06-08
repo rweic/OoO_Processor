@@ -3,7 +3,8 @@ module decoder (
     // Inputs
     inst_i,
     // Outputs
-    alu_o, lsu_o, mul_o, br_o
+    alu_o, lsu_o, mul_o, br_o,
+    rs1_addr_o, rs2_addr_o, rd_addr_o
     );
     // Inputs
     input [31:0] inst_i;
@@ -12,13 +13,21 @@ module decoder (
     output lsu_o;
     output mul_o;
     output br_o;
-    // Any other outputs that might needed
+    output reg [4:0] rs1_addr_o;
+    output reg [4:0] rs2_addr_o;
+    output [4:0] rd_addr_o;
 
     reg [3:0] resource;
 
     wire [6:0] opcode = inst_i[6:0];
     wire [6:0] funct7 = inst_i[31:25];
     wire [2:0] funct3 = inst_i[14:12];
+    wire [4:0] rs1_addr = inst_i[19:15];
+    wire [4:0] rs2_addr = inst_i[24:20];
+    wire [4:0] rd_addr = inst_i[11:7];
+
+    assign rd_addr_o = rd_addr;
+
 
 /*  All decoding fields that could probably be used later
     wire[4:0] rs1_addr = inst_i[19:15];
@@ -44,11 +53,15 @@ module decoder (
             // need to stop other from reading: rd
             `OP_OP_IMM: begin
                 resource = 'b1000;
+                rs1_addr_o = rs1_addr;
+                rs2_addr_o = 'b0;
             end
             // rs1 & rs2 -> rd
             // need to wait for: rs1, rs2
             // need to stop other from reading: rd
             `OP_OP: begin
+                rs1_addr_o = rs1_addr;
+                rs2_addr_o = rs2_addr;
                 if (funct7 == `FUNCT7_MULDIV) begin
                     if ((funct3 == 'b000) | (funct3 == 'b001) | (funct3 == 'b010))
                         resource = 'b0010;
@@ -62,11 +75,15 @@ module decoder (
             // imm_u -> rd
             // need to stop other from reading: rd
             `OP_LUI: begin 
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b1000;
             end
             // pc + imm_u -> rd
             // need to stop other from reading: rd
             `OP_AUIPC: begin 
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b1000;
             end
 
@@ -75,6 +92,8 @@ module decoder (
             // pc + 4 -> rd
             // need to stop other from reading: rd
             `OP_JAL: begin 
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b1001;
             end
             // jump to rs1 + imm_i
@@ -82,6 +101,8 @@ module decoder (
             // need to wait for: rs1
             // need to stop other from reading: rd
             `OP_JALR: begin 
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b1001;
             end
             // QUESTION: what would happen if there's no branch predictor? always assume taken?
@@ -89,9 +110,10 @@ module decoder (
             // if take: jump to pc + imm_b
             // need to wait for: rs1, rs2
             `OP_BRANCH: begin
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b0001;
             end
-
             // For load and store: resource used is lsu
             // funct3 needed to identify the length of that
             // Add an additional signal to indicate if it's read/write
@@ -100,15 +122,21 @@ module decoder (
             // need to wait for: rs1
             // need to stop other from reading: rd
             `OP_LOAD: begin
+                rs1_addr_o = rs1_addr;
+                rs2_addr_o = 'b0;
                 resource = 'b0100;
             end
             // rs2 -> mem[rs1+imm_s]
             // SW, SH, SB  - 32, 16, 8 bits
             // need to wait for: rs1, rs2
             `OP_STORE: begin 
+                rs1_addr_o = rs1_addr;
+                rs2_addr_o = rs2_addr;
                 resource = 'b0100;
             end
             default: begin 
+                rs1_addr_o = 'b0;
+                rs2_addr_o = 'b0;
                 resource = 'b0000;
             end
         endcase

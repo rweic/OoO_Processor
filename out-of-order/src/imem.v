@@ -59,14 +59,41 @@ module imem(
 
   // FOR TEST ONLY, COMMENT OUT LATER
   initial begin
-    for (integer i=0; i < RAM_DEPTH; i = i + 1 ) begin
+    for (integer i = 0; i < RAM_DEPTH; i = i + 1) begin
       mem[i] = 'h00000000;
     end
-    mem[0] = 'h003100b3; // add x1, x2, x3
-    mem[1] = 'h40730233; // sub x4, x6, x7
-    mem[2] = 'h029301b3; // mul x3, x6, x9
-    mem[3] = 'h003103b3; // add x7, x2, x3
-    mem[4] = 'h00610433; // sll x8, x2, x6
+    mem[0] = 'h5a000093; 
+    mem[1] = 'h22600113; 
+    mem[2] = 'h0220e2b3; 
+    mem[3] = 'h00010093; 
+    mem[4] = 'h00028113; 
+    mem[5] = 'h0220e2b3;
+    mem[6] = 'h00010093;
+    mem[7] = 'h00028113;
+    mem[8] = 'h0220e2b3;
+    mem[9] = 'h00010093;
+    mem[10] = 'h00028113;
+    mem[11] = 'h0220e2b3;
+    mem[12] = 'h00010093;
+    mem[13] = 'h00028113;
+    mem[14] = 'h0220e2b3;
+    mem[15] = 'h00010093;
+    mem[16] = 'h00028113;
+    mem[17] = 'h0220e2b3;
+    mem[18] = 'h00010093;
+    mem[19] = 'h00028113;
+    mem[20] = 'h0220e2b3;
+    mem[21] = 'h00010093;
+    mem[22] = 'h00028113;
+    mem[23] = 'h0220e2b3;
+    mem[24] = 'h00010093;
+    mem[25] = 'h00028113;
+    mem[26] = 'h0220e2b3;
+    mem[27] = 'h00010093;
+    mem[28] = 'h00028113;
+    mem[29] = 'h0220e2b3;
+    mem[30] = 'h00010093;
+    mem[31] = 'h00028113;
   end
 
   // Memory Write Block Port 0

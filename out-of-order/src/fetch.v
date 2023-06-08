@@ -30,6 +30,7 @@ module fetch (
     wire [31:0] imem_dout;
     // Program Counter
     reg [31:0] pc;
+    reg [31:0] pc_reg; 
     reg [31:0] inst_valid;
 
     assign imem_addr_o = pc[9:2];
@@ -48,15 +49,17 @@ module fetch (
     always @(posedge clk_i) begin
         if (reset_i) begin
             pc_o <= 'b0;
+            pc_reg <= 'b0;
             inst_o <= 'b0;
             inst_valid <= 'b0;
             inst_valid_o <= 'b0;
         end
         else begin
-            pc_o <= pc;
+            pc_o <= pc_reg;
+            pc_reg <= pc;
             inst_o <= imem_dout;
             inst_valid <= 1'b1;
-            inst_valid_o <= inst_valid & (imem_inst_i != 0);
+            inst_valid_o <= inst_valid & (|imem_inst_i != 0);
         end
     end
 
