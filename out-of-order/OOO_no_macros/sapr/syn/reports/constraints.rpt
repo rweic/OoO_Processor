@@ -1,4 +1,3 @@
-Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : constraint
@@ -6,16 +5,2034 @@ Report : constraint
         -verbose
 Design : core
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 18:07:18 2023
+Date   : Tue Jun  6 19:43:09 2023
 ****************************************
+
+
+  Startpoint: lsu0/lsu_fifo/rd_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/rd_ptr_reg[1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/rd_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/rd_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  ...
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/rd_ptr_reg[1]/next_state (**SEQGEN**)     0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/rd_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/rd_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/rd_ptr_reg[0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/rd_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/rd_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 f
+  ...
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/rd_ptr_reg[0]/next_state (**SEQGEN**)     0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/rd_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/fifo_cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/fifo_cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/fifo_cnt_reg[1]/clocked_on (**SEQGEN**)
+                                                          0.00 #     0.00 r
+  lsu0/lsu_fifo/fifo_cnt_reg[1]/Q (**SEQGEN**)            0.00       0.00 r
+  ...
+  lsu0/lsu_fifo/C184/Z_1 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/fifo_cnt_reg[1]/next_state (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/fifo_cnt_reg[1]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  ...
+  lsu0/lsu_fifo/C185/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/next_state (**SEQGEN**)     0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/fifo_cnt_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/fifo_cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/fifo_cnt_reg[0]/clocked_on (**SEQGEN**)
+                                                          0.00 #     0.00 r
+  lsu0/lsu_fifo/fifo_cnt_reg[0]/Q (**SEQGEN**)            0.00       0.00 f
+  ...
+  lsu0/lsu_fifo/C184/Z_0 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/fifo_cnt_reg[0]/next_state (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/fifo_cnt_reg[0]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 f
+  ...
+  lsu0/lsu_fifo/C185/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/next_state (**SEQGEN**)     0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][11]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][11]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][11]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][10]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][10]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][10]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][9]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][9]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][9]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][8]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][8]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][8]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][7]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][7]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][7]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][6]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][6]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][6]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][5]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][5]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][5]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][4]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][4]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][4]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][3]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][3]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][3]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][2]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][2]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][2]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][1]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[2][0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[2][0]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[2][0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][11]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][11]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][11]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][10]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][10]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][10]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][9]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][9]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][9]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][8]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][8]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][8]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][7]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][7]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][7]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][6]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][6]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][6]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][5]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][5]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][5]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][4]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][4]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][4]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][3]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][3]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][3]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][2]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][2]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][2]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][1]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[3][0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[3][0]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[3][0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][11]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][11]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][11]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][10]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][10]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][10]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][9]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][9]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][9]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][8]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][8]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][8]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][7]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][7]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][7]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][6]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][6]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][6]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][5]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][5]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][5]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][4]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][4]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][4]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][3]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][3]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][3]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][2]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][2]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][2]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][1]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[1][0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/mem_reg[1][0]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[1][0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][11]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][11]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][11]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][10]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][10]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][10]/clocked_on (**SEQGEN**)
+                                                          0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][9]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][9]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][9]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][8]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][8]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][8]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][7]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][7]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][7]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][6]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][6]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][6]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][5]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][5]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][5]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][4]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][4]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][4]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][3]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][3]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][3]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][2]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][2]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][2]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][1]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][1]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][1]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+  Startpoint: lsu0/lsu_fifo/wr_ptr_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: lsu0/lsu_fifo/mem_reg[0][0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
+  lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
+  lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
+  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/mem_reg[0][0]/synch_enable (**SEQGEN**)
+                                                          0.00       0.01 r
+  data arrival time                                                  0.01
+
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock reconvergence pessimism                           0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  lsu0/lsu_fifo/mem_reg[0][0]/clocked_on (**SEQGEN**)     0.00       0.01 r
+  library hold time                                       0.00       0.01
+  data required time                                                 0.01
+  --------------------------------------------------------------------------
+  data required time                                                 0.01
+  data arrival time                                                 -0.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
 
 
     Design: core
 
     max_leakage_power          0.00
-  - Current Leakage Power  44420.20
+  - Current Leakage Power  260794.53
   ----------------------------------
-    Slack                  -44420.20  (VIOLATED)
+    Slack                  -260794.53  (VIOLATED)
 
 
 1

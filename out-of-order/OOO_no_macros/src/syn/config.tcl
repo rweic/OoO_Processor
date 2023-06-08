@@ -14,6 +14,7 @@ set BASE "$PROJECT_DIR/src/verilog"
 set RTL_SOURCE_FILES [list \
    "$BASE/PARAM.vh" \
    "$BASE/alu.v" \
+	 "$BASE/fifo.v" \
    "$BASE/arith.v" \
    "$BASE/decoder.v" \
    "$BASE/rename.v" \
@@ -21,7 +22,7 @@ set RTL_SOURCE_FILES [list \
    "$BASE/fetch.v" \
    "$BASE/lsu.v" \
    "$BASE/mul.v" \
-   "$BASE/priority_select.v" \
+   "$BASE/priority_management.v" \
    "$BASE/regfile.v" \
    "$BASE/rob.v" \
    "$BASE/rs.v" \

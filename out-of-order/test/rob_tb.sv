@@ -12,11 +12,11 @@ module rob_tb();
     reg [31:0] pc_i;
     reg [31:0] inst_i;
     // Values (update)
-    reg [31:0] rob_idx_alu_i;
+    reg [4:0] rob_idx_alu_i;
     reg [31:0] reg_value_alu_i;
-    reg [31:0] rob_idx_lsu_i;
+    reg [4:0] rob_idx_lsu_i;
     reg [31:0] reg_value_lsu_i;
-    reg [31:0] rob_idx_mul_i;
+    reg [4:0] rob_idx_mul_i;
     reg [31:0] reg_value_mul_i;
 
     // wires
@@ -40,7 +40,13 @@ module rob_tb();
     end
 
     initial begin
-	    $dumpfile("uut.vcd");
+       `ifndef PRE_SYN
+    	    $sdf_annotate("rob.syn.sdf", cpu0);
+    	`endif
+        //$vcdpluson;
+        $fsdbDumpfile("rob.fsdb");
+        $fsdbDumpvars(0, rob_tb);
+        $dumpfile("rob.vcd");
 	    $dumpvars();
         reset_i = 1'b1; 
         allocate_req_i = 1'b0; update_req_alu_i = 1'b0; update_req_lsu_i = 1'b0; update_req_mul_i = 1'b0; 

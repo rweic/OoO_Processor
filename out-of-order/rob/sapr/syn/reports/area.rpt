@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : area
+Design : rob
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 15:06:30 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
+
+Number of ports:                          451
+Number of nets:                         17554
+Number of cells:                        14941
+Number of combinational cells:          11526
+Number of sequential cells:              3411
+Number of macros/black boxes:               0
+Number of buf/inv:                        883
+Number of references:                      31
+
+Combinational area:              13921.110313
+Buf/Inv area:                      631.749990
+Noncombinational area:           15424.541440
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 29345.651753
+Total area:                 undefined
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------------------------
+rob                               29345.6518    100.0   8382.1922   5304.3058  0.0000  rob
+cbuf_inst                          7198.4919     24.5   2522.7441   4675.7478  0.0000  fifo_WIDTH32_DEPTH32_ADDR_LEN5_0
+cbuf_pc                            7198.4919     24.5   2522.7441   4675.7478  0.0000  fifo_WIDTH32_DEPTH32_ADDR_LEN5_1
+cbuf_prd                           1262.1700      4.3    493.4300    768.7400  0.0000  fifo_WIDTH5_DEPTH32_ADDR_LEN5
+--------------------------------  ----------  -------  ----------  ----------  ------  --------------------------------
+Total                                                  13921.1103  15424.5414  0.0000
+
+1
