@@ -15,6 +15,7 @@
 `define ALU_OP_SRL  4'b1010     // Shift right
 `define ALU_OP_MUL  4'b1011
 `define ALU_OP_DIV  4'b1100
+`define ALU_OP_REM  4'b1101
 
 // Opcode
 `define OP_OP_IMM   7'b0010011

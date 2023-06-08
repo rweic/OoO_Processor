@@ -209,10 +209,10 @@ module decode #(parameter WIDTH = 32, parameter INST_LEN = 32, parameter ADDR_LE
                                     `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                                 end
                                 `FUNCT3_REM: begin
-                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                    `SET_CTRL(`ALU_OP_REM, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                                 end
                                 `FUNCT3_REMU: begin
-                                    `SET_CTRL(`ALU_OP_DIV, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
+                                    `SET_CTRL(`ALU_OP_REM, `OPSEL_RS1, `OPSEL_RS2, `WB_ALU, rs1, rs2, rd, 1'b1, 1'b0, 0)
                                 end
                             endcase
                         default: begin
