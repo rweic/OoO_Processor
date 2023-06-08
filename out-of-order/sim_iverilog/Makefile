@@ -1,9 +1,9 @@
-MODULE = core
+MODULE = toplevel
 
 DSRC = ../src
 DTST = ../test
 
-SRC = $(DSRC)/*.v
+SRC = $(DSRC)/*.v #$(DSRC)/$(MODULE).v $(DSRC)/priority_management.v
 HDR = $(DSRC)/PARAM.vh
 TB = $(DTST)/$(MODULE)_tb.sv
 
