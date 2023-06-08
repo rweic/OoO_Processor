@@ -1,4 +1,4 @@
-TOPLEVEL=fsm
+TOPLEVEL=fetch
 
 dve: 
 	-dve -full64 &

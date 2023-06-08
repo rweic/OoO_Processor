@@ -1,2 +1,2 @@
-fsm.sv
-tb.sv
+verilog/fetch.v
+test/fetch_tb.sv

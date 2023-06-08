@@ -31,14 +31,14 @@ set_fix_hold [get_clocks]
 set_max_fanout $max_fanout $current_design
 set_max_transition $max_trans $current_design
 
-set_dont_touch regfile0/register
-set_dont_touch reorder_buf/reg_value
-set_dont_touch reorder_buf/cbuf_prd/mem
-set_dont_touch reorder_buf/cbuf_pc/mem
-set_dont_touch reorder_buf/cbuf_inst/mem
-set_dont_touch rename0/rat
-set_dont_touch lsu0/lsu_fifo
-set_dont_touch rename0/freelist0/valid_registers
+#set_dont_touch regfile0/register
+#set_dont_touch reorder_buf/reg_value
+#set_dont_touch reorder_buf/cbuf_prd/mem
+#set_dont_touch reorder_buf/cbuf_pc/mem
+#set_dont_touch reorder_buf/cbuf_inst/mem
+#set_dont_touch rename0/rat
+#set_dont_touch lsu0/lsu_fifo
+#set_dont_touch rename0/freelist0/valid_registers
 
 
 ##############################################################################
