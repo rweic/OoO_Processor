@@ -1,0 +1,109 @@
+ 
+****************************************
+Report : qor
+Design : rob
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 15:06:31 2023
+****************************************
+
+
+  Timing Path Group 'Inputs'
+  -----------------------------------
+  Levels of Logic:              13.00
+  Critical Path Length:          4.64
+  Critical Path Slack:           5.04
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'Outputs'
+  -----------------------------------
+  Levels of Logic:               3.00
+  Critical Path Length:          1.28
+  Critical Path Slack:           8.57
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'Regs_to_Regs'
+  -----------------------------------
+  Levels of Logic:              12.00
+  Critical Path Length:          3.04
+  Critical Path Slack:           6.77
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          3
+  Hierarchical Port Count:        156
+  Leaf Cell Count:              14937
+  Buf/Inv Cell Count:             883
+  Buf Cell Count:                 571
+  Inv Cell Count:                 312
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     11526
+  Sequential Cell Count:         3411
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    13921.110313
+  Noncombinational Area: 15424.541440
+  Buf/Inv Area:            631.749990
+  Total Buffer Area:           462.31
+  Total Inverter Area:         169.44
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             29345.651753
+  Design Area:           29345.651753
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         17404
+  Nets With Violations:             1
+  Max Trans Violations:             1
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: linux-lab-045.ece.uw.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  1.01
+  Mapping Optimization:                5.97
+  -----------------------------------------
+  Overall Compile Time:               15.77
+  Overall Compile Wall Clock Time:     9.12
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

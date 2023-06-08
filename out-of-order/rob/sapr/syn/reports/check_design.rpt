@@ -1,0 +1,20 @@
+ 
+****************************************
+check_design summary:
+Version:     T-2022.03-SP3
+Date:        Thu Jun  8 15:06:31 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
+--------------------------------------------------------------------------------
+
+Warning: In design 'fifo_WIDTH5_DEPTH32_ADDR_LEN5', port 'empty_o' is not connected to any nets. (LINT-28)
+Warning: In design 'fifo_WIDTH5_DEPTH32_ADDR_LEN5', port 'full_o' is not connected to any nets. (LINT-28)
+Warning: In design 'fifo_WIDTH32_DEPTH32_ADDR_LEN5_1', port 'empty_o' is not connected to any nets. (LINT-28)
+Warning: In design 'fifo_WIDTH32_DEPTH32_ADDR_LEN5_1', port 'full_o' is not connected to any nets. (LINT-28)
+Warning: In design 'fifo_WIDTH32_DEPTH32_ADDR_LEN5_0', port 'empty_o' is not connected to any nets. (LINT-28)
+Warning: In design 'fifo_WIDTH32_DEPTH32_ADDR_LEN5_0', port 'full_o' is not connected to any nets. (LINT-28)
+1

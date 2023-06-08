@@ -1,0 +1,42 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : rob
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 15:06:30 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+rob                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+rob                                     148.156 1.67e+03 3.65e+05 2.19e+03 100.0
+  cbuf_inst (fifo_WIDTH32_DEPTH32_ADDR_LEN5_0)   25.950  502.302 8.77e+04  615.911  28.2
+  cbuf_pc (fifo_WIDTH32_DEPTH32_ADDR_LEN5_1)   25.865  502.067 8.77e+04  615.602  28.1
+  cbuf_prd (fifo_WIDTH5_DEPTH32_ADDR_LEN5)    7.915   88.075 1.59e+04  111.858   5.1
+1

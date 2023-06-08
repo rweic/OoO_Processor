@@ -1,0 +1,7 @@
+verdiSetActWin -dock widgetDock_<Decl._Tree>
+wvCreateWindow
+wvOpenFile -win $_nWave2 \
+           {/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/rob/sim/presyn/rob.fsdb}
+verdiWindowResize -win $_Verdi_1 "500" "150" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+debExit

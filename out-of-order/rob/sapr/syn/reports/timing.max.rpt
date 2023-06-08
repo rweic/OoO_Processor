@@ -1,0 +1,224 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'rob' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+        -nets
+        -max_paths 200
+        -capacitance
+Design : rob
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 15:06:30 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+reg_value_reg[24][14]/D (DFF_X1)     4.74 f           9.78         5.04
+reg_value_reg[22][14]/D (DFF_X1)     4.74 f           9.78         5.04
+reg_value_reg[2][14]/D (DFF_X1)     4.74 f            9.78         5.04
+reg_value_reg[25][14]/D (DFF_X1)     4.74 f           9.78         5.04
+reg_value_reg[9][14]/D (DFF_X1)     4.74 f            9.78         5.04
+reg_value_reg[0][14]/D (DFF_X1)     4.74 f            9.78         5.04
+reg_value_reg[5][14]/D (DFF_X1)     4.74 f            9.78         5.04
+reg_value_reg[4][14]/D (DFF_X1)     4.74 f            9.78         5.04
+reg_value_reg[13][18]/D (DFF_X1)     4.74 f           9.78         5.04
+reg_value_reg[7][14]/D (DFF_X1)     4.73 f            9.78         5.04
+reg_value_reg[8][18]/D (DFF_X1)     4.73 f            9.78         5.05
+reg_value_reg[2][18]/D (DFF_X1)     4.73 f            9.78         5.05
+reg_value_reg[5][18]/D (DFF_X1)     4.73 f            9.78         5.05
+reg_value_reg[9][18]/D (DFF_X1)     4.73 f            9.78         5.05
+reg_value_reg[14][18]/D (DFF_X1)     4.73 f           9.78         5.05
+reg_value_reg[12][18]/D (DFF_X1)     4.73 f           9.78         5.05
+reg_value_reg[6][18]/D (DFF_X1)     4.73 f            9.78         5.05
+reg_value_reg[10][18]/D (DFF_X1)     4.73 f           9.78         5.06
+reg_value_reg[14][2]/D (DFF_X1)     4.52 f            9.78         5.26
+reg_value_reg[13][2]/D (DFF_X1)     4.52 f            9.78         5.26
+reg_value_reg[17][2]/D (DFF_X1)     4.52 f            9.78         5.26
+reg_value_reg[10][2]/D (DFF_X1)     4.52 f            9.78         5.26
+reg_value_reg[8][2]/D (DFF_X1)      4.51 f            9.78         5.27
+reg_value_reg[16][2]/D (DFF_X1)     4.51 f            9.78         5.27
+reg_value_reg[3][2]/D (DFF_X1)      4.51 f            9.78         5.27
+reg_value_reg[4][2]/D (DFF_X1)      4.51 f            9.78         5.27
+reg_value_reg[1][18]/D (DFF_X1)     4.42 f            9.79         5.37
+reg_value_reg[18][14]/D (DFF_X1)     4.42 f           9.80         5.38
+reg_value_reg[20][14]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[19][14]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[13][14]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[22][18]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[21][14]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[17][14]/D (DFF_X1)     4.40 f           9.78         5.38
+reg_value_reg[20][18]/D (DFF_X1)     4.39 f           9.78         5.39
+reg_value_reg[25][18]/D (DFF_X1)     4.39 f           9.78         5.39
+reg_value_reg[3][18]/D (DFF_X1)     4.40 f            9.78         5.39
+reg_value_reg[21][18]/D (DFF_X1)     4.39 f           9.78         5.39
+reg_value_reg[27][18]/D (DFF_X1)     4.39 f           9.78         5.39
+reg_value_reg[16][18]/D (DFF_X1)     4.39 f           9.78         5.39
+reg_value_reg[0][18]/D (DFF_X1)     4.39 f            9.78         5.39
+reg_value_reg[13][13]/D (DFF_X1)     4.37 f           9.78         5.40
+reg_value_reg[26][13]/D (DFF_X1)     4.38 f           9.78         5.40
+reg_value_reg[24][13]/D (DFF_X1)     4.38 f           9.78         5.40
+reg_value_reg[2][13]/D (DFF_X1)     4.38 f            9.78         5.40
+reg_value_reg[1][13]/D (DFF_X1)     4.37 f            9.78         5.41
+reg_value_reg[0][13]/D (DFF_X1)     4.37 f            9.78         5.41
+reg_value_reg[23][13]/D (DFF_X1)     4.37 f           9.78         5.41
+reg_value_reg[19][13]/D (DFF_X1)     4.37 f           9.78         5.42
+reg_value_reg[12][13]/D (DFF_X1)     4.37 f           9.78         5.42
+reg_value_reg[29][13]/D (DFF_X1)     4.37 f           9.78         5.42
+reg_value_reg[16][13]/D (DFF_X1)     4.36 f           9.78         5.42
+reg_value_reg[20][20]/D (DFF_X1)     4.34 f           9.78         5.44
+reg_value_reg[3][20]/D (DFF_X1)     4.34 f            9.78         5.44
+reg_value_reg[2][20]/D (DFF_X1)     4.34 f            9.78         5.44
+reg_value_reg[13][19]/D (DFF_X1)     4.34 f           9.78         5.44
+reg_value_reg[20][16]/D (DFF_X1)     4.34 f           9.78         5.44
+reg_value_reg[8][20]/D (DFF_X1)     4.33 f            9.78         5.44
+reg_value_reg[24][15]/D (DFF_X1)     4.33 f           9.78         5.44
+reg_value_reg[24][19]/D (DFF_X1)     4.34 f           9.78         5.44
+reg_value_reg[2][16]/D (DFF_X1)     4.34 f            9.78         5.44
+reg_value_reg[22][15]/D (DFF_X1)     4.33 f           9.78         5.44
+reg_value_reg[20][15]/D (DFF_X1)     4.33 f           9.78         5.44
+reg_value_reg[25][15]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[2][9]/D (DFF_X1)      4.34 f            9.78         5.45
+reg_value_reg[24][9]/D (DFF_X1)     4.34 f            9.78         5.45
+reg_value_reg[22][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[6][20]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[1][20]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[2][19]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[14][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[27][15]/D (DFF_X1)     4.34 f           9.78         5.45
+reg_value_reg[25][9]/D (DFF_X1)     4.34 f            9.78         5.45
+reg_value_reg[12][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[27][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[7][9]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[19][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[11][19]/D (DFF_X1)     4.34 f           9.78         5.45
+reg_value_reg[28][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[7][20]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[18][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[6][9]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[6][15]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[8][12]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[24][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[17][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[24][20]/D (DFF_X1)     4.34 f           9.78         5.45
+reg_value_reg[14][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[13][16]/D (DFF_X1)     4.34 f           9.78         5.45
+reg_value_reg[8][16]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[31][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[7][19]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[13][12]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[3][12]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[5][3]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[15][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[9][3]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[4][3]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[31][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[0][16]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[15][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[9][16]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[31][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[31][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[12][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[4][20]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[11][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[5][19]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[10][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[20][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[6][3]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[11][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[27][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[28][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[0][9]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[19][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[30][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[24][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[7][16]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[3][9]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[10][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[25][12]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[12][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[28][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[23][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[25][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[28][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[23][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[21][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[30][15]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[18][15]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[4][9]/D (DFF_X1)      4.33 f            9.78         5.45
+reg_value_reg[21][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[10][3]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[30][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[21][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[17][16]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[4][16]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[22][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[18][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[6][19]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[23][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[21][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[24][12]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[26][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[9][19]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[29][9]/D (DFF_X1)     4.33 f            9.78         5.45
+reg_value_reg[16][20]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[27][16]/D (DFF_X1)     4.32 f           9.78         5.45
+reg_value_reg[19][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[17][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[19][16]/D (DFF_X1)     4.32 f           9.78         5.45
+reg_value_reg[30][19]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[13][15]/D (DFF_X1)     4.33 f           9.78         5.45
+reg_value_reg[10][20]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[20][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[1][19]/D (DFF_X1)     4.33 f            9.78         5.46
+reg_value_reg[5][20]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[26][16]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[25][16]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[28][12]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[7][12]/D (DFF_X1)     4.33 f            9.78         5.46
+reg_value_reg[16][16]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[18][12]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[0][11]/D (DFF_X1)     4.33 f            9.78         5.46
+reg_value_reg[29][20]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[0][19]/D (DFF_X1)     4.33 f            9.78         5.46
+reg_value_reg[9][12]/D (DFF_X1)     4.33 f            9.78         5.46
+reg_value_reg[10][12]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[30][20]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[15][20]/D (DFF_X1)     4.33 f           9.78         5.46
+reg_value_reg[24][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[14][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[29][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[13][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[1][27]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[23][16]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[10][16]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[6][16]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[18][16]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[6][12]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[10][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[28][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[27][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[9][27]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[7][27]/D (DFF_X1)     4.32 f            9.78         5.46
+reg_value_reg[12][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[31][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[19][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[10][11]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[16][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[11][11]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[15][27]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[15][15]/D (DFF_X1)     4.32 f           9.78         5.46
+reg_value_reg[20][11]/D (DFF_X1)     4.31 f           9.78         5.47
+reg_value_reg[14][11]/D (DFF_X1)     4.31 f           9.78         5.47
+reg_value_reg[28][11]/D (DFF_X1)     4.31 f           9.78         5.47
+reg_value_reg[15][17]/D (DFF_X1)     4.32 f           9.78         5.47
+reg_value_reg[0][17]/D (DFF_X1)     4.32 f            9.78         5.47
+reg_value_reg[29][11]/D (DFF_X1)     4.31 f           9.78         5.47
+
+1
