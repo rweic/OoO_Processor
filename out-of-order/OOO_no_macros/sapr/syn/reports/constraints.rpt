@@ -5,7 +5,7 @@ Report : constraint
         -verbose
 Design : core
 Version: T-2022.03-SP3
-Date   : Tue Jun  6 19:43:09 2023
+Date   : Thu Jun  8 15:48:00 2023
 ****************************************
 
 
@@ -27,7 +27,7 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/rd_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/rd_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
   ...
-  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C185/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/rd_ptr_reg[1]/next_state (**SEQGEN**)     0.00       0.01 r
   data arrival time                                                  0.01
 
@@ -63,7 +63,7 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/rd_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/rd_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 f
   ...
-  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C185/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/rd_ptr_reg[0]/next_state (**SEQGEN**)     0.00       0.01 r
   data arrival time                                                  0.01
 
@@ -100,7 +100,7 @@ Date   : Tue Jun  6 19:43:09 2023
                                                           0.00 #     0.00 r
   lsu0/lsu_fifo/fifo_cnt_reg[1]/Q (**SEQGEN**)            0.00       0.00 r
   ...
-  lsu0/lsu_fifo/C184/Z_1 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C183/Z_1 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/fifo_cnt_reg[1]/next_state (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -138,7 +138,7 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
   ...
-  lsu0/lsu_fifo/C185/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C184/Z_1 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/next_state (**SEQGEN**)     0.00       0.01 r
   data arrival time                                                  0.01
 
@@ -175,7 +175,7 @@ Date   : Tue Jun  6 19:43:09 2023
                                                           0.00 #     0.00 r
   lsu0/lsu_fifo/fifo_cnt_reg[0]/Q (**SEQGEN**)            0.00       0.00 f
   ...
-  lsu0/lsu_fifo/C184/Z_0 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C183/Z_0 (*SELECT_OP_3.2_3.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/fifo_cnt_reg[0]/next_state (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -213,7 +213,7 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 f
   ...
-  lsu0/lsu_fifo/C185/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
+  lsu0/lsu_fifo/C184/Z_0 (*SELECT_OP_2.2_2.1_2)           0.00       0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/next_state (**SEQGEN**)     0.00       0.01 r
   data arrival time                                                  0.01
 
@@ -248,8 +248,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][11]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -286,8 +286,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][10]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -324,8 +324,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][9]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -361,8 +361,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][8]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -398,8 +398,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][7]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -435,8 +435,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][6]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -472,8 +472,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][5]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -509,8 +509,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][4]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -546,8 +546,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][3]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -583,8 +583,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][2]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -620,8 +620,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][1]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -657,8 +657,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_1 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[2][0]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -694,8 +694,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][11]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -732,8 +732,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][10]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -770,8 +770,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][9]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -807,8 +807,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][8]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -844,8 +844,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][7]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -881,8 +881,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][6]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -918,8 +918,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][5]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -955,8 +955,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][4]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -992,8 +992,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][3]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1029,8 +1029,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][2]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1066,8 +1066,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][1]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1103,8 +1103,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C179/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C178/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_0 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[3][0]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1140,8 +1140,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][11]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1178,8 +1178,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][10]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1216,8 +1216,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][9]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1253,8 +1253,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][8]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1290,8 +1290,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][7]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1327,8 +1327,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][6]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1364,8 +1364,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][5]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1401,8 +1401,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][4]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1438,8 +1438,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][3]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1475,8 +1475,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][2]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1512,8 +1512,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][1]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1549,8 +1549,8 @@ Date   : Tue Jun  6 19:43:09 2023
   clock network delay (ideal)                             0.00       0.00
   lsu0/lsu_fifo/wr_ptr_reg[0]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[0]/Q (**SEQGEN**)              0.00       0.00 r
-  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
+  lsu0/lsu_fifo/C180/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_2 (*SELECT_OP_3.4_3.1_4)           0.00       0.00 r
   lsu0/lsu_fifo/mem_reg[1][0]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1587,8 +1587,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][11]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1626,8 +1626,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][10]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1665,8 +1665,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][9]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1703,8 +1703,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][8]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1741,8 +1741,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][7]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1779,8 +1779,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][6]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1817,8 +1817,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][5]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1855,8 +1855,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][4]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1893,8 +1893,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][3]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1931,8 +1931,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][2]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -1969,8 +1969,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][1]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -2007,8 +2007,8 @@ Date   : Tue Jun  6 19:43:09 2023
   lsu0/lsu_fifo/wr_ptr_reg[1]/clocked_on (**SEQGEN**)     0.00 #     0.00 r
   lsu0/lsu_fifo/wr_ptr_reg[1]/Q (**SEQGEN**)              0.00       0.00 f
   lsu0/lsu_fifo/I_4/Z (GTECH_NOT)                         0.00       0.00 r
-  lsu0/lsu_fifo/C182/Z (GTECH_AND2)                       0.00       0.00 r
-  lsu0/lsu_fifo/C187/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
+  lsu0/lsu_fifo/C181/Z (GTECH_AND2)                       0.00       0.00 r
+  lsu0/lsu_fifo/C186/Z_3 (*SELECT_OP_3.4_3.1_4)           0.00       0.01 r
   lsu0/lsu_fifo/mem_reg[0][0]/synch_enable (**SEQGEN**)
                                                           0.00       0.01 r
   data arrival time                                                  0.01
@@ -2030,9 +2030,9 @@ Date   : Tue Jun  6 19:43:09 2023
     Design: core
 
     max_leakage_power          0.00
-  - Current Leakage Power  260794.53
+  - Current Leakage Power  750505.44
   ----------------------------------
-    Slack                  -260794.53  (VIOLATED)
+    Slack                  -750505.44  (VIOLATED)
 
 
 1

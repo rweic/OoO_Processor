@@ -5,13 +5,13 @@ Report : power
         -verbose
 Design : core
 Version: T-2022.03-SP3
-Date   : Tue Jun  6 19:43:09 2023
+Date   : Thu Jun  8 15:48:01 2023
 ****************************************
 
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/OOO_no_macros/freepdk-45nm/stdcells-wc.db)
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
     gtech (File: /home/lab.apps/vlsiapps_new/syn/current/libraries/syn/gtech.db)
 
 
@@ -37,12 +37,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.3947 mW   (96%)
-  Net Switching Power  =  63.6564 uW    (4%)
+  Cell Internal Power  =   2.7018 mW   (97%)
+  Net Switching Power  =  94.0692 uW    (3%)
                          ---------
-Total Dynamic Power    =   1.4584 mW  (100%)
+Total Dynamic Power    =   2.7958 mW  (100%)
 
-Cell Leakage Power     = 230.6669 uW
+Cell Leakage Power     = 657.5725 uW
 
                  Internal         Switching           Leakage            Total                         Cell
 Power Group      Power            Power               Power              Power   (   %    )  Attrs  Count
@@ -50,10 +50,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-clock_network  1.3933e+03            0.0000            0.0000        1.3933e+03  (  82.49%)            0 i
-register       -1.5068e+01            7.9591        1.4371e+05          136.5980 (   8.09%)            2790
+clock_network  2.6924e+03            0.0000            0.0000        2.6924e+03  (  77.96%)            0 i
+register       -1.3449e+01            7.0532        2.7733e+05          270.9377 (   7.85%)            5336
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-combinational     16.5095           55.6965        8.6961e+04          159.1681  (   9.42%)            6105
+combinational     22.7885           87.0159        3.8024e+05          490.0485  (  14.19%)            26549
 ---------------------------------------------------------------------------------------------------------
-Total          1.3947e+03 uW        63.6556 uW     2.3067e+05 nW     1.6890e+03 uW
+Total          2.7018e+03 uW        94.0691 uW     6.5757e+05 nW     3.4534e+03 uW
 1

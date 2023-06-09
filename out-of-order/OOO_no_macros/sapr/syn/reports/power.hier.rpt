@@ -5,13 +5,13 @@ Report : power
         -analysis_effort low
 Design : core
 Version: T-2022.03-SP3
-Date   : Tue Jun  6 19:43:09 2023
+Date   : Thu Jun  8 15:48:01 2023
 ****************************************
 
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/OOO_no_macros/freepdk-45nm/stdcells-wc.db)
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
     gtech (File: /home/lab.apps/vlsiapps_new/syn/current/libraries/syn/gtech.db)
 
 
@@ -36,43 +36,47 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-core                                     63.656 1.39e+03 2.31e+05 1.69e+03 100.0
-  lsu0 (lsu)                              0.230    0.500  465.869    1.197   0.1
-    lsu_fifo (fifo_WIDTH12_DEPTH4_ADDR_LEN2)    0.170    0.000    0.000    0.170   0.0
-      C189 (*MUX_OP_4_2_12)               0.000    0.000    0.000    0.000   0.0
-      C188 (*SELECT_OP_2.12_2.1_12)    2.25e-05    0.000    0.000 2.25e-05   0.0
-      C187 (*SELECT_OP_3.4_3.1_4)         0.103    0.000    0.000    0.103   0.0
-      C186 (*SELECT_OP_2.2_2.1_2)      2.68e-03    0.000    0.000 2.68e-03   0.0
-      C185 (*SELECT_OP_2.2_2.1_2)      2.66e-03    0.000    0.000 2.66e-03   0.0
-      C184 (*SELECT_OP_3.2_3.1_2)      3.24e-05    0.000    0.000 3.24e-05   0.0
-      C183 (*SELECT_OP_4.1_4.1_1)      3.17e-03    0.000    0.000 3.17e-03   0.0
+core                                     94.069 2.70e+03 6.58e+05 3.45e+03 100.0
+  lsu0 (lsu)                              0.833    3.279 2.95e+03    7.063   0.2
+    lsu_fifo (fifo_WIDTH12_DEPTH4_ADDR_LEN2)    0.293    0.000    0.000    0.293   0.0
+      C188 (*MUX_OP_4_2_12)               0.126    0.000    0.000    0.126   0.0
+      C187 (*SELECT_OP_2.12_2.1_12)    2.25e-05    0.000    0.000 2.25e-05   0.0
+      C186 (*SELECT_OP_3.4_3.1_4)         0.101    0.000    0.000    0.101   0.0
+      C185 (*SELECT_OP_2.2_2.1_2)      2.77e-03    0.000    0.000 2.77e-03   0.0
+      C184 (*SELECT_OP_2.2_2.1_2)      2.71e-03    0.000    0.000 2.71e-03   0.0
+      C183 (*SELECT_OP_3.2_3.1_2)      2.73e-05    0.000    0.000 2.73e-05   0.0
+      C182 (*SELECT_OP_4.1_4.1_1)      3.11e-03    0.000    0.000 3.11e-03   0.0
+      sub_43 (*SUB_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
       add_41 (*ADD_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
-      sub_39 (*SUB_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
-      add_53 (*ADD_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
-      add_54 (*ADD_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
-  reorder_buf (rob)                      37.304 1.11e+03 1.73e+05 1.32e+03  78.1
-    cbuf_inst (fifo_WIDTH32_DEPTH32_ADDR_LEN5_0)   16.535  526.682 8.15e+04  624.680  37.0
-    cbuf_pc (fifo_WIDTH32_DEPTH32_ADDR_LEN5_1)   15.525  494.366 7.66e+04  586.531  34.7
-    cbuf_prd (fifo_WIDTH5_DEPTH32_ADDR_LEN5)    5.244   87.682 1.47e+04  107.603   6.4
-  reservation_station (rs)                3.639  129.093 2.53e+04  157.993   9.4
-    genblk3[3].lsu_entry (rs_entry_0)     0.268   13.334 1.98e+03   15.582   0.9
-    genblk3[2].lsu_entry (rs_entry_1)     0.271   13.321 1.98e+03   15.572   0.9
-    genblk3[1].lsu_entry (rs_entry_2)     0.293   13.223 1.98e+03   15.499   0.9
-    genblk3[0].lsu_entry (rs_entry_3)     0.328   13.129 1.99e+03   15.444   0.9
-    genblk2[3].mul_entry (rs_entry_4)  2.08e-02    1.546  286.467    1.853   0.1
-    genblk2[2].mul_entry (rs_entry_5)  2.12e-02    1.546  286.471    1.854   0.1
-    genblk2[1].mul_entry (rs_entry_6)  2.10e-02    1.546  286.461    1.853   0.1
-    genblk2[0].mul_entry (rs_entry_7)  2.13e-02    1.546  286.469    1.854   0.1
-    genblk1[3].alu_entry (rs_entry_8)     0.394   17.834 2.65e+03   20.878   1.2
-    genblk1[2].alu_entry (rs_entry_9)     0.417   17.684 2.66e+03   20.757   1.2
-    genblk1[1].alu_entry (rs_entry_10)    0.542   17.256 2.68e+03   20.477   1.2
-    genblk1[0].alu_entry (rs_entry_11)    0.672   16.900 2.68e+03   20.254   1.2
-    pm_mul (priority_management_0)     8.89e-03 5.60e-03 1.05e+03    1.062   0.1
-    pm_lsu (priority_management_1)     4.20e-02 2.54e-02 1.05e+03    1.116   0.1
-    pm_alu (priority_management_2)        0.136 8.27e-02 1.05e+03    1.268   0.1
-  rename0 (rename)                       15.871  110.975 2.39e+04  150.713   8.9
-    freelist0 (freelist)                  2.862    3.993 1.23e+03    8.089   0.5
-  decode (decode)                         0.741    0.337  410.170    1.488   0.1
-    dec0 (decoder)                        0.107    0.101  203.035    0.411   0.0
-  fetch (fetch)                           5.850   45.064 7.52e+03   58.434   3.5
+      add_55 (*ADD_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
+      add_56 (*ADD_UNS_OP_2_1_2)       2.80e-03    0.000    0.000 2.80e-03   0.0
+  mul0 (mul)                           1.29e-03    2.565  261.963    2.828   0.1
+  arith0 (arith)                          0.869    0.636 2.60e+04   27.540   0.8
+    alu (alu)                             0.585    0.513 2.10e+04   22.054   0.6
+  regfile0 (regfile)                     17.439  508.308 1.37e+05  662.906  19.2
+  reorder_buf (rob)                      44.814 1.67e+03 3.89e+05 2.11e+03  61.0
+    cbuf_inst (fifo_WIDTH32_DEPTH32_ADDR_LEN5_0)   12.918  521.733 8.18e+04  616.491  17.9
+    cbuf_pc (fifo_WIDTH32_DEPTH32_ADDR_LEN5_1)   11.016  492.579 7.67e+04  580.248  16.8
+    cbuf_prd (fifo_WIDTH5_DEPTH32_ADDR_LEN5)    6.340   90.611 1.57e+04  112.651   3.3
+  reservation_station (rs)                5.296  263.249 5.41e+04  322.644   9.3
+    genblk3[3].lsu_entry (rs_entry_0)     0.285   21.019 3.38e+03   24.686   0.7
+    genblk3[2].lsu_entry (rs_entry_1)     0.291   21.039 3.38e+03   24.712   0.7
+    genblk3[1].lsu_entry (rs_entry_2)     0.334   20.902 3.40e+03   24.639   0.7
+    genblk3[0].lsu_entry (rs_entry_3)     0.370   20.801 3.39e+03   24.561   0.7
+    genblk2[3].mul_entry (rs_entry_4)  3.90e-02    9.220 1.68e+03   10.940   0.3
+    genblk2[2].mul_entry (rs_entry_5)  4.03e-02    9.268 1.68e+03   10.989   0.3
+    genblk2[1].mul_entry (rs_entry_6)  3.91e-02    9.220 1.68e+03   10.940   0.3
+    genblk2[0].mul_entry (rs_entry_7)  3.94e-02    9.221 1.68e+03   10.940   0.3
+    genblk1[3].alu_entry (rs_entry_8)     0.628   35.850 5.53e+03   42.012   1.2
+    genblk1[2].alu_entry (rs_entry_9)     0.646   35.871 5.54e+03   42.054   1.2
+    genblk1[1].alu_entry (rs_entry_10)    0.891   35.435 5.56e+03   41.884   1.2
+    genblk1[0].alu_entry (rs_entry_11)    1.091   35.119 5.56e+03   41.770   1.2
+    pm_mul (priority_management_0)     9.40e-03 5.83e-03 1.05e+03    1.063   0.0
+    pm_lsu (priority_management_1)     3.76e-02 2.31e-02 1.07e+03    1.126   0.0
+    pm_alu (priority_management_2)        0.126 8.92e-02 1.33e+03    1.541   0.0
+  rename0 (rename)                       17.454  190.277 3.79e+04  245.594   7.1
+    freelist0 (freelist)                  7.917   92.011 1.62e+04  116.113   3.4
+  decode (decode)                         0.477    0.350  585.651    1.413   0.0
+    dec0 (decoder)                        0.457    0.339  522.742    1.319   0.0
+  fetch (fetch)                           6.451   60.782 9.81e+03   77.039   2.2
 1

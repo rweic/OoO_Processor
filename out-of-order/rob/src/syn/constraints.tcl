@@ -36,6 +36,7 @@ set_dont_touch reg_value
 set_dont_touch cbuf_prd/mem
 set_dont_touch cbuf_pc/mem
 set_dont_touch cbuf_inst/mem
+set_dont_touch valid
 #set_dont_touch rename0/rat
 #set_dont_touch lsu0/lsu_fifo
 #set_dont_touch rename0/freelist0/valid_registers

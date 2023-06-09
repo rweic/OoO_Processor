@@ -1,0 +1,8 @@
+wvCreateWindow
+wvOpenFile -win $_nWave2 \
+           {/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/lsu/sim/presyn/lsu.fsdb}
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+debExit

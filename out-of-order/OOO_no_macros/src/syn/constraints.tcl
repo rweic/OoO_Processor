@@ -37,7 +37,7 @@ set_dont_touch reorder_buf/cbuf_prd/mem
 set_dont_touch reorder_buf/cbuf_pc/mem
 set_dont_touch reorder_buf/cbuf_inst/mem
 set_dont_touch rename0/rat
-set_dont_touch lsu0/lsu_fifo
+set_dont_touch lsu0/lsu_fifo/mem
 set_dont_touch rename0/freelist0/valid_registers
 
 

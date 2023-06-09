@@ -4,7 +4,7 @@ Report : net fanout
         -threshold 32
 Design : rob
 Version: T-2022.03-SP3
-Date   : Thu Jun  8 15:06:31 2023
+Date   : Thu Jun  8 22:40:32 2023
 ****************************************
 
 
@@ -28,6 +28,6 @@ Attributes:
 
 Net                 Fanout   Attributes   Capacitance   Driver
 --------------------------------------------------------------------------------
-clk_i                 3411   dr, h        1001882.06    clk_i
-reset_i                 95   d, I             0.00      reset_i
+clk_i                 3382   dr, h        1001882.06    clk_i
+reset_i                119   d, I             0.00      reset_i
 1

@@ -1,0 +1,40 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : lsu
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 16:26:17 2023
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+lsu                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+lsu                                      12.491   27.460 7.30e+03   47.254 100.0
+  lsu_fifo (fifo_WIDTH12_DEPTH4_ADDR_LEN2)    2.640   22.679 4.48e+03   29.803  63.1
+1

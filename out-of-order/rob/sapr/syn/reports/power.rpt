@@ -5,7 +5,7 @@ Report : power
         -verbose
 Design : rob
 Version: T-2022.03-SP3
-Date   : Thu Jun  8 15:06:30 2023
+Date   : Thu Jun  8 22:40:32 2023
 ****************************************
 
 
@@ -36,12 +36,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.6747 mW   (92%)
-  Net Switching Power  = 148.1562 uW    (8%)
+  Cell Internal Power  =   1.6493 mW   (94%)
+  Net Switching Power  = 100.7385 uW    (6%)
                          ---------
-Total Dynamic Power    =   1.8228 mW  (100%)
+Total Dynamic Power    =   1.7500 mW  (100%)
 
-Cell Leakage Power     = 364.8632 uW
+Cell Leakage Power     = 313.5569 uW
 
                  Internal         Switching           Leakage            Total                         Cell
 Power Group      Power            Power               Power              Power   (   %    )  Attrs  Count
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-clock_network  1.6060e+03            0.0000            0.0000        1.6060e+03  (  73.41%)            0 i
-register          30.3904           13.8926        1.7998e+05          224.2617  (  10.25%)            3411
+clock_network  1.5931e+03            0.0000            0.0000        1.5931e+03  (  77.20%)            0 i
+register          29.5752            9.9429        1.7843e+05          217.9493  (  10.56%)            3382
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)            0
-combinational     38.3519          134.2641        1.8488e+05          357.4991  (  16.34%)            11526
+combinational     26.6041           90.7957        1.3513e+05          252.5292  (  12.24%)            8553
 ---------------------------------------------------------------------------------------------------------
-Total          1.6747e+03 uW       148.1566 uW     3.6486e+05 nW     2.1877e+03 uW
+Total          1.6493e+03 uW       100.7386 uW     3.1356e+05 nW     2.0636e+03 uW
 1

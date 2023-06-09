@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : rob
 Version: T-2022.03-SP3
-Date   : Thu Jun  8 15:06:30 2023
+Date   : Thu Jun  8 22:40:32 2023
 ****************************************
 
 
@@ -35,8 +35,8 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-rob                                     148.156 1.67e+03 3.65e+05 2.19e+03 100.0
-  cbuf_inst (fifo_WIDTH32_DEPTH32_ADDR_LEN5_0)   25.950  502.302 8.77e+04  615.911  28.2
-  cbuf_pc (fifo_WIDTH32_DEPTH32_ADDR_LEN5_1)   25.865  502.067 8.77e+04  615.602  28.1
-  cbuf_prd (fifo_WIDTH5_DEPTH32_ADDR_LEN5)    7.915   88.075 1.59e+04  111.858   5.1
+rob                                     100.739 1.65e+03 3.14e+05 2.06e+03 100.0
+  cbuf_inst (fifo_WIDTH32_DEPTH32_ADDR_LEN5_0)   25.930  502.308 8.77e+04  615.903  29.8
+  cbuf_pc (fifo_WIDTH32_DEPTH32_ADDR_LEN5_1)   25.855  502.081 8.77e+04  615.605  29.8
+  cbuf_prd (fifo_WIDTH5_DEPTH32_ADDR_LEN5)    7.904   88.030 1.59e+04  111.800   5.4
 1

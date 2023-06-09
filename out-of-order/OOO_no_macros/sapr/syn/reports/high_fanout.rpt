@@ -4,7 +4,7 @@ Report : net fanout
         -threshold 32
 Design : core
 Version: T-2022.03-SP3
-Date   : Tue Jun  6 19:43:09 2023
+Date   : Thu Jun  8 15:48:01 2023
 ****************************************
 
 
@@ -28,7 +28,7 @@ Attributes:
 
 Net                 Fanout   Attributes   Capacitance   Driver
 --------------------------------------------------------------------------------
-clk_i                 2790   dr, h        1001882.06    clk_i
-reset_i                227   d, I             0.00      reset_i
+clk_i                 5336   dr, h        1001882.06    clk_i
+reset_i                266   d, I             0.00      reset_i
 lsu0/lsu_fifo/*Logic0*    402 dr, d         350.72      lsu0/lsu_fifo/U2/**logic_0**
 1

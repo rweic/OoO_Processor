@@ -1,0 +1,3 @@
+test/lsu_tb.sv
+verilog/fifo.v
+verilog/lsu.v

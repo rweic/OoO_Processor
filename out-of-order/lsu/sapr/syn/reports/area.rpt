@@ -1,0 +1,46 @@
+ 
+****************************************
+Report : area
+Design : lsu
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 16:26:17 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/out-of-order/rob/freepdk-45nm/stdcells-wc.db)
+
+Number of ports:                          291
+Number of nets:                           471
+Number of cells:                          336
+Number of combinational cells:            272
+Number of sequential cells:                54
+Number of macros/black boxes:               0
+Number of buf/inv:                         75
+Number of references:                      21
+
+Combinational area:                301.112002
+Buf/Inv area:                       48.943999
+Noncombinational area:             244.187991
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   545.299993
+Total area:                 undefined
+
+The above information was reported from the logical library. The following are from the physical library:
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  -----------------------------
+lsu                                545.3000    100.0  182.7420    27.1320  0.0000  lsu
+lsu_fifo                           335.4260     61.5  118.3700   217.0560  0.0000  fifo_WIDTH12_DEPTH4_ADDR_LEN2
+--------------------------------  ---------  -------  --------  ---------  ------  -----------------------------
+Total                                                 301.1120   244.1880  0.0000
+
+1

@@ -8,7 +8,7 @@ Report : timing
         -capacitance
 Design : rob
 Version: T-2022.03-SP3
-Date   : Thu Jun  8 15:06:30 2023
+Date   : Thu Jun  8 22:40:32 2023
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -18,11 +18,44 @@ Wire Load Model Mode: top
 
 Endpoint                         Path Delay     Path Required     Slack
 ------------------------------------------------------------------------
+valid_reg[3]/D (DFF_X1)             0.11 f            0.03         0.09
 commitment_valid_o_reg/D (DFF_X1)     0.11 f          0.03         0.09
-tail_reg[2]/D (DFF_X1)              0.11 f            0.03         0.09
-tail_reg[3]/D (DFF_X1)              0.12 f            0.03         0.09
+prd_value_committed_o_reg[31]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[30]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[29]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[28]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[27]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[26]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[25]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[24]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[23]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[22]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[21]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[20]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[19]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[18]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[17]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[16]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[15]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[14]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[13]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[12]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[11]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[10]/D (DFF_X1)     0.11 f     0.03       0.09
+prd_value_committed_o_reg[9]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[8]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[7]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[6]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[5]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[4]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[3]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[2]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[1]/D (DFF_X1)     0.11 f     0.03        0.09
+prd_value_committed_o_reg[0]/D (DFF_X1)     0.11 f     0.03        0.09
+valid_reg[4]/D (DFF_X1)             0.12 f            0.03         0.09
+head_reg[0]/D (DFF_X1)              0.12 f            0.03         0.09
+tail_reg[2]/D (DFF_X1)              0.12 f            0.03         0.09
 tail_reg[1]/D (DFF_X1)              0.12 f            0.03         0.09
-head_reg[3]/D (DFF_X1)              0.12 f            0.03         0.09
 cbuf_pc/rd_ptr_reg[3]/D (DFF_X1)     0.12 f           0.03         0.09
 cbuf_pc/rd_ptr_reg[2]/D (DFF_X1)     0.12 f           0.03         0.09
 cbuf_pc/wr_ptr_reg[3]/D (DFF_X1)     0.12 f           0.03         0.09
@@ -31,9 +64,15 @@ cbuf_inst/rd_ptr_reg[2]/D (DFF_X1)     0.12 f         0.03         0.09
 cbuf_inst/wr_ptr_reg[3]/D (DFF_X1)     0.12 f         0.03         0.09
 cbuf_pc/rd_ptr_reg[0]/D (DFF_X1)     0.12 f           0.03         0.09
 cbuf_inst/rd_ptr_reg[0]/D (DFF_X1)     0.12 f         0.03         0.09
+valid_reg[2]/D (DFF_X1)             0.12 f            0.03         0.09
+head_reg[2]/D (DFF_X1)              0.12 f            0.03         0.09
+head_reg[1]/D (DFF_X1)              0.12 f            0.03         0.09
+tail_reg[4]/D (DFF_X1)              0.12 f            0.03         0.09
 tail_reg[0]/D (DFF_X1)              0.12 f            0.03         0.09
 cbuf_prd/rd_ptr_reg[1]/D (DFF_X1)     0.12 f          0.03         0.09
 cbuf_prd/rd_ptr_reg[0]/D (DFF_X1)     0.12 f          0.03         0.09
+valid_reg[1]/D (DFF_X1)             0.12 f            0.03         0.09
+valid_reg[0]/D (DFF_X1)             0.12 f            0.03         0.09
 cbuf_prd/rd_ptr_reg[4]/D (DFF_X1)     0.14 f          0.03         0.11
 cbuf_prd/mem_reg[0][4]/D (DFF_X1)     0.21 r          0.07         0.14
 cbuf_prd/mem_reg[0][3]/D (DFF_X1)     0.21 r          0.07         0.14
@@ -175,48 +214,9 @@ cbuf_prd/mem_reg[27][3]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[27][2]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[27][1]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[27][0]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[28][4]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[28][3]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[28][2]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[28][1]/D (DFF_X1)     0.21 r         0.07         0.14
 cbuf_prd/mem_reg[28][0]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[29][4]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[29][3]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[29][2]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[29][1]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[29][0]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[30][4]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[30][3]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[30][2]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[30][1]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[30][0]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[31][4]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[31][3]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[31][2]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[31][1]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/mem_reg[31][0]/D (DFF_X1)     0.21 r         0.07         0.14
-cbuf_prd/wr_ptr_reg[3]/D (DFF_X1)     0.20 f          0.03         0.17
-cbuf_inst/mem_reg[0][31]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][30]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][29]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][28]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][27]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][26]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][25]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][24]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][23]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][22]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][21]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][20]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][19]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][18]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][17]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][16]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][15]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][14]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][13]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][12]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][11]/D (DFF_X1)     0.21 f        0.03         0.18
-cbuf_inst/mem_reg[0][10]/D (DFF_X1)     0.21 f        0.03         0.18
 
 1

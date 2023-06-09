@@ -1,0 +1,4243 @@
+*SPEF "IEEE 1481-1999"
+*DESIGN "lsu"
+*DATE "Thu Jun  8 16:26:17 2023"
+*VENDOR "SYNOPSYS INC"
+*PROGRAM "Synopsys Design Compiler cmos"
+*VERSION "T-2022.03-SP3"
+*DESIGN_FLOW "SYNTHESIS"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1.0 NS
+*C_UNIT 0.0010 PF
+*R_UNIT 1000.0 KOHM
+*L_UNIT 1.0 HENRY
+
+*PORTS
+
+clk_i I *L 0.000e+00 *S 7.967e-01 7.967e-01 
+reset_i I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[31\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[30\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[29\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[28\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[27\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[26\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[25\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[24\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[23\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[22\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[21\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[20\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[19\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[18\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[17\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[16\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[15\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[14\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[13\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[12\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[11\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[10\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[9\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[8\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[7\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[6\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[5\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[4\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[3\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[2\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[1\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+pc_i\[0\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+lsu_request_i I *L 0.000e+00 *S 8.690e-02 8.690e-02 
+inst_i\[31\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[30\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[29\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[28\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[27\] I *L 0.000e+00 *S 2.193e-02 2.193e-02 
+inst_i\[26\] I *L 0.000e+00 *S 3.383e-02 3.383e-02 
+inst_i\[25\] I *L 0.000e+00 *S 6.402e-02 6.402e-02 
+inst_i\[24\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[23\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[22\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[21\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[20\] I *L 0.000e+00 *S 1.691e-02 1.691e-02 
+inst_i\[19\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[18\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[17\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[16\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[15\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+inst_i\[14\] I *L 0.000e+00 *S 1.659e-02 1.659e-02 
+inst_i\[13\] I *L 0.000e+00 *S 6.983e-02 6.983e-02 
+inst_i\[12\] I *L 0.000e+00 *S 3.248e-02 3.248e-02 
+inst_i\[11\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[10\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[9\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[8\] I *L 0.000e+00 *S 3.471e-02 3.471e-02 
+inst_i\[7\] I *L 0.000e+00 *S 2.756e-02 2.756e-02 
+inst_i\[6\] I *L 0.000e+00 *S 1.689e-02 1.689e-02 
+inst_i\[5\] I *L 0.000e+00 *S 3.424e-02 3.424e-02 
+inst_i\[4\] I *L 0.000e+00 *S 1.723e-02 1.723e-02 
+inst_i\[3\] I *L 0.000e+00 *S 1.645e-02 1.645e-02 
+inst_i\[2\] I *L 0.000e+00 *S 1.651e-02 1.651e-02 
+inst_i\[1\] I *L 0.000e+00 *S 1.628e-02 1.628e-02 
+inst_i\[0\] I *L 0.000e+00 *S 1.652e-02 1.652e-02 
+rs1_value_i\[31\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[30\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[29\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[28\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[27\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[26\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[25\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[24\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[23\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[22\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[21\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[20\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[19\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[18\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[17\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[16\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[15\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[14\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[13\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[12\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[11\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[10\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[9\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[8\] I *L 0.000e+00 *S 0.000e+00 0.000e+00 
+rs1_value_i\[7\] I *L 0.000e+00 *S 2.464e-02 2.464e-02 
+rs1_value_i\[6\] I *L 0.000e+00 *S 3.378e-02 3.378e-02 
+rs1_value_i\[5\] I *L 0.000e+00 *S 6.417e-02 6.417e-02 
+rs1_value_i\[4\] I *L 0.000e+00 *S 6.617e-02 6.617e-02 
+rs1_value_i\[3\] I *L 0.000e+00 *S 6.617e-02 6.617e-02 
+rs1_value_i\[2\] I *L 0.000e+00 *S 6.617e-02 6.617e-02 
+rs1_value_i\[1\] I *L 0.000e+00 *S 6.617e-02 6.617e-02 
+rs1_value_i\[0\] I *L 0.000e+00 *S 4.649e-02 4.649e-02 
+rs2_value_i\[31\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[30\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[29\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[28\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[27\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[26\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[25\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[24\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[23\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[22\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[21\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[20\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[19\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[18\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[17\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[16\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[15\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[14\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[13\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[12\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[11\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[10\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[9\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[8\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[7\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[6\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[5\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[4\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[3\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[2\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[1\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rs2_value_i\[0\] I *L 0.000e+00 *S 9.239e-03 9.239e-03 
+rob_idx_i\[4\] I *L 0.000e+00 *S 1.228e-02 1.228e-02 
+rob_idx_i\[3\] I *L 0.000e+00 *S 1.228e-02 1.228e-02 
+rob_idx_i\[2\] I *L 0.000e+00 *S 1.228e-02 1.228e-02 
+rob_idx_i\[1\] I *L 0.000e+00 *S 1.228e-02 1.228e-02 
+rob_idx_i\[0\] I *L 0.000e+00 *S 1.228e-02 1.228e-02 
+busy_o O *L 2.469e+01 *S 2.320e-01 1.039e-01 
+writeback_valid_o O *L 2.469e+01 *S 2.597e-01 9.897e-02 
+writeback_value_o\[31\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[30\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[29\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[28\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[27\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[26\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[25\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[24\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[23\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[22\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[21\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[20\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[19\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[18\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[17\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[16\] O *L 2.469e+01 *S 2.265e-01 1.483e-01 
+writeback_value_o\[15\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[14\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[13\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[12\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[11\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[10\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[9\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[8\] O *L 2.469e+01 *S 2.178e-01 8.414e-02 
+writeback_value_o\[7\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[6\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[5\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[4\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[3\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[2\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[1\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+writeback_value_o\[0\] O *L 2.469e+01 *S 4.895e-01 1.005e-01 
+rob_idx_o\[4\] O *L 2.469e+01 *S 1.923e-01 7.891e-02 
+rob_idx_o\[3\] O *L 2.469e+01 *S 1.923e-01 7.891e-02 
+rob_idx_o\[2\] O *L 2.469e+01 *S 1.923e-01 7.891e-02 
+rob_idx_o\[1\] O *L 2.469e+01 *S 1.923e-01 7.891e-02 
+rob_idx_o\[0\] O *L 2.469e+01 *S 1.923e-01 7.891e-02 
+dmem_csb_write_o O *L 2.469e+01 *S 3.045e-01 1.922e-01 
+dmem_wmask_o\[3\] O *L 2.469e+01 *S 4.119e-01 8.535e-02 
+dmem_wmask_o\[2\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_wmask_o\[1\] O *L 2.469e+01 *S 4.103e-01 6.443e-02 
+dmem_wmask_o\[0\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_waddr_o\[7\] O *L 2.469e+01 *S 2.320e-01 1.039e-01 
+dmem_waddr_o\[6\] O *L 2.469e+01 *S 2.320e-01 1.039e-01 
+dmem_waddr_o\[5\] O *L 2.469e+01 *S 4.890e-01 1.450e-01 
+dmem_waddr_o\[4\] O *L 2.469e+01 *S 4.890e-01 1.450e-01 
+dmem_waddr_o\[3\] O *L 2.469e+01 *S 4.890e-01 1.450e-01 
+dmem_waddr_o\[2\] O *L 2.469e+01 *S 2.292e-01 1.560e-01 
+dmem_waddr_o\[1\] O *L 2.469e+01 *S 2.292e-01 1.560e-01 
+dmem_waddr_o\[0\] O *L 2.469e+01 *S 2.292e-01 1.560e-01 
+dmem_din_o\[31\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[30\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[29\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[28\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[27\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[26\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[25\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[24\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[23\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[22\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[21\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[20\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[19\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[18\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[17\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[16\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[15\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[14\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[13\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[12\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[11\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[10\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[9\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[8\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[7\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[6\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[5\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[4\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[3\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[2\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[1\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_din_o\[0\] O *L 2.469e+01 *S 2.167e-01 1.414e-01 
+dmem_csb_read_o O *L 2.469e+01 *S 2.780e-01 1.772e-01 
+dmem_raddr_o\[7\] O *L 2.469e+01 *S 2.320e-01 1.039e-01 
+dmem_raddr_o\[6\] O *L 2.469e+01 *S 2.320e-01 1.039e-01 
+dmem_raddr_o\[5\] O *L 2.469e+01 *S 2.654e-01 9.081e-02 
+dmem_raddr_o\[4\] O *L 2.469e+01 *S 2.654e-01 9.081e-02 
+dmem_raddr_o\[3\] O *L 2.469e+01 *S 2.654e-01 9.081e-02 
+dmem_raddr_o\[2\] O *L 2.469e+01 *S 2.466e-01 1.642e-01 
+dmem_raddr_o\[1\] O *L 2.469e+01 *S 2.466e-01 1.642e-01 
+dmem_raddr_o\[0\] O *L 2.469e+01 *S 2.466e-01 1.642e-01 
+dmem_dout_i\[31\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[30\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[29\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[28\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[27\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[26\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[25\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[24\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[23\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[22\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[21\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[20\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[19\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[18\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[17\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[16\] I *L 0.000e+00 *S 1.635e-02 1.635e-02 
+dmem_dout_i\[15\] I *L 0.000e+00 *S 4.586e-02 4.586e-02 
+dmem_dout_i\[14\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[13\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[12\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[11\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[10\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[9\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[8\] I *L 0.000e+00 *S 2.788e-02 2.788e-02 
+dmem_dout_i\[7\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[6\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[5\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[4\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[3\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[2\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[1\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+dmem_dout_i\[0\] I *L 0.000e+00 *S 3.451e-02 3.451e-02 
+
+*R_NET clk_i 9.205e+01
+*DRIVER clk_i
+*CELL NULL
+*C2_R1_C1 4.603e+01 8.644e-01 4.603e+01 
+*LOADS
+*RC rob_idx_o_reg_4_:CK 2.729e-02
+*RC mem_load_success_reg:CK 2.729e-02
+*RC rob_idx_o_reg_0_:CK 2.729e-02
+*RC rob_idx_o_reg_1_:CK 2.729e-02
+*RC rob_idx_o_reg_2_:CK 2.729e-02
+*RC rob_idx_o_reg_3_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__11_:CK 2.729e-02
+*RC lsu_fifo/wr_ptr_reg_0_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__5_:CK 2.729e-02
+*RC lsu_fifo/rd_ptr_reg_1_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__1_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__2_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__3_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__4_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__5_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__6_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__7_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__8_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__9_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__10_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_3__11_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__1_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__2_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__3_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__4_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__5_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__6_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__7_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__8_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__9_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__10_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_2__11_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__1_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__2_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__3_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__4_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__6_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__7_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__8_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__9_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_1__10_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__1_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__2_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__3_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__4_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__5_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__6_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__7_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__8_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__9_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__10_:CK 2.729e-02
+*RC lsu_fifo/mem_reg_0__11_:CK 2.729e-02
+*RC lsu_fifo/wr_ptr_reg_1_:CK 2.729e-02
+*RC lsu_fifo/rd_ptr_reg_0_:CK 2.729e-02
+*END
+
+*R_NET lsu_request_i 1.004e+01
+*DRIVER lsu_request_i
+*CELL NULL
+*C2_R1_C1 5.021e+00 4.254e-02 5.021e+00 
+*LOADS
+*RC lsu_fifo/U54:A1 1.694e-02
+*RC lsu_fifo/U88:A2 1.720e-02
+*RC lsu_fifo/U102:A1 1.694e-02
+*RC lsu_fifo/U115:A 1.758e-02
+*RC lsu_fifo/U118:B1 1.677e-02
+*END
+
+*R_NET inst_i\[27\] 2.533e+00
+*DRIVER inst_i\[27\]
+*CELL NULL
+*C2_R1_C1 1.267e+00 6.236e-03 1.267e+00 
+*LOADS
+*RC U210:A 1.580e-02
+*END
+
+*R_NET inst_i\[26\] 3.909e+00
+*DRIVER inst_i\[26\]
+*CELL NULL
+*C2_R1_C1 1.954e+00 1.407e-02 1.954e+00 
+*LOADS
+*RC U205:A1 1.349e-02
+*RC U206:A1 1.401e-02
+*END
+
+*R_NET inst_i\[25\] 7.397e+00
+*DRIVER inst_i\[25\]
+*CELL NULL
+*C2_R1_C1 3.699e+00 3.293e-02 3.699e+00 
+*LOADS
+*RC U203:A1 1.081e-02
+*RC U204:A1 1.690e-02
+*RC U208:A1 1.628e-02
+*RC U213:A1 1.690e-02
+*END
+
+*R_NET inst_i\[24\] 4.011e+00
+*DRIVER inst_i\[24\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_1_U2:A 2.501e-02
+*END
+
+*R_NET inst_i\[23\] 4.011e+00
+*DRIVER inst_i\[23\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_1_U3:A 2.501e-02
+*END
+
+*R_NET inst_i\[22\] 4.011e+00
+*DRIVER inst_i\[22\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_1_U4:A 2.501e-02
+*END
+
+*R_NET inst_i\[21\] 4.011e+00
+*DRIVER inst_i\[21\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_1_U5:A 2.501e-02
+*END
+
+*R_NET inst_i\[20\] 1.953e+00
+*DRIVER inst_i\[20\]
+*CELL NULL
+*C2_R1_C1 9.767e-01 6.236e-03 9.767e-01 
+*LOADS
+*RC U160:A 1.218e-02
+*END
+
+*R_NET inst_i\[14\] 1.916e+00
+*DRIVER inst_i\[14\]
+*CELL NULL
+*C2_R1_C1 9.582e-01 6.236e-03 9.582e-01 
+*LOADS
+*RC U171:A 1.195e-02
+*END
+
+*R_NET inst_i\[13\] 8.068e+00
+*DRIVER inst_i\[13\]
+*CELL NULL
+*C2_R1_C1 4.034e+00 3.293e-02 4.034e+00 
+*LOADS
+*RC U166:A 1.690e-02
+*RC U171:C2 1.683e-02
+*RC U171:B2 1.644e-02
+*RC U172:C1 1.624e-02
+*END
+
+*R_NET inst_i\[12\] 3.753e+00
+*DRIVER inst_i\[12\]
+*CELL NULL
+*C2_R1_C1 1.876e+00 1.407e-02 1.876e+00 
+*LOADS
+*RC U171:B1 1.335e-02
+*RC U172:C2 1.305e-02
+*END
+
+*R_NET inst_i\[11\] 4.011e+00
+*DRIVER inst_i\[11\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_0_U2:A 2.501e-02
+*END
+
+*R_NET inst_i\[10\] 4.011e+00
+*DRIVER inst_i\[10\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_0_U3:A 2.501e-02
+*END
+
+*R_NET inst_i\[9\] 4.011e+00
+*DRIVER inst_i\[9\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_0_U4:A 2.501e-02
+*END
+
+*R_NET inst_i\[8\] 4.011e+00
+*DRIVER inst_i\[8\]
+*CELL NULL
+*C2_R1_C1 2.005e+00 6.236e-03 2.005e+00 
+*LOADS
+*RC intadd_0_U5:A 2.501e-02
+*END
+
+*R_NET inst_i\[7\] 3.185e+00
+*DRIVER inst_i\[7\]
+*CELL NULL
+*C2_R1_C1 1.592e+00 1.407e-02 1.592e+00 
+*LOADS
+*RC U165:A1 8.752e-03
+*RC U167:A2 1.365e-02
+*END
+
+*R_NET inst_i\[6\] 1.952e+00
+*DRIVER inst_i\[6\]
+*CELL NULL
+*C2_R1_C1 9.758e-01 6.236e-03 9.758e-01 
+*LOADS
+*RC U155:A1 1.217e-02
+*END
+
+*R_NET inst_i\[5\] 3.956e+00
+*DRIVER inst_i\[5\]
+*CELL NULL
+*C2_R1_C1 1.978e+00 1.407e-02 1.978e+00 
+*LOADS
+*RC U158:A2 1.381e-02
+*RC U163:A 1.402e-02
+*END
+
+*R_NET inst_i\[4\] 1.991e+00
+*DRIVER inst_i\[4\]
+*CELL NULL
+*C2_R1_C1 9.954e-01 6.236e-03 9.954e-01 
+*LOADS
+*RC U157:A1 1.241e-02
+*END
+
+*R_NET inst_i\[3\] 1.901e+00
+*DRIVER inst_i\[3\]
+*CELL NULL
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U155:A2 1.185e-02
+*END
+
+*R_NET inst_i\[2\] 1.908e+00
+*DRIVER inst_i\[2\]
+*CELL NULL
+*C2_R1_C1 9.541e-01 6.236e-03 9.541e-01 
+*LOADS
+*RC U157:A2 1.190e-02
+*END
+
+*R_NET inst_i\[1\] 1.881e+00
+*DRIVER inst_i\[1\]
+*CELL NULL
+*C2_R1_C1 9.406e-01 6.236e-03 9.406e-01 
+*LOADS
+*RC U156:A1 1.173e-02
+*END
+
+*R_NET inst_i\[0\] 1.909e+00
+*DRIVER inst_i\[0\]
+*CELL NULL
+*C2_R1_C1 9.544e-01 6.236e-03 9.544e-01 
+*LOADS
+*RC U156:A2 1.190e-02
+*END
+
+*R_NET rs1_value_i\[7\] 2.847e+00
+*DRIVER rs1_value_i\[7\]
+*CELL NULL
+*C2_R1_C1 1.424e+00 6.236e-03 1.424e+00 
+*LOADS
+*RC U210:B 1.775e-02
+*END
+
+*R_NET rs1_value_i\[6\] 3.903e+00
+*DRIVER rs1_value_i\[6\]
+*CELL NULL
+*C2_R1_C1 1.952e+00 1.407e-02 1.952e+00 
+*LOADS
+*RC U205:A2 1.381e-02
+*RC U206:A2 1.365e-02
+*END
+
+*R_NET rs1_value_i\[5\] 7.414e+00
+*DRIVER rs1_value_i\[5\]
+*CELL NULL
+*C2_R1_C1 3.707e+00 3.293e-02 3.707e+00 
+*LOADS
+*RC U203:A2 1.086e-02
+*RC U204:A2 1.677e-02
+*RC U208:A2 1.665e-02
+*RC U213:A2 1.677e-02
+*END
+
+*R_NET rs1_value_i\[4\] 7.645e+00
+*DRIVER rs1_value_i\[4\]
+*CELL NULL
+*C2_R1_C1 3.823e+00 1.407e-02 3.823e+00 
+*LOADS
+*RC intadd_1_U2:B 2.689e-02
+*RC intadd_0_U2:B 2.689e-02
+*END
+
+*R_NET rs1_value_i\[3\] 7.645e+00
+*DRIVER rs1_value_i\[3\]
+*CELL NULL
+*C2_R1_C1 3.823e+00 1.407e-02 3.823e+00 
+*LOADS
+*RC intadd_1_U3:B 2.689e-02
+*RC intadd_0_U3:B 2.689e-02
+*END
+
+*R_NET rs1_value_i\[2\] 7.645e+00
+*DRIVER rs1_value_i\[2\]
+*CELL NULL
+*C2_R1_C1 3.823e+00 1.407e-02 3.823e+00 
+*LOADS
+*RC intadd_1_U4:B 2.689e-02
+*RC intadd_0_U4:B 2.689e-02
+*END
+
+*R_NET rs1_value_i\[1\] 7.645e+00
+*DRIVER rs1_value_i\[1\]
+*CELL NULL
+*C2_R1_C1 3.823e+00 1.407e-02 3.823e+00 
+*LOADS
+*RC intadd_1_U5:B 2.689e-02
+*RC intadd_0_U5:B 2.689e-02
+*END
+
+*R_NET rs1_value_i\[0\] 5.371e+00
+*DRIVER rs1_value_i\[0\]
+*CELL NULL
+*C2_R1_C1 2.686e+00 2.308e-02 2.686e+00 
+*LOADS
+*RC U159:A 1.559e-02
+*RC U165:A2 1.017e-02
+*RC U167:A1 1.557e-02
+*END
+
+*R_NET rob_idx_i\[4\] 1.419e+00
+*DRIVER rob_idx_i\[4\]
+*CELL NULL
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC rob_idx_o_reg_4_:D 8.848e-03
+*END
+
+*R_NET rob_idx_i\[3\] 1.419e+00
+*DRIVER rob_idx_i\[3\]
+*CELL NULL
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC rob_idx_o_reg_3_:D 8.848e-03
+*END
+
+*R_NET rob_idx_i\[2\] 1.419e+00
+*DRIVER rob_idx_i\[2\]
+*CELL NULL
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC rob_idx_o_reg_2_:D 8.848e-03
+*END
+
+*R_NET rob_idx_i\[1\] 1.419e+00
+*DRIVER rob_idx_i\[1\]
+*CELL NULL
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC rob_idx_o_reg_1_:D 8.848e-03
+*END
+
+*R_NET rob_idx_i\[0\] 1.419e+00
+*DRIVER rob_idx_i\[0\]
+*CELL NULL
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC rob_idx_o_reg_0_:D 8.848e-03
+*END
+
+*R_NET writeback_valid_o 3.312e+01
+*DRIVER mem_load_success_reg:Q
+*CELL DFF_X1
+*C2_R1_C1 1.656e+01 4.254e-02 1.656e+01 
+*LOADS
+*RC writeback_valid_o 2.137e-01
+*RC U215:A1 1.694e-02
+*RC lsu_fifo/U120:A 1.758e-02
+*RC lsu_fifo/U121:B1 1.677e-02
+*RC lsu_fifo/U122:B1 1.677e-02
+*END
+
+*R_NET writeback_value_o\[31\] 2.500e+01
+*DRIVER U226:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[31\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[30\] 2.500e+01
+*DRIVER U227:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[30\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[29\] 2.500e+01
+*DRIVER U251:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[29\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[28\] 2.500e+01
+*DRIVER U268:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[28\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[27\] 2.500e+01
+*DRIVER U271:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[27\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[26\] 2.500e+01
+*DRIVER U272:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[26\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[25\] 2.500e+01
+*DRIVER U273:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[25\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[24\] 2.500e+01
+*DRIVER U274:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[24\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[23\] 2.500e+01
+*DRIVER U241:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[23\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[22\] 2.500e+01
+*DRIVER U231:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[22\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[21\] 2.500e+01
+*DRIVER U245:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[21\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[20\] 2.500e+01
+*DRIVER U237:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[20\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[19\] 2.500e+01
+*DRIVER U239:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[19\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[18\] 2.500e+01
+*DRIVER U243:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[18\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[17\] 2.500e+01
+*DRIVER U235:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[17\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[16\] 2.500e+01
+*DRIVER U233:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[16\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[7\] 2.500e+01
+*DRIVER U267:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[7\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[6\] 2.500e+01
+*DRIVER U265:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[6\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[5\] 2.500e+01
+*DRIVER U263:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[5\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[4\] 2.500e+01
+*DRIVER U261:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[4\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[3\] 2.500e+01
+*DRIVER U259:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[3\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[2\] 2.500e+01
+*DRIVER U257:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[2\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[1\] 2.500e+01
+*DRIVER U255:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[1\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[0\] 2.500e+01
+*DRIVER U253:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[0\] 1.559e-01
+*END
+
+*R_NET rob_idx_o\[4\] 2.500e+01
+*DRIVER rob_idx_o_reg_4_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC rob_idx_o\[4\] 1.559e-01
+*END
+
+*R_NET rob_idx_o\[3\] 2.500e+01
+*DRIVER rob_idx_o_reg_3_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC rob_idx_o\[3\] 1.559e-01
+*END
+
+*R_NET rob_idx_o\[2\] 2.500e+01
+*DRIVER rob_idx_o_reg_2_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC rob_idx_o\[2\] 1.559e-01
+*END
+
+*R_NET rob_idx_o\[1\] 2.500e+01
+*DRIVER rob_idx_o_reg_1_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC rob_idx_o\[1\] 1.559e-01
+*END
+
+*R_NET rob_idx_o\[0\] 2.500e+01
+*DRIVER rob_idx_o_reg_0_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC rob_idx_o\[0\] 1.559e-01
+*END
+
+*R_NET dmem_csb_write_o 3.425e+01
+*DRIVER U158:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.713e+01 3.293e-02 1.713e+01 
+*LOADS
+*RC dmem_csb_write_o 2.067e-01
+*RC U135:A2 3.041e-02
+*RC U136:A 2.800e-02
+*RC U143:A 1.690e-02
+*END
+
+*R_NET dmem_wmask_o\[3\] 2.615e+01
+*DRIVER U136:ZN
+*CELL AOI211_X2
+*C2_R1_C1 1.308e+01 1.407e-02 1.308e+01 
+*LOADS
+*RC dmem_wmask_o\[3\] 1.762e-01
+*RC U173:A 7.789e-03
+*END
+
+*R_NET dmem_wmask_o\[1\] 2.615e+01
+*DRIVER U135:ZN
+*CELL NOR3_X2
+*C2_R1_C1 1.308e+01 1.407e-02 1.308e+01 
+*LOADS
+*RC dmem_wmask_o\[1\] 1.762e-01
+*RC U174:A 7.789e-03
+*END
+
+*R_NET dmem_waddr_o\[5\] 2.500e+01
+*DRIVER U247:ZN
+*CELL XNOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[5\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[4\] 2.500e+01
+*DRIVER U214:ZN
+*CELL XNOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[4\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[3\] 2.500e+01
+*DRIVER U212:ZN
+*CELL XNOR2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[3\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[2\] 2.500e+01
+*DRIVER intadd_0_U2:S
+*CELL FA_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[2\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[1\] 2.500e+01
+*DRIVER intadd_0_U3:S
+*CELL FA_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[1\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[0\] 2.500e+01
+*DRIVER intadd_0_U4:S
+*CELL FA_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[0\] 1.559e-01
+*END
+
+*R_NET rs2_value_i\[31\] 1.067e+00
+*DRIVER rs2_value_i\[31\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U154:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[30\] 1.067e+00
+*DRIVER rs2_value_i\[30\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U175:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[29\] 1.067e+00
+*DRIVER rs2_value_i\[29\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U176:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[28\] 1.067e+00
+*DRIVER rs2_value_i\[28\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U177:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[27\] 1.067e+00
+*DRIVER rs2_value_i\[27\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U178:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[26\] 1.067e+00
+*DRIVER rs2_value_i\[26\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U179:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[25\] 1.067e+00
+*DRIVER rs2_value_i\[25\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U180:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[24\] 1.067e+00
+*DRIVER rs2_value_i\[24\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U181:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[23\] 1.067e+00
+*DRIVER rs2_value_i\[23\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U182:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[22\] 1.067e+00
+*DRIVER rs2_value_i\[22\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U183:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[21\] 1.067e+00
+*DRIVER rs2_value_i\[21\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U184:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[20\] 1.067e+00
+*DRIVER rs2_value_i\[20\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U185:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[19\] 1.067e+00
+*DRIVER rs2_value_i\[19\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U186:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[18\] 1.067e+00
+*DRIVER rs2_value_i\[18\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U187:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[17\] 1.067e+00
+*DRIVER rs2_value_i\[17\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U188:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[16\] 1.067e+00
+*DRIVER rs2_value_i\[16\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U153:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[15\] 1.067e+00
+*DRIVER rs2_value_i\[15\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U189:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[14\] 1.067e+00
+*DRIVER rs2_value_i\[14\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U190:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[13\] 1.067e+00
+*DRIVER rs2_value_i\[13\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U191:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[12\] 1.067e+00
+*DRIVER rs2_value_i\[12\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U192:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[11\] 1.067e+00
+*DRIVER rs2_value_i\[11\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U193:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[10\] 1.067e+00
+*DRIVER rs2_value_i\[10\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U202:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[9\] 1.067e+00
+*DRIVER rs2_value_i\[9\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U201:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[8\] 1.067e+00
+*DRIVER rs2_value_i\[8\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U200:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[7\] 1.067e+00
+*DRIVER rs2_value_i\[7\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U199:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[6\] 1.067e+00
+*DRIVER rs2_value_i\[6\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U198:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[5\] 1.067e+00
+*DRIVER rs2_value_i\[5\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U197:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[4\] 1.067e+00
+*DRIVER rs2_value_i\[4\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U196:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[3\] 1.067e+00
+*DRIVER rs2_value_i\[3\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U195:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[2\] 1.067e+00
+*DRIVER rs2_value_i\[2\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U194:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[1\] 1.067e+00
+*DRIVER rs2_value_i\[1\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U152:A 6.657e-03
+*END
+
+*R_NET rs2_value_i\[0\] 1.067e+00
+*DRIVER rs2_value_i\[0\]
+*CELL NULL
+*C2_R1_C1 5.337e-01 6.236e-03 5.337e-01 
+*LOADS
+*RC U151:A 6.657e-03
+*END
+
+*R_NET dmem_csb_read_o 3.111e+01
+*DRIVER U164:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.555e+01 3.293e-02 1.555e+01 
+*LOADS
+*RC dmem_csb_read_o 2.067e-01
+*RC U169:B2 1.600e-02
+*RC U170:B1 1.654e-02
+*RC U248:A1 1.688e-02
+*END
+
+*R_NET dmem_raddr_o\[5\] 2.704e+01
+*DRIVER U138:ZN
+*CELL XNOR2_X2
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[5\] 1.762e-01
+*RC lsu_fifo/U11:A 1.402e-02
+*END
+
+*R_NET dmem_raddr_o\[4\] 2.704e+01
+*DRIVER U139:ZN
+*CELL XNOR2_X2
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[4\] 1.762e-01
+*RC lsu_fifo/U73:A 1.402e-02
+*END
+
+*R_NET dmem_raddr_o\[3\] 2.704e+01
+*DRIVER U140:ZN
+*CELL XNOR2_X2
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[3\] 1.762e-01
+*RC lsu_fifo/U71:A 1.402e-02
+*END
+
+*R_NET dmem_raddr_o\[2\] 2.704e+01
+*DRIVER intadd_1_U2:S
+*CELL FA_X1
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[2\] 1.762e-01
+*RC lsu_fifo/U69:A 1.402e-02
+*END
+
+*R_NET dmem_raddr_o\[1\] 2.704e+01
+*DRIVER intadd_1_U3:S
+*CELL FA_X1
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[1\] 1.762e-01
+*RC lsu_fifo/U67:A 1.402e-02
+*END
+
+*R_NET dmem_raddr_o\[0\] 2.704e+01
+*DRIVER intadd_1_U4:S
+*CELL FA_X1
+*C2_R1_C1 1.352e+01 1.407e-02 1.352e+01 
+*LOADS
+*RC dmem_raddr_o\[0\] 1.762e-01
+*RC lsu_fifo/U65:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[31\] 1.890e+00
+*DRIVER dmem_dout_i\[31\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U305:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[30\] 1.890e+00
+*DRIVER dmem_dout_i\[30\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U303:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[29\] 1.890e+00
+*DRIVER dmem_dout_i\[29\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U301:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[28\] 1.890e+00
+*DRIVER dmem_dout_i\[28\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U299:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[27\] 1.890e+00
+*DRIVER dmem_dout_i\[27\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U297:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[26\] 1.890e+00
+*DRIVER dmem_dout_i\[26\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U295:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[25\] 1.890e+00
+*DRIVER dmem_dout_i\[25\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U293:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[24\] 1.890e+00
+*DRIVER dmem_dout_i\[24\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U290:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[23\] 1.890e+00
+*DRIVER dmem_dout_i\[23\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U240:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[22\] 1.890e+00
+*DRIVER dmem_dout_i\[22\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U225:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[21\] 1.890e+00
+*DRIVER dmem_dout_i\[21\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U244:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[20\] 1.890e+00
+*DRIVER dmem_dout_i\[20\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U236:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[19\] 1.890e+00
+*DRIVER dmem_dout_i\[19\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U238:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[18\] 1.890e+00
+*DRIVER dmem_dout_i\[18\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U242:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[17\] 1.890e+00
+*DRIVER dmem_dout_i\[17\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U234:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[16\] 1.890e+00
+*DRIVER dmem_dout_i\[16\]
+*CELL NULL
+*C2_R1_C1 9.448e-01 6.236e-03 9.448e-01 
+*LOADS
+*RC U232:B2 1.178e-02
+*END
+
+*R_NET dmem_dout_i\[15\] 5.299e+00
+*DRIVER dmem_dout_i\[15\]
+*CELL NULL
+*C2_R1_C1 2.649e+00 2.308e-02 2.649e+00 
+*LOADS
+*RC U130:A1 9.824e-03
+*RC U228:A2 1.535e-02
+*RC U305:A1 1.559e-02
+*END
+
+*R_NET dmem_dout_i\[14\] 3.221e+00
+*DRIVER dmem_dout_i\[14\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U129:A1 8.752e-03
+*RC U303:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[13\] 3.221e+00
+*DRIVER dmem_dout_i\[13\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U132:A1 8.752e-03
+*RC U301:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[12\] 3.221e+00
+*DRIVER dmem_dout_i\[12\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U128:A1 8.752e-03
+*RC U299:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[11\] 3.221e+00
+*DRIVER dmem_dout_i\[11\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U127:A1 8.752e-03
+*RC U297:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[10\] 3.221e+00
+*DRIVER dmem_dout_i\[10\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U126:A1 8.752e-03
+*RC U295:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[9\] 3.221e+00
+*DRIVER dmem_dout_i\[9\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U131:A1 8.752e-03
+*RC U293:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[8\] 3.221e+00
+*DRIVER dmem_dout_i\[8\]
+*CELL NULL
+*C2_R1_C1 1.611e+00 1.407e-02 1.611e+00 
+*LOADS
+*RC U125:A1 8.752e-03
+*RC U290:A2 1.391e-02
+*END
+
+*R_NET dmem_dout_i\[7\] 3.987e+00
+*DRIVER dmem_dout_i\[7\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U240:A1 1.403e-02
+*RC U266:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[6\] 3.987e+00
+*DRIVER dmem_dout_i\[6\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U225:A1 1.403e-02
+*RC U264:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[5\] 3.987e+00
+*DRIVER dmem_dout_i\[5\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U244:A1 1.403e-02
+*RC U262:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[4\] 3.987e+00
+*DRIVER dmem_dout_i\[4\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U236:A1 1.403e-02
+*RC U260:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[3\] 3.987e+00
+*DRIVER dmem_dout_i\[3\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U238:A1 1.403e-02
+*RC U258:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[2\] 3.987e+00
+*DRIVER dmem_dout_i\[2\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U242:A1 1.403e-02
+*RC U256:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[1\] 3.987e+00
+*DRIVER dmem_dout_i\[1\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U234:A1 1.403e-02
+*RC U254:A 1.402e-02
+*END
+
+*R_NET dmem_dout_i\[0\] 3.987e+00
+*DRIVER dmem_dout_i\[0\]
+*CELL NULL
+*C2_R1_C1 1.993e+00 1.407e-02 1.993e+00 
+*LOADS
+*RC U232:A1 1.403e-02
+*RC U250:A 1.402e-02
+*END
+
+*R_NET mem_addr_r\[1\] 3.915e+00
+*DRIVER intadd_1_U5:S
+*CELL FA_X1
+*C2_R1_C1 1.957e+00 1.407e-02 1.957e+00 
+*LOADS
+*RC U170:B2 1.352e-02
+*RC lsu_fifo/U63:A 1.402e-02
+*END
+
+*R_NET mem_addr_r\[0\] 3.960e+00
+*DRIVER U162:ZN
+*CELL AOI21_X1
+*C2_R1_C1 1.980e+00 1.407e-02 1.980e+00 
+*LOADS
+*RC U169:B1 1.383e-02
+*RC lsu_fifo/U61:A 1.402e-02
+*END
+
+*R_NET N34 5.392e+00
+*DRIVER U157:ZN
+*CELL NOR3_X1
+*C2_R1_C1 2.696e+00 2.308e-02 2.696e+00 
+*LOADS
+*RC U158:A1 1.501e-02
+*RC U164:A1 1.501e-02
+*RC mem_load_success_reg:D 1.147e-02
+*END
+
+*R_NET lsu_out_addr_1_ 1.953e+00
+*DRIVER lsu_fifo/U36:ZN
+*CELL OAI21_X1
+*C2_R1_C1 9.767e-01 6.236e-03 9.767e-01 
+*LOADS
+*RC U147:A 1.218e-02
+*END
+
+*R_NET lsu_out_ls 1.923e+00
+*DRIVER lsu_fifo/U42:ZN
+*CELL OAI21_X1
+*C2_R1_C1 9.615e-01 6.236e-03 9.615e-01 
+*LOADS
+*RC U215:A2 1.199e-02
+*END
+
+*R_NET lsu_out_signed 3.858e+00
+*DRIVER lsu_fifo/U45:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.929e+00 1.407e-02 1.929e+00 
+*LOADS
+*RC U286:A2 1.365e-02
+*RC U228:A1 1.349e-02
+*END
+
+*R_NET lsu_out_h 6.000e+00
+*DRIVER lsu_fifo/U48:ZN
+*CELL OAI21_X1
+*C2_R1_C1 3.000e+00 2.308e-02 3.000e+00 
+*LOADS
+*RC U284:A1 1.501e-02
+*RC U286:A1 1.557e-02
+*RC U216:A 1.559e-02
+*END
+
+*R_NET mem_ls 3.282e+00
+*DRIVER U248:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.641e+00 1.407e-02 1.641e+00 
+*LOADS
+*RC U142:A2 9.065e-03
+*RC lsu_fifo/U59:A 1.402e-02
+*END
+
+*R_NET intadd_0_CI 5.055e+00
+*DRIVER U165:ZN
+*CELL AND2_X1
+*C2_R1_C1 2.528e+00 1.407e-02 2.528e+00 
+*LOADS
+*RC U168:B1 1.383e-02
+*RC intadd_0_U5:CI 2.173e-02
+*END
+
+*R_NET intadd_0_SUM_0_ 7.539e+00
+*DRIVER intadd_0_U5:S
+*CELL FA_X1
+*C2_R1_C1 3.770e+00 2.308e-02 3.770e+00 
+*LOADS
+*RC U135:A1 2.759e-02
+*RC U150:A 1.559e-02
+*RC U170:A2 1.483e-02
+*END
+
+*R_NET intadd_0_n4 3.049e+00
+*DRIVER intadd_0_U5:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_0_U4:CI 1.901e-02
+*END
+
+*R_NET intadd_0_n3 3.049e+00
+*DRIVER intadd_0_U4:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_0_U3:CI 1.901e-02
+*END
+
+*R_NET intadd_0_n2 3.049e+00
+*DRIVER intadd_0_U3:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_0_U2:CI 1.901e-02
+*END
+
+*R_NET intadd_0_n1 4.471e+00
+*DRIVER intadd_0_U2:CO
+*CELL FA_X1
+*C2_R1_C1 2.235e+00 1.407e-02 2.235e+00 
+*LOADS
+*RC U212:A 1.810e-02
+*RC U213:B1 1.335e-02
+*END
+
+*R_NET intadd_1_CI 5.010e+00
+*DRIVER U161:ZN
+*CELL NOR2_X1
+*C2_R1_C1 2.505e+00 1.407e-02 2.505e+00 
+*LOADS
+*RC U162:A 1.351e-02
+*RC intadd_1_U5:CI 2.173e-02
+*END
+
+*R_NET intadd_1_n4 3.049e+00
+*DRIVER intadd_1_U5:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_1_U4:CI 1.901e-02
+*END
+
+*R_NET intadd_1_n3 3.049e+00
+*DRIVER intadd_1_U4:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_1_U3:CI 1.901e-02
+*END
+
+*R_NET intadd_1_n2 3.049e+00
+*DRIVER intadd_1_U3:CO
+*CELL FA_X1
+*C2_R1_C1 1.525e+00 6.236e-03 1.525e+00 
+*LOADS
+*RC intadd_1_U2:CI 1.901e-02
+*END
+
+*R_NET intadd_1_n1 6.255e+00
+*DRIVER intadd_1_U2:CO
+*CELL FA_X1
+*C2_R1_C1 3.127e+00 1.407e-02 3.127e+00 
+*LOADS
+*RC U140:A 3.065e-02
+*RC U204:B1 1.335e-02
+*END
+
+*R_NET n93 1.953e+00
+*DRIVER U142:ZN
+*CELL AND2_X1
+*C2_R1_C1 9.767e-01 6.236e-03 9.767e-01 
+*LOADS
+*RC lsu_fifo/U10:A 1.218e-02
+*END
+
+*R_NET n94 1.907e+00
+*DRIVER U155:ZN
+*CELL NOR2_X1
+*C2_R1_C1 9.537e-01 6.236e-03 9.537e-01 
+*LOADS
+*RC U156:A3 1.189e-02
+*END
+
+*R_NET n95 1.865e+00
+*DRIVER U156:ZN
+*CELL NAND3_X1
+*C2_R1_C1 9.326e-01 6.236e-03 9.326e-01 
+*LOADS
+*RC U157:A3 1.163e-02
+*END
+
+*R_NET n96 3.901e+00
+*DRIVER U160:ZN
+*CELL INV_X1
+*C2_R1_C1 1.951e+00 1.407e-02 1.951e+00 
+*LOADS
+*RC U161:A2 1.365e-02
+*RC U162:B2 1.379e-02
+*END
+
+*R_NET n97 3.944e+00
+*DRIVER U159:ZN
+*CELL INV_X1
+*C2_R1_C1 1.972e+00 1.407e-02 1.972e+00 
+*LOADS
+*RC U161:A1 1.401e-02
+*RC U162:B1 1.373e-02
+*END
+
+*R_NET n98 1.923e+00
+*DRIVER U163:ZN
+*CELL INV_X1
+*C2_R1_C1 9.615e-01 6.236e-03 9.615e-01 
+*LOADS
+*RC U164:A2 1.199e-02
+*END
+
+*R_NET n99 1.922e+00
+*DRIVER U143:ZN
+*CELL INV_X1
+*C2_R1_C1 9.612e-01 6.236e-03 9.612e-01 
+*LOADS
+*RC U168:A 1.199e-02
+*END
+
+*R_NET n100 1.844e+00
+*DRIVER U167:ZN
+*CELL NOR2_X1
+*C2_R1_C1 9.221e-01 6.236e-03 9.221e-01 
+*LOADS
+*RC U168:B2 1.150e-02
+*END
+
+*R_NET n101 3.929e+00
+*DRIVER U168:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.964e+00 1.407e-02 1.964e+00 
+*LOADS
+*RC U169:A 1.380e-02
+*RC U170:A1 1.383e-02
+*END
+
+*R_NET n102 1.953e+00
+*DRIVER U170:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.767e-01 6.236e-03 9.767e-01 
+*LOADS
+*RC U144:A 1.218e-02
+*END
+
+*R_NET n103 1.889e+00
+*DRIVER U144:ZN
+*CELL INV_X1
+*C2_R1_C1 9.444e-01 6.236e-03 9.444e-01 
+*LOADS
+*RC U171:C1 1.178e-02
+*END
+
+*R_NET n104 1.911e+00
+*DRIVER U171:ZN
+*CELL AOI221_X1
+*C2_R1_C1 9.553e-01 6.236e-03 9.553e-01 
+*LOADS
+*RC U172:B 1.191e-02
+*END
+
+*R_NET n105 1.893e+00
+*DRIVER U169:ZN
+*CELL OAI21_X1
+*C2_R1_C1 9.467e-01 6.236e-03 9.467e-01 
+*LOADS
+*RC U172:A 1.181e-02
+*END
+
+*R_NET n106 3.610e+00
+*DRIVER U150:ZN
+*CELL INV_X1
+*C2_R1_C1 1.805e+00 6.236e-03 1.805e+00 
+*LOADS
+*RC U136:C2 2.251e-02
+*END
+
+*R_NET n107 1.952e+00
+*DRIVER U146:ZN
+*CELL INV_X1
+*C2_R1_C1 9.758e-01 6.236e-03 9.758e-01 
+*LOADS
+*RC U207:A1 1.217e-02
+*END
+
+*R_NET n108 1.878e+00
+*DRIVER U208:ZN
+*CELL NAND2_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U209:A1 1.171e-02
+*END
+
+*R_NET n109 6.241e+00
+*DRIVER U204:ZN
+*CELL AOI22_X1
+*C2_R1_C1 3.120e+00 1.407e-02 3.120e+00 
+*LOADS
+*RC U139:A 3.065e-02
+*RC U211:B2 1.325e-02
+*END
+
+*R_NET n110 5.092e+00
+*DRIVER U211:ZN
+*CELL OAI21_X1
+*C2_R1_C1 2.546e+00 6.236e-03 2.546e+00 
+*LOADS
+*RC U138:B 3.175e-02
+*END
+
+*R_NET n111 8.019e+00
+*DRIVER U209:ZN
+*CELL NAND2_X1
+*C2_R1_C1 4.009e+00 1.407e-02 4.009e+00 
+*LOADS
+*RC U140:B 3.610e-02
+*RC U212:B 2.031e-02
+*END
+
+*R_NET n112 5.919e+00
+*DRIVER U203:ZN
+*CELL OR2_X1
+*C2_R1_C1 2.960e+00 2.308e-02 2.960e+00 
+*LOADS
+*RC U204:B2 1.509e-02
+*RC U209:A2 1.535e-02
+*RC U213:B2 1.509e-02
+*END
+
+*R_NET n113 8.019e+00
+*DRIVER U207:ZN
+*CELL NOR2_X1
+*C2_R1_C1 4.009e+00 1.407e-02 4.009e+00 
+*LOADS
+*RC U139:B 3.610e-02
+*RC U214:B 2.031e-02
+*END
+
+*R_NET n114 7.732e+00
+*DRIVER U216:ZN
+*CELL INV_X1
+*C2_R1_C1 3.866e+00 2.308e-02 3.866e+00 
+*LOADS
+*RC U275:A1 1.557e-02
+*RC U141:A3 2.854e-02
+*RC U270:B1 1.538e-02
+*END
+
+*R_NET n115 1.953e+00
+*DRIVER U281:ZN
+*CELL INV_X1
+*C2_R1_C1 9.767e-01 6.236e-03 9.767e-01 
+*LOADS
+*RC U148:A 1.218e-02
+*END
+
+*R_NET n117 1.878e+00
+*DRIVER U225:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U231:A1 1.171e-02
+*END
+
+*R_NET n118 1.878e+00
+*DRIVER U232:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U233:A1 1.171e-02
+*END
+
+*R_NET n119 1.878e+00
+*DRIVER U234:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U235:A1 1.171e-02
+*END
+
+*R_NET n120 1.878e+00
+*DRIVER U236:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U237:A1 1.171e-02
+*END
+
+*R_NET n121 1.878e+00
+*DRIVER U238:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U239:A1 1.171e-02
+*END
+
+*R_NET n122 1.878e+00
+*DRIVER U240:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U241:A1 1.171e-02
+*END
+
+*R_NET n123 1.878e+00
+*DRIVER U242:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U243:A1 1.171e-02
+*END
+
+*R_NET n124 1.704e+01
+*DRIVER U148:ZN
+*CELL INV_X1
+*C2_R1_C1 8.522e+00 8.097e-02 8.522e+00 
+*LOADS
+*RC U225:A2 2.156e-02
+*RC U232:A2 2.156e-02
+*RC U234:A2 2.156e-02
+*RC U236:A2 2.156e-02
+*RC U238:A2 2.156e-02
+*RC U240:A2 2.156e-02
+*RC U242:A2 2.156e-02
+*RC U244:A2 2.156e-02
+*END
+
+*R_NET n125 1.693e+01
+*DRIVER U230:ZN
+*CELL NAND2_X1
+*C2_R1_C1 8.464e+00 8.097e-02 8.464e+00 
+*LOADS
+*RC U231:A2 2.142e-02
+*RC U233:A2 2.142e-02
+*RC U235:A2 2.142e-02
+*RC U237:A2 2.142e-02
+*RC U239:A2 2.142e-02
+*RC U241:A2 2.142e-02
+*RC U243:A2 2.142e-02
+*RC U245:A2 2.142e-02
+*END
+
+*R_NET n126 1.878e+00
+*DRIVER U244:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U245:A1 1.171e-02
+*END
+
+*R_NET n127 6.016e+00
+*DRIVER U205:ZN
+*CELL NAND2_X1
+*C2_R1_C1 3.008e+00 2.308e-02 3.008e+00 
+*LOADS
+*RC U146:A 1.559e-02
+*RC U211:A 1.535e-02
+*RC U246:A 1.535e-02
+*END
+
+*R_NET n128 4.457e+00
+*DRIVER U213:ZN
+*CELL AOI22_X1
+*C2_R1_C1 2.229e+00 1.407e-02 2.229e+00 
+*LOADS
+*RC U214:A 1.810e-02
+*RC U246:B2 1.325e-02
+*END
+
+*R_NET n129 5.972e+00
+*DRIVER U206:ZN
+*CELL NOR2_X1
+*C2_R1_C1 2.986e+00 2.308e-02 2.986e+00 
+*LOADS
+*RC U207:A2 1.518e-02
+*RC U211:B1 1.538e-02
+*RC U246:B1 1.538e-02
+*END
+
+*R_NET n130 2.847e+00
+*DRIVER U246:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.424e+00 6.236e-03 1.424e+00 
+*LOADS
+*RC U247:B 1.775e-02
+*END
+
+*R_NET n131 6.930e+00
+*DRIVER U210:ZN
+*CELL XNOR2_X1
+*C2_R1_C1 3.465e+00 1.407e-02 3.465e+00 
+*LOADS
+*RC U138:A 3.065e-02
+*RC U247:A 1.810e-02
+*END
+
+*R_NET n132 9.358e+00
+*DRIVER U172:ZN
+*CELL OAI211_X1
+*C2_R1_C1 4.679e+00 2.308e-02 4.679e+00 
+*LOADS
+*RC U135:A3 2.854e-02
+*RC U136:B 2.827e-02
+*RC U248:A2 1.518e-02
+*END
+
+*R_NET n133 4.650e+00
+*DRIVER U166:ZN
+*CELL INV_X1
+*C2_R1_C1 2.325e+00 1.407e-02 2.325e+00 
+*LOADS
+*RC U136:C1 2.396e-02
+*RC U142:A1 8.752e-03
+*END
+
+*R_NET n134 3.984e+00
+*DRIVER U284:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.992e+00 1.407e-02 1.992e+00 
+*LOADS
+*RC U285:A 1.402e-02
+*RC U229:A1 1.401e-02
+*END
+
+*R_NET n135 1.844e+00
+*DRIVER U285:ZN
+*CELL INV_X1
+*C2_R1_C1 9.221e-01 6.236e-03 9.221e-01 
+*LOADS
+*RC U252:B2 1.150e-02
+*END
+
+*R_NET n136 3.929e+00
+*DRIVER U286:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.965e+00 1.407e-02 1.965e+00 
+*LOADS
+*RC U223:A2 1.381e-02
+*RC U252:B1 1.383e-02
+*END
+
+*R_NET n137 1.711e+01
+*DRIVER U252:ZN
+*CELL OAI21_X1
+*C2_R1_C1 8.553e+00 8.097e-02 8.553e+00 
+*LOADS
+*RC U253:A2 2.119e-02
+*RC U255:A1 2.171e-02
+*RC U257:A1 2.171e-02
+*RC U259:A1 2.171e-02
+*RC U261:A1 2.171e-02
+*RC U263:A1 2.171e-02
+*RC U265:A1 2.171e-02
+*RC U267:A1 2.171e-02
+*END
+
+*R_NET n140 5.547e+00
+*DRIVER U215:ZN
+*CELL NAND2_X1
+*C2_R1_C1 2.773e+00 1.407e-02 2.773e+00 
+*LOADS
+*RC U141:A1 2.500e-02
+*RC U149:A 1.402e-02
+*END
+
+*R_NET n141 3.955e+00
+*DRIVER U223:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.978e+00 1.407e-02 1.978e+00 
+*LOADS
+*RC U224:A 1.402e-02
+*RC U270:A 1.380e-02
+*END
+
+*R_NET n142 1.844e+00
+*DRIVER U269:ZN
+*CELL NAND2_X1
+*C2_R1_C1 9.221e-01 6.236e-03 9.221e-01 
+*LOADS
+*RC U270:B2 1.150e-02
+*END
+
+*R_NET n144 7.658e+00
+*DRIVER U147:ZN
+*CELL INV_X1
+*C2_R1_C1 3.829e+00 2.308e-02 3.829e+00 
+*LOADS
+*RC U284:A2 1.535e-02
+*RC U141:A2 2.821e-02
+*RC U269:A2 1.535e-02
+*END
+
+*R_NET n152 1.154e+01
+*DRIVER U270:ZN
+*CELL OAI21_X1
+*C2_R1_C1 5.768e+00 8.097e-02 5.768e+00 
+*LOADS
+*RC U128:A2 1.460e-02
+*RC U127:A2 1.460e-02
+*RC U126:A2 1.460e-02
+*RC U125:A2 1.460e-02
+*RC U130:A2 1.460e-02
+*RC U129:A2 1.460e-02
+*RC U132:A2 1.460e-02
+*RC U131:A2 1.460e-02
+*END
+
+*R_NET n157 3.880e+00
+*DRIVER U229:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.940e+00 1.407e-02 1.940e+00 
+*LOADS
+*RC U283:A1 1.349e-02
+*RC U230:A2 1.381e-02
+*END
+
+*R_NET n158 1.878e+00
+*DRIVER U290:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U274:A1 1.171e-02
+*END
+
+*R_NET n159 1.952e+00
+*DRIVER U250:ZN
+*CELL INV_X1
+*C2_R1_C1 9.758e-01 6.236e-03 9.758e-01 
+*LOADS
+*RC U253:A1 1.217e-02
+*END
+
+*R_NET n160 1.878e+00
+*DRIVER U293:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U273:A1 1.171e-02
+*END
+
+*R_NET n161 1.901e+00
+*DRIVER U254:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U255:A2 1.185e-02
+*END
+
+*R_NET n162 1.878e+00
+*DRIVER U295:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U272:A1 1.171e-02
+*END
+
+*R_NET n163 1.901e+00
+*DRIVER U256:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U257:A2 1.185e-02
+*END
+
+*R_NET n164 1.878e+00
+*DRIVER U297:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U271:A1 1.171e-02
+*END
+
+*R_NET n165 1.901e+00
+*DRIVER U258:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U259:A2 1.185e-02
+*END
+
+*R_NET n166 1.878e+00
+*DRIVER U299:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U268:A1 1.171e-02
+*END
+
+*R_NET n167 1.901e+00
+*DRIVER U260:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U261:A2 1.185e-02
+*END
+
+*R_NET n168 1.878e+00
+*DRIVER U301:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U251:A1 1.171e-02
+*END
+
+*R_NET n169 1.901e+00
+*DRIVER U262:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U263:A2 1.185e-02
+*END
+
+*R_NET n170 1.459e+01
+*DRIVER U283:ZN
+*CELL NAND2_X1
+*C2_R1_C1 7.297e+00 6.648e-02 7.297e+00 
+*LOADS
+*RC U227:A2 1.980e-02
+*RC U251:A2 1.980e-02
+*RC U268:A2 1.980e-02
+*RC U271:A2 1.980e-02
+*RC U272:A2 1.980e-02
+*RC U273:A2 1.980e-02
+*RC U274:A2 1.980e-02
+*END
+
+*R_NET n171 1.878e+00
+*DRIVER U303:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U227:A1 1.171e-02
+*END
+
+*R_NET n172 1.901e+00
+*DRIVER U264:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U265:A2 1.185e-02
+*END
+
+*R_NET n173 3.400e+01
+*DRIVER U224:ZN
+*CELL INV_X1
+*C2_R1_C1 1.700e+01 1.858e-01 1.700e+01 
+*LOADS
+*RC U225:B1 2.468e-02
+*RC U232:B1 2.468e-02
+*RC U234:B1 2.468e-02
+*RC U236:B1 2.468e-02
+*RC U238:B1 2.468e-02
+*RC U240:B1 2.468e-02
+*RC U242:B1 2.468e-02
+*RC U244:B1 2.468e-02
+*RC U290:B1 2.468e-02
+*RC U293:B1 2.468e-02
+*RC U295:B1 2.468e-02
+*RC U297:B1 2.468e-02
+*RC U299:B1 2.468e-02
+*RC U301:B1 2.468e-02
+*RC U303:B1 2.468e-02
+*RC U305:B1 2.468e-02
+*END
+
+*R_NET n174 1.930e+01
+*DRIVER U141:ZN
+*CELL NOR3_X2
+*C2_R1_C1 9.651e+00 9.102e-02 9.651e+00 
+*LOADS
+*RC U281:A 2.170e-02
+*RC U290:A1 2.171e-02
+*RC U293:A1 2.171e-02
+*RC U295:A1 2.171e-02
+*RC U297:A1 2.171e-02
+*RC U299:A1 2.171e-02
+*RC U301:A1 2.171e-02
+*RC U303:A1 2.171e-02
+*RC U305:A2 2.154e-02
+*END
+
+*R_NET n175 3.881e+00
+*DRIVER U228:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.941e+00 1.407e-02 1.941e+00 
+*LOADS
+*RC U275:A2 1.365e-02
+*RC U229:A2 1.365e-02
+*END
+
+*R_NET n178 1.218e+01
+*DRIVER U149:ZN
+*CELL INV_X1
+*C2_R1_C1 6.088e+00 5.299e-02 6.088e+00 
+*LOADS
+*RC U282:A2 1.812e-02
+*RC U283:A2 1.812e-02
+*RC U223:A1 1.772e-02
+*RC U230:A1 1.772e-02
+*RC U252:A 1.812e-02
+*RC U269:A1 1.772e-02
+*END
+
+*R_NET n179 1.878e+00
+*DRIVER U275:ZN
+*CELL NOR2_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U282:A1 1.171e-02
+*END
+
+*R_NET n181 1.923e+00
+*DRIVER U282:ZN
+*CELL NAND2_X1
+*C2_R1_C1 9.615e-01 6.236e-03 9.615e-01 
+*LOADS
+*RC U226:A2 1.199e-02
+*END
+
+*R_NET n182 1.878e+00
+*DRIVER U305:ZN
+*CELL AOI22_X1
+*C2_R1_C1 9.390e-01 6.236e-03 9.390e-01 
+*LOADS
+*RC U226:A1 1.171e-02
+*END
+
+*R_NET n183 1.901e+00
+*DRIVER U266:ZN
+*CELL INV_X1
+*C2_R1_C1 9.505e-01 6.236e-03 9.505e-01 
+*LOADS
+*RC U267:A2 1.185e-02
+*END
+
+*R_NET dmem_din_o\[0\] 2.500e+01
+*DRIVER U151:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[0\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[1\] 2.500e+01
+*DRIVER U152:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[1\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[2\] 2.500e+01
+*DRIVER U194:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[2\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[3\] 2.500e+01
+*DRIVER U195:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[3\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[4\] 2.500e+01
+*DRIVER U196:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[4\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[5\] 2.500e+01
+*DRIVER U197:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[5\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[6\] 2.500e+01
+*DRIVER U198:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[6\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[7\] 2.500e+01
+*DRIVER U199:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[7\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[8\] 2.500e+01
+*DRIVER U200:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[8\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[9\] 2.500e+01
+*DRIVER U201:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[9\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[10\] 2.500e+01
+*DRIVER U202:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[10\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[11\] 2.500e+01
+*DRIVER U193:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[11\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[12\] 2.500e+01
+*DRIVER U192:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[12\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[13\] 2.500e+01
+*DRIVER U191:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[13\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[14\] 2.500e+01
+*DRIVER U190:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[14\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[15\] 2.500e+01
+*DRIVER U189:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[15\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[16\] 2.500e+01
+*DRIVER U153:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[16\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[17\] 2.500e+01
+*DRIVER U188:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[17\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[18\] 2.500e+01
+*DRIVER U187:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[18\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[19\] 2.500e+01
+*DRIVER U186:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[19\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[20\] 2.500e+01
+*DRIVER U185:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[20\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[21\] 2.500e+01
+*DRIVER U184:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[21\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[22\] 2.500e+01
+*DRIVER U183:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[22\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[23\] 2.500e+01
+*DRIVER U182:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[23\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[24\] 2.500e+01
+*DRIVER U181:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[24\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[25\] 2.500e+01
+*DRIVER U180:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[25\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[26\] 2.500e+01
+*DRIVER U179:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[26\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[27\] 2.500e+01
+*DRIVER U178:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[27\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[28\] 2.500e+01
+*DRIVER U177:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[28\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[29\] 2.500e+01
+*DRIVER U176:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[29\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[30\] 2.500e+01
+*DRIVER U175:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[30\] 1.559e-01
+*END
+
+*R_NET dmem_din_o\[31\] 2.500e+01
+*DRIVER U154:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_din_o\[31\] 1.559e-01
+*END
+
+*R_NET dmem_wmask_o\[0\] 2.500e+01
+*DRIVER U174:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_wmask_o\[0\] 1.559e-01
+*END
+
+*R_NET dmem_wmask_o\[2\] 2.500e+01
+*DRIVER U173:Z
+*CELL CLKBUF_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_wmask_o\[2\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[8\] 2.500e+01
+*DRIVER U125:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[8\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[10\] 2.500e+01
+*DRIVER U126:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[10\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[11\] 2.500e+01
+*DRIVER U127:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[11\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[12\] 2.500e+01
+*DRIVER U128:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[12\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[14\] 2.500e+01
+*DRIVER U129:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[14\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[15\] 2.500e+01
+*DRIVER U130:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[15\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[9\] 2.500e+01
+*DRIVER U131:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[9\] 1.559e-01
+*END
+
+*R_NET writeback_value_o\[13\] 2.500e+01
+*DRIVER U132:ZN
+*CELL AND2_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC writeback_value_o\[13\] 1.559e-01
+*END
+
+*R_NET dmem_raddr_o\[6\] 2.500e+01
+*DRIVER U133:ZN
+*CELL INV_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_raddr_o\[6\] 1.559e-01
+*END
+
+*R_NET dmem_raddr_o\[7\] 2.500e+01
+*DRIVER U137:ZN
+*CELL INV_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_raddr_o\[7\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[6\] 2.500e+01
+*DRIVER U217:ZN
+*CELL INV_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[6\] 1.559e-01
+*END
+
+*R_NET dmem_waddr_o\[7\] 2.500e+01
+*DRIVER U219:ZN
+*CELL INV_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC dmem_waddr_o\[7\] 1.559e-01
+*END
+
+*R_NET busy_o 2.500e+01
+*DRIVER U221:ZN
+*CELL INV_X1
+*C2_R1_C1 1.250e+01 6.236e-03 1.250e+01 
+*LOADS
+*RC busy_o 1.559e-01
+*END
+
+*R_NET lsu_fifo/wr_ptr\[1\] 3.929e+00
+*DRIVER lsu_fifo/wr_ptr_reg_1_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.965e+00 1.407e-02 1.965e+00 
+*LOADS
+*RC lsu_fifo/U8:B1 1.383e-02
+*RC lsu_fifo/U54:A2 1.381e-02
+*END
+
+*R_NET lsu_fifo/wr_ptr\[0\] 3.887e+00
+*DRIVER lsu_fifo/wr_ptr_reg_0_:Q
+*CELL DFF_X1
+*C2_R1_C1 1.944e+00 1.407e-02 1.944e+00 
+*LOADS
+*RC lsu_fifo/U7:B1 1.383e-02
+*RC lsu_fifo/U88:A1 1.351e-02
+*END
+
+*R_NET lsu_fifo/rd_ptr\[1\] 5.919e+00
+*DRIVER lsu_fifo/rd_ptr_reg_1_:Q
+*CELL DFF_X1
+*C2_R1_C1 2.960e+00 2.308e-02 2.960e+00 
+*LOADS
+*RC lsu_fifo/U12:A1 1.501e-02
+*RC lsu_fifo/U13:A2 1.518e-02
+*RC lsu_fifo/U14:A2 1.535e-02
+*END
+
+*R_NET lsu_fifo/rd_ptr\[0\] 8.003e+00
+*DRIVER lsu_fifo/rd_ptr_reg_0_:Q
+*CELL DFF_X1
+*C2_R1_C1 4.001e+00 3.293e-02 4.001e+00 
+*LOADS
+*RC lsu_fifo/U13:A1 1.688e-02
+*RC lsu_fifo/U14:A1 1.628e-02
+*RC lsu_fifo/U15:A1 1.628e-02
+*RC lsu_fifo/U122:B2 1.644e-02
+*END
+
+*R_NET lsu_fifo/mem\[44\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__11_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U17:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[43\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__10_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U20:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[42\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__9_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U23:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[41\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__8_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U26:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[40\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__7_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U29:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[39\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__6_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U32:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[38\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__5_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U35:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[37\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__4_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U38:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[36\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__3_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U41:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[35\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__2_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U44:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/mem\[34\] 1.913e+00
+*DRIVER lsu_fifo/mem_reg_0__1_:Q
+*CELL DFF_X1
+*C2_R1_C1 9.563e-01 6.236e-03 9.563e-01 
+*LOADS
+*RC lsu_fifo/U47:B1 1.193e-02
+*END
+
+*R_NET lsu_fifo/n54 1.419e+00
+*DRIVER lsu_fifo/U56:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n55 1.419e+00
+*DRIVER lsu_fifo/U58:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__2_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n56 1.419e+00
+*DRIVER lsu_fifo/U60:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__3_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n57 1.419e+00
+*DRIVER lsu_fifo/U62:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__4_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n58 1.419e+00
+*DRIVER lsu_fifo/U64:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__5_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n59 1.419e+00
+*DRIVER lsu_fifo/U66:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__6_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n60 1.419e+00
+*DRIVER lsu_fifo/U68:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__7_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n61 1.419e+00
+*DRIVER lsu_fifo/U70:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__8_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n62 1.419e+00
+*DRIVER lsu_fifo/U72:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__9_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n63 1.419e+00
+*DRIVER lsu_fifo/U74:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__10_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n64 1.419e+00
+*DRIVER lsu_fifo/U75:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_3__11_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n66 1.419e+00
+*DRIVER lsu_fifo/U77:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n67 1.419e+00
+*DRIVER lsu_fifo/U78:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__2_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n68 1.419e+00
+*DRIVER lsu_fifo/U79:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__3_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n69 1.419e+00
+*DRIVER lsu_fifo/U80:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__4_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n70 1.419e+00
+*DRIVER lsu_fifo/U81:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__5_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n71 1.419e+00
+*DRIVER lsu_fifo/U82:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__6_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n72 1.419e+00
+*DRIVER lsu_fifo/U83:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__7_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n73 1.419e+00
+*DRIVER lsu_fifo/U84:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__8_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n74 1.419e+00
+*DRIVER lsu_fifo/U85:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__9_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n75 1.419e+00
+*DRIVER lsu_fifo/U86:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__10_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n76 1.419e+00
+*DRIVER lsu_fifo/U87:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_2__11_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n78 1.419e+00
+*DRIVER lsu_fifo/U91:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n79 1.419e+00
+*DRIVER lsu_fifo/U92:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__2_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n80 1.419e+00
+*DRIVER lsu_fifo/U93:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__3_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n81 1.419e+00
+*DRIVER lsu_fifo/U94:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__4_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n82 1.419e+00
+*DRIVER lsu_fifo/U95:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__5_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n83 1.419e+00
+*DRIVER lsu_fifo/U96:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__6_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n84 1.419e+00
+*DRIVER lsu_fifo/U97:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__7_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n85 1.419e+00
+*DRIVER lsu_fifo/U98:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__8_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n86 1.419e+00
+*DRIVER lsu_fifo/U99:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__9_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n87 1.419e+00
+*DRIVER lsu_fifo/U100:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__10_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n88 1.419e+00
+*DRIVER lsu_fifo/U101:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_1__11_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n90 1.419e+00
+*DRIVER lsu_fifo/U104:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n91 1.419e+00
+*DRIVER lsu_fifo/U105:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__2_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n92 1.419e+00
+*DRIVER lsu_fifo/U106:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__3_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n93 1.419e+00
+*DRIVER lsu_fifo/U107:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__4_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n94 1.419e+00
+*DRIVER lsu_fifo/U108:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__5_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n95 1.419e+00
+*DRIVER lsu_fifo/U109:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__6_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n96 1.419e+00
+*DRIVER lsu_fifo/U110:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__7_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n97 1.419e+00
+*DRIVER lsu_fifo/U111:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__8_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n98 1.419e+00
+*DRIVER lsu_fifo/U112:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__9_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n99 1.419e+00
+*DRIVER lsu_fifo/U113:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__10_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n100 1.419e+00
+*DRIVER lsu_fifo/U114:ZN
+*CELL OAI22_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/mem_reg_0__11_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n101 1.419e+00
+*DRIVER lsu_fifo/U117:ZN
+*CELL AOI221_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/wr_ptr_reg_1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n102 1.419e+00
+*DRIVER lsu_fifo/U118:ZN
+*CELL AOI221_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/wr_ptr_reg_0_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n103 1.419e+00
+*DRIVER lsu_fifo/U121:ZN
+*CELL AOI221_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/rd_ptr_reg_1_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n104 1.419e+00
+*DRIVER lsu_fifo/U122:ZN
+*CELL AOI221_X1
+*C2_R1_C1 7.094e-01 6.236e-03 7.094e-01 
+*LOADS
+*RC lsu_fifo/rd_ptr_reg_0_:D 8.848e-03
+*END
+
+*R_NET lsu_fifo/n1 1.881e+00
+*DRIVER lsu_fifo/U16:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U17:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n3 1.881e+00
+*DRIVER lsu_fifo/U19:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U20:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n5 1.881e+00
+*DRIVER lsu_fifo/U22:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U23:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n7 1.881e+00
+*DRIVER lsu_fifo/U25:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U26:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n9 1.881e+00
+*DRIVER lsu_fifo/U28:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U29:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n11 1.881e+00
+*DRIVER lsu_fifo/U31:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U32:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n13 1.881e+00
+*DRIVER lsu_fifo/U34:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U35:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n14 1.922e+00
+*DRIVER lsu_fifo/U35:ZN
+*CELL AOI21_X1
+*C2_R1_C1 9.612e-01 6.236e-03 9.612e-01 
+*LOADS
+*RC lsu_fifo/U36:A 1.199e-02
+*END
+
+*R_NET lsu_fifo/n15 1.881e+00
+*DRIVER lsu_fifo/U37:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U38:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n17 1.881e+00
+*DRIVER lsu_fifo/U40:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U41:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n18 1.922e+00
+*DRIVER lsu_fifo/U41:ZN
+*CELL AOI21_X1
+*C2_R1_C1 9.612e-01 6.236e-03 9.612e-01 
+*LOADS
+*RC lsu_fifo/U42:A 1.199e-02
+*END
+
+*R_NET lsu_fifo/n19 1.881e+00
+*DRIVER lsu_fifo/U43:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U44:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n20 1.922e+00
+*DRIVER lsu_fifo/U44:ZN
+*CELL AOI21_X1
+*C2_R1_C1 9.612e-01 6.236e-03 9.612e-01 
+*LOADS
+*RC lsu_fifo/U45:A 1.199e-02
+*END
+
+*R_NET lsu_fifo/n21 1.881e+00
+*DRIVER lsu_fifo/U46:ZN
+*CELL OAI22_X1
+*C2_R1_C1 9.407e-01 6.236e-03 9.407e-01 
+*LOADS
+*RC lsu_fifo/U47:A 1.173e-02
+*END
+
+*R_NET lsu_fifo/n22 1.922e+00
+*DRIVER lsu_fifo/U47:ZN
+*CELL AOI21_X1
+*C2_R1_C1 9.612e-01 6.236e-03 9.612e-01 
+*LOADS
+*RC lsu_fifo/U48:A 1.199e-02
+*END
+
+*R_NET lsu_fifo/n23 2.179e+01
+*DRIVER lsu_fifo/U14:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.089e+01 9.654e-02 1.089e+01 
+*LOADS
+*RC lsu_fifo/U16:A2 1.738e-02
+*RC lsu_fifo/U19:A2 1.738e-02
+*RC lsu_fifo/U22:A2 1.738e-02
+*RC lsu_fifo/U25:A2 1.738e-02
+*RC lsu_fifo/U28:A2 1.738e-02
+*RC lsu_fifo/U31:A2 1.738e-02
+*RC lsu_fifo/U34:A2 1.738e-02
+*RC lsu_fifo/U37:A2 1.738e-02
+*RC lsu_fifo/U40:A2 1.738e-02
+*RC lsu_fifo/U43:A2 1.738e-02
+*RC lsu_fifo/U46:A2 1.738e-02
+*END
+
+*R_NET lsu_fifo/n25 2.502e+01
+*DRIVER lsu_fifo/U13:ZN
+*CELL NOR2_X1
+*C2_R1_C1 1.251e+01 1.144e-01 1.251e+01 
+*LOADS
+*RC lsu_fifo/U17:B2 1.987e-02
+*RC lsu_fifo/U20:B2 1.987e-02
+*RC lsu_fifo/U23:B2 1.987e-02
+*RC lsu_fifo/U26:B2 1.987e-02
+*RC lsu_fifo/U29:B2 1.987e-02
+*RC lsu_fifo/U32:B2 1.987e-02
+*RC lsu_fifo/U35:B2 1.987e-02
+*RC lsu_fifo/U38:B2 1.987e-02
+*RC lsu_fifo/U41:B2 1.987e-02
+*RC lsu_fifo/U44:B2 1.987e-02
+*RC lsu_fifo/U47:B2 1.987e-02
+*RC lsu_fifo/U50:B2 1.987e-02
+*END
+
+*R_NET lsu_fifo/n27 2.240e+01
+*DRIVER lsu_fifo/U55:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.120e+01 9.654e-02 1.120e+01 
+*LOADS
+*RC lsu_fifo/U56:B1 1.787e-02
+*RC lsu_fifo/U58:B1 1.787e-02
+*RC lsu_fifo/U60:B1 1.787e-02
+*RC lsu_fifo/U62:B1 1.787e-02
+*RC lsu_fifo/U64:B1 1.787e-02
+*RC lsu_fifo/U66:B1 1.787e-02
+*RC lsu_fifo/U68:B1 1.787e-02
+*RC lsu_fifo/U70:B1 1.787e-02
+*RC lsu_fifo/U72:B1 1.787e-02
+*RC lsu_fifo/U74:B1 1.787e-02
+*RC lsu_fifo/U75:B1 1.787e-02
+*END
+
+*R_NET lsu_fifo/n28 2.509e+01
+*DRIVER lsu_fifo/U9:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.254e+01 1.144e-01 1.254e+01 
+*LOADS
+*RC lsu_fifo/U55:A2 1.989e-02
+*RC lsu_fifo/U56:A1 1.993e-02
+*RC lsu_fifo/U58:A1 1.993e-02
+*RC lsu_fifo/U60:A1 1.993e-02
+*RC lsu_fifo/U62:A1 1.993e-02
+*RC lsu_fifo/U64:A1 1.993e-02
+*RC lsu_fifo/U66:A1 1.993e-02
+*RC lsu_fifo/U68:A1 1.993e-02
+*RC lsu_fifo/U70:A1 1.993e-02
+*RC lsu_fifo/U72:A1 1.993e-02
+*RC lsu_fifo/U74:A1 1.993e-02
+*RC lsu_fifo/U75:A1 1.993e-02
+*END
+
+*R_NET lsu_fifo/n29 3.768e+00
+*DRIVER lsu_fifo/U54:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.884e+00 1.407e-02 1.884e+00 
+*LOADS
+*RC lsu_fifo/U7:B2 1.325e-02
+*RC lsu_fifo/U9:B2 1.325e-02
+*END
+
+*R_NET lsu_fifo/n30 2.490e+01
+*DRIVER lsu_fifo/U7:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.245e+01 1.144e-01 1.245e+01 
+*LOADS
+*RC lsu_fifo/U76:A2 1.989e-02
+*RC lsu_fifo/U77:B1 1.977e-02
+*RC lsu_fifo/U78:B1 1.977e-02
+*RC lsu_fifo/U79:B1 1.977e-02
+*RC lsu_fifo/U80:B1 1.977e-02
+*RC lsu_fifo/U81:B1 1.977e-02
+*RC lsu_fifo/U82:B1 1.977e-02
+*RC lsu_fifo/U83:B1 1.977e-02
+*RC lsu_fifo/U84:B1 1.977e-02
+*RC lsu_fifo/U85:B1 1.977e-02
+*RC lsu_fifo/U86:B1 1.977e-02
+*RC lsu_fifo/U87:B1 1.977e-02
+*END
+
+*R_NET lsu_fifo/n31 2.179e+01
+*DRIVER lsu_fifo/U76:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.089e+01 9.654e-02 1.089e+01 
+*LOADS
+*RC lsu_fifo/U77:A2 1.738e-02
+*RC lsu_fifo/U78:A2 1.738e-02
+*RC lsu_fifo/U79:A2 1.738e-02
+*RC lsu_fifo/U80:A2 1.738e-02
+*RC lsu_fifo/U81:A2 1.738e-02
+*RC lsu_fifo/U82:A2 1.738e-02
+*RC lsu_fifo/U83:A2 1.738e-02
+*RC lsu_fifo/U84:A2 1.738e-02
+*RC lsu_fifo/U85:A2 1.738e-02
+*RC lsu_fifo/U86:A2 1.738e-02
+*RC lsu_fifo/U87:A2 1.738e-02
+*END
+
+*R_NET lsu_fifo/n32 2.490e+01
+*DRIVER lsu_fifo/U89:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.245e+01 1.144e-01 1.245e+01 
+*LOADS
+*RC lsu_fifo/U90:A2 1.989e-02
+*RC lsu_fifo/U91:B1 1.977e-02
+*RC lsu_fifo/U92:B1 1.977e-02
+*RC lsu_fifo/U93:B1 1.977e-02
+*RC lsu_fifo/U94:B1 1.977e-02
+*RC lsu_fifo/U95:B1 1.977e-02
+*RC lsu_fifo/U96:B1 1.977e-02
+*RC lsu_fifo/U97:B1 1.977e-02
+*RC lsu_fifo/U98:B1 1.977e-02
+*RC lsu_fifo/U99:B1 1.977e-02
+*RC lsu_fifo/U100:B1 1.977e-02
+*RC lsu_fifo/U101:B1 1.977e-02
+*END
+
+*R_NET lsu_fifo/n33 2.179e+01
+*DRIVER lsu_fifo/U90:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.089e+01 9.654e-02 1.089e+01 
+*LOADS
+*RC lsu_fifo/U91:A2 1.738e-02
+*RC lsu_fifo/U92:A2 1.738e-02
+*RC lsu_fifo/U93:A2 1.738e-02
+*RC lsu_fifo/U94:A2 1.738e-02
+*RC lsu_fifo/U95:A2 1.738e-02
+*RC lsu_fifo/U96:A2 1.738e-02
+*RC lsu_fifo/U97:A2 1.738e-02
+*RC lsu_fifo/U98:A2 1.738e-02
+*RC lsu_fifo/U99:A2 1.738e-02
+*RC lsu_fifo/U100:A2 1.738e-02
+*RC lsu_fifo/U101:A2 1.738e-02
+*END
+
+*R_NET lsu_fifo/n34 1.687e+01
+*DRIVER lsu_fifo/U10:ZN
+*CELL INV_X1
+*C2_R1_C1 8.435e+00 8.097e-02 8.435e+00 
+*LOADS
+*RC lsu_fifo/U58:B2 2.100e-02
+*RC lsu_fifo/U78:A1 2.146e-02
+*RC lsu_fifo/U92:A1 2.146e-02
+*RC lsu_fifo/U105:A1 2.146e-02
+*RC lsu_fifo/U56:B2 2.100e-02
+*RC lsu_fifo/U77:A1 2.146e-02
+*RC lsu_fifo/U91:A1 2.146e-02
+*RC lsu_fifo/U104:A1 2.146e-02
+*END
+
+*R_NET lsu_fifo/n36 8.060e+00
+*DRIVER lsu_fifo/U59:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U60:B2 1.631e-02
+*RC lsu_fifo/U79:A1 1.668e-02
+*RC lsu_fifo/U93:A1 1.668e-02
+*RC lsu_fifo/U106:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n37 8.060e+00
+*DRIVER lsu_fifo/U61:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U62:B2 1.631e-02
+*RC lsu_fifo/U80:A1 1.668e-02
+*RC lsu_fifo/U94:A1 1.668e-02
+*RC lsu_fifo/U107:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n38 8.060e+00
+*DRIVER lsu_fifo/U63:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U64:B2 1.631e-02
+*RC lsu_fifo/U81:A1 1.668e-02
+*RC lsu_fifo/U95:A1 1.668e-02
+*RC lsu_fifo/U108:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n39 8.060e+00
+*DRIVER lsu_fifo/U65:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U66:B2 1.631e-02
+*RC lsu_fifo/U82:A1 1.668e-02
+*RC lsu_fifo/U96:A1 1.668e-02
+*RC lsu_fifo/U109:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n40 8.060e+00
+*DRIVER lsu_fifo/U67:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U68:B2 1.631e-02
+*RC lsu_fifo/U83:A1 1.668e-02
+*RC lsu_fifo/U97:A1 1.668e-02
+*RC lsu_fifo/U110:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n41 8.060e+00
+*DRIVER lsu_fifo/U69:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U70:B2 1.631e-02
+*RC lsu_fifo/U84:A1 1.668e-02
+*RC lsu_fifo/U98:A1 1.668e-02
+*RC lsu_fifo/U111:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n42 8.060e+00
+*DRIVER lsu_fifo/U71:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U72:B2 1.631e-02
+*RC lsu_fifo/U85:A1 1.668e-02
+*RC lsu_fifo/U99:A1 1.668e-02
+*RC lsu_fifo/U112:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n43 8.060e+00
+*DRIVER lsu_fifo/U73:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U74:B2 1.631e-02
+*RC lsu_fifo/U86:A1 1.668e-02
+*RC lsu_fifo/U100:A1 1.668e-02
+*RC lsu_fifo/U113:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n44 2.490e+01
+*DRIVER lsu_fifo/U8:ZN
+*CELL OAI21_X1
+*C2_R1_C1 1.245e+01 1.144e-01 1.245e+01 
+*LOADS
+*RC lsu_fifo/U103:A2 1.989e-02
+*RC lsu_fifo/U104:B1 1.977e-02
+*RC lsu_fifo/U105:B1 1.977e-02
+*RC lsu_fifo/U106:B1 1.977e-02
+*RC lsu_fifo/U107:B1 1.977e-02
+*RC lsu_fifo/U108:B1 1.977e-02
+*RC lsu_fifo/U109:B1 1.977e-02
+*RC lsu_fifo/U110:B1 1.977e-02
+*RC lsu_fifo/U111:B1 1.977e-02
+*RC lsu_fifo/U112:B1 1.977e-02
+*RC lsu_fifo/U113:B1 1.977e-02
+*RC lsu_fifo/U114:B1 1.977e-02
+*END
+
+*R_NET lsu_fifo/n45 2.179e+01
+*DRIVER lsu_fifo/U103:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.089e+01 9.654e-02 1.089e+01 
+*LOADS
+*RC lsu_fifo/U104:A2 1.738e-02
+*RC lsu_fifo/U105:A2 1.738e-02
+*RC lsu_fifo/U106:A2 1.738e-02
+*RC lsu_fifo/U107:A2 1.738e-02
+*RC lsu_fifo/U108:A2 1.738e-02
+*RC lsu_fifo/U109:A2 1.738e-02
+*RC lsu_fifo/U110:A2 1.738e-02
+*RC lsu_fifo/U111:A2 1.738e-02
+*RC lsu_fifo/U112:A2 1.738e-02
+*RC lsu_fifo/U113:A2 1.738e-02
+*RC lsu_fifo/U114:A2 1.738e-02
+*END
+
+*R_NET lsu_fifo/n46 8.060e+00
+*DRIVER lsu_fifo/U11:ZN
+*CELL INV_X1
+*C2_R1_C1 4.030e+00 3.293e-02 4.030e+00 
+*LOADS
+*RC lsu_fifo/U75:B2 1.631e-02
+*RC lsu_fifo/U87:A1 1.668e-02
+*RC lsu_fifo/U101:A1 1.668e-02
+*RC lsu_fifo/U114:A1 1.668e-02
+*END
+
+*R_NET lsu_fifo/n47 5.984e+00
+*DRIVER lsu_fifo/U88:ZN
+*CELL NAND3_X1
+*C2_R1_C1 2.992e+00 2.308e-02 2.992e+00 
+*LOADS
+*RC lsu_fifo/U89:A2 1.535e-02
+*RC lsu_fifo/U117:C2 1.552e-02
+*RC lsu_fifo/U117:B2 1.516e-02
+*END
+
+*R_NET lsu_fifo/n48 1.858e+00
+*DRIVER lsu_fifo/U116:ZN
+*CELL NOR2_X1
+*C2_R1_C1 9.292e-01 6.236e-03 9.292e-01 
+*LOADS
+*RC lsu_fifo/U117:B1 1.159e-02
+*END
+
+*R_NET lsu_fifo/n49 5.905e+00
+*DRIVER lsu_fifo/U102:ZN
+*CELL NAND2_X1
+*C2_R1_C1 2.953e+00 2.308e-02 2.953e+00 
+*LOADS
+*RC lsu_fifo/U8:B2 1.475e-02
+*RC lsu_fifo/U118:C2 1.552e-02
+*RC lsu_fifo/U118:B2 1.516e-02
+*END
+
+*R_NET lsu_fifo/n50 2.392e+01
+*DRIVER lsu_fifo/U15:ZN
+*CELL NAND2_X1
+*C2_R1_C1 1.196e+01 1.144e-01 1.196e+01 
+*LOADS
+*RC lsu_fifo/U16:B2 1.950e-02
+*RC lsu_fifo/U19:B2 1.950e-02
+*RC lsu_fifo/U22:B2 1.950e-02
+*RC lsu_fifo/U25:B2 1.950e-02
+*RC lsu_fifo/U28:B2 1.950e-02
+*RC lsu_fifo/U31:B2 1.950e-02
+*RC lsu_fifo/U34:B2 1.950e-02
+*RC lsu_fifo/U37:B2 1.950e-02
+*RC lsu_fifo/U40:B2 1.950e-02
+*RC lsu_fifo/U43:B2 1.950e-02
+*RC lsu_fifo/U46:B2 1.950e-02
+*RC lsu_fifo/U119:A2 1.347e-02
+*END
+
+*R_NET lsu_fifo/n51 9.146e+00
+*DRIVER lsu_fifo/U12:ZN
+*CELL NAND2_X1
+*C2_R1_C1 4.573e+00 4.254e-02 4.573e+00 
+*LOADS
+*RC lsu_fifo/U36:B2 1.665e-02
+*RC lsu_fifo/U42:B2 1.665e-02
+*RC lsu_fifo/U45:B2 1.665e-02
+*RC lsu_fifo/U48:B2 1.665e-02
+*RC lsu_fifo/U119:A1 1.121e-02
+*END
+
+*R_NET lsu_fifo/n52 1.898e+00
+*DRIVER lsu_fifo/U119:ZN
+*CELL AND2_X1
+*C2_R1_C1 9.491e-01 6.236e-03 9.491e-01 
+*LOADS
+*RC lsu_fifo/U121:B2 1.184e-02
+*END
+
+*R_NET lsu_fifo/n53 1.670e+01
+*DRIVER lsu_fifo/U53:ZN
+*CELL INV_X1
+*C2_R1_C1 8.351e+00 8.097e-02 8.351e+00 
+*LOADS
+*RC lsu_fifo/U7:A 2.141e-02
+*RC lsu_fifo/U8:A 2.141e-02
+*RC lsu_fifo/U9:A 2.141e-02
+*RC lsu_fifo/U55:A1 2.096e-02
+*RC lsu_fifo/U76:A1 2.096e-02
+*RC lsu_fifo/U89:A1 2.096e-02
+*RC lsu_fifo/U90:A1 2.096e-02
+*RC lsu_fifo/U103:A1 2.096e-02
+*END
+
+*R_NET lsu_fifo/n65 1.952e+00
+*DRIVER lsu_fifo/U115:ZN
+*CELL INV_X1
+*C2_R1_C1 9.758e-01 6.236e-03 9.758e-01 
+*LOADS
+*RC lsu_fifo/U116:A1 1.217e-02
+*END
+
+*R_NET lsu_fifo/n77 3.857e+00
+*DRIVER lsu_fifo/U120:ZN
+*CELL INV_X1
+*C2_R1_C1 1.928e+00 1.407e-02 1.928e+00 
+*LOADS
+*RC lsu_fifo/U121:C1 1.357e-02
+*RC lsu_fifo/U122:C1 1.357e-02
+*END
+
+*R_NET lsu_fifo/n114 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__1_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U46:B1 1.372e-02
+*RC lsu_fifo/U91:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n115 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__5_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U34:B1 1.372e-02
+*RC lsu_fifo/U95:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n116 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__3_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U40:B1 1.372e-02
+*RC lsu_fifo/U93:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n117 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__4_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U37:B1 1.372e-02
+*RC lsu_fifo/U94:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n118 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__2_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U43:B1 1.372e-02
+*RC lsu_fifo/U92:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n119 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__6_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U31:B1 1.372e-02
+*RC lsu_fifo/U96:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n120 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__7_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U28:B1 1.372e-02
+*RC lsu_fifo/U97:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n121 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__8_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U25:B1 1.372e-02
+*RC lsu_fifo/U98:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n122 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__9_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U22:B1 1.372e-02
+*RC lsu_fifo/U99:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n123 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__10_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U19:B1 1.372e-02
+*RC lsu_fifo/U100:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n124 3.871e+00
+*DRIVER lsu_fifo/mem_reg_1__11_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.936e+00 1.407e-02 1.936e+00 
+*LOADS
+*RC lsu_fifo/U16:B1 1.372e-02
+*RC lsu_fifo/U101:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n125 3.948e+00
+*DRIVER lsu_fifo/rd_ptr_reg_1_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.974e+00 1.407e-02 1.974e+00 
+*LOADS
+*RC lsu_fifo/U15:A2 1.381e-02
+*RC lsu_fifo/U121:C2 1.396e-02
+*END
+
+*R_NET lsu_fifo/n126 3.948e+00
+*DRIVER lsu_fifo/rd_ptr_reg_0_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.974e+00 1.407e-02 1.974e+00 
+*LOADS
+*RC lsu_fifo/U12:A2 1.381e-02
+*RC lsu_fifo/U122:C2 1.396e-02
+*END
+
+*R_NET lsu_fifo/n127 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__1_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U46:A1 1.383e-02
+*RC lsu_fifo/U56:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n129 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__5_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U34:A1 1.383e-02
+*RC lsu_fifo/U64:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n131 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__3_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U40:A1 1.383e-02
+*RC lsu_fifo/U60:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n132 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__4_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U37:A1 1.383e-02
+*RC lsu_fifo/U62:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n133 3.888e+00
+*DRIVER lsu_fifo/mem_reg_2__1_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.944e+00 1.407e-02 1.944e+00 
+*LOADS
+*RC lsu_fifo/U48:B1 1.383e-02
+*RC lsu_fifo/U77:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n134 3.888e+00
+*DRIVER lsu_fifo/mem_reg_2__5_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.944e+00 1.407e-02 1.944e+00 
+*LOADS
+*RC lsu_fifo/U36:B1 1.383e-02
+*RC lsu_fifo/U81:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n135 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__4_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U80:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n136 3.888e+00
+*DRIVER lsu_fifo/mem_reg_2__3_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.944e+00 1.407e-02 1.944e+00 
+*LOADS
+*RC lsu_fifo/U42:B1 1.383e-02
+*RC lsu_fifo/U79:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n137 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__2_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U43:A1 1.383e-02
+*RC lsu_fifo/U58:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n138 3.888e+00
+*DRIVER lsu_fifo/mem_reg_2__2_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.944e+00 1.407e-02 1.944e+00 
+*LOADS
+*RC lsu_fifo/U45:B1 1.383e-02
+*RC lsu_fifo/U78:B2 1.352e-02
+*END
+
+*R_NET lsu_fifo/n139 8.036e+00
+*DRIVER lsu_fifo/wr_ptr_reg_0_:QN
+*CELL DFF_X1
+*C2_R1_C1 4.018e+00 3.293e-02 4.018e+00 
+*LOADS
+*RC lsu_fifo/U9:B1 1.668e-02
+*RC lsu_fifo/U102:A2 1.665e-02
+*RC lsu_fifo/U116:A2 1.647e-02
+*RC lsu_fifo/U118:C1 1.637e-02
+*END
+
+*R_NET lsu_fifo/n140 3.876e+00
+*DRIVER lsu_fifo/wr_ptr_reg_1_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.938e+00 1.407e-02 1.938e+00 
+*LOADS
+*RC lsu_fifo/U88:A3 1.370e-02
+*RC lsu_fifo/U117:C1 1.357e-02
+*END
+
+*R_NET lsu_fifo/n142 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__1_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U104:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n143 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__2_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U105:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n144 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__3_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U106:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n145 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__4_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U107:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n146 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__5_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U108:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n147 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__6_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U109:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n148 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__7_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U110:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n149 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__8_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U111:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n150 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__9_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U112:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n151 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__10_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U113:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n152 1.882e+00
+*DRIVER lsu_fifo/mem_reg_0__11_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U114:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n153 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__6_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U82:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n154 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__7_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U83:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n155 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__8_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U84:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n156 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__9_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U85:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n157 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__10_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U86:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n158 1.882e+00
+*DRIVER lsu_fifo/mem_reg_2__11_:QN
+*CELL DFF_X1
+*C2_R1_C1 9.410e-01 6.236e-03 9.410e-01 
+*LOADS
+*RC lsu_fifo/U87:B2 1.174e-02
+*END
+
+*R_NET lsu_fifo/n159 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__6_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U31:A1 1.383e-02
+*RC lsu_fifo/U66:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n160 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__7_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U28:A1 1.383e-02
+*RC lsu_fifo/U68:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n161 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__8_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U25:A1 1.383e-02
+*RC lsu_fifo/U70:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n162 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__9_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U22:A1 1.383e-02
+*RC lsu_fifo/U72:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n163 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__10_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U19:A1 1.383e-02
+*RC lsu_fifo/U74:A2 1.333e-02
+*END
+
+*R_NET lsu_fifo/n164 3.861e+00
+*DRIVER lsu_fifo/mem_reg_3__11_:QN
+*CELL DFF_X1
+*C2_R1_C1 1.930e+00 1.407e-02 1.930e+00 
+*LOADS
+*RC lsu_fifo/U16:A1 1.383e-02
+*RC lsu_fifo/U75:A2 1.333e-02
+*END

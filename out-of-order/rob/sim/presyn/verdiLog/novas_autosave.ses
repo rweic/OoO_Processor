@@ -27,7 +27,7 @@ fdb_tool =
 [hb]
 postSimFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/rob/sim/presyn/rob.fsdb
 syncTime = 0
-viewport = 0 20 1920 914 0 0 230 898
+viewport = 0 27 1920 914 0 0 412 1918
 activeNode = "rob_tb"
 activeScope = "rob_tb"
 activeFile = "test/rob_tb.sv"
@@ -67,7 +67,7 @@ WaveformFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1920 623 100 65
+viewPort = 0 25 1920 633 100 65
 primaryWindow = TRUE
 SessionFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/rob/sim/presyn/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

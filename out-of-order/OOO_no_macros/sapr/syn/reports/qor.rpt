@@ -3,15 +3,15 @@
 Report : qor
 Design : core
 Version: T-2022.03-SP3
-Date   : Tue Jun  6 19:43:09 2023
+Date   : Thu Jun  8 15:48:01 2023
 ****************************************
 
 
   Timing Path Group 'Inputs'
   -----------------------------------
-  Levels of Logic:               6.00
-  Critical Path Length:          2.10
-  Critical Path Slack:           7.59
+  Levels of Logic:               9.00
+  Critical Path Length:          3.58
+  Critical Path Slack:           6.21
   Critical Path Clk Period:     10.00
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -22,9 +22,9 @@ Date   : Tue Jun  6 19:43:09 2023
 
   Timing Path Group 'Outputs'
   -----------------------------------
-  Levels of Logic:              37.00
-  Critical Path Length:          8.92
-  Critical Path Slack:           0.93
+  Levels of Logic:              44.00
+  Critical Path Length:          9.83
+  Critical Path Slack:           0.02
   Critical Path Clk Period:     10.00
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -35,9 +35,9 @@ Date   : Tue Jun  6 19:43:09 2023
 
   Timing Path Group 'Regs_to_Regs'
   -----------------------------------
-  Levels of Logic:              38.00
-  Critical Path Length:          7.95
-  Critical Path Slack:           2.00
+  Levels of Logic:              59.00
+  Critical Path Length:          9.82
+  Critical Path Slack:           0.00
   Critical Path Clk Period:     10.00
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
@@ -49,36 +49,36 @@ Date   : Tue Jun  6 19:43:09 2023
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:         35
-  Hierarchical Port Count:       3631
-  Leaf Cell Count:               8896
-  Buf/Inv Cell Count:             912
-  Buf Cell Count:                 299
-  Inv Cell Count:                 613
+  Hierarchical Cell Count:         39
+  Hierarchical Port Count:       4245
+  Leaf Cell Count:              31886
+  Buf/Inv Cell Count:            2025
+  Buf Cell Count:                 581
+  Inv Cell Count:                1444
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      6106
-  Sequential Cell Count:         2790
+  Combinational Cell Count:     26550
+  Sequential Cell Count:         5336
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:     7076.132167
-  Noncombinational Area: 12372.191551
-  Buf/Inv Area:            550.087997
-  Total Buffer Area:           233.55
-  Total Inverter Area:         316.54
+  Combinational Area:    29477.322364
+  Noncombinational Area: 23885.203134
+  Buf/Inv Area:           1244.613997
+  Total Buffer Area:           479.86
+  Total Inverter Area:         764.75
   Macro/Black Box Area:      0.000000
   Net Area:                  0.000000
   -----------------------------------
-  Cell Area:             19448.323718
-  Design Area:           19448.323718
+  Cell Area:             53362.525498
+  Design Area:           53362.525498
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         11200
+  Total Number of Nets:         33617
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -89,12 +89,12 @@ Date   : Tue Jun  6 19:43:09 2023
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    1.34
-  Logic Optimization:                  0.75
-  Mapping Optimization:                3.90
+  Resource Sharing:                    2.95
+  Logic Optimization:                  1.72
+  Mapping Optimization:                9.37
   -----------------------------------------
-  Overall Compile Time:               14.38
-  Overall Compile Wall Clock Time:     7.92
+  Overall Compile Time:               37.74
+  Overall Compile Wall Clock Time:    18.68
 
   --------------------------------------------------------------------
 

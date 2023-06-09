@@ -63,8 +63,8 @@ module rob
     reg [4:0] fifo_cnt;
 
     // Need updates (valid & rd_value)
-    reg [NUM_ENTRIES-1:0] valid;
-    reg [31:0] reg_value [0:NUM_ENTRIES-1]; 
+    reg [NUM_ENTRIES - 1:0] valid;
+    reg [31:0] reg_value [0:NUM_ENTRIES - 1]; //NUM_ENTRIES
 
     /*wire [31:0] reg_rob_0 = reg_value[0];
     wire [31:0] reg_rob_1 = reg_value[1];
@@ -75,7 +75,7 @@ module rob
     wire [4:0] prd_addr_committed;
     wire [31:0] pc_committed;
     wire [31:0] inst_committed;
-    wire [NUM_ENTRIES-1:0] new_valid;
+    wire [31:0] new_valid;
 
     assign empty_o = (fifo_cnt == 0);
     assign full_o = (fifo_cnt == NUM_ENTRIES);

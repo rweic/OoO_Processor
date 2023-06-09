@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : net fanout
+        -threshold 32
+Design : lsu
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 16:26:17 2023
+****************************************
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+lsu                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+clk_i                   54   dr              92.05      clk_i
+1

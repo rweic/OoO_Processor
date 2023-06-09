@@ -1,4 +1,3 @@
-verdiSetActWin -dock widgetDock_<Message>
 simSetSimulator "-vcssv" -exec \
            "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/rob/sim/presyn/simv" \
            -args "+v2k +lint=all +neg_tchk +define+PRE_SYN=1 -a rob.log"
@@ -7,7 +6,6 @@ debImport "-dbdir" \
 debLoadSimResult \
            /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/out-of-order/rob/sim/presyn/rob.fsdb
 wvCreateWindow
-verdiWindowResize -win $_Verdi_1 "490" "142" "900" "700"
 verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
 srcHBSelect "rob_tb.rob0" -win $_nTrace1
 verdiSetActWin -dock widgetDock_<Inst._Tree>
@@ -33,5 +31,6 @@ wvAddSignal -win $_nWave2 "/rob_tb/rob0/clk_i" "/rob_tb/rob0/reset_i" \
 wvSetPosition -win $_nWave2 {("rob0" 0)}
 wvSetPosition -win $_nWave2 {("rob0" 23)}
 wvSetPosition -win $_nWave2 {("rob0" 23)}
+wvZoomAll -win $_nWave2
 verdiSetActWin -win $_nWave2
 debExit
