@@ -4,7 +4,7 @@ Report : net fanout
         -threshold 32
 Design : cpu
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 14:27:59 2023
+Date   : Thu Jun  8 22:30:48 2023
 ****************************************
 
 
@@ -29,6 +29,5 @@ Attributes:
 Net                 Fanout   Attributes   Capacitance   Driver
 --------------------------------------------------------------------------------
 clk                   1475   dr, h        1001882.06    clk
-reset                  134   d, I             0.00      reset
-exec0/alu0/n2770        34                   83.66      exec0/alu0/U5049/ZN
+reset                  108   d, I             0.00      reset
 1

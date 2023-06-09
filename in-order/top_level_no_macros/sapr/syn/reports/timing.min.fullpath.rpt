@@ -8,7 +8,7 @@ Report : timing
         -capacitance
 Design : cpu
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 14:21:21 2023
+Date   : Thu Jun  8 22:30:47 2023
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -17,7 +17,7 @@ Operating Conditions: fast   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[31]
+  Endpoint: decode0/load_flag_o_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -32,19 +32,19 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   input external delay                               0.10       0.10 r
   reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
+  reset (net)                  108         0.00      0.00       0.10 r
   decode0/reset (decode)                             0.00       0.10 r
   decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U662/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N61 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[31]/D (DFF_X1)                    0.01       0.11 f
+  decode0/U700/ZN (NOR2_X1)                          0.01       0.11 f
+  decode0/N175 (net)             1         1.34      0.00       0.11 f
+  decode0/load_flag_o_reg/D (DFF_X1)                 0.01       0.11 f
   data arrival time                                             0.11
 
   clock clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   clock reconvergence pessimism                      0.00       0.00
   clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[31]/CK (DFF_X1)                   0.00       0.01 r
+  decode0/load_flag_o_reg/CK (DFF_X1)                0.00       0.01 r
   library hold time                                  0.02       0.03
   data required time                                            0.03
   ---------------------------------------------------------------------
@@ -55,7 +55,7 @@ Wire Load Model Mode: top
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[30]
+  Endpoint: decode0/rs1_value_o_reg[31]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -64,36 +64,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U661/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N60 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[30]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U682/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N142 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[31]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[30]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[31]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[29]
+  Endpoint: decode0/rs1_value_o_reg[30]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -102,36 +102,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U660/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N59 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[29]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U681/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N141 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[30]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[29]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[30]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[28]
+  Endpoint: decode0/rs1_value_o_reg[29]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -140,36 +140,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U659/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N58 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[28]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U679/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N140 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[29]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[28]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[29]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[27]
+  Endpoint: decode0/rs1_value_o_reg[28]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -178,36 +178,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U658/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N57 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[27]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U678/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N139 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[28]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[27]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[28]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[26]
+  Endpoint: decode0/rs1_value_o_reg[27]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -216,36 +216,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U657/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N56 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[26]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U677/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N138 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[27]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[26]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[27]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[25]
+  Endpoint: decode0/rs1_value_o_reg[26]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -254,36 +254,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U656/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N55 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[25]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U675/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N137 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[26]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
 
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[25]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[26]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[24]
+  Endpoint: decode0/rs1_value_o_reg[25]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: Inputs
   Path Type: min
@@ -292,754 +292,32 @@ Wire Load Model Mode: top
   ------------------------------------------------
   cpu                5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U655/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N54 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[24]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[24]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[23]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U654/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N53 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[23]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[23]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[22]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U653/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N52 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[22]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[22]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[21]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U652/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N51 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[21]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[21]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[20]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U651/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N50 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[20]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[20]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[19]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U650/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N49 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[19]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[19]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U649/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N48 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[18]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[18]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[17]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U648/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N47 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[17]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[17]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[16]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U647/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N46 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[16]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[16]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[15]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U646/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N45 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[15]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[15]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[14]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U645/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N44 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[14]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[14]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[13]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U644/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N43 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[13]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[13]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[12]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U643/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N42 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[12]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[12]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[11]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U642/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N41 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[11]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[11]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[10]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U641/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N40 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[10]/D (DFF_X1)                    0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[10]/CK (DFF_X1)                   0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[9]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U640/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N39 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[9]/D (DFF_X1)                     0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[9]/CK (DFF_X1)                    0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[8]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U639/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N38 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[8]/D (DFF_X1)                     0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[8]/CK (DFF_X1)                    0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[7]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U638/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N37 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[7]/D (DFF_X1)                     0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[7]/CK (DFF_X1)                    0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[6]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U637/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N36 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[6]/D (DFF_X1)                     0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[6]/CK (DFF_X1)                    0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
-
-
-  Startpoint: reset (input port clocked by clk)
-  Endpoint: decode0/pc_o_reg[4]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Inputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 r
-  reset (in)                                         0.00       0.10 r
-  reset (net)                  134         0.00      0.00       0.10 r
-  decode0/reset (decode)                             0.00       0.10 r
-  decode0/reset (net)                      0.00      0.00       0.10 r
-  decode0/U636/ZN (NOR2_X1)                          0.01       0.11 f
-  decode0/N34 (net)              1         1.34      0.00       0.11 f
-  decode0/pc_o_reg[4]/D (DFF_X1)                     0.01       0.11 f
-  data arrival time                                             0.11
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  decode0/pc_o_reg[4]/CK (DFF_X1)                    0.00       0.01 r
-  library hold time                                  0.02       0.03
-  data required time                                            0.03
-  ---------------------------------------------------------------------
-  data required time                                            0.03
-  data arrival time                                            -0.11
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.09
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U674/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N136 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[25]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[25]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
 
 
   Startpoint: reset (input port clocked by clk)
@@ -1058,10 +336,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U627/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U673/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N135 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[24]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1096,10 +374,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U625/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U672/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N134 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[23]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1134,10 +412,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U623/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U671/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N133 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[22]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1172,10 +450,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U622/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U670/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N132 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[21]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1210,10 +488,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U620/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U668/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N131 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[20]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1248,10 +526,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U619/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U666/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N130 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[19]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1286,10 +564,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U618/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U665/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N129 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[18]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1324,10 +602,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U617/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U664/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N128 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[17]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1362,10 +640,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U616/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U663/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N127 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[16]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1400,10 +678,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U615/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U662/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N126 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[15]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1438,10 +716,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U614/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U661/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N125 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[14]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1476,10 +754,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U613/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U660/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N124 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[13]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1514,10 +792,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U611/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U659/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N123 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[12]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1552,10 +830,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U610/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U657/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N122 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[11]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1590,10 +868,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U609/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U656/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N121 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[10]/D (DFF_X1)                            0.01       0.11 f
   data arrival time                                                            0.11
@@ -1628,10 +906,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U608/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U654/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N120 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[9]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1666,10 +944,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U606/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U652/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N119 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[8]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1704,10 +982,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U604/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U650/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N118 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[7]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1742,10 +1020,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U603/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U648/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N117 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[6]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1780,10 +1058,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U665/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U687/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N116 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[5]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1818,10 +1096,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U602/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U647/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N115 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[4]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1856,10 +1134,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U664/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U686/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N114 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[3]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1869,6 +1147,44 @@ Wire Load Model Mode: top
   clock reconvergence pessimism                                     0.00       0.00
   clock uncertainty                                                 0.01       0.01
   decode0/rs1_value_o_reg[3]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs1_value_o_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U685/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N113 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[2]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[2]/CK (DFF_X1)                            0.00       0.01 r
   library hold time                                                 0.02       0.03
   data required time                                                           0.03
   ------------------------------------------------------------------------------------
@@ -1894,10 +1210,10 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   input external delay                                              0.10       0.10 r
   reset (in)                                                        0.00       0.10 r
-  reset (net)                                 134         0.00      0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
   decode0/reset (decode)                                            0.00       0.10 r
   decode0/reset (net)                                     0.00      0.00       0.10 r
-  decode0/U663/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/U684/ZN (NOR2_X1)                                         0.01       0.11 f
   decode0/N112 (net)                            1         1.34      0.00       0.11 f
   decode0/rs1_value_o_reg[1]/D (DFF_X1)                             0.01       0.11 f
   data arrival time                                                            0.11
@@ -1907,6 +1223,690 @@ Wire Load Model Mode: top
   clock reconvergence pessimism                                     0.00       0.00
   clock uncertainty                                                 0.01       0.01
   decode0/rs1_value_o_reg[1]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs1_value_o_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U683/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N111 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs1_value_o_reg[0]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs1_value_o_reg[0]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[16]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U627/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N159 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[16]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[16]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U626/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N158 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[15]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[15]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[14]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U624/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N157 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[14]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[14]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U623/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N156 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[13]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[13]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U622/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N155 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[12]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[12]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U621/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N154 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[11]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[11]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U620/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N153 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[10]/D (DFF_X1)                            0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[10]/CK (DFF_X1)                           0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U619/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N152 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[9]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[9]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U618/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N151 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[8]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[8]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U617/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N150 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[7]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[7]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U616/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N149 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[6]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[6]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U615/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N148 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[5]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[5]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U614/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N147 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[4]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[4]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U612/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N146 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[3]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[3]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U610/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N145 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[2]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[2]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U609/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N144 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[1]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[1]/CK (DFF_X1)                            0.00       0.01 r
+  library hold time                                                 0.02       0.03
+  data required time                                                           0.03
+  ------------------------------------------------------------------------------------
+  data required time                                                           0.03
+  data arrival time                                                           -0.11
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.09
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: decode0/rs2_value_o_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Inputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                       Fanout       Cap      Incr       Path
+  ------------------------------------------------------------------------------------
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  input external delay                                              0.10       0.10 r
+  reset (in)                                                        0.00       0.10 r
+  reset (net)                                 108         0.00      0.00       0.10 r
+  decode0/reset (decode)                                            0.00       0.10 r
+  decode0/reset (net)                                     0.00      0.00       0.10 r
+  decode0/U608/ZN (NOR2_X1)                                         0.01       0.11 f
+  decode0/N143 (net)                            1         1.34      0.00       0.11 f
+  decode0/rs2_value_o_reg[0]/D (DFF_X1)                             0.01       0.11 f
+  data arrival time                                                            0.11
+
+  clock clk (rise edge)                                             0.00       0.00
+  clock network delay (ideal)                                       0.00       0.00
+  clock reconvergence pessimism                                     0.00       0.00
+  clock uncertainty                                                 0.01       0.01
+  decode0/rs2_value_o_reg[0]/CK (DFF_X1)                            0.00       0.01 r
   library hold time                                                 0.02       0.03
   data required time                                                           0.03
   ------------------------------------------------------------------------------------
@@ -3424,9 +3424,9 @@ Wire Load Model Mode: top
   slack (MET)                                                   0.50
 
 
-  Startpoint: fetch0/pc_reg[23]
+  Startpoint: fetch0/pc_reg[28]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: pc_if[23] (output port clocked by clk)
+  Endpoint: pc_if[28] (output port clocked by clk)
   Path Group: Outputs
   Path Type: min
 
@@ -3438,12 +3438,12 @@ Wire Load Model Mode: top
   ---------------------------------------------------------------------
   clock clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                        0.00       0.00
-  fetch0/pc_reg[23]/CK (DFF_X1)                      0.00 #     0.00 r
-  fetch0/pc_reg[23]/Q (DFF_X1)                       0.27       0.27 f
-  fetch0/pc_if[23] (net)         2        26.79      0.00       0.27 f
-  fetch0/pc_if[23] (fetch)                           0.00       0.27 f
-  pc_if[23] (net)                         26.79      0.00       0.27 f
-  pc_if[23] (out)                                    0.14       0.41 f
+  fetch0/pc_reg[28]/CK (DFF_X1)                      0.00 #     0.00 r
+  fetch0/pc_reg[28]/Q (DFF_X1)                       0.27       0.27 f
+  fetch0/pc_if[28] (net)         2        26.79      0.00       0.27 f
+  fetch0/pc_if[28] (fetch)                           0.00       0.27 f
+  pc_if[28] (net)                         26.79      0.00       0.27 f
+  pc_if[28] (out)                                    0.14       0.41 f
   data arrival time                                             0.41
 
   clock clk (rise edge)                              0.00       0.00
@@ -3599,6 +3599,41 @@ Wire Load Model Mode: top
   slack (MET)                                                   0.50
 
 
+  Startpoint: fetch0/pc_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: pc_if[10] (output port clocked by clk)
+  Path Group: Outputs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  clock clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  fetch0/pc_reg[10]/CK (DFF_X1)                      0.00 #     0.00 r
+  fetch0/pc_reg[10]/Q (DFF_X1)                       0.28       0.28 f
+  fetch0/pc_if[10] (net)         3        28.63      0.00       0.28 f
+  fetch0/pc_if[10] (fetch)                           0.00       0.28 f
+  pc_if[10] (net)                         28.63      0.00       0.28 f
+  pc_if[10] (out)                                    0.15       0.43 f
+  data arrival time                                             0.43
+
+  clock clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  clock reconvergence pessimism                      0.00       0.00
+  clock uncertainty                                  0.01       0.01
+  output external delay                             -0.10      -0.09
+  data required time                                           -0.09
+  ---------------------------------------------------------------------
+  data required time                                           -0.09
+  data arrival time                                            -0.43
+  ---------------------------------------------------------------------
+  slack (MET)                                                   0.52
+
+
   Startpoint: fetch0/pc_reg[9]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: pc_if[9] (output port clocked by clk)
@@ -3669,41 +3704,6 @@ Wire Load Model Mode: top
   slack (MET)                                                   0.52
 
 
-  Startpoint: fetch0/pc_reg[7]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: pc_if[7] (output port clocked by clk)
-  Path Group: Outputs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout       Cap      Incr       Path
-  ---------------------------------------------------------------------
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  fetch0/pc_reg[7]/CK (DFF_X1)                       0.00 #     0.00 r
-  fetch0/pc_reg[7]/Q (DFF_X1)                        0.28       0.28 f
-  fetch0/pc_if[7] (net)          3        28.63      0.00       0.28 f
-  fetch0/pc_if[7] (fetch)                            0.00       0.28 f
-  pc_if[7] (net)                          28.63      0.00       0.28 f
-  pc_if[7] (out)                                     0.15       0.43 f
-  data arrival time                                             0.43
-
-  clock clk (rise edge)                              0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock reconvergence pessimism                      0.00       0.00
-  clock uncertainty                                  0.01       0.01
-  output external delay                             -0.10      -0.09
-  data required time                                           -0.09
-  ---------------------------------------------------------------------
-  data required time                                           -0.09
-  data arrival time                                            -0.43
-  ---------------------------------------------------------------------
-  slack (MET)                                                   0.52
-
-
   Startpoint: decode0/imm_reg[11]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: decode0/imm_reg[11]
@@ -3721,8 +3721,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[11]/CK (DFF_X1)                    0.00 #     0.00 r
   decode0/imm_reg[11]/QN (DFF_X1)                    0.17       0.17 r
-  decode0/n491 (net)             1         1.93      0.00       0.17 r
-  decode0/U519/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n522 (net)             1         1.93      0.00       0.17 r
+  decode0/U543/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n12 (net)              1         1.34      0.00       0.21 f
   decode0/imm_reg[11]/D (DFF_X1)                     0.01       0.22 f
   data arrival time                                             0.22
@@ -3758,8 +3758,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[10]/CK (DFF_X1)                    0.00 #     0.00 r
   decode0/imm_reg[10]/QN (DFF_X1)                    0.17       0.17 r
-  decode0/n490 (net)             1         1.93      0.00       0.17 r
-  decode0/U517/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n521 (net)             1         1.93      0.00       0.17 r
+  decode0/U541/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n11 (net)              1         1.34      0.00       0.21 f
   decode0/imm_reg[10]/D (DFF_X1)                     0.01       0.22 f
   data arrival time                                             0.22
@@ -3795,8 +3795,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[9]/CK (DFF_X1)                     0.00 #     0.00 r
   decode0/imm_reg[9]/QN (DFF_X1)                     0.17       0.17 r
-  decode0/n489 (net)             1         1.93      0.00       0.17 r
-  decode0/U515/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n520 (net)             1         1.93      0.00       0.17 r
+  decode0/U539/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n10 (net)              1         1.34      0.00       0.21 f
   decode0/imm_reg[9]/D (DFF_X1)                      0.01       0.22 f
   data arrival time                                             0.22
@@ -3832,8 +3832,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[8]/CK (DFF_X1)                     0.00 #     0.00 r
   decode0/imm_reg[8]/QN (DFF_X1)                     0.17       0.17 r
-  decode0/n488 (net)             1         1.93      0.00       0.17 r
-  decode0/U513/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n519 (net)             1         1.93      0.00       0.17 r
+  decode0/U537/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n9 (net)               1         1.34      0.00       0.21 f
   decode0/imm_reg[8]/D (DFF_X1)                      0.01       0.22 f
   data arrival time                                             0.22
@@ -3869,8 +3869,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[7]/CK (DFF_X1)                     0.00 #     0.00 r
   decode0/imm_reg[7]/QN (DFF_X1)                     0.17       0.17 r
-  decode0/n487 (net)             1         1.93      0.00       0.17 r
-  decode0/U511/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n518 (net)             1         1.93      0.00       0.17 r
+  decode0/U535/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n8 (net)               1         1.34      0.00       0.21 f
   decode0/imm_reg[7]/D (DFF_X1)                      0.01       0.22 f
   data arrival time                                             0.22
@@ -3906,8 +3906,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                        0.00       0.00
   decode0/imm_reg[6]/CK (DFF_X1)                     0.00 #     0.00 r
   decode0/imm_reg[6]/QN (DFF_X1)                     0.17       0.17 r
-  decode0/n486 (net)             1         1.93      0.00       0.17 r
-  decode0/U509/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n517 (net)             1         1.93      0.00       0.17 r
+  decode0/U533/ZN (OAI21_X1)                         0.04       0.21 f
   decode0/n7 (net)               1         1.34      0.00       0.21 f
   decode0/imm_reg[6]/D (DFF_X1)                      0.01       0.22 f
   data arrival time                                             0.22
@@ -3917,6 +3917,43 @@ Wire Load Model Mode: top
   clock reconvergence pessimism                      0.00       0.00
   clock uncertainty                                  0.01       0.01
   decode0/imm_reg[6]/CK (DFF_X1)                     0.00       0.01 r
+  library hold time                                  0.02       0.03
+  data required time                                            0.03
+  ---------------------------------------------------------------------
+  data required time                                            0.03
+  data arrival time                                            -0.22
+  ---------------------------------------------------------------------
+  slack (MET)                                                   0.19
+
+
+  Startpoint: decode0/imm_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: decode0/imm_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: Regs_to_Regs
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout       Cap      Incr       Path
+  ---------------------------------------------------------------------
+  clock clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  decode0/imm_reg[5]/CK (DFF_X1)                     0.00 #     0.00 r
+  decode0/imm_reg[5]/QN (DFF_X1)                     0.17       0.17 r
+  decode0/n516 (net)             1         1.93      0.00       0.17 r
+  decode0/U531/ZN (OAI21_X1)                         0.04       0.21 f
+  decode0/n6 (net)               1         1.34      0.00       0.21 f
+  decode0/imm_reg[5]/D (DFF_X1)                      0.01       0.22 f
+  data arrival time                                             0.22
+
+  clock clk (rise edge)                              0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  clock reconvergence pessimism                      0.00       0.00
+  clock uncertainty                                  0.01       0.01
+  decode0/imm_reg[5]/CK (DFF_X1)                     0.00       0.01 r
   library hold time                                  0.02       0.03
   data required time                                            0.03
   ---------------------------------------------------------------------
@@ -4091,7 +4128,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][27]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][27]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3301 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3310 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2672/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2044 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][27]/D (DFF_X1)                           0.01       0.22 f
@@ -4313,7 +4350,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][21]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][21]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3090 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3097 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2666/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2038 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][21]/D (DFF_X1)                           0.01       0.22 f
@@ -4350,7 +4387,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][20]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][20]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3300 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3215 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2665/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2037 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][20]/D (DFF_X1)                           0.01       0.22 f
@@ -4387,7 +4424,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][19]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][19]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3299 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3214 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2664/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2036 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][19]/D (DFF_X1)                           0.01       0.22 f
@@ -4461,7 +4498,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][17]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][17]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3298 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3213 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2662/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2034 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][17]/D (DFF_X1)                           0.01       0.22 f
@@ -4572,7 +4609,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][14]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][14]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3089 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3096 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2658/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2031 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][14]/D (DFF_X1)                           0.01       0.22 f
@@ -4609,7 +4646,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][13]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[1][13]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3088 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3095 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2657/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2030 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][13]/D (DFF_X1)                           0.01       0.22 f
@@ -4831,7 +4868,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][7]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[1][7]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3087 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3094 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2651/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2024 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][7]/D (DFF_X1)                            0.01       0.22 f
@@ -4868,7 +4905,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][6]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[1][6]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3297 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3317 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2650/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2023 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][6]/D (DFF_X1)                            0.01       0.22 f
@@ -4905,7 +4942,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][5]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[1][5]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3086 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3093 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2649/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2022 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][5]/D (DFF_X1)                            0.01       0.22 f
@@ -5090,7 +5127,7 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[1][0]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[1][0]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3296 (net)                          1         1.94      0.00       0.17 r
+  regfile0/n3321 (net)                          1         1.94      0.00       0.17 r
   regfile0/U2644/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n2017 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[1][0]/D (DFF_X1)                            0.01       0.22 f
@@ -5101,43 +5138,6 @@ Wire Load Model Mode: top
   clock reconvergence pessimism                                     0.00       0.00
   clock uncertainty                                                 0.01       0.01
   regfile0/register_reg[1][0]/CK (DFF_X1)                           0.00       0.01 r
-  library hold time                                                 0.02       0.03
-  data required time                                                           0.03
-  ------------------------------------------------------------------------------------
-  data required time                                                           0.03
-  data arrival time                                                           -0.22
-  ------------------------------------------------------------------------------------
-  slack (MET)                                                                  0.19
-
-
-  Startpoint: regfile0/register_reg[2][11]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: regfile0/register_reg[2][11]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: Regs_to_Regs
-  Path Type: min
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  cpu                5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                                       Fanout       Cap      Incr       Path
-  ------------------------------------------------------------------------------------
-  clock clk (rise edge)                                             0.00       0.00
-  clock network delay (ideal)                                       0.00       0.00
-  regfile0/register_reg[2][11]/CK (DFF_X1)                          0.00 #     0.00 r
-  regfile0/register_reg[2][11]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3078 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2621/ZN (AOI22_X1)                                      0.04       0.21 f
-  regfile0/n1996 (net)                          1         1.34      0.00       0.21 f
-  regfile0/register_reg[2][11]/D (DFF_X1)                           0.01       0.22 f
-  data arrival time                                                            0.22
-
-  clock clk (rise edge)                                             0.00       0.00
-  clock network delay (ideal)                                       0.00       0.00
-  clock reconvergence pessimism                                     0.00       0.00
-  clock uncertainty                                                 0.01       0.01
-  regfile0/register_reg[2][11]/CK (DFF_X1)                          0.00       0.01 r
   library hold time                                                 0.02       0.03
   data required time                                                           0.03
   ------------------------------------------------------------------------------------
@@ -5164,8 +5164,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][10]/CK (DFF_X1)                          0.00 #     0.00 r
   regfile0/register_reg[2][10]/QN (DFF_X1)                          0.17       0.17 r
-  regfile0/n3077 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2620/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3082 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2619/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1995 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][10]/D (DFF_X1)                           0.01       0.22 f
   data arrival time                                                            0.22
@@ -5202,7 +5202,7 @@ Wire Load Model Mode: top
   regfile0/register_reg[2][9]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][9]/QN (DFF_X1)                           0.17       0.17 r
   regfile0/n2839 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2619/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/U2618/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1994 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][9]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5238,8 +5238,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][8]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][8]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3578 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2618/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3525 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2617/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1993 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][8]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5275,8 +5275,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][7]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][7]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3076 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2617/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3081 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2616/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1992 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][7]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5312,8 +5312,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][6]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][6]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3577 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2616/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3578 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2615/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1991 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][6]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5349,8 +5349,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][5]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][5]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3075 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2615/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3080 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2614/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1990 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][5]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5386,8 +5386,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][4]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][4]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3576 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2614/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3577 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2613/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1989 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][4]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5423,8 +5423,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][3]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][3]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3294 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2613/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3297 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2612/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1988 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][3]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5460,8 +5460,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][2]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][2]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3575 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2612/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3576 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2611/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1987 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][2]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5498,7 +5498,7 @@ Wire Load Model Mode: top
   regfile0/register_reg[2][1]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][1]/QN (DFF_X1)                           0.17       0.17 r
   regfile0/n2838 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2611/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/U2610/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1986 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][1]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22
@@ -5534,8 +5534,8 @@ Wire Load Model Mode: top
   clock network delay (ideal)                                       0.00       0.00
   regfile0/register_reg[2][0]/CK (DFF_X1)                           0.00 #     0.00 r
   regfile0/register_reg[2][0]/QN (DFF_X1)                           0.17       0.17 r
-  regfile0/n3574 (net)                          1         1.94      0.00       0.17 r
-  regfile0/U2610/ZN (AOI22_X1)                                      0.04       0.21 f
+  regfile0/n3575 (net)                          1         1.94      0.00       0.17 r
+  regfile0/U2609/ZN (AOI22_X1)                                      0.04       0.21 f
   regfile0/n1985 (net)                          1         1.34      0.00       0.21 f
   regfile0/register_reg[2][0]/D (DFF_X1)                            0.01       0.22 f
   data arrival time                                                            0.22

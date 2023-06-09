@@ -8,7 +8,7 @@ Report : timing
         -capacitance
 Design : cpu
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 14:18:49 2023
+Date   : Thu Jun  8 22:30:47 2023
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -18,33 +18,7 @@ Wire Load Model Mode: top
 
 Endpoint                         Path Delay     Path Required     Slack
 ------------------------------------------------------------------------
-decode0/pc_o_reg[31]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[30]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[29]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[28]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[27]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[26]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[25]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[24]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[23]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[22]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[21]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[20]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[19]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[18]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[17]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[16]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[15]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[14]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[13]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[12]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[11]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[10]/D (DFF_X1)     0.11 f            0.03         0.09
-decode0/pc_o_reg[9]/D (DFF_X1)      0.11 f            0.03         0.09
-decode0/pc_o_reg[8]/D (DFF_X1)      0.11 f            0.03         0.09
-decode0/pc_o_reg[7]/D (DFF_X1)      0.11 f            0.03         0.09
-decode0/pc_o_reg[6]/D (DFF_X1)      0.11 f            0.03         0.09
-decode0/pc_o_reg[4]/D (DFF_X1)      0.11 f            0.03         0.09
+decode0/load_flag_o_reg/D (DFF_X1)     0.11 f         0.03         0.09
 decode0/rs1_value_o_reg[31]/D (DFF_X1)     0.11 f     0.03         0.09
 decode0/rs1_value_o_reg[30]/D (DFF_X1)     0.11 f     0.03         0.09
 decode0/rs1_value_o_reg[29]/D (DFF_X1)     0.11 f     0.03         0.09
@@ -74,7 +48,9 @@ decode0/rs1_value_o_reg[6]/D (DFF_X1)     0.11 f      0.03         0.09
 decode0/rs1_value_o_reg[5]/D (DFF_X1)     0.11 f      0.03         0.09
 decode0/rs1_value_o_reg[4]/D (DFF_X1)     0.11 f      0.03         0.09
 decode0/rs1_value_o_reg[3]/D (DFF_X1)     0.11 f      0.03         0.09
+decode0/rs1_value_o_reg[2]/D (DFF_X1)     0.11 f      0.03         0.09
 decode0/rs1_value_o_reg[1]/D (DFF_X1)     0.11 f      0.03         0.09
+decode0/rs1_value_o_reg[0]/D (DFF_X1)     0.11 f      0.03         0.09
 decode0/rs2_value_o_reg[31]/D (DFF_X1)     0.11 f     0.03         0.09
 decode0/rs2_value_o_reg[30]/D (DFF_X1)     0.11 f     0.03         0.09
 decode0/rs2_value_o_reg[29]/D (DFF_X1)     0.11 f     0.03         0.09
@@ -197,17 +173,29 @@ regfile0/register_reg[23][24]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[23][22]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[23][21]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[23][19]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][31]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][30]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][29]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][28]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][27]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][26]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][25]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][24]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][22]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][21]/D (DFF_X1)     0.21 r     0.07       0.15
-regfile0/register_reg[25][19]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][31]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][30]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][29]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][28]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][27]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][26]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][25]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][24]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][22]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][21]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[24][19]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][31]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][30]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][29]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][28]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][27]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][26]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][25]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][24]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][22]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][21]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[26][19]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[27][31]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][30]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][29]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][28]/D (DFF_X1)     0.21 r     0.07       0.15
@@ -218,5 +206,17 @@ regfile0/register_reg[27][24]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][22]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][21]/D (DFF_X1)     0.21 r     0.07       0.15
 regfile0/register_reg[27][19]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][31]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][30]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][29]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][28]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][27]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][26]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][25]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][24]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][22]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][21]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[29][19]/D (DFF_X1)     0.21 r     0.07       0.15
+regfile0/register_reg[30][19]/D (DFF_X1)     0.21 r     0.07       0.15
 
 1

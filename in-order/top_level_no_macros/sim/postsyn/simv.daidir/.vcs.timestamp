@@ -29,7 +29,7 @@
 -Xufe=2steps
 -Xvcs_run_simv=1
 -debug_access+all
--f top_level_no_macros.include
+-f top_level_no_macros_tb.include
 -fsdb
 -full64
 -gen_obj
@@ -39,19 +39,16 @@
 -sverilog
 -timescale=1ns/10ps
 /home/lab.apps/vlsiapps_new/vcs/current/linux64/bin/vcs1
-top_level_no_macros.log
+top_level_no_macros_tb.log
 /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/verdi.tab
-top_level_no_macros.include
-95
-XMODIFIERS=@im=ibus
-XDG_SESSION_ID=1280
-XDG_RUNTIME_DIR=/run/user/1007685
-XDG_MENU_PREFIX=gnome-
-XDG_DATA_DIRS=/homes/gbeatty3/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-XDG_CURRENT_DESKTOP=GNOME
+top_level_no_macros_tb.include
+83
+XDG_SESSION_ID=6413
+XDG_RUNTIME_DIR=/run/user/977666
+XDG_DATA_DIRS=/homes/ecarino/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VTE_VERSION=5204
 VRST_HOME=/home/lab.apps/vlsiapps_new/incisive/current
-VNCDESKTOP=linux-lab-045.ece.uw.edu:1 (gbeatty3)
+VNCDESKTOP=linux-lab-071.ece.uw.edu:2 (ecarino)
 VMR_MODE_FLAG=64
 VG_GNU_PACKAGE=/home/lab.apps/vlsiapps_new/vcs/current/gnu/linux
 VERDI_HOME=/home/lab.apps/vlsiapps_new/verdi/current
@@ -60,7 +57,7 @@ VC_STATIC_HOME=/home/lab.apps/vlsiapps_new/vc_static/current
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_MX_HOME_INTERNAL=1
 VCS_MODE_FLAG=64
-VCS_LOG_FILE=top_level_no_macros.log
+VCS_LOG_FILE=top_level_no_macros_tb.log
 VCS_HOME=/home/lab.apps/vlsiapps_new/vcs/current
 VCS_EXEC_DONE=1
 VCS_DEPTH=0
@@ -70,21 +67,19 @@ USE_CALIBRE_VCO=aoj
 UNAME=/bin/uname
 TOOL_HOME=/home/lab.apps/vlsiapps_new/vcs/current/linux64
 SYNOPSYS_LC_ROOT=/home/lab.apps/vlsiapps_new/lc/current
-SSH_TTY=/dev/pts/3
-SSH_CONNECTION=10.18.253.239 55800 10.159.224.45 22
-SSH_CLIENT=10.18.253.239 55800 22
-SSH_AUTH_SOCK=/run/user/1007685/keyring/ssh
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=10.102.200.190 65140 10.159.224.71 22
+SSH_CLIENT=10.102.200.190 65140 22
+SSH_AUTH_SOCK=/tmp/ssh-QWu4jXEQALNK/agent.32002
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=25288
+SSH_AGENT_PID=32003
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_VCS_CLANG_PATH=/home/lab.apps/vlsiapps_new/vcs/current/linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SKIP_OS_CHECKS=1
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/25167,unix/unix:/tmp/.ICE-unix/25167
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/31990,unix/unix:/tmp/.ICE-unix/31990
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=10.18.253.239
-QT_IM_MODULE=ibus
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
@@ -97,29 +92,22 @@ MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
 MODELSIM_TOOLS=/home/lab.apps/vlsiapps_new/modelsim/current/
 MGLS_LICENSE_FILE=27007@mentorls.s.uw.edu
 MGC_HOME=/home/lab.apps/vlsiapps_new/calibre/current
-MFLAGS=
+MFLAGS=-B
 MAKELEVEL=1
-MAKEFLAGS=
+MAKEFLAGS=B
 LOADEDMODULES=
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 LAMMPS_POTENTIALS=/usr/share/lammps/potentials
-KRB5CCNAME=KEYRING:persistent:1007685
-IMSETTINGS_MODULE=none
-IMSETTINGS_INTEGRATE_DESKTOP=yes
+KRB5CCNAME=KEYRING:persistent:977666
 HSPICE=/home/lab.apps/vlsiapps_new/hspice/current/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
-GROUP=gbeatty3
-GNOME_TERMINAL_SERVICE=:1.164
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/b178a322_0ed1_4b3a_b3fd_a47b003cfdf2
-GNOME_SHELL_SESSION_MODE=classic
-GNOME_DESKTOP_SESSION_ID=this-is-deprecated
-GJS_DEBUG_TOPICS=JS ERROR;JS LOG
-GJS_DEBUG_OUTPUT=stderr
+GROUP=ecarino
+GPG_AGENT_INFO=/homes/ecarino/.gnupg/S.gpg-agent:32005:1
 EDA_TOOLS_PATH=/home/lab.apps/vlsiapps_new
 EDA_CSHRC_PATH=/home/lab.apps/vlsiapps_new/cshrc
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-mRxv0ggGNj,guid=ff87f6db951a8ce16921f9d164713370
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-5KNxc6iu4q,guid=7f8a4b4937dddf5025b711a264811584
 CVS_RSH=ssh
 COLORTERM=truecolor
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -137,20 +125,20 @@ CDN_SYNTH_ROOT=/home/lab.apps/vlsiapps_new/genus/current/tools
 CALIBRE_HOME=/home/lab.apps/vlsiapps_new/calibre/current
 BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
 ARCH=/home/lab.apps/vlsiapps_new/hspice/current/hspice/suse64
-ADK_PATH=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm
+ADK_PATH=/home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/
 0
 0
 10
-1685926111 cpu.sdf
-1685926111 ../../sapr/syn/results/cpu.syn.sdf
-1685923438 verilog/top_level_no_macros_tb.sv
-1685926113 cpu.syn.v
-1685926113 ../../sapr/syn/results/cpu.syn.v
-1685597292 verilog/icache.v
-1685590711 verilog/dcache.v
-1685565420 verilog/PARAM.vh
-1682036274 /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v
-1685926443 top_level_no_macros.include
+1686288649 cpu.sdf
+1686288649 ../../sapr/syn/results/cpu.syn.sdf
+1686107403 verilog/top_level_no_macros_tb.sv
+1686288650 cpu.syn.v
+1686288650 ../../sapr/syn/results/cpu.syn.v
+1685922840 verilog/icache.v
+1685922840 verilog/dcache.v
+1686182404 verilog/PARAM.vh
+1681784564 /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v
+1686288959 top_level_no_macros_tb.include
 1676546067 /home/lab.apps/vlsiapps_new/verdi/current/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/vcsdp_lite.tab
 4
@@ -158,5 +146,5 @@ ADK_PATH=/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macr
 1654053585 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/liberrorinf.so
 1654053489 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libsnpsmalloc.so
 1654053565 /home/lab.apps/vlsiapps_new/vcs/current/linux64/lib/libvfs.so
-1685926455 simv.daidir
+1686288969 simv.daidir
 -1 partitionlib

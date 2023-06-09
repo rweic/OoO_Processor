@@ -25,12 +25,12 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb
-syncTime = 0
-viewport = 0 27 1920 914 0 0 244 1918
+postSimFile = /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros_tb.fsdb
+syncTime = 37552
+viewport = 0 84 1920 914 0 0 271 1918
 activeNode = "ANTENNA_X1"
 activeScope = "ANTENNA_X1"
-activeFile = "/homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v"
+activeFile = "/home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
@@ -56,20 +56,20 @@ multipleSelection = 1 195 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
-importCmd = "-dbdir" "/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir" 
-invokeDir = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn
+importCmd = "-dbdir" "/home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir" 
+invokeDir = /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn
 [hb.sourceTab.1]
 scope = ANTENNA_X1
-File = /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v
+File = /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells.v
 Line = 196
 [nMemoryManager]
-WaveformFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros.fsdb
+WaveformFile = /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/top_level_no_macros_tb.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1920 414 205 65
+viewPort = 0 25 1920 363 205 65
 primaryWindow = TRUE
-SessionFile = /home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/verdiLog/novas_autosave.ses.wave.0
+SessionFile = /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE
 snap = TRUE

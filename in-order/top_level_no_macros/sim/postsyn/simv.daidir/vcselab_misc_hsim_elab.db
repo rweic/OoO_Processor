@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
-psLogFileName                      	top_level_no_macros.log
-pDaiDir                            	/home/projects/ee478.2023spr/gbeatty3/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir
+psLogFileName                      	top_level_no_macros_tb.log
+pDaiDir                            	/home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/sim/postsyn/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 fHsimPCSharedLibSpecified          	0
