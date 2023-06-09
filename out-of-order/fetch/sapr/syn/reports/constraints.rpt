@@ -1,0 +1,20 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -verbose
+Design : fetch
+Version: T-2022.03-SP3
+Date   : Tue Jun  6 21:41:04 2023
+****************************************
+
+
+    Design: fetch
+
+    max_leakage_power          0.00
+  - Current Leakage Power   9334.10
+  ----------------------------------
+    Slack                  -9334.10  (VIOLATED)
+
+
+1

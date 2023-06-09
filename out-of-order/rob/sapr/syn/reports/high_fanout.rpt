@@ -1,0 +1,33 @@
+ 
+****************************************
+Report : net fanout
+        -threshold 32
+Design : rob
+Version: T-2022.03-SP3
+Date   : Thu Jun  8 15:06:31 2023
+****************************************
+
+
+Operating Conditions: slow   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+rob                    5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+clk_i                 3411   dr, h        1001882.06    clk_i
+reset_i                 95   d, I             0.00      reset_i
+1

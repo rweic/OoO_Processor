@@ -1,0 +1,91 @@
+Warning: Could not read any link_library files. The link_library setting {"*", "stdcells-wc.db", "stdcells-bc.db", "dw_foundation.sldb"} may be invalid. (UID-349)
+
+  Loading design 'fsm'
+Warning: Layer 'metal1' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal2' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal3' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal4' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal5' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal6' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal7' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal8' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal9' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+Warning: Layer 'metal10' is missing the optional 'edge capacitance' attribute. (PSYN-101)
+
+
+
+
+Information: The design has 5 physical cells. (PSYN-105)
+Information: Library Manufacturing Grid(GridResolution) : 5
+Information: Time Unit from Milkyway design library: 'ns' 
+Information: Design Library and main library timing units are matched - 1.000 ns. 
+Information: Resistance Unit from Milkyway design library: 'kohm' 
+Warning: Mismatch in the main library and the Milkyway library resistance units. In the main library it is 1000.000 kohm and in the Milkyway design library it is 1.000 kohm. Check and correct the resistance units in the .tf and .db files. (PSYN-476)
+Information: Capacitance Unit from Milkyway design library: 'pf' 
+Warning: Mismatch in the main and the Milkyway library capacitance units. In the main library it is 0.001 pf and in the Milkyway design library it is 1.000 pf. Check and correct the capacitance units in the .tf and .db files. (PSYN-477)
+Information: Layer metal7 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal8 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal9 is ignored for resistance and capacitance computation. (RCEX-019)
+Information: Layer metal10 is ignored for resistance and capacitance computation. (RCEX-019)
+Error: Initialization of the detail route TLU+ RC model failed. (RCEX-030)
+Error: Extraction failed. (RCEX-205)
+Information: Updating graph... (UID-83)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+ 
+****************************************
+Report : clock tree
+Design : fsm
+Version: T-2022.03-SP3
+Date   : Tue May 16 23:07:54 2023
+****************************************
+
+Information: Float pin scale factor for the 'max' operating condition of scenario 'default' is set to 1.000 (CTS-375)
+
+============ Global Skew Report ================
+
+Clock Tree Name                : "clk"
+Clock Period                   : 5.00000        
+Clock Tree root pin            : "Clock"
+Number of Levels               : 1
+Number of Sinks                : 6
+Number of CT Buffers           : 0
+Number of CTS added gates      : 0
+Number of Preexisting Gates    : 0
+Number of Preexisting Buf/Inv  : 0
+Total Number of Clock Cells    : 0
+Total Area of CT Buffers       : 0.00000        
+Total Area of CT cells         : 0.00000        
+Max Global Skew                : 0.00000   
+Number of MaxTran Violators    : 0
+Number of MaxCap Violators     : 0
+Number of MaxFanout Violators  : 0
+
+
+Operating Condition               worst
+Clock global Skew                 0.000
+Longest path delay                0.047
+Shortest path delay               0.047
+
+The longest path delay end pin: ps_reg_0_/CK
+The shortest path delay end pin: ps_reg_0_/CK
+
+The longest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+Clock                                       0.000            1  0.000     0.000     0.000     r
+Clock                                       5.458            6  0.047     0.047     0.047     r
+ps_reg_0_/CK                                5.458            0  0.047     0.000     0.047     r
+[clock delay]                                                                       0.047
+----------------------------------------------------------------------------------------------------
+
+The Shortest Path:
+Pin                                         Cap       Fanout    Trans     Incr      Arri
+----------------------------------------------------------------------------------------------------
+Clock                                       0.000            1  0.000     0.000     0.000     r
+Clock                                       5.458            6  0.047     0.047     0.047     r
+ps_reg_0_/CK                                5.458            0  0.047     0.000     0.047     r
+[clock delay]                                                                       0.047
+----------------------------------------------------------------------------------------------------
+
+1

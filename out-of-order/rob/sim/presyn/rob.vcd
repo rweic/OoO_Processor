@@ -1,0 +1,227 @@
+$date
+	Thu Jun  8 15:34:29 2023
+$end
+
+$version
+	Synopsys VCS version T-2022.06_Full64
+$end
+
+$timescale
+	10ps
+$end
+
+$comment Csum: 1 d60318812caaaa52 $end
+
+
+$scope module rob_tb $end
+$var reg 1 ! clk_i $end
+$var reg 1 " reset_i $end
+$var reg 1 # allocate_req_i $end
+$var reg 1 $ update_req_alu_i $end
+$var reg 1 % update_req_lsu_i $end
+$var reg 1 & update_req_mul_i $end
+$var reg 5 ' prd_addr_i [4:0] $end
+$var reg 32 ( pc_i [31:0] $end
+$var reg 32 ) inst_i [31:0] $end
+$var reg 5 * rob_idx_alu_i [4:0] $end
+$var reg 32 + reg_value_alu_i [31:0] $end
+$var reg 5 , rob_idx_lsu_i [4:0] $end
+$var reg 32 - reg_value_lsu_i [31:0] $end
+$var reg 5 . rob_idx_mul_i [4:0] $end
+$var reg 32 / reg_value_mul_i [31:0] $end
+$var wire 1 0 empty_o $end
+$var wire 1 1 full_o $end
+$var wire 5 2 rob_idx_o [4:0] $end
+$var wire 1 3 commitment_valid_o $end
+$var wire 32 4 inst_committed_o [31:0] $end
+$var wire 32 5 pc_committed_o [31:0] $end
+$var wire 5 6 prd_addr_committed_o [4:0] $end
+$var wire 32 7 prd_value_committed_o [31:0] $end
+
+$scope module rob0 $end
+$var wire 1 8 clk_i $end
+$var wire 1 9 reset_i $end
+$var wire 1 : allocate_req_i $end
+$var wire 1 ; update_req_alu_i $end
+$var wire 1 < update_req_lsu_i $end
+$var wire 1 = update_req_mul_i $end
+$var wire 5 > prd_addr_i [4:0] $end
+$var wire 32 ? pc_i [31:0] $end
+$var wire 32 @ inst_i [31:0] $end
+$var wire 5 A rob_idx_alu_i [4:0] $end
+$var wire 32 B reg_value_alu_i [31:0] $end
+$var wire 5 C rob_idx_lsu_i [4:0] $end
+$var wire 32 D reg_value_lsu_i [31:0] $end
+$var wire 5 E rob_idx_mul_i [4:0] $end
+$var wire 32 F reg_value_mul_i [31:0] $end
+$var wire 1 0 empty_o $end
+$var wire 1 1 full_o $end
+$var wire 5 2 rob_idx_o [4:0] $end
+$var reg 1 G commitment_valid_o $end
+$var reg 32 H inst_committed_o [31:0] $end
+$var reg 32 I pc_committed_o [31:0] $end
+$var reg 5 J prd_addr_committed_o [4:0] $end
+$var reg 32 K prd_value_committed_o [31:0] $end
+$var reg 5 L head [4:0] $end
+$var reg 5 M tail [4:0] $end
+$var reg 5 N fifo_cnt [4:0] $end
+$var reg 32 O valid [31:0] $end
+$var wire 1 P ready $end
+$var wire 5 Q prd_addr_committed [4:0] $end
+$var wire 32 R pc_committed [31:0] $end
+$var wire 32 S inst_committed [31:0] $end
+$var integer 32 T i $end
+
+$scope begin unnamed$$_0 $end
+$upscope $end
+
+
+$scope module cbuf_prd $end
+$var wire 1 8 clk_i $end
+$var wire 1 9 reset_i $end
+$var wire 1 : wr_i $end
+$var wire 1 P rd_i $end
+$var wire 5 > data_in_i [4:0] $end
+$var wire 5 Q data_out_o [4:0] $end
+$var wire 1 U empty_o $end
+$var wire 1 V full_o $end
+$var reg 5 W rd_ptr [4:0] $end
+$var reg 5 X wr_ptr [4:0] $end
+$var reg 5 Y fifo_cnt [4:0] $end
+$var integer 32 Z i $end
+$upscope $end
+
+
+$scope module cbuf_pc $end
+$var wire 1 8 clk_i $end
+$var wire 1 9 reset_i $end
+$var wire 1 : wr_i $end
+$var wire 1 P rd_i $end
+$var wire 32 ? data_in_i [31:0] $end
+$var wire 32 R data_out_o [31:0] $end
+$var wire 1 [ empty_o $end
+$var wire 1 \ full_o $end
+$var reg 5 ] rd_ptr [4:0] $end
+$var reg 5 ^ wr_ptr [4:0] $end
+$var reg 5 _ fifo_cnt [4:0] $end
+$var integer 32 ` i $end
+$upscope $end
+
+
+$scope module cbuf_inst $end
+$var wire 1 8 clk_i $end
+$var wire 1 9 reset_i $end
+$var wire 1 : wr_i $end
+$var wire 1 P rd_i $end
+$var wire 32 @ data_in_i [31:0] $end
+$var wire 32 S data_out_o [31:0] $end
+$var wire 1 a empty_o $end
+$var wire 1 b full_o $end
+$var reg 5 c rd_ptr [4:0] $end
+$var reg 5 d wr_ptr [4:0] $end
+$var reg 5 e fifo_cnt [4:0] $end
+$var integer 32 f i $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+x#
+xa
+0b
+x[
+0\
+xU
+0V
+0!
+x3
+x0
+01
+xP
+1"
+x:
+xG
+19
+x;
+x<
+x=
+x$
+x%
+x&
+bxxxxx e
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx f
+bxxxxx c
+bxxxxx d
+bxxxxx _
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx `
+bxxxxx Y
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Z
+bxxxxx W
+bxxxxx X
+bxxxxx N
+bxxxxx L
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx T
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx S
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 4
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx )
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx R
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 5
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (
+bxxxxx Q
+bxxxxx 6
+bxxxxx '
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 7
+bxxxxx ]
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx +
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx /
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx H
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx @
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx I
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ?
+bxxxxx J
+bxxxxx >
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx K
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx B
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx D
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx F
+bxxxxx A
+bxxxxx C
+bxxxxx E
+bxxxxx *
+bxxxxx ,
+bxxxxx .
+bxxxxx 2
+bxxxxx M
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx O
+bxxxxx ^
+08
+$end
+#500
+1!
+18
+0"
+09
+b00000 _
+1[
+b00000 e
+1a
+b00000 Y
+1U
+#1000
+0!
+08
+#1500
+1!
+18
+#2000
+0!
+08
+#2500
+1!
+18
