@@ -5,13 +5,13 @@ Report : power
         -analysis_effort low
 Design : cpu
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 14:27:42 2023
+Date   : Thu Jun  8 22:30:48 2023
 ****************************************
 
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+    NangateOpenCellLibrary (File: /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
 
 
 Operating Conditions: slow   Library: NangateOpenCellLibrary
@@ -35,13 +35,13 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-cpu                                      33.259  508.716 4.26e+05  967.751 100.0
-  wb0 (writeback)                         0.121    0.112 2.67e+03    2.907   0.3
-  memaccess0 (memory_access)              1.200   43.930 9.15e+03   54.282   5.6
-  exec0 (execute)                        12.931   46.516 2.90e+05  349.904  36.2
-    alu0 (alu)                           12.207   10.893 2.81e+05  303.988  31.4
-  regfile0 (regfile)                     14.012  337.329 9.49e+04  446.235  46.1
-  decode0 (decode)                        1.200   49.998 1.82e+04   69.365   7.2
-  fetch0 (fetch)                          3.731   30.736 9.58e+03   44.051   4.6
-  hazard_detect0 (hazard_detect)       6.28e-02 9.42e-02  841.681    0.999   0.1
+cpu                                      32.972  508.603 4.32e+05  973.958 100.0
+  wb0 (writeback)                         0.125    0.117 2.66e+03    2.907   0.3
+  memaccess0 (memory_access)              1.202   44.013 9.15e+03   54.365   5.6
+  exec0 (execute)                        12.433   46.098 2.97e+05  355.395  36.5
+    alu0 (alu)                           11.695   10.363 2.87e+05  308.742  31.7
+  regfile0 (regfile)                     14.029  337.269 9.50e+04  446.286  45.8
+  decode0 (decode)                        1.279   50.149 1.83e+04   69.722   7.2
+  fetch0 (fetch)                          3.837   30.859 9.57e+03   44.270   4.5
+  hazard_detect0 (hazard_detect)       6.43e-02 9.74e-02  841.663    1.003   0.1
 1

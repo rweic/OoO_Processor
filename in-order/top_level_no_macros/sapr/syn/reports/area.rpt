@@ -3,29 +3,29 @@
 Report : area
 Design : cpu
 Version: T-2022.03-SP3
-Date   : Mon Jun  5 14:25:10 2023
+Date   : Thu Jun  8 22:30:48 2023
 ****************************************
 
 Library(s) Used:
 
-    NangateOpenCellLibrary (File: /homes/gbeatty3/ee478/gbeatty3/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
+    NangateOpenCellLibrary (File: /home/projects/ee478.2023spr/ecarino/OoO_Processor/in-order/top_level_no_macros/freepdk-45nm/stdcells-wc.db)
 
 Number of ports:                         2603
-Number of nets:                         23823
-Number of cells:                        21015
-Number of combinational cells:          19502
+Number of nets:                         23979
+Number of cells:                        21173
+Number of combinational cells:          19660
 Number of sequential cells:              1475
 Number of macros/black boxes:               0
-Number of buf/inv:                       3363
+Number of buf/inv:                       3336
 Number of references:                       8
 
-Combinational area:              20787.900038
-Buf/Inv area:                     1988.616007
-Noncombinational area:            6669.949758
+Combinational area:              21045.388043
+Buf/Inv area:                     1999.522006
+Noncombinational area:            6670.481758
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 27457.849796
+Total cell area:                 27715.869801
 Total area:                 undefined
 
 The above information was reported from the logical library. The following are from the physical library:
@@ -38,16 +38,16 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
                                   Total       Total    national    national   boxes   Design
 --------------------------------  ----------  -------  ----------  ---------  ------  -------------
-cpu                               27457.8498    100.0      0.7980     0.0000  0.0000  cpu
-decode0                            1377.8800      5.0    717.6680   660.2120  0.0000  decode
-exec0                             16430.2879     59.8    311.4860   474.8100  0.0000  execute
-exec0/alu0                        15643.9919     57.0  15643.9919     0.0000  0.0000  alu
-fetch0                              789.7540      2.9    355.6420   434.1120  0.0000  fetch
+cpu                               27715.8698    100.0      0.7980     0.0000  0.0000  cpu
+decode0                            1415.6520      5.1    755.4400   660.2120  0.0000  decode
+exec0                             16650.5359     60.1    326.6480   475.3420  0.0000  execute
+exec0/alu0                        15848.5459     57.2  15848.5459     0.0000  0.0000  alu
+fetch0                              789.7540      2.8    355.6420   434.1120  0.0000  fetch
 hazard_detect0                       45.7520      0.2     45.7520     0.0000  0.0000  hazard_detect
 memaccess0                          763.4200      2.8    148.4280   614.9920  0.0000  memory_access
-regfile0                           7870.1419     28.7   3384.3181  4485.8238  0.0000  regfile
-wb0                                 179.8160      0.7    179.8160     0.0000  0.0000  writeback
+regfile0                           7870.1419     28.4   3384.3181  4485.8238  0.0000  regfile
+wb0                                 179.8160      0.6    179.8160     0.0000  0.0000  writeback
 --------------------------------  ----------  -------  ----------  ---------  ------  -------------
-Total                                                  20787.9000  6669.9498  0.0000
+Total                                                  21045.3880  6670.4818  0.0000
 
 1
