@@ -166,7 +166,9 @@ This testbench test for functional unit (load store unit).
 This testbench test for functional unit (multiplier unit).
 
 ### Synthesis
+repo: out-of-order/OOO_no_macros/sapr/syn
 
+Unable to resolve synthesis errors. DC removed necessary register banks.
 
 ### Post-Syn Simulation
 
