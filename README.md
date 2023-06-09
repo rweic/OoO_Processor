@@ -123,7 +123,11 @@ Funtion unit multiplier, takes two cycle to execute.
 
 Reorder buffer, used for commitment.
 
-17. PARAM.vh
+17. fifo.v
+
+The fifo that's both used for load store unit and re-order buffer.
+
+18. PARAM.vh
 
 This is the header files for holding the commonly used parameters among modules.
 
