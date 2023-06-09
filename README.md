@@ -178,12 +178,16 @@ This testbench test for functional unit (multiplier unit).
 
 
 
-# Processor Performance Comparison 
+# Processor Performance Comparison
 
-## Comparing runtimes of each processor in doing the following:
-##### 1. GCD
-##### 2. Fibonacci Sequence
-##### 3. Matrix Multiplication
+## Analyzing Processor Runtimes for Arithmetic-Intensive Operation:
+
+Out-of-order execution greatly improves performance when instructions can be executed independently. The presence of parallelism in the hardware significantly enhances the throughput of processors in this regard.
+
+   #### Example where both processors are given the same instruction set:
+
+   - In Order: [Image](https://cdn.discordapp.com/attachments/321127701501050882/1116602144196399184/image.png)
+   - Out of Order: [Image]
 
 #### Written algorithims in C and compiled into RISC Assembly with either:
 https://godbolt.org/
